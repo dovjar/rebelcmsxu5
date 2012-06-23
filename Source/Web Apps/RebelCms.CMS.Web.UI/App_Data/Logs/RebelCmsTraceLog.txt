@@ -1052,3 +1052,121 @@ NHibernate.HibernateException: Missing table: AttributeDateValue
 2012-06-23 19:57:53,779 [25] INFO  RebelCms.Cms.Web.Context.DefaultRenderModelFactory [(null)] - End find/create (took 0ms)
 2012-06-23 19:57:53,780 [25] INFO  RebelCms.Cms.Web.Context.DefaultRenderModelFactory [(null)] - Begin find/create context
 2012-06-23 19:57:53,781 [25] INFO  RebelCms.Cms.Web.Context.DefaultRenderModelFactory [(null)] - End find/create (took 0ms)
+2012-06-23 19:57:53,880 [25] INFO  RebelCms.Cms.Web.Mvc.Controllers.RebelCmsController [(null)] - Controller being disposed, calling scope cleanup: True
+2012-06-23 19:57:53,918 [25] INFO  RebelCms.Cms.Web.Mvc.Controllers.RebelCmsController [(null)] - Controller being disposed, calling scope cleanup: True
+2012-06-23 19:57:53,919 [25] INFO  RebelCms.Cms.Web.Mvc.Controllers.RebelCmsController [(null)] - Controller being disposed, calling scope cleanup: True
+2012-06-23 19:57:56,813 [18] INFO  RebelCms.Framework.Localization.TextManager [(null)] - Start ReloadTexts
+2012-06-23 19:57:56,838 [18] INFO  RebelCms.Framework.Localization.TextManager [(null)] - End ReloadTexts (took 5ms)
+2012-06-23 19:57:56,839 [18] INFO  RebelCms.Framework.Localization.TextManager [(null)] - Start ReloadTexts
+2012-06-23 19:57:56,841 [18] INFO  RebelCms.Framework.Localization.TextManager [(null)] - End ReloadTexts (took 1ms)
+2012-06-23 19:57:57,054 [25] INFO  RebelCms.Framework.Localization.TextManager [(null)] - Start ParseAllPatterns
+2012-06-23 19:57:57,249 [25] INFO  RebelCms.Framework.Localization.TextManager [(null)] - End ParseAllPatterns (took 194ms)
+2012-06-23 19:57:57,683 [18] INFO  RebelCms.Cms.Web.Trees.ContentTreeController [(null)] - FilterWithPermissions
+2012-06-23 19:57:57,686 [18] INFO  RebelCms.Cms.Web.Trees.ContentTreeController [(null)] - FilterWithPermissions (took 1ms)
+2012-06-23 19:57:57,687 [18] INFO  RebelCms.Cms.Web.Trees.ContentTreeController [(null)] - Get childIds
+2012-06-23 19:57:57,733 [18] WARN  NHibernate.Engine.StatefulPersistenceContext.ProxyWarnLog [(null)] - Narrowing proxy to RebelCms.Framework.Persistence.RdbmsModel.AttributeSchemaDefinition - this operation breaks ==
+2012-06-23 19:57:57,760 [18] INFO  RebelCms.Cms.Web.Trees.ContentTreeController [(null)] - Get childIds (took 73ms)
+2012-06-23 20:09:47,803 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Start Initialise
+2012-06-23 20:09:47,858 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Creating shadow copy folder and querying for dlls
+2012-06-23 20:09:47,867 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Shadow copying assemblies
+2012-06-23 20:09:47,871 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - C:\Projects\rebelcmsxu5\Source\Web Apps\RebelCms.CMS.Web.UI\App_Plugins\Core\lib\RebelCms.Cms.Web.Editors.dll to C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\25ebfbe6\8bee582a
+2012-06-23 20:09:47,896 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Adding to BuildManager: 'RebelCms.Cms.Web.Editors, Version=15.5.0.310, Culture=neutral, PublicKeyToken=null'
+2012-06-23 20:09:47,897 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - C:\Projects\rebelcmsxu5\Source\Web Apps\RebelCms.CMS.Web.UI\App_Plugins\Core\lib\RebelCms.CMS.Web.ParameterEditors.dll to C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\25ebfbe6\8bee582a
+2012-06-23 20:09:47,900 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Adding to BuildManager: 'RebelCms.CMS.Web.ParameterEditors, Version=15.5.0.310, Culture=neutral, PublicKeyToken=null'
+2012-06-23 20:09:47,901 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - C:\Projects\rebelcmsxu5\Source\Web Apps\RebelCms.CMS.Web.UI\App_Plugins\Core\lib\RebelCms.Cms.Web.PropertyEditors.dll to C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\25ebfbe6\8bee582a
+2012-06-23 20:09:47,925 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Adding to BuildManager: 'RebelCms.Cms.Web.PropertyEditors, Version=15.5.0.310, Culture=neutral, PublicKeyToken=null'
+2012-06-23 20:09:47,926 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - C:\Projects\rebelcmsxu5\Source\Web Apps\RebelCms.CMS.Web.UI\App_Plugins\Core\lib\RebelCms.Cms.Web.Tasks.dll to C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\25ebfbe6\8bee582a
+2012-06-23 20:09:47,939 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Adding to BuildManager: 'RebelCms.Cms.Web.Tasks, Version=15.5.0.310, Culture=neutral, PublicKeyToken=null'
+2012-06-23 20:09:47,940 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - C:\Projects\rebelcmsxu5\Source\Web Apps\RebelCms.CMS.Web.UI\App_Plugins\Core\lib\RebelCms.Cms.Web.Trees.dll to C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\25ebfbe6\8bee582a
+2012-06-23 20:09:47,955 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - Adding to BuildManager: 'RebelCms.Cms.Web.Trees, Version=15.5.0.310, Culture=neutral, PublicKeyToken=null'
+2012-06-23 20:09:47,958 [10] INFO  RebelCms.Cms.Web.System.PluginManager [(null)] - End Initialise (took 114ms)
+2012-06-23 20:09:47,970 [10] INFO  RebelCms.Cms.Web.UI.MvcApplication [(null)] - Http application warmup
+2012-06-23 20:09:47,982 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder FrameworkSetup
+2012-06-23 20:09:48,035 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 51ms)
+2012-06-23 20:09:48,038 [10] INFO  RebelCms.Cms.Web.RebelCmsWebApplication [(null)] - Start called. Product info: RebelCms 5.0.0 RTM build 15.5.0.310
+2012-06-23 20:09:48,040 [10] INFO  RebelCms.Cms.Web.System.Boot.BootManager [(null)] - Created
+2012-06-23 20:09:48,163 [10] INFO  RebelCms.Cms.Web.System.Boot.BootManager [(null)] - Initialising container
+2012-06-23 20:09:48,165 [10] INFO  RebelCms.Cms.Web.System.Boot.BootManager [(null)] - Booting
+2012-06-23 20:09:48,166 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder RebelCmsContainerBuilder`1
+2012-06-23 20:09:48,180 [10] INFO  RebelCms.Cms.Web.RebelCmsWebApplication [(null)] - Container is building
+2012-06-23 20:09:48,181 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder WebTypesDemandBuilder
+2012-06-23 20:09:48,192 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 10ms)
+2012-06-23 20:09:48,198 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder MvcTypesDemandBuilder
+2012-06-23 20:09:48,321 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 96ms)
+2012-06-23 20:09:48,324 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder HiveDemandBuilder
+2012-06-23 20:09:48,546 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 221ms)
+2012-06-23 20:09:48,547 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder LoadFromPersistenceConfig
+2012-06-23 20:09:48,570 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for nhibernate in RebelCms.Framework.Persistence.NHibernate
+2012-06-23 20:09:48,582 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder NHibernateDemandBuilder
+2012-06-23 20:09:48,594 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder NHibernateConfigBuilder
+2012-06-23 20:09:48,598 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 1ms)
+2012-06-23 20:09:48,602 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 19ms)
+2012-06-23 20:09:48,603 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a bootstrapper for nhibernate
+2012-06-23 20:09:48,604 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for nhibernate
+2012-06-23 20:09:48,611 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for membership in RebelCms.Hive.Providers.Membership
+2012-06-23 20:09:48,617 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder MembershipDemandBuilder
+2012-06-23 20:09:48,619 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 1ms)
+2012-06-23 20:09:48,620 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a bootstrapper for membership
+2012-06-23 20:09:48,621 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for membership
+2012-06-23 20:09:48,622 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for templates in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,634 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,635 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,637 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for templates
+2012-06-23 20:09:48,638 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for templates
+2012-06-23 20:09:48,639 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for partials in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,644 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,645 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,645 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for partials
+2012-06-23 20:09:48,645 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for partials
+2012-06-23 20:09:48,648 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for file-uploader in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,653 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,654 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,654 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for file-uploader
+2012-06-23 20:09:48,655 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for file-uploader
+2012-06-23 20:09:48,655 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for scripts in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,660 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,661 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,662 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for scripts
+2012-06-23 20:09:48,662 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for scripts
+2012-06-23 20:09:48,663 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for stylesheets in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,668 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,669 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,669 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for stylesheets
+2012-06-23 20:09:48,669 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for stylesheets
+2012-06-23 20:09:48,670 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for macros in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,675 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,676 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,676 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for macros
+2012-06-23 20:09:48,676 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for macros
+2012-06-23 20:09:48,677 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for macro-partials in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,683 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,683 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,684 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for macro-partials
+2012-06-23 20:09:48,684 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for macro-partials
+2012-06-23 20:09:48,685 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Calling setup module for stubs in RebelCms.Hive.Providers.IO
+2012-06-23 20:09:48,692 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ProviderDemandBuilder
+2012-06-23 20:09:48,692 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 0ms)
+2012-06-23 20:09:48,693 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a no-op bootstrapper for stubs
+2012-06-23 20:09:48,693 [10] INFO  RebelCms.Hive.DependencyManagement.ProviderDemandRunner [(null)] - Registering a ProviderDependencyHelper for stubs
+2012-06-23 20:09:48,694 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 146ms)
+2012-06-23 20:09:48,721 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterTasks start took 22ms
+2012-06-23 20:09:48,732 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterTreeControllers start took 7ms
+2012-06-23 20:09:48,742 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterPropertyEditors start took 7ms
+2012-06-23 20:09:48,750 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterParameterEditors start took 4ms
+2012-06-23 20:09:48,759 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterEditorControllers start took 6ms
+2012-06-23 20:09:48,770 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterMenuItems start took 8ms
+2012-06-23 20:09:48,773 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterSurfaceControllers start took 0ms
+2012-06-23 20:09:48,779 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterDashboardFilters start took 3ms
+2012-06-23 20:09:48,783 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterDashboardMatchRules start took 1ms
+2012-06-23 20:09:48,790 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterPermissions start took 4ms
+2012-06-23 20:09:48,796 [10] INFO  RebelCms.Cms.Web.DependencyManagement.RebelCmsComponentRegistrar [(null)] - RegisterMacroEngines start took 4ms
+2012-06-23 20:09:48,797 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - Start AddDependencyDemandBuilder ModelMappingsDemandBuilder
+2012-06-23 20:09:48,802 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 4ms)
+2012-06-23 20:09:48,810 [10] INFO  RebelCms.Framework.Localization.TextManager [(null)] - Start ReloadTexts
+2012-06-23 20:09:48,828 [10] INFO  RebelCms.Framework.Localization.TextManager [(null)] - End ReloadTexts (took 15ms)
+2012-06-23 20:09:48,833 [10] INFO  RebelCms.Cms.Web.RebelCmsWebApplication [(null)] - Container building is complete
+2012-06-23 20:09:48,834 [10] INFO  RebelCms.Framework.DependencyManagement.AbstractContainerBuilder [(null)] - End AddDependencyDemandBuilder (took 667ms)
+2012-06-23 20:09:48,987 [10] INFO  RebelCms.Cms.Web.System.Boot.BootManager [(null)] - Booting CmsBootstrapper
+2012-06-23 20:09:51,440 [10] INFO  RebelCms.Cms.Web.System.Boot.BootManager [(null)] - Booting RenderBootstrapper
+2012-06-23 20:09:51,456 [10] INFO  RebelCms.Cms.Web.Tasks.ConfigurationTaskBuilder [(null)] - Executing RebelCms.Cms.Web.Tasks.ConfigurationTaskBuilder
+2012-06-23 20:09:51,460 [10] INFO  RebelCms.Cms.Web.Tasks.ConfigurationTaskBuilder [(null)] - Building configuration tasks
