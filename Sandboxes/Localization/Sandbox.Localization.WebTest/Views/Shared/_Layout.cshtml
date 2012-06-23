@@ -1,6 +1,6 @@
-﻿@using Umbraco.Foundation.Web.Localization.JavaScript
-@using Umbraco.Foundation.Web.Localization.Mvc
-@using Umbraco.Foundation.Localization.Processing.ParameterValues
+﻿@using RebelCms.Foundation.Web.Localization.JavaScript
+@using RebelCms.Foundation.Web.Localization.Mvc
+@using RebelCms.Foundation.Localization.Processing.ParameterValues
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +61,7 @@
 
 
 
-            @{var w = new Umbraco.Foundation.Web.Localization.JavaScript.JavaScriptWriter("L10n");}
+            @{var w = new RebelCms.Foundation.Web.Localization.JavaScript.JavaScriptWriter("L10n");}
             <script type="text/javascript">          
             @(w.GetScript(L10n.Current, "L10n", L10n.Current.GetCurrentLanguage(),  "Sandbox.Localization.WebTest", null))          
                                                 

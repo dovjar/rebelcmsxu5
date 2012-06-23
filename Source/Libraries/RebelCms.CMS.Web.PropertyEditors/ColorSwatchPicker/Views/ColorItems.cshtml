@@ -1,0 +1,54 @@
+﻿@inherits WebViewPage<IList<RebelCms.Cms.Web.PropertyEditors.ColorSwatchPicker.ColorItem>>
+              
+@using RebelCms.Cms.Web;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Microsoft.Web.Mvc;
+@using RebelCms.Cms.Web.PropertyEditors.ColorSwatchPicker;
+@using RebelCms.Cms.Web.EmbeddedViewEngine;
+@using RebelCms.Cms.Web.PropertyEditors;
+
+@{ 
+    Html
+        .RequiresJsResource(typeof(ColorSwatchPickerEditor), "RebelCms.Cms.Web.PropertyEditors.ColorSwatchPicker.Resources.ColorSwatchPickerPrevalueEditor.js")
+        .RequiresCssResource(typeof(ColorSwatchPickerEditor), "RebelCms.Cms.Web.PropertyEditors.ColorSwatchPicker.Resources.ColorSwatchPickerPrevalueEditor.css");
+        
+}
+
+<script type="text/javascript">
+
+    (function ($) {
+        $(document).ready(function () {
+
+            RebelCms.PropertyEditors.ColorSwatchPickerPrevalueEditor.init({
+                containerId: "#color-items",
+                templateId: "#colorItemTemplate",
+                addId: "#add"
+            });
+        });
+    })(jQuery);
+
+</script>
+<script type="text/x-jquery-tmpl" id="colorItemTemplate">
+        @Html.CollectionItemJQueryTemplate(EmbeddedViewPath.Create("RebelCms.Cms.Web.PropertyEditors.ColorSwatchPicker.Views.ColorItem.cshtml,RebelCms.Cms.Web.PropertyEditors"), new ColorItem())
+</script>
+
+<ul id="color-items">
+@if (Model != null)
+{ 
+    foreach (ColorItem item in Model)
+    {
+         Html.RenderPartial(
+             EmbeddedViewPath.Create(
+                 "RebelCms.Cms.Web.PropertyEditors.ColorSwatchPicker.Views.ColorItem.cshtml,RebelCms.Cms.Web.PropertyEditors"),
+                 item);
+     }
+}
+</ul>
+<a id="add" href="#">Add another color</a>

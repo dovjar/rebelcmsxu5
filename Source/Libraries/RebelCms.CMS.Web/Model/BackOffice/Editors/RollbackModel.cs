@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web.Mvc;
+using RebelCms.Framework;
+
+namespace RebelCms.Cms.Web.Model.BackOffice.Editors
+{
+    using RebelCms.Framework.Persistence.Model;
+    using RebelCms.Framework.Persistence.Model.Versioning;
+    using global::System.ComponentModel;
+
+    public class RollbackModel : DialogModel
+    {
+        public HiveId Id { get; set; }
+        public string Name { get; set; }
+        public DateTime CreateDate { get; set; }
+        public IEnumerable<SelectListItem> Versions { get; set; }
+
+        [ReadOnly(true)]
+        public Revision<TypedEntity> LastRevision { get; set; }
+
+        public RollbackModel()
+        {
+            Versions = new List<SelectListItem>();
+        }
+    }
+}

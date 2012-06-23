@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 using System.Security;
 
 //This is the core assembly information for the whole project
-[assembly: AssemblyVersion("15.5.0.310")]
-[assembly: AssemblyFileVersion("5.0.310.0")]
-[assembly: AssemblyInformationalVersion("Umbraco 5.0.0 RTM")]
-[assembly: AssemblyCompany("Umbraco")]
+[assembly: AssemblyVersion("0.0.0.1")]
+[assembly: AssemblyFileVersion("0.0.1.0")]
+[assembly: AssemblyInformationalVersion("RebelCms 0.0.1")]
+[assembly: AssemblyCompany("RebelCms")]
 [assembly: AssemblyCopyright("Copyright � 2012")]
-[assembly: AssemblyTrademark("Umbraco")]
+[assembly: AssemblyTrademark("RebelCms")]
 [assembly: AssemblyCulture("")]
 
 //[assembly: AllowPartiallyTrustedCallers()]

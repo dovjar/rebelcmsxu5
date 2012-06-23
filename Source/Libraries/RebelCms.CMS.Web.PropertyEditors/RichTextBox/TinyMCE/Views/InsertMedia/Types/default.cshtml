@@ -1,0 +1,32 @@
+﻿@using RebelCms.Framework
+@inherits InsertMediaPage
+              
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Microsoft.Web.Mvc;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using RebelCms.Framework;
+@using RebelCms.Cms.Web;
+@using RebelCms.Cms.Web.Trees;
+@using RebelCms.Cms.Web.Editors;
+@using RebelCms.Cms.Web.PropertyEditors.RichTextBox;
+@using RebelCms.Cms.Web.Model.BackOffice.TinyMCE.InsertMedia;
+@using RebelCms.Cms.Web.PropertyEditors.RichTextBox.TinyMCE.Controllers;
+
+@functions { 
+    public int Width {get;set;} 
+    public int Height {get;set;}
+    public string Alt { get; set; } 
+}
+
+@{
+    var attr = Width != 0 ? "width="+ Width : "";
+    attr += Height != 0 ? " height=" + Height : "";
+}
+
+<img src="@Url.GetMediaUrl(Model.MediaId)" data-RebelCms-src="@Model.MediaId.ToString()" data-RebelCms-link="internal" alt="@Alt" @attr />

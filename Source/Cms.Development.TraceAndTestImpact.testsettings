@@ -2,8 +2,8 @@
 <TestSettings name="Trace and Test Impact" id="3eac11b5-6a0a-4a4c-b17d-6506ec7d5462" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Description>These are test settings for Trace and Test Impact.</Description>
   <Deployment>
-    <DeploymentItem filename="Web Apps\Umbraco.CMS.Web.UI\Web.config" />
-    <DeploymentItem filename="Web Apps\Umbraco.CMS.Web.UI\App_Data\Umbraco\Config\log4net.config" />
+    <DeploymentItem filename="Web Apps\RebelCms.CMS.Web.UI\Web.config" />
+    <DeploymentItem filename="Web Apps\RebelCms.CMS.Web.UI\App_Data\RebelCms\Config\log4net.config" />
   </Deployment>
   <Execution>
     <TestTypeSpecific>

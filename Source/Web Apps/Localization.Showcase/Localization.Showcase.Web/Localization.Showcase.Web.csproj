@@ -104,9 +104,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Libraries\Umbraco.Framework\Umbraco.Framework.csproj">
+    <ProjectReference Include="..\..\..\Libraries\RebelCms.Framework\RebelCms.Framework.csproj">
       <Project>{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}</Project>
-      <Name>Umbraco.Framework</Name>
+      <Name>RebelCms.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestPlugin\TestPlugin.csproj">
       <Project>{E8F7BCBC-95CF-41FE-9536-4BD3C65C8973}</Project>

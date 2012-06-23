@@ -112,7 +112,7 @@ namespace Sandbox.Hive.Tests
       var providers = instance.PersistenceProviders;
 
       var writeable = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None);
-      instance = writeable.GetSection("umbraco.foundation") as IFoundationConfigurationSection;
+      instance = writeable.GetSection("RebelCms.foundation") as IFoundationConfigurationSection;
 
       providers = instance.PersistenceProviders;
 

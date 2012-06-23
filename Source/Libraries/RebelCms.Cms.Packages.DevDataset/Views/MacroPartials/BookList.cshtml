@@ -1,0 +1,15 @@
+﻿@inherits PartialViewMacroPage
+
+@using RebelCms.Cms.Web
+@using RebelCms.Cms.Web.Macros
+@using RebelCms.Framework
+
+@foreach (var item in DynamicModel.Children)
+{
+    var childName = item.Name ?? "(No name yet)";
+    <div class="product">
+        <h3><a href="@item.Url">@childName</a></h3>
+        <a href="@item.Url"><img src="@RebelCms.GetMediaUrl(item.Id, "image", 100)" alt="@childName" /></a>
+        <p>@(((string)item.AsDynamic().BodyText).StripHtml().Truncate(100)) <a href="@item.Url">Read more</a></p>
+    </div>
+}

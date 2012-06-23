@@ -1,14 +1,14 @@
 <Project InitialTargets="Build" DefaultTargets="AfterBuild" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
 		<MSBuildCommunityTasksPath>..\MSBuildCommunityTasks</MSBuildCommunityTasksPath>
-		<UmbracoMSBuildTasksPath>..\UmbracoMSBuildTasks</UmbracoMSBuildTasksPath>
+		<RebelCmsMSBuildTasksPath>..\RebelCmsMSBuildTasks</RebelCmsMSBuildTasksPath>
 	</PropertyGroup>
-	<Import Project="..\Resources\References\Umbraco\UmbracoMSBuildTasks\Umbraco.MSBuild.Tasks.Targets" />
+	<Import Project="..\Resources\References\RebelCms\RebelCmsMSBuildTasks\RebelCms.MSBuild.Tasks.Targets" />
 	<Import Project="..\Resources\References\Tigris\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
 	<PropertyGroup>
 		<BuildFolder>BuildOutput\</BuildFolder>
-		<BuildZipFileName>JupiterWebApp.zip</BuildZipFileName>
-		<BuildZipFileNameBin>JupiterAllBinaries.zip</BuildZipFileNameBin>
+		<BuildZipFileName>RebelCmsWebApp.zip</BuildZipFileName>
+		<BuildZipFileNameBin>RebelCmsAllBinaries.zip</BuildZipFileNameBin>
 		<IncludeSymbols>False</IncludeSymbols>
 		<BuildFolderRelativeToProjects>..\..\$(BuildFolder)</BuildFolderRelativeToProjects>
 		<SolutionBinFolder>$(BuildFolder)bin\</SolutionBinFolder>
@@ -19,7 +19,7 @@
 		<WebAppFolderRelativeToProjects>$(BuildFolderRelativeToProjects)WebApp\</WebAppFolderRelativeToProjects>
 		<WebBuildFolderWildcard>$(WebAppFolder)**\*.*</WebBuildFolderWildcard>
 		<WebBuildFolderExclusionWildcard>$(WebAppFolder)**\Web.Template.*;$(WebAppFolder)**\*.pdb</WebBuildFolderExclusionWildcard>
-		<WebProjectPluginFolder>Web Apps\Umbraco.CMS.Web.UI\App_Plugins\</WebProjectPluginFolder>
+		<WebProjectPluginFolder>Web Apps\RebelCms.CMS.Web.UI\App_Plugins\</WebProjectPluginFolder>
 		<WebProjectPluginFolderWildcard>$(WebProjectPluginFolder)**\*.*</WebProjectPluginFolderWildcard>
 		<WebProjectPluginFolderExclusionWildcard>$(WebProjectPluginFolder)Packages\DevDataset.1.0\**\*.*</WebProjectPluginFolderExclusionWildcard>
 	</PropertyGroup>
@@ -62,11 +62,11 @@
 		<Message Text="Finished Copying default plugins" Importance="high" />
 	</Target>
 	<Target Name="OffsetTimestamps" DependsOnTargets="CopyDefaultPlugins">
-		<CreateItem Include="$(BuildFolder)**\Umbraco.*.dll">
+		<CreateItem Include="$(BuildFolder)**\RebelCms.*.dll">
 			<Output TaskParameter="Include" ItemName="FilesToOffsetTimestamp" />
         </CreateItem>
 		<Message Text="Starting to offset timestamps" Importance="high" />
-		<Umbraco.MSBuild.Tasks.TimestampOffset Files="@(FilesToOffsetTimestamp)" Offset="-11" />
+		<RebelCms.MSBuild.Tasks.TimestampOffset Files="@(FilesToOffsetTimestamp)" Offset="-11" />
 		<Message Text="Finished offsetting timestamps" Importance="high" />
 	</Target>
 	<Target Name="AfterBuild">

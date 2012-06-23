@@ -1,0 +1,365 @@
+/* RebelCms */
+
+/* Reset */
+.RebelCms, .RebelCms div, .RebelCms span, .RebelCms a
+{
+    vertical-align: baseline;
+    text-align: left;
+    position: absolute;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-family: Arial,Verdana;
+    font-size: 11px;
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    display: block;
+}
+
+/* General */
+.RebelCms
+{
+    position: absolute;
+    direction: ltr;
+    border: 5px solid #a3a3a3;
+    overflow: hidden;
+}
+.RebelCms .mceWrapper
+{
+    position: static;
+}
+
+#mceEventBlocker
+{
+    border: none !important;
+}
+.mceEventBlocker
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.RebelCms .mcePlaceHolder
+{
+    border: 1px solid #a3a3a3;
+    background: #fff;
+    top: 0;
+    left: 0;
+}
+.RebelCms_modalBlocker
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: url("../../../../../../modal/images/overlay-background.gif");
+}
+
+/* Top */
+.RebelCms .mceTop
+{
+    top: 0;
+    height: 15px;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background: url("../../../../../../modal/images/modal-gradient.gif") repeat-x;
+}
+.RebelCms .mceTop .mceLeft
+{
+    display: none;
+}
+.RebelCms .mceTop .mceCenter
+{
+    display: none;
+}
+.RebelCms .mceTop .mceRight
+{
+    display: none;
+}
+
+.RebelCms .mceTop span
+{
+    color: #378080;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    display: block;
+    padding-left: 10px;
+}
+
+/* Middle */
+.RebelCms .mceMiddle, .RebelCms .mceMiddle div
+{
+    top: 0;
+}
+.RebelCms .mceMiddle
+{
+    width: 100%;
+    height: 100%;
+    clip: rect(26px auto auto auto);
+    background: #FFF;
+    overflow: hidden;
+}
+.RebelCms .mceMiddle .mceLeft
+{
+    display: none;
+}
+.RebelCms .mceMiddle span
+{
+    top: 25px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+}
+.RebelCms .mceMiddle .mceRight
+{
+    display: none;
+}
+
+/* Bottom */
+.RebelCms .mceBottom, .RebelCms .mceBottom div
+{
+    display: none !important;
+}
+
+/* Actions */
+.RebelCms a
+{
+    width: 29px;
+    height: 16px;
+    top: 3px;
+}
+.RebelCms .mceClose
+{
+    right: 6px;
+    background: url(img/close.png) no-repeat;
+}
+.RebelCms .mceMin
+{
+    display: none;
+    right: 68px;
+    background: url(img/buttons.gif) 0 0;
+}
+.RebelCms .mceMed
+{
+    display: none;
+    right: 37px;
+    background: url(img/buttons.gif) -29px 0;
+}
+.RebelCms .mceMax
+{
+    display: none;
+    right: 37px;
+    background: url(img/buttons.gif) -58px 0;
+}
+.RebelCms .mceMove
+{
+    display: none;
+    width: 100%;
+    cursor: move;
+    background: url(img/corners.gif) no-repeat -100px -100px;
+}
+.RebelCms .mceMovable .mceMove
+{
+    display: block;
+}
+.RebelCms .mceFocus .mceClose
+{
+    right: 6px;
+    top: 6px;
+}
+
+.RebelCms .mceFocus .mceMin
+{
+    right: 68px;
+    background: url(img/buttons.gif) 0 -16px;
+}
+.RebelCms .mceFocus .mceMed
+{
+    right: 37px;
+    background: url(img/buttons.gif) -29px -16px;
+}
+.RebelCms .mceFocus .mceMax
+{
+    right: 37px;
+    background: url(img/buttons.gif) -58px -16px;
+}
+
+.RebelCms .mceFocus .mceMin:hover
+{
+    right: 68px;
+    background: url(img/buttons.gif) 0 -32px;
+}
+.RebelCms .mceFocus .mceMed:hover
+{
+    right: 37px;
+    background: url(img/buttons.gif) -29px -32px;
+}
+.RebelCms .mceFocus .mceMax:hover
+{
+    right: 37px;
+    background: url(img/buttons.gif) -58px -32px;
+}
+
+/* Resize */
+.RebelCms .mceResize
+{
+    top: auto;
+    left: auto;
+    display: none;
+    width: 5px;
+    height: 5px;
+    background: url(img/horizontal.gif) no-repeat 0 -75px;
+}
+.RebelCms .mceResizable .mceResize
+{
+    display: block;
+}
+.RebelCms .mceResizable .mceMin, .RebelCms .mceMax
+{
+    display: none;
+}
+.RebelCms .mceMinimizable .mceMin
+{
+    display: block;
+}
+.RebelCms .mceMaximizable .mceMax
+{
+    display: block;
+}
+.RebelCms .mceMaximized .mceMed
+{
+    display: block;
+}
+.RebelCms .mceMaximized .mceMax
+{
+    display: none;
+}
+.RebelCms a.mceResizeN
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: n-resize;
+}
+.RebelCms a.mceResizeNW
+{
+    top: 0;
+    left: 0;
+    cursor: nw-resize;
+}
+.RebelCms a.mceResizeNE
+{
+    top: 0;
+    right: 0;
+    cursor: ne-resize;
+}
+.RebelCms a.mceResizeW
+{
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: w-resize;
+}
+.RebelCms a.mceResizeE
+{
+    top: 0;
+    right: 0;
+    height: 100%;
+    cursor: e-resize;
+}
+.RebelCms a.mceResizeS
+{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: s-resize;
+}
+.RebelCms a.mceResizeSW
+{
+    bottom: 0;
+    left: 0;
+    cursor: sw-resize;
+}
+.RebelCms a.mceResizeSE
+{
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+/* Alert/Confirm */
+.RebelCms .mceButton
+{
+    font-weight: bold;
+    bottom: 10px;
+    width: 80px;
+    height: 30px;
+    background: url(img/button.gif);
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    outline: 0;
+}
+.RebelCms .mceMiddle .mceIcon
+{
+    left: 15px;
+    top: 35px;
+    width: 32px;
+    height: 32px;
+}
+.RebelCms .mceAlert .mceMiddle span, .RebelCms .mceConfirm .mceMiddle span
+{
+    background: transparent;
+    left: 60px;
+    top: 35px;
+    width: 320px;
+    height: 50px;
+    font-weight: bold;
+    overflow: auto;
+    white-space: normal;
+}
+.RebelCms a:hover
+{
+    font-weight: bold;
+}
+.RebelCms .mceAlert .mceMiddle, .RebelCms .mceConfirm .mceMiddle
+{
+    background: #D6D7D5;
+}
+.RebelCms .mceAlert .mceOk
+{
+    left: 50%;
+    top: auto;
+    margin-left: -40px;
+}
+.RebelCms .mceAlert .mceIcon
+{
+    background: url(img/alert.gif);
+}
+.RebelCms .mceConfirm .mceOk
+{
+    left: 50%;
+    top: auto;
+    margin-left: -90px;
+}
+.RebelCms .mceConfirm .mceCancel
+{
+    left: 50%;
+    top: auto;
+}
+.RebelCms .mceConfirm .mceIcon
+{
+    background: url(img/confirm.gif);
+}

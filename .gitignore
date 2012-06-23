@@ -27,42 +27,42 @@ _ReSharper*/
 [Bb]uild[Ll]og.*
 *.[Pp]ublish.xml
 *.suo
-umbraco.config
+RebelCms.config
 Plugins\**.dll
 *.vs10x
 *.orig
 */App_Data/Logs/*
 */App_Data/ClientDependency/*
-*/App_Data/Umbraco.sdf
+*/App_Data/RebelCms.sdf
 Source/testimpactdata.sdf
-Source/Web Apps/Umbraco.Cms.Web.UI/Web.config
+Source/Web Apps/RebelCms.Cms.Web.UI/Web.config
 *.DS_Store
-Source/Web Apps/Umbraco.CMS.Web.UI/Web.config
+Source/Web Apps/RebelCms.CMS.Web.UI/Web.config
 Source/BuildOutput/*
 Source/*.zip
 glob:*.docstates
-*/App_Data/Umbraco/web.config
+*/App_Data/RebelCms/web.config
 */Plugins/Packages/*
 */App_Data/Examine/*
-*/App_Data/Umbraco/HiveConfig/web.config
-glob:Source/Web Apps/Umbraco.CMS.Web.UI/App_Data/Umbraco/Media/*
+*/App_Data/RebelCms/HiveConfig/web.config
+glob:Source/Web Apps/RebelCms.CMS.Web.UI/App_Data/RebelCms/Media/*
 */App_Plugins/Packages/*
-*/App_Data/Umbraco/Macros/*
-*/App_Data/Umbraco/Media/*
+*/App_Data/RebelCms/Macros/*
+*/App_Data/RebelCms/Media/*
 */App_Plugins/Core/Editors/*
 */App_Plugins/Core/Trees/*
 */App_Plugins/Core/PropertyEditors/*
 */App_Plugins/Core/Tasks/*
-*/Umbraco.Cms.Web.UI/Scripts/Umbraco/*
-*/Umbraco.Cms.Web.UI/Views/Umbraco/*
+*/RebelCms.Cms.Web.UI/Scripts/RebelCms/*
+*/RebelCms.Cms.Web.UI/Views/RebelCms/*
 *.crunchproject.local.xml
-Source/Web Apps/Umbraco.CMS.Web.UI/App_Plugins/Core/ParameterEditors/*
+Source/Web Apps/RebelCms.CMS.Web.UI/App_Plugins/Core/ParameterEditors/*
 *.crunchsolution.local.xml
 */App_Plugins/Core/ParameterEditors/*
-Source/Web Apps/Umbraco.Cms.Web.UI/Content/Styles/*
-Source/Web Apps/Umbraco.Cms.Web.UI/Content/Images/*
-*/App_Data/Umbraco/LocalPackages/*.nupkg
-Source/Web Apps/Umbraco.Cms.Web.UI/App_Plugins/Core/lib/*
-Source/Testing/Umbraco.Tests.CoreAndFramework/App_Data/Users.xml
-Source/Testing/Umbraco.Tests.CoreAndFramework/App_Data/Roles.xml
-Source/Web Apps/Umbraco.CMS.Web.UI/App_Plugins/Core/lib/*
+Source/Web Apps/RebelCms.Cms.Web.UI/Content/Styles/*
+Source/Web Apps/RebelCms.Cms.Web.UI/Content/Images/*
+*/App_Data/RebelCms/LocalPackages/*.nupkg
+Source/Web Apps/RebelCms.Cms.Web.UI/App_Plugins/Core/lib/*
+Source/Testing/RebelCms.Tests.CoreAndFramework/App_Data/Users.xml
+Source/Testing/RebelCms.Tests.CoreAndFramework/App_Data/Roles.xml
+Source/Web Apps/RebelCms.CMS.Web.UI/App_Plugins/Core/lib/*

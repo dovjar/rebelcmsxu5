@@ -1,0 +1,12 @@
+﻿@using RebelCms.Cms.Web.Mvc.Controllers.BackOffice;
+@{
+    ViewBag.ActiveIndex = 1;
+    Layout = "_RestartAppLayout.cshtml";
+    ViewBag.Title = "Installing RebelCms database";
+    ViewBag.Message = "The RebelCms database is being configured. This process populates your chosen database with a blank RebelCms instance.";
+    
+    ViewBag.NextButtonUrl = Url.Action("CreateUser", "Install");
+    ViewBag.PrevButtonUrl = Url.Action("Database", "Install");
+    ViewBag.GetProgressUrl = Url.Action("PerformInstall", "Install");
+    ViewBag.RestartUrl = Url.Action("PerformRecycleApplication", "Install");
+}

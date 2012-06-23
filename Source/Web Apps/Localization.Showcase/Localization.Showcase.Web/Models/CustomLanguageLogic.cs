@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Umbraco.Framework.Localization;
-using Umbraco.Framework.Localization.Configuration;
+using RebelCms.Framework.Localization;
+using RebelCms.Framework.Localization.Configuration;
 using System.Threading;
 using System.Globalization;
 

@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization.Showcase.Web",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "TestPlugin\TestPlugin.csproj", "{E8F7BCBC-95CF-41FE-9536-4BD3C65C8973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework", "..\..\Libraries\Umbraco.Framework\Umbraco.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework", "..\..\Libraries\RebelCms.Framework\RebelCms.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

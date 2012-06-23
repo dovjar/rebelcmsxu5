@@ -1,0 +1,31 @@
+.CodeMirror-scroll.cm-s-RebelCms {
+    overflow: auto;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    font-size:1.2em;
+    line-height:1.2em;
+    height:auto;
+}
+
+.cm-s-RebelCms span.cm-keyword {color: #708;}
+.cm-s-RebelCms span.cm-atom {color: #219;}
+.cm-s-RebelCms span.cm-number {color: #164;}
+.cm-s-RebelCms span.cm-def {color: #00f;}
+.cm-s-RebelCms span.cm-variable {color: black;}
+.cm-s-RebelCms span.cm-variable-2 {color: #05a;}
+.cm-s-RebelCms span.cm-variable-3 {color: #0a5;}
+.cm-s-RebelCms span.cm-property {color: black;}
+.cm-s-RebelCms span.cm-operator {color: black;}
+.cm-s-RebelCms span.cm-comment {color: #a50;}
+.cm-s-RebelCms span.cm-string {color: #a11;}
+.cm-s-RebelCms span.cm-string-2 {color: #f50;}
+.cm-s-RebelCms span.cm-meta {color: #555;}
+.cm-s-RebelCms span.cm-error {color: #f00;}
+.cm-s-RebelCms span.cm-qualifier {color: #555;}
+.cm-s-RebelCms span.cm-builtin {color: #30a;}
+.cm-s-RebelCms span.cm-bracket {color: #cc7;}
+.cm-s-RebelCms span.cm-tag {color: #170;}
+.cm-s-RebelCms span.cm-attribute {color: #00c;}
