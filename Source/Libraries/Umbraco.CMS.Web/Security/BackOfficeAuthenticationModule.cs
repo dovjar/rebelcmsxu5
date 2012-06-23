@@ -3,7 +3,6 @@ using System.Linq;
 using System.Security.Principal;
 using System.Threading;
 using System.Web;
-using System.Web.Routing;
 using System.Web.Script.Serialization;
 using System.Web.Security;
 using Umbraco.Cms.Web.Configuration;
@@ -36,28 +35,18 @@ namespace Umbraco.Cms.Web.Security
         /// <param name="e"></param>
         static void AuthenticateRequest(object sender, EventArgs e)
         {
-            var app = (HttpApplication) sender;
+            var app = (HttpApplication)sender;
             var http = new HttpContextWrapper(app.Context);
 
             //we need to determine if the path being requested is an umbraco path, if not don't do anything
             var settings = UmbracoSettings.GetSettings();
+            var currentPath = app.Request.Url.AbsolutePath;
+            
+            var fullBackOfficePath = string.Concat(app.Request.ApplicationPath.TrimEnd('/'), "/", settings.UmbracoPaths.BackOfficePath);
+            var fullInstallerPath = string.Concat(app.Request.ApplicationPath.TrimEnd('/'), "/", "Install");
 
-            var backOfficeRoutePath = string.Concat(settings.UmbracoPaths.BackOfficePath, "/");
-            var installerRoutePath = string.Concat("Install", "/");
-
-            var routeUrl = "";
-            var routeData = RouteTable.Routes.GetRouteData(http);
-            if (routeData != null)
-            {
-                var route = routeData.Route as Route;
-                if (route != null)
-                {
-                    routeUrl = route.Url;
-                }
-            }
-
-            if (routeUrl.StartsWith(installerRoutePath, StringComparison.InvariantCultureIgnoreCase) ||
-                routeUrl.StartsWith(backOfficeRoutePath, StringComparison.InvariantCultureIgnoreCase))
+            if (currentPath.StartsWith(fullBackOfficePath, StringComparison.InvariantCultureIgnoreCase)
+                || currentPath.StartsWith(fullInstallerPath, StringComparison.InvariantCultureIgnoreCase))
             {
                 if (app.Context.User == null)
                 {
@@ -69,9 +58,10 @@ namespace Umbraco.Cms.Web.Security
                     }
                     else
                     {
+
                         var ticket = http.GetUmbracoAuthTicket();
                         if (ticket != null && !ticket.Expired && http.RenewUmbracoAuthTicket())
-                        {
+                        {   
                             //create the Umbraco user identity 
                             var identity = new UmbracoBackOfficeIdentity(ticket);
 
@@ -82,9 +72,9 @@ namespace Umbraco.Cms.Web.Security
                         }
                     }
                 }
-
             }
 
+            
         }
 
         public static UmbracoBackOfficeIdentity GetUmbracoBackOfficeIdentity(HttpContextBase http)
