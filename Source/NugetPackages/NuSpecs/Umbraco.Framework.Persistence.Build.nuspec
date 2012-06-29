@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Umbraco.Framework.Persistence</id>
+    <version>5.2.0.0</version>
+    <title>Umbraco Framework Persistence</title>
+    <authors>Umbraco HQ</authors>
+    <owners>Umbraco</owners>
+    <licenseUrl>http://umbraco.codeplex.com/license</licenseUrl>
+    <projectUrl>http://umbraco.com</projectUrl>
+    <iconUrl>http://umbraco.com/media/357769/100px_transparent.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs the Umbraco Framework Persistence assemblies and dependencies</description>
+    <summary>Installs the Umbraco Framework Persistence assemblies and dependencies</summary>
+    <language>en-US</language>
+    <tags>umbraco</tags>
+    <dependencies>
+      <dependency id="Umbraco.Framework" version="5.2.0-beta" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Framework.Persistence.dll" target="lib\net40\Umbraco.Framework.Persistence.dll" />
+  </files>
+</package>

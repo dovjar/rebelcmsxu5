@@ -9,63 +9,93 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Cms.Development.vsmdi = Cms.Development.vsmdi
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.UI", "Web Apps\RebelCms.CMS.Web.UI\RebelCms.Cms.Web.UI.csproj", "{D17A89C5-54ED-49A4-B07A-14CBFA47E793}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.UI", "Web Apps\Umbraco.Cms.Web.UI\Umbraco.Cms.Web.UI.csproj", "{D17A89C5-54ED-49A4-B07A-14CBFA47E793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web", "Libraries\RebelCms.CMS.Web\RebelCms.Cms.Web.csproj", "{8F320595-7764-4E31-AEC5-94F1B128EDFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web", "Libraries\Umbraco.Cms.Web\Umbraco.Cms.Web.csproj", "{8F320595-7764-4E31-AEC5-94F1B128EDFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Tests.Cms", "Testing\RebelCms.CMS.Tests\RebelCms.Tests.Cms.csproj", "{4D3D2E41-6977-47B8-BD87-45ABFB7F60D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.Cms", "Testing\Umbraco.Cms.Tests\Umbraco.Tests.Cms.csproj", "{4D3D2E41-6977-47B8-BD87-45ABFB7F60D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.PropertyEditors", "Libraries\RebelCms.CMS.Web.PropertyEditors\RebelCms.Cms.Web.PropertyEditors.csproj", "{6E2C1BD8-6652-41B0-9174-D85484AFE703}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.PropertyEditors", "Libraries\Umbraco.Cms.Web.PropertyEditors\Umbraco.Cms.Web.PropertyEditors.csproj", "{6E2C1BD8-6652-41B0-9174-D85484AFE703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Tests.Extensions", "Testing\RebelCms.TestExtensions\RebelCms.Tests.Extensions.csproj", "{26A70ABF-3C79-463A-A950-DDF5400DFC2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.Extensions", "Testing\Umbraco.TestExtensions\Umbraco.Tests.Extensions.csproj", "{26A70ABF-3C79-463A-A950-DDF5400DFC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.Trees", "Libraries\RebelCms.CMS.Web.Trees\RebelCms.Cms.Web.Trees.csproj", "{8D847BD0-44E2-428F-9872-3DAF6000EA5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.Trees", "Libraries\Umbraco.Cms.Web.Trees\Umbraco.Cms.Web.Trees.csproj", "{8D847BD0-44E2-428F-9872-3DAF6000EA5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Tests", "_Tests", "{3F29D317-91A3-491F-963E-4C5E349DD237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.EmbeddedViewEngine", "Libraries\RebelCms.CMS.Web.EmbeddedViewEngine\RebelCms.Cms.Web.EmbeddedViewEngine.csproj", "{8F9C0D9E-CD6A-4CA6-84FC-CEE7474988FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.EmbeddedViewEngine", "Libraries\Umbraco.Cms.Web.EmbeddedViewEngine\Umbraco.Cms.Web.EmbeddedViewEngine.csproj", "{8F9C0D9E-CD6A-4CA6-84FC-CEE7474988FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.Editors", "Libraries\RebelCms.CMS.Web.Editors\RebelCms.Cms.Web.Editors.csproj", "{340DCA60-FC0D-40E6-AE88-4788D62A0F01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.Editors", "Libraries\Umbraco.Cms.Web.Editors\Umbraco.Cms.Web.Editors.csproj", "{340DCA60-FC0D-40E6-AE88-4788D62A0F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework", "Libraries\RebelCms.Framework\RebelCms.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework", "Libraries\Umbraco.Framework\Umbraco.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{AA754A15-A257-499C-AE34-3101B8C9120A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework.DependencyManagement.Autofac", "Libraries\RebelCms.Framework.DependencyManagement.Autofac\RebelCms.Framework.DependencyManagement.Autofac.csproj", "{5420EF90-DA2F-405F-A0EC-18FBED4B4438}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.DependencyManagement.Autofac", "Libraries\Umbraco.Framework.DependencyManagement.Autofac\Umbraco.Framework.DependencyManagement.Autofac.csproj", "{5420EF90-DA2F-405F-A0EC-18FBED4B4438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework.Persistence", "Libraries\RebelCms.Framework.Persistence\RebelCms.Framework.Persistence.csproj", "{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Persistence", "Libraries\Umbraco.Framework.Persistence\Umbraco.Framework.Persistence.csproj", "{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework.Persistence.NHibernate", "Libraries\RebelCms.Framework.Persistence.NHibernate\RebelCms.Framework.Persistence.NHibernate.csproj", "{E119331A-011C-4EDB-8840-A52AFCDF5CD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Persistence.NHibernate", "Libraries\Umbraco.Framework.Persistence.NHibernate\Umbraco.Framework.Persistence.NHibernate.csproj", "{E119331A-011C-4EDB-8840-A52AFCDF5CD1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{B7CBF667-299F-431C-9083-33AF96439F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Packages.SystemInfo", "Libraries\RebelCms.Cms.Packages.SystemInfo\RebelCms.Cms.Packages.SystemInfo.csproj", "{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Packages.SystemInfo", "Libraries\Umbraco.Cms.Packages.SystemInfo\Umbraco.Cms.Packages.SystemInfo.csproj", "{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.Tasks", "Libraries\RebelCms.Cms.Web.Tasks\RebelCms.Cms.Web.Tasks.csproj", "{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.Tasks", "Libraries\Umbraco.Cms.Web.Tasks\Umbraco.Cms.Web.Tasks.csproj", "{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Packages.DevDataset", "Libraries\RebelCms.Cms.Packages.DevDataset\RebelCms.Cms.Packages.DevDataset.csproj", "{23078C45-56CA-4F7A-99A2-0B2B677A56E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Packages.DevDataset", "Libraries\Umbraco.Cms.Packages.DevDataset\Umbraco.Cms.Packages.DevDataset.csproj", "{23078C45-56CA-4F7A-99A2-0B2B677A56E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hive", "Hive", "{AE7D03D3-6DCF-41F1-915D-8183C8336383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Hive", "Libraries\RebelCms.Hive\RebelCms.Hive.csproj", "{8E44FCAB-2597-48F9-8F88-984DD47787C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Hive", "Libraries\Umbraco.Hive\Umbraco.Hive.csproj", "{8E44FCAB-2597-48F9-8F88-984DD47787C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Hive.Providers.IO", "Libraries\RebelCms.Hive.Providers.IO\RebelCms.Hive.Providers.IO.csproj", "{F685A510-6DF8-4138-9759-B09CF3CF29D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Hive.Providers.IO", "Libraries\Umbraco.Hive.Providers.IO\Umbraco.Hive.Providers.IO.csproj", "{F685A510-6DF8-4138-9759-B09CF3CF29D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Tests.CoreAndFramework", "Testing\RebelCms.Tests.CoreAndFramework\RebelCms.Tests.CoreAndFramework.csproj", "{9D4DA63D-8664-4602-918E-2F75B94F1BBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.CoreAndFramework", "Testing\Umbraco.Tests.CoreAndFramework\Umbraco.Tests.CoreAndFramework.csproj", "{9D4DA63D-8664-4602-918E-2F75B94F1BBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A3F21908-ACBB-4278-9761-F4FA31659BB0}"
+	ProjectSection(SolutionItems) = preProject
+		..\Build.bat = ..\Build.bat
+		..\Build.Nuget.bat = ..\Build.Nuget.bat
+		Build.proj = Build.proj
+		Build.proj.Alex = Build.proj.Alex
+		..\Build.Release.bat = ..\Build.Release.bat
+		Build.Release.proj = Build.Release.proj
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.MSBuild.Tasks", "Libraries\RebelCms.MSBuild.Tasks\RebelCms.MSBuild.Tasks.csproj", "{68AC9679-2439-4DA9-86BC-E36579594EFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.MSBuild.Tasks", "Libraries\Umbraco.MSBuild.Tasks\Umbraco.MSBuild.Tasks.csproj", "{68AC9679-2439-4DA9-86BC-E36579594EFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework.Security", "Libraries\RebelCms.Framework.Security\RebelCms.Framework.Security.csproj", "{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Security", "Libraries\Umbraco.Framework.Security\Umbraco.Framework.Security.csproj", "{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework.Persistence.Examine", "Libraries\RebelCms.Framework.Persistence.Examine\RebelCms.Framework.Persistence.Examine.csproj", "{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Testing", "Libraries\Umbraco.Framework.Testing\Umbraco.Framework.Testing.csproj", "{C2E8F096-9E07-429F-B22D-D13D63154893}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Framework.Testing", "Libraries\RebelCms.Framework.Testing\RebelCms.Framework.Testing.csproj", "{C2E8F096-9E07-429F-B22D-D13D63154893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.ParameterEditors", "Libraries\Umbraco.Cms.Web.ParameterEditors\Umbraco.Cms.Web.ParameterEditors.csproj", "{D06CBA96-0135-4132-8CA1-4E171766FAB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Cms.Web.ParameterEditors", "Libraries\RebelCms.Cms.Web.ParameterEditors\RebelCms.Cms.Web.ParameterEditors.csproj", "{D06CBA96-0135-4132-8CA1-4E171766FAB9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspecs", "Nuspecs", "{F5779C65-2375-4495-90A9-48342556B583}"
+	ProjectSection(SolutionItems) = preProject
+		NugetPackages\NuSpecs\Umbraco.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Cms.Web.Editors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.Editors.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Cms.Web.ParameterEditors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.ParameterEditors.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Cms.Web.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.PropertyEditors.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Cms.Web.Trees.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.Trees.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Framework.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Framework.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Framework.Persistence.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Framework.Persistence.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Framework.Security.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Framework.Security.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Hive.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Hive.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Hive.Providers.IO.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Hive.Providers.IO.Build.nuspec
+		NugetPackages\NuSpecs\Umbraco.Scaffolding.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Scaffolding.PropertyEditors.Build.nuspec
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebelCms.Hive.Providers.Membership", "Libraries\RebelCms.Hive.Providers.Membership\RebelCms.Hive.Providers.Membership.csproj", "{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Lucene", "Libraries\Umbraco.Lucene\Umbraco.Lucene.csproj", "{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{24859A7C-0E76-49E6-B702-88C85B8064C5}"
+	ProjectSection(SolutionItems) = preProject
+		NugetPackages\NuSpecs\tools\framework-install.ps1 = NugetPackages\NuSpecs\tools\framework-install.ps1
+		NugetPackages\NuSpecs\tools\install.ps1 = NugetPackages\NuSpecs\tools\install.ps1
+		NugetPackages\NuSpecs\tools\Readme.txt = NugetPackages\NuSpecs\tools\Readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Packages.SnapshotDashboard", "Libraries\Umbraco.Cms.Packages.SnapshotDashboard\Umbraco.Cms.Packages.SnapshotDashboard.csproj", "{81115A66-62A7-4358-8F71-0EE3521BCE07}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -434,26 +464,6 @@ Global
 		{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
 		{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Tests.Cms Only|Any CPU.Build.0 = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Tests.DomainDesign Only|Any CPU.Build.0 = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Tests.Framework Only|Any CPU.Build.0 = Debug|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug - Web only (No Unit test build)|Any CPU.Build.0 = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.DebugNoTests|Any CPU.ActiveCfg = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.DebugNoTests|Any CPU.Build.0 = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.DebugPlusNUnitTests|Any CPU.ActiveCfg = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.DebugPlusNUnitTests|Any CPU.Build.0 = DebugNoTests|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
 		{C2E8F096-9E07-429F-B22D-D13D63154893}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Release|Any CPU
 		{C2E8F096-9E07-429F-B22D-D13D63154893}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Release|Any CPU
 		{C2E8F096-9E07-429F-B22D-D13D63154893}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
@@ -493,26 +503,46 @@ Global
 		{D06CBA96-0135-4132-8CA1-4E171766FAB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D06CBA96-0135-4132-8CA1-4E171766FAB9}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
 		{D06CBA96-0135-4132-8CA1-4E171766FAB9}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Release|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Release|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Tests.DomainDesign Only|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Tests.Framework Only|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug - Web only (No Unit test build)|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.DebugNoTests|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.DebugNoTests|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.DebugPlusNUnitTests|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.DebugPlusNUnitTests|Any CPU.Build.0 = Debug|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Release|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Release|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Tests.DomainDesign Only|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Tests.Framework Only|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug - Web only (No Unit test build)|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.DebugNoTests|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.DebugNoTests|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.DebugPlusNUnitTests|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.DebugPlusNUnitTests|Any CPU.Build.0 = Debug|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Release|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Release|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Tests.DomainDesign Only|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Tests.Framework Only|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug - Web only (No Unit test build)|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.DebugNoTests|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.DebugNoTests|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.DebugPlusNUnitTests|Any CPU.ActiveCfg = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.DebugPlusNUnitTests|Any CPU.Build.0 = Debug|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
+		{81115A66-62A7-4358-8F71-0EE3521BCE07}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -526,13 +556,14 @@ Global
 		{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A} = {AA754A15-A257-499C-AE34-3101B8C9120A}
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1} = {AA754A15-A257-499C-AE34-3101B8C9120A}
 		{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE} = {AA754A15-A257-499C-AE34-3101B8C9120A}
-		{B3CD7F2C-D4BE-4731-8D0E-607E571649AD} = {AA754A15-A257-499C-AE34-3101B8C9120A}
 		{C2E8F096-9E07-429F-B22D-D13D63154893} = {AA754A15-A257-499C-AE34-3101B8C9120A}
+		{E10B551E-2D14-46ED-BDAD-E1692D03F6A6} = {AA754A15-A257-499C-AE34-3101B8C9120A}
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE} = {B7CBF667-299F-431C-9083-33AF96439F9D}
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7} = {B7CBF667-299F-431C-9083-33AF96439F9D}
+		{81115A66-62A7-4358-8F71-0EE3521BCE07} = {B7CBF667-299F-431C-9083-33AF96439F9D}
 		{8E44FCAB-2597-48F9-8F88-984DD47787C5} = {AE7D03D3-6DCF-41F1-915D-8183C8336383}
 		{F685A510-6DF8-4138-9759-B09CF3CF29D6} = {AE7D03D3-6DCF-41F1-915D-8183C8336383}
-		{0A2B414C-DF72-4C82-B473-F32F6FCC4A42} = {AE7D03D3-6DCF-41F1-915D-8183C8336383}
 		{68AC9679-2439-4DA9-86BC-E36579594EFB} = {A3F21908-ACBB-4278-9761-F4FA31659BB0}
+		{24859A7C-0E76-49E6-B702-88C85B8064C5} = {F5779C65-2375-4495-90A9-48342556B583}
 	EndGlobalSection
 EndGlobal

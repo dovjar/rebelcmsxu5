@@ -20,7 +20,7 @@ namespace Sandbox.Hive.BootStrappers.AutoFac.Modules
       builder.RegisterType<FoundationConfigurationSection>().As<IFoundationConfigurationSection>()
         .ExternallyOwned();
 
-      var configSection = ConfigurationManager.GetSection("RebelCms.foundation") as IFoundationConfigurationSection;
+      var configSection = ConfigurationManager.GetSection("umbraco.foundation") as IFoundationConfigurationSection;
 
       builder.RegisterInstance(configSection)
         .As<IFoundationConfigurationSection>()

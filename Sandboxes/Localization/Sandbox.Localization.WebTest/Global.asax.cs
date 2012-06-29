@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using RebelCms.Foundation.Web.Localization.Mvc;
+using Umbraco.Foundation.Web.Localization.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Globalization;

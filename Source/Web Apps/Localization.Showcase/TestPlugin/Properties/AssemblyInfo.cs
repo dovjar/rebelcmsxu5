@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Web.UI;
-using RebelCms.Framework.Localization.Configuration;
+using Umbraco.Framework.Localization.Configuration;
 using TestPlugin.Texts;
 
 // General Information about an assembly is controlled through the following 

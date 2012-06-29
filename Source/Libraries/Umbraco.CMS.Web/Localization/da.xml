@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localizations Language="da-DK">
+  <!-- Single file per language approach. Match all languages (*) as theses are the default text if no localizations exist -->
+
+  <!-- Applications -->
+  <Text Key="content">Indhold</Text>
+  <Text Key="media">Mediearkiv</Text>
+  <Text Key="settings">Indstillinger</Text>
+  <Text Key="developer">Udvikler</Text>
+  <Text Key="users">Brugere</Text>
+  <Text Key="members">Medlemmer</Text>
+
+  <!-- These are used regardless of class, assembly and namespace -->
+  <Text Key="Name">Navn</Text>
+  <Text Key="CreatedBy">Oprettet af</Text>
+  <Text Key="UtcCreated">Oprettet den</Text>
+  <Text Key="UtcModified">Sidst redigeret</Text>
+  <Text Key="NodeName">Node Navn</Text>
+  <Text Key="ModifiedBy">Redigeret af</Text>
+  <Text Key="ShowLabel">Vis label</Text>
+
+  <!-- Messages -->
+  <Text Key="Login.Invalid">Ugyldigt brugernavn eller password</Text>
+  <Text Key="Delete.Successful">Element slettet</Text>
+  <Text Key="Delete.Failed">Elementet blev ikke slettet</Text>
+  <Text Key="Validation.Errors">Valideringsfejl forekommet</Text>
+
+  <Text Key="Save.ErrorsOccurred.Message">#Plural(ErrorCount){Der er opstået en valideringsfejl | Der er forekommet valideringsfejl}</Text>
+  <Text Key="Save.ErrorsOccurred.Title">Valideringsfejl!</Text>
+
+  <Text Key="Save.ValidationSummary.Title">Ret venligst fejlene og prøv igen</Text>
+
+  <Text Key="Content.Save.Title">Indhold gemt</Text>
+  <Text Key="Content.Save.Message">Husk at publicér for at gøre ændringerne synlige</Text>
+  <Text Key="Content.SaveUnathorized.Title">Indhold ikke gemt</Text>
+  <Text Key="Content.SaveUnathorized.Message">Indholdet blev ikke gemt på grund af manglende rettigheder</Text>
+  <Text Key="Content.UnSaved.Message">Dette indhold er i øjeblikket ikke gemt. Husk at gemme indholdet, hvis du senere ønsker at komme tilbage og redigere det.</Text>
+  <Text Key="Content.NoTemplates.Message">Der findes i øjeblikket ingen skabeloner for dette indhold</Text>
+  <Text Key="Content.UrlResolutionFailedHostname.Message">En URL kunne ikke genereres for denne side da den indeholdte struktur kræver et hostnavn tilføjet</Text>
+  <Text Key="Content.NoChildTypesAllowed.Message">Denne indholdstype har ikke nogle tilladte underelementer tilføjet</Text>
+
+  <Text Key="User.Save.Title">Bruger gemt</Text>
+  <Text Key="User.Save.Message">Information om brugeren er gemt</Text>
+  <Text Key="User.UnSaved.Message">Denne bruger er ikke gemt. Husk at gemme brugeren, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+
+  <Text Key="UserGroup.Save.Title">Brugergruppe gemt</Text>
+  <Text Key="UserGroup.Save.Message">Information om brugergruppen er blevet gemt</Text>
+  <Text Key="UserGroup.UnSaved.Message">Denne brugergruppe er ikke gemt. Husk at gemme brugergruppen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+  <Text Key="UserGroup.Inherit.Message">Notér venligst, at rettigheder sat til arv, automatisk vil blive "ikke tilladt", hvis ingen eksplicit "tilladt"-rettighed kan arves</Text>
+
+  <Text Key="MemberGroup.Save.Title">Medlemsgruppen blev gemt</Text>
+  <Text Key="MemberGroup.Save.Message">Information om medlemsgruppen er blevet gemt</Text>
+  <Text Key="MemberGroup.UnSaved.Message">Denne medlemsgruppe er ikke gemt. Husk at gemme medlemsgruppen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+
+  <Text Key="DataType.Save.Title">Datatype gemt</Text>
+  <Text Key="DataType.Save.Message">Datatypen er blevet gemt</Text>
+  <Text Key="DataType.UnSaved.Message">Denne datatype er ikke gemt. Husk at gemme datatypen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+
+  <Text Key="DocumentType.Save.Title">Dokumenttypen gemt</Text>
+  <Text Key="DocumentType.Save.Message">Dokumenttypen er blevet gemt</Text>
+  <Text Key="DocumentType.UnSaved.Message">Denne dokumenttype er ikke gemt. Husk at gemme dokumenttypen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+  <Text Key="DocumentType.PropertyDeleted.Title">Egenskab slettet</Text>
+  <Text Key="DocumentType.PropertyDeleted.Message">Dokumenttypens egenskab blev slettet</Text>
+  <Text Key="DocumentType.TabDeleted.Title">Fane slettet</Text>
+  <Text Key="DocumentType.TabDeleted.Message">Dokumenttypens fane blev slettet</Text>
+  <Text Key="DocumentType.TabAdded.Title">Fane tilføjet</Text>
+  <Text Key="DocumentType.TabAdded.Message">Fanen blev tilføjet dokumenttypen</Text>
+  <Text Key="DocumentType.Validation.DuplicateTab">En fane med samme navn eksisterer allerede</Text>
+  <Text Key="DocumentType.Validation.RequiredTabName">Et fanenavn skal angives</Text>
+
+  <Text Key="Permissions.Title">Rettigheder opdateret</Text>
+  <Text Key="Permissions.Success.Message">Rettigheder blev gemt for noden {Name}</Text>
+  <Text Key="Permissions.NoUserGroups.Message">Ingen ikke-administrator brugergruppe blev fundet. Tilføj venligst en ny brugergruppe før du forsøger at sætte rettigheder.</Text>
+  <Text Key="PublicAccess.Title">Offentlig adgang opdateret</Text>
+  <Text Key="PublicAccess.Success.Message">Offentlig adgang blev opdateret for noden {Name}</Text>
+  <Text Key="Hostname.Title">Værtsnavn opdateret</Text>
+  <Text Key="Hostname.Success.Message">{Count} værtsnavn gemt for noden {Name}</Text>
+  <Text Key="Language.Title">Sprog opdateret</Text>
+  <Text Key="Language.Success.Message">Sprog blev gemt for noden {Name}</Text>
+  <Text Key="Sort.Title">Indholdssortering</Text>
+  <Text Key="Rollback.Title">Indhold tilbagerulning</Text>
+  <Text Key="Sort.Success.Message">Indholdet blev sorteret</Text>
+  <Text Key="Move.Success.Message">'{FromName}' er blevet flyttet til '{ToName}'</Text>
+  <Text Key="Copy.Success.Message">'{FromName}' er blevet kopieret til '{ToName}'</Text>
+  <Text Key="Rollback.Success.Message">Indholdet blev gendannet til tidligere version</Text>
+  <Text Key="Publish.Title">Indholdspublicering</Text>
+  <Text Key="Publish.SingleSuccess.Message">'{Name}' er blevet publiceret</Text>
+  <Text Key="Publish.SingleUnathorized.Message">'{Name}' blev ikke publiceret på grund af manglende rettigheder</Text>
+  <Text Key="Publish.ChildrenSuccess.Message">'{Name}' og undersider er blevet publiceret</Text>
+  <Text Key="Publish.IncludeChildren.Label">Publicér '{Name}' og alle underliggende sider</Text>
+  <Text Key="Publish.IncludeUnpublishedChildren.Label">Inkludér upublicerede undersider</Text>
+  <Text Key="Unpublish.Title">Annullér publicering</Text>
+  <Text Key="Unpublish.SingleSuccess.Message">'{Name}' er ikke længere publiceret</Text>
+  <Text Key="Unpublish.SingleUnathorized.Message">'{Name}' er stadig publiceret på grund af manglende rettigheder</Text>
+
+  <Text Key="Language.Save.Title">Sprog gemt</Text>
+  <Text Key="Language.Save.Message">Sproget er blevet gemt</Text>
+  <Text Key="Language.UnSaved.Message">Dette sprog er ikke gemt. Husk at gemme sproget, hvis du ønsker at komme tilbage og redigere dette senere.</Text>
+
+  <Text Key="Macro.Save.Title">Makroen gemt</Text>
+  <Text Key="Macro.Save.Message">Makroen er blevet gemt</Text>
+  <Text Key="Macro.UnSaved.Message">Denne makro er ikke gemt. Husk at gemme makroen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+  <Text Key="Macro.ParamsPopulated.Title">Makroparametre</Text>
+  <Text Key="Macro.ParamsPopulatedSuccess.Message">Makroparametre modtaget med succes</Text>
+  <Text Key="Macro.ParamsFailedSurfaceAction.Message">Kunne ikke tolke parametre for underliggende handling, da de indeholdte en eller flere: "out", "return value" eller "LCID" parametre.</Text>
+  <Text Key="Macro.ParamsFailedPartialView.Message">Kunne ikke finde det refererede "partial view".</Text>
+  <Text Key="Macro.RenderingFailed.Message">Der opstod en fejl ved renderingen af makroen '{MacroName}'. FEJL: '{Error}'. Se Umbraco loggen for komplet fejlbeskrivelse.</Text>
+  <Text Key="Macro.RenderingFailed.Title">Makro fejl</Text>
+
+  <Text Key="Template.Save.Title">Skabelon gemt</Text>
+  <Text Key="Template.Save.Message">Skabelonen er blevet gemt</Text>
+
+  <Text Key="Partials.Save.Title">Delskabelon gemt</Text>
+  <Text Key="Partials.Save.Message">Delskabelonen er blevet gemt</Text>
+
+  <Text Key="Script.Save.Title">Skript gemt</Text>
+  <Text Key="Script.Save.Message">Skriptet er blevet gemt</Text>
+
+  <Text Key="Stylesheet.Save.Title">Stilark gemt</Text>
+  <Text Key="Stylesheet.Save.Message">Stilarket er blevet gemt</Text>
+
+  <Text Key="StylesheetRule.UnSaved.Message">Denne regel er ikke gemt. Husk at gemme reglen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+
+  <Text Key="Folder.Save.Title">Mappe oprettet</Text>
+  <Text Key="Folder.Save.Message">Mappen er blevet oprettet</Text>
+
+  <Text Key="File.UnSaved.Message">Denne fil er ikke gemt. Husk at gemme filen, hvis du ønsker at komme tilbage og redigere denne senere.</Text>
+
+  <!-- Global UI -->
+  <Text Key="UI.Button.Logout">Log ud</Text>
+  <Text Key="UI.Button.About">Om</Text>
+  <Text Key="UI.Title.Sections">Sektioner</Text>
+  <Text Key="UI.Title.Search">Søg</Text>
+  <Text Key="UI.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+  <Text Key="UI.Tab.FileProperties">Umbraco Egenskaber</Text>
+  <!-- Trees-->
+  <!-- TODO -->
+
+  <!-- Fixed Tree Nodes -->
+  <Text Key="Local packages">Lokale pakker</Text>
+
+  <!-- Menu Items-->
+  <Text Key="Audit">Revision</Text>
+  <Text Key="Copy">Kopiér</Text>
+  <Text Key="CreateFolder">Opret mappe</Text>
+  <Text Key="Create">Opret</Text>
+  <Text Key="Delete">Slet</Text>
+  <Text Key="EmptyRecycleBin">Tøm papirkurv</Text>
+  <Text Key="ExportDocumentType">Eksportér dokumenttype</Text>
+  <Text Key="Manage hostnames">Håndtér værtsnavne</Text>
+  <Text Key="ImportDocumentType">Importér værtsnavne</Text>
+  <Text Key="Language">Sprog</Text>
+  <Text Key="Logout">Log ud</Text>
+  <Text Key="Move">Flyt</Text>
+  <Text Key="Notify">Notificér</Text>
+  <Text Key="Package">Pakke</Text>
+  <Text Key="Permissions">Rettigheder</Text>
+  <Text Key="Public Access">Offentlig adgang</Text>
+  <Text Key="Publish">Publicér</Text>
+  <Text Key="Refresh">Genindlæs</Text>
+  <Text Key="Rollback">Gendannelse</Text>
+  <Text Key="Save">Gem</Text>
+  <Text Key="SendPublish">Send til publicering</Text>
+  <Text Key="SendTranslate">Send til oversættelse</Text>
+  <Text Key="Sort">Sortér</Text>
+  <Text Key="Translate">Oversæt</Text>
+  <Text Key="Update">Opdatér</Text>
+
+  <!-- Dashboards -->
+
+  <!-- Editors -->
+
+  <!-- General -->
+  <Text Key="Editors.PleaseSelect">Vælg venligst...</Text>
+  <Text Key="Editors.File">Fil</Text>
+  <Text Key="Editors.Folder">Mappe</Text>
+  <Text Key="Editors.None">Ingen</Text>
+
+  <!-- Controls -->
+  <!-- Date Time Picker-->
+  <Text Key="DateTimePicker.Choose">Vælg dato</Text>
+  <Text Key="DateTimePicker.None">Ingen dato valgt</Text>
+  <Text Key="DateTimePicker.Clear">Fjern dato</Text>
+
+  <!-- Schema Editor -->
+  <Text Key="Schema.Editor.Tab.Info">Info</Text>
+  <Text Key="Schema.Editor.Tab.Composition">Komposition</Text>
+  <Text Key="Schema.Editor.Tab.Properties">Egenskaber</Text>
+  <Text Key="Schema.Editor.Tab.Tabs">Faner</Text>
+  <Text Key="Schema.Editor.Notice.PropInheritance">Der er blevet foretaget ændringer til den liste af typer som denne type arver fra. Gem igen for at kunne se de nye arvede egenskaber.</Text>
+  <Text Key="Schema.Editor.Notice.TabInheritance">Der er blevet foretaget ændringer til den liste af typer som denne type arver fra. Gem igen for at kunne se de nye arvede faner.</Text>
+
+
+  <!-- Content Editor -->
+  <Text Key="Content.Editor.Tab.GeneralProperties">Generelle Egenskaber</Text>
+  <Text Key="Content.Editor.Label.NotPublishedYet">Dette element er ikke blevet publiceret</Text>
+  <Text Key="Content.Editor.Label.LastPublished">Sidst publiceret</Text>
+
+  <!-- Action - Copy Content -->
+  <Text Key="Action.Copy.Title">Kopiér</Text>
+  <Text Key="Action.Copy.HeaderTitle">Vælg nedenfor hvor dokumentet '{Name}' skal kopieres til</Text>
+
+  <!-- Action - Manage Hostnames -->
+  <Text Key="Action.HostNames.Title">Håndtér værtsnavne</Text>
+  <Text Key="Action.HostNames.Button.AddHostname">Tilføj værtsnavne</Text>
+  <Text Key="Action.HostNames.Button.DeleteHostname">Slet værtsnavne</Text>
+  <Text Key="Action.HostNames.Description.VirtualDirectory">Det nuværende site kører i et Virtual Directory</Text>
+  <Text Key="Action.HostNames.Description.ResultingHostname">Det resulterende værtsnavn vil pege på</Text>
+
+  <!-- Action - Set Languages-->
+  <Text Key="Action.Language.Title">Vælg sprog</Text>
+
+  <!-- Action - Move Content -->
+  <Text Key="Action.Move.Title">Flyt</Text>
+  <Text Key="Action.Move.HeaderTitle">Vælg nedenfor hvor dokumentet '{Name}' skal flyttes til</Text>
+
+  <!-- Action - Manage Permissions-->
+  <Text Key="Action.Permissions.Title">Håndtér rettigheder</Text>
+
+  <!-- Action - Public Access-->
+  <Text Key="Action.PublicAccess.Title">Håndtér offentlig adgang</Text>
+  <Text Key="Action.PublicAccess.Label.MemberGroups">Medlemsgrupper</Text>
+  <Text Key="Action.PublicAccess.Description.MemberGroups">Vælg de medlemsgrupper, som skal have adgang til denne side.</Text>
+  <Text Key="Action.PublicAccess.Label.Available">Ledig</Text>
+  <Text Key="Action.PublicAccess.Label.Selected">Tilgængelig</Text>
+  <Text Key="Action.PublicAccess.Title.Select">Vælg siderne som et medlem skal videresendes til for log ind og hvis der opstår en fejl</Text>
+  <Text Key="Action.PublicAccess.Label.LoginPage">Login Side</Text>
+  <Text Key="Action.PublicAccess.Description.LoginPage">Vælg den side der indeholder login formen</Text>
+  <Text Key="Action.PublicAccess.Label.ErrorPage">Fejl Side</Text>
+  <Text Key="Action.PublicAccess.Description.ErrorPage">Vælg den side, der skal vises, når et medlem er logget ind, men ikke har de nødvendige rettigheder.</Text>
+
+  <!-- Action - Publish-->
+  <Text Key="Action.Publish.Title">Publicér indhold</Text>
+  <Text Key="Action.Publish.Description.Save">Klik 'Gem' for at publicere '{Name}' og herved gøre det offentligt tilgængeligt.</Text>
+  <Text Key="Action.Publish.Description.Children">Du kan publicere denne side og alle dens undersider ved nedenfor at markere 'publicér alle undersider'.</Text>
+
+  <!-- Action - Rollback-->
+  <Text Key="Action.Rollback.Title">Gendannelse</Text>
+  <Text Key="Action.Rollback.HeaderTitle"> Vælg versionen du ønsker at sammenligne den nuværende version af '{Name}' med</Text>
+  <Text Key="Action.Rollback.Label.Current">Nuværende</Text>
+  <Text Key="Action.Rollback.Label.Created">Oprettet</Text>
+  <Text Key="Action.Rollback.Label.LastStatus">Sidste statusændring</Text>
+  <Text Key="Action.Rollback.Label.Target">Mål</Text>
+  <Text Key="Action.Rollback.SelectVersion">Vælg en version...</Text>
+  <Text Key="Action.Rollback.Label.View">Vis</Text>
+  <Text Key="Action.Rollback.Label.Diff">Forskelle</Text>
+  <!-- Action - Sort-->
+  <Text Key="Action.Sort.Title">Sortér indhold</Text>
+  <Text Key="Action.Sort.Table.Name">Navn</Text>
+  <Text Key="Action.Sort.Table.CreationDate">Oprettelsesdato</Text>
+  <Text Key="Action.Sort.Table.SortOrder">Sortér rækkefølge</Text>
+
+  <!-- Media Editor -->
+  <Text Key="Media.Editor.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+
+
+  <!-- Language Editor -->
+  <Text Key="Language.Editor.Tab.NewLanguage">Nyt Sprog</Text>
+  <Text Key="Language.Editor.Label.ISO">ISO kode</Text>
+  <Text Key="Language.Editor.Label.Fallbacks">Reserve</Text>
+  <Text Key="Language.Editor.FallbackOrder">Sæt reserve rækkefølge...</Text>
+
+  <!-- Dictionary Editor -->
+  <Text Key="Dictionary.Editor.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+
+  <!-- Document Type Editor-->
+  <Text Key="DocumentType.Editor.Description.IsAbstract">Bestemmer om dokumenttypen er ment til kun at kunne arves af andre. Hvis markeret, vil dokumenttypen ikke være valgbar, når der oprettes indhold.</Text>
+  <Text Key="DocumentType.Editor.Title.AddNewProperty">Tilføj ny egenskab</Text>
+  <Text Key="DocumentType.Editor.Button.AddNewProperty">Klik her for at tilføje ny egenskab</Text>
+  <Text Key="DocumentType.Editor.Button.CancelNewProperty">Annullér tilføjelse af ny egenskab</Text>
+  <Text Key="DocumentType.Editor.Title.Tab">Fane</Text>
+  <Text Key="DocumentType.Editor.NoProperties">Ingen egenskaber</Text>
+  <Text Key="DocumentType.Editor.Label.Tab">Definerede faner</Text>
+
+  <!-- Media Type Editor-->
+
+  <!-- Stylesheet Editor -->
+  <Text Key="Stylesheet.Editor.Title">Stilark Redigering</Text>
+
+  <!-- Stylesheet Rule Editor -->
+  <Text Key="StylesheetRule.Editor.Title.Create">Opret regel</Text>
+  <Text Key="StylesheetRule.Editor.Title.Edit">Redigér regel</Text>
+  <Text Key="StylesheetRule.Editor.Description.Name">Navn der identificerer reglen i teksteditoren</Text>
+  <Text Key="StylesheetRule.Editor.Description.Selector">The CSS selektor for reglen, eks.: h1, .redHeader, .blueText</Text>
+  <Text Key="StylesheetRule.Editor.Label.Styles">Stile</Text>
+  <Text Key="StylesheetRule.Editor.Label.Preview">Eksempel</Text>
+
+  <!-- Scripts Editor -->
+  <Text Key="Script.Create.Title">Opret et script</Text>
+  <Text Key="Script.Editor.Title">Script Redigering</Text>
+
+  <!-- Template Editor -->
+  <Text Key="Template.Editor.Title">Skabelon Redigering</Text>
+  <Text Key="Template.Editor.Title.MasterTemplate">Master Template</Text>
+
+  <!-- Partial Editor -->
+  <Text Key="Partial.Create.Title">Opret en delskabelon</Text>
+  <Text Key="Partial.Editor.Title">Delskabelon Redigering</Text>
+  <Text Key="Partial.Editor.Title.CurrentPath">Nuværende sti</Text>
+  <Text Key="Partial.Editor.Label.CreateFile">Opret fil</Text>
+  <Text Key="Partial.Editor.Label.CreateFolder">Opret mappe</Text>
+
+  <!-- Datatype editor-->
+  <Text Key="DataType.Create.Title">Opret ny datatype</Text>
+  <Text Key="DataType.Editor.Tab.Title">Datatype</Text>
+  <Text Key="DataType.Editor.Settings">Indstillinger</Text>
+  <Text Key="DataType.Editor.DataTypeGUID">Datatype GUID</Text>
+  <Text Key="DataType.Editor.SelectPropEditor">--Vælg redigeringsværktøj--</Text>
+
+  <!-- Packaging Editor -->
+  <Text Key="Packaging.Editor.Title">Lokalt pakkearkiv</Text>
+  <Text Key="Packaging.Editor.Title.Upload">Overfør pakke til lokalt pakkearkiv</Text>
+  <Text Key="Packaging.Editor.Labels.FileName">Filnavn</Text>
+  <Text Key="Packaging.Editor.Button.Upload">Overfør</Text>
+  <Text Key="Packaging.Editor.Labels.AutoInstall">Auto-installér pakke (Acceptér venligst nedenstående krav)</Text>
+  <Text Key="Packaging.Editor.Title.Upload">Overfør pakke til lokalt pakkearkiv</Text>
+  <Text Key="Packaging.Editor.Title.Install">Installér lokal pakke</Text>
+  <Text Key="Packaging.Editor.Notice.Install.Title">Installér kun pakker fra kilder som du stoler på!</Text>
+  <Text Key="Packaging.Editor.Notice.Install">
+    <![CDATA[
+          <p>
+              Når man installerer en Umbraco-pakke, bør man udvise den samme forsigtighed, som når man installerer
+              et program på din computer.</p>
+          <p>
+              En ondsindet pakke kan skade din Umbraco installation på samme måde som et ondsindet
+              program kan skade din computer.</p>
+          <p>
+              Det anbefales at installere fra det officielle Umbraco pakkearkiv, eller et tilpasset
+              arkiv, hver gang dette er muligt.</p>
+              
+  ]]>
+  </Text>
+  <Text Key="Packaging.Editor.Labels.Risks">Jeg forstår de sikkerhedsricisi, der er forbundet med at installere en lokal pakke</Text>
+  <Text Key="Packaging.Editor.InstallPackage">Installér pakke</Text>
+  <Text Key="Packaging.Editor.UnInstallPackage">Afinstallér pakke</Text>
+  <Text Key="Packaging.Editor.Button.RemoveFromLocal">Fjern fra lokalt pakkearkiv</Text>
+  <Text Key="Packaging.Editor.RecycleApplication.Title">Lokalt pakkearkiv</Text>
+  <Text Key="Packaging.Editor.RecycleApplication.PleaseWait">Vent venligst imens din applikation genstarter</Text>
+  <Text Key="Packaging.Editor.RecycleApplication.WaitingForServer">Venter på svar fra serveren...</Text>
+
+  <!-- Macro Editor -->
+  <Text Key="Macro.Create.Title">Opret ny makro</Text>
+  <Text Key="Macro.Editor.Tab.Props">Makro Egenskaber</Text>
+  <Text Key="Macro.Editor.Tab.Params">Macro Parametre</Text>
+  <Text Key="Macro.Editor.Validation.MacroItemSelected">Kontrollér at et makroelement er valgt for den nuværende makro type</Text>
+  <Text Key="Macro.Editor.Params.Notice">
+    Du kan automatisk populere makroens parametre ved at klikke på 'Populér'-knappen.
+    Dette vil skanne makro-elementet/filen, som du har valgt, afgøre dens parametre, og herefter
+    automatisk udfylde navn, alias og typen af parameter.
+  </Text>
+  <Text Key="Macro.Editor.Button.Populate">Populér</Text>
+  <Text Key="Macro.Editor.Button.Populate.Title">Populér automatisk makro parametre</Text>
+  <Text Key="Macro.Editor.ParamsTable.Show">Vis</Text>
+  <Text Key="Macro.Editor.ParamsTable.Alias">Alias</Text>
+  <Text Key="Macro.Editor.ParamsTable.Name">Navn</Text>
+  <Text Key="Macro.Editor.ParamsTable.Type">Type</Text>
+  <Text Key="Macro.Editor.Validation.AliasRequired">Alias-feltet er påkrævet.</Text>
+  <Text Key="Macro.Editor.Validation.NameRequired">Navn-feltet er påkrævet.</Text>
+  <Text Key="Macro.Editor.Button.Add">Tilføj parameter</Text>
+
+  <!-- Macro Partial Editor-->
+  <Text Key="MacroPartial.Create.Title">Opret en ny delmakro</Text>
+  <Text Key="Packaging.Editor.Title">Delmakro Redigering</Text>
+
+  <!-- User Editor -->
+  <Text Key="User.Editor.Tab.NewUser">Ny bruger</Text>
+  <Text Key="User.Editor.Tab.Backoffice">Backoffice</Text>
+  <Text Key="User.Editor.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+  <Text Key="User.Editor.Label.UserGroups">Brugergrupper</Text>
+  <Text Key="User.Editor.Label.StartNodeContent">Start Node i Indhold</Text>
+  <Text Key="User.Editor.Label.StartNodeMedia">Start Node i Mediearkiv</Text>
+  <Text Key="User.Editor.Label.Sections">Sektioner</Text>
+
+  <!-- User Group Editor -->
+  <Text Key="UserGroup.Editor.Tab.NewUserGroup">New Brugergruppe</Text>
+  <Text Key="UserGroup.Editor.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+  <Text Key="UserGroup.Editor.Label.Permissions">Rettigheder</Text>
+
+  <!-- Member Editor -->
+  <Text Key="Member.Editor.Tab.NewMember">Nyt medlem</Text>
+  <Text Key="Member.Editor.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+  <Text Key="Member.Editor.Label.MemberGroups">Medlemsgrupper</Text>
+
+  <!-- Member Group Editor -->
+  <Text Key="MemberGroup.Editor.Tab.NewMemberGroup">Ny Medlemsgruppe</Text>
+  <Text Key="MemberGroup.Editor.Tab.UmbracoProperties">Umbraco Egenskaber</Text>
+
+  <!-- Member Type Editor -->
+
+
+  <Namespace Name="Umbraco.Cms.Web">
+
+    <Text Key="CoreEntityModel.PropertyEditorId">Vælg redigeringsværktøj</Text>
+    <Text Key="CoreEntityModel.UtcPublished">Pulikationsstatus</Text>
+
+    <Text Key="ContentEditorModel.DocumentTypeName">Dokumenttype</Text>
+    <Text Key="ContentEditorModel.SelectedTemplateId">Skabelon</Text>
+    <Text Key="ContentEditorModel.UtcPublishedDate">Pulikationsstatus</Text>
+    <Text Key="ContentEditorModel.UtcPublishScheduled">Publiceret den</Text>
+    <Text Key="ContentEditorModel.UtcUnpublishScheduled">Fjernet den</Text>
+    <Text Key="ContentEditorModel.DocumentLinks">Tilknytninger til dokumentet</Text>
+    <Text Key="CreateContentModel.SelectedDocumentTypeId">Vælg dokumenttype</Text>
+
+    <Text Key="DocumentTypeProperty.DataTypeId">Datatype</Text>
+    <Text Key="DocumentTypeProperty.TabId">Fane</Text>
+
+    <Text Key="MemberEditorModel.ConfirmPassword">Bekræft kodeord</Text>
+    <Text Key="MemberEditorModel.OldPassword">Gammelt kodeord</Text>
+    <Text Key="MemberEditorModel.IsApproved">Login aktiveret</Text>
+    <Text Key="MemberEditorModel.LastLoginDate">Seneste logindato</Text>
+    <Text Key="MemberEditorModel.LastActivityDate">Seneste aktivitsdato</Text>
+    <Text Key="MemberEditorModel.LastPasswordChangeDate">Seneste kodeordsskiftsdato</Text>
+
+    <Text Key="UserEditorModel.ConfirmPassword">Bekræft kodeord</Text>
+    <Text Key="UserEditorModel.OldPassword">Gammelt kodeord</Text>
+    <Text Key="UserEditorModel.IsApproved">Login aktiveret?</Text>
+    <Text Key="UserEditorModel.SessionTimeout">Log ud efter (minutter)</Text>
+    <Text Key="UserEditorModel.LastLoginDate">Seneste logindato</Text>
+    <Text Key="UserEditorModel.LastActivityDate">Seneste aktivitsdato</Text>
+    <Text Key="UserEditorModel.LastPasswordChangeDate">Seneste kodeordsskiftsdato</Text>
+    <Text Key="UserEditorModel.StartContentHiveId">Startnode i Indhold</Text>
+    <Text Key="UserEditorModel.StartMediaHiveId">Startnode for Mediearkiv</Text>
+    <Text Key="UserEditorModel.Applications">Sektioner</Text>
+
+    <Text Key="CreateDocumentTypeModel.CreateTemplate">Opret matchende skabelon</Text>
+    <Text Key="CreateDocumentTypeModel.SelectedDocumentTypeId">Master dokumenttype</Text>
+
+    <Text Key="CreateMacroModel.MacroType">Makro Type</Text>
+
+    <Text Key="MacroEditorModel.MacroType">Makro Type</Text>
+    <Text Key="MacroEditorModel.UseInEditor">Brug i tekstredigeringsværktøj</Text>
+    <Text Key="MacroEditorModel.RenderContentInEditor">Rendér indhold i tekstredigeringsværktøj</Text>
+    <Text Key="MacroEditorModel.CachePeriodSeconds">Cache-periode i sekunder</Text>
+    <Text Key="MacroEditorModel.CacheByPage">Cache pr. side</Text>
+    <Text Key="MacroEditorModel.CachePersonalized">Cache personlig</Text>
+
+    <Text Key="HostnamesModel.NewHostname">Tilføj værtsnavn</Text>
+    <Text Key="HostnamesModel.AssignedHostnames">Tilføjede værtsnavne</Text>
+
+    <Text Key="AbstractSchemaEditorModel.Name">Navn</Text>
+    <Text Key="AbstractSchemaEditorModel.Alias">Alias</Text>
+    <Text Key="AbstractSchemaEditorModel.Icon">Ikon</Text>
+    <Text Key="AbstractSchemaEditorModel.Icon.Description">Ikonet der vises i indholdstræet.</Text>
+    <Text Key="AbstractSchemaEditorModel.Thumbnail">Miniaturebillede</Text>
+    <Text Key="AbstractSchemaEditorModel.Thumbnail.Description">Miniaturebilledet der vises ved 'Opret'-billedet.</Text>
+    <Text Key="AbstractSchemaEditorModel.Description">Beskrivelse</Text>
+    <Text Key="AbstractSchemaEditorModel.Description.Description">Beskrivelsen der vises ved 'Opret'-billedet</Text>
+    <Text Key="AbstractSchemaEditorModel.InheritFrom">Arv fra</Text>
+    <Text Key="AbstractSchemaEditorModel.InheritFrom.Description">Dokumenttypen som denne skal arve faner/egenskaber fra.</Text>
+    <Text Key="AbstractSchemaEditorModel.AllowedChildren">Tillaldte undertyper</Text>
+    <Text Key="AbstractSchemaEditorModel.AllowedChildren.Description">De dokumenttyper, der må oprettes under denne type.</Text>
+
+    <Text Key="DocumentTypeEditorModel.AllowedTemplates">Tilladte Skabeloner</Text>
+    <Text Key="DocumentTypeEditorModel.AllowedTemplates.Description">De skabeloner som denne type kan gøre brug af.</Text>
+    <Text Key="DocumentTypeEditorModel.DefaultTemplateId">Standardskabelon</Text>
+    <Text Key="DocumentTypeEditorModel.DefaultTemplateId.Description">Den standardskabelon der bruges ved oprettelse af indhold af denne type.</Text>
+
+    <Text Key="MembershipCreateStatus.DuplicateUserName">Brugernavnet eksisterer allerede. Indtast et andet brugernavn.</Text>
+    <Text Key="MembershipCreateStatus.DuplicateEmail">En bruger findes allerede med denne email-adresse. Indtast en anden e-mail.</Text>
+    <Text Key="MembershipCreateStatus.InvalidPassword">Det indtastede kodeord er ugyldigt. Indtast et gyldigt kodeord og prøv igen.</Text>
+    <Text Key="MembershipCreateStatus.InvalidEmail">Den indtastede email-addresse er ugyldig. Indtast en gyldig email-adresse og prøv igen.</Text>
+    <Text Key="MembershipCreateStatus.InvalidAnswer">Svaret til gensendelse af password er ugyldigt. Indtast et gyldigt svar og prøv igen.</Text>
+    <Text Key="MembershipCreateStatus.InvalidQuestion">Spørgsmålet til gensendelse af password er ugyldigt. Indtast et gyldigt spørgsmål og prøv igen.</Text>
+    <Text Key="MembershipCreateStatus.InvalidUserName">Det indtastede brugernavn er ugyldigt. Indtast et gyldigt brugernavn og prøv igen.</Text>
+    <Text Key="MembershipCreateStatus.ProviderError">Godkendelsestjenesten returnerede en fejl. Kontrollér venligst det indtastede og forsøg igen. Hvis problemet vedvarer, kontakt da venligst din systemadministrator.</Text>
+    <Text Key="MembershipCreateStatus.UserRejected">Oprettelsen af brugeren er blevet annulleret. Kontrollér venligst det indtastede og forsøg igen. Hvis problemet vedvarer, kontakt da venligst din systemadministrator.</Text>
+
+
+  </Namespace>
+
+  <Namespace Name="Umbraco.Cms.Web.PropertyEditors">
+    <Text Key="IsRequired">Påkrævet</Text>
+    <Text Key="RichTextPreValueModel.ShowContextMenu">Vis kontekstmenu</Text>
+    <Text Key="RichTextPreValueModel.EditorSize">Størrelse på redigeringsværktøj</Text>
+    <Text Key="RichTextPreValueModel.TinyMceItems">Tekstværktøjets elementer</Text>
+
+    <Text Key="TextBoxPreValueModel.RegexValidationStatement">Regular expression validering</Text>
+
+    <Text Key="ColorSwatchPickerPreValueModel.Colors">Farver</Text>
+
+    <Text Key="DateTimePickerPreValueModel.ShowTime">Vis også tidspunkt</Text>
+
+    <Text Key="NodeNameEditorModel.UrlName">Url navn</Text>
+    <Text Key="NodeNameEditorModel.UrlAliases">Url aliaser</Text>
+  </Namespace>
+
+</Localizations>

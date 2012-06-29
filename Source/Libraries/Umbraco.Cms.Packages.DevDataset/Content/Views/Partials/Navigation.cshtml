@@ -1,0 +1,17 @@
+﻿@inherits RenderViewPage
+@using Umbraco.Cms.Web;
+
+ @{
+     var homepage = CurrentPage.AncestorsOrSelf.First("NodeTypeAlias == @0", "homePage");
+ }
+  <ul>
+  <li><a href="@homepage.Url">Home</a></li>
+  @foreach (var item in homepage.Children)
+  {
+      if (@item.CurrentTemplate != null)
+      {
+          var childName = item.Name ?? "(No name yet)";
+          <li><a href="@item.Url">@childName </a></li>
+      }
+  }
+  </ul>

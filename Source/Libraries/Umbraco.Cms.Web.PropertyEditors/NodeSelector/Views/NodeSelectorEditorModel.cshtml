@@ -1,0 +1,92 @@
+﻿@inherits WebViewPage<Umbraco.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorEditorModel>
+@using System.Reflection
+@using System.Web.Mvc.Html
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Umbraco.Cms
+@using Umbraco.Cms.Web
+@using Umbraco.Cms.Web.PropertyEditors.NodeSelector
+@using Umbraco.Cms.Web.Security
+@using Umbraco.Framework;
+@using Umbraco.Cms.Web.Model.BackOffice;
+@using Umbraco.Cms.Web.Trees;
+@using Microsoft.Web.Mvc;
+@using Umbraco.Framework.Localization
+@using Umbraco.Framework.Persistence.Model.Constants
+
+@{
+    var nodeSelectorId = "ns_" + Guid.NewGuid().ToString("N");
+
+    Html.RequiresJsResource(typeof (NodeSelectorEditor), "Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.NodeSelectorEditor.js");
+    Html.RequiresCssResource(typeof(NodeSelectorEditor), "Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.NodeSelectorEditor.css");
+}
+
+@if (!Model.ErrorMessage.IsNullOrWhiteSpace())
+{
+    <div class="error">@Model.ErrorMessage</div>
+}
+else
+{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#@(nodeSelectorId)").nodeSelector({
+                preVals: @(Html.ToJsonString(Model.PreValueModel)),
+                initVal: @(Html.ToJsonString(Model.PersistedItems)),
+                dataTypeId: "@(Model.DataTypeId)",
+                getPathUrl: "@(Url.Action("GetPath", "NodeSelectorUtility", new { area = Url.GetBackOfficeArea() }))",
+                getTooltipUrl: "@(Url.Action("GetTooltipContent", "NodeSelectorUtility", new { area = Url.GetBackOfficeArea()}))",
+                getMediaUrl: "@(Url.Action("GetMediaUrl", "NodeSelectorUtility", new { area = Url.GetBackOfficeArea() }))",
+                getFilterUrl: "@(Url.Action("IsNodeSelectable", "NodeSelectorUtility", new { area = Url.GetBackOfficeArea() }))"
+            });
+        });
+
+    </script>
+
+    <div id="@nodeSelectorId" class="node-selector clearfix" data-bind="style: {height: height() + 'px'}">
+        @Html.ValidationMessageFor(x => Model.Value)
+        <div class="header pane">Select Items</div>    
+        <div class="right pane" data-bind="style: {height: paneHeight() + 'px'}">
+            <div class="inner-pane jstree jstree-umbraco" data-bind="template: { foreach: selectedItems }, onNodeSelectorSort: handleSort">
+                <div class="@(Model.PreValueModel.ShowThumbnails ? "item thumb-item" : "item")" data-id="${htmlId}">
+                    @if(Model.PreValueModel.ShowThumbnails)
+                    {
+                        <div class="image handle">
+                            <div class="no-image" data-bind="visible: !hasImage()">No Image</div>
+                            <div class="throbber" data-bind="visible: isLoadingImage()"></div>
+                            <div data-bind="visible: hasImage(), html: imageMarkup"></div>
+                        </div>                       
+                    }
+                    <a data-bind="css:{info: displayInfo, hide: !displayInfo}, click: $parent.showTooltip"></a>                
+                    <div class="inner-item">
+                        <a class="close" title="Remove" data-bind="click: $parent.removeItem"></a>                                                            
+                        <a class="handle" title="Sync tree" data-bind="click: $parent.syncTree">   
+                            <ins class="${nodeStyle}" style="${nodeIcon}">&nbsp;</ins>
+                            <span data-bind="text: nodeName"></span>
+                        </a>                    
+                    </div>                
+                </div>            
+            </div>
+        </div>
+        <div class="left pane" data-bind="style: {height: paneHeight() + 'px'}">
+            <div class='filter-loading' data-bind="visible: filterLoading()"><div></div></div>
+            <div class="inner-pane">
+                @Html.RenderTree(Model.TreeModel)    
+            </div>
+        </div>
+        @Html.HiddenFor(x => Model.Value, new Dictionary<string, object>
+            {
+                {"data-bind", "value: serializedValue"},
+                {"data-val", "true"},
+                {"data-val-nsMaxItems", "NodeSelectorEditorModel.MaxNodeCount.Error".Localize(typeof(NodeSelectorEditor), new { Max = Model.PreValueModel.MaxNodeCount })},
+                {"data-val-nsMaxItems-count", Model.PreValueModel.MaxNodeCount},
+                {"data-val-nsMinItems", "NodeSelectorEditorModel.MinNodeCount.Error".Localize(typeof(NodeSelectorEditor), new { Min = Model.PreValueModel.MinNodeCount })},
+                {"data-val-nsMinItems-count", Model.PreValueModel.MinNodeCount},
+            })
+    </div>
+}

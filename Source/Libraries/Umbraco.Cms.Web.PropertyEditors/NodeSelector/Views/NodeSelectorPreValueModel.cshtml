@@ -1,0 +1,142 @@
+﻿@inherits WebViewPage<Umbraco.Cms.Web.PropertyEditors.NodeSelector.NodeSelectorPreValueModel>
+@using System.Web.Mvc.Html
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Umbraco.Cms
+@using Umbraco.Cms.Web
+@using Umbraco.Cms.Web.Security
+@using Umbraco.Framework;
+@using Umbraco.Cms.Web.Model.BackOffice;
+@using Umbraco.Cms.Web.Trees;
+@using Microsoft.Web.Mvc;
+@using Umbraco.Framework.Persistence.Model.Constants
+@using Umbraco.Cms.Web.PropertyEditors.NodeSelector
+@{
+    Html.EnsureTreeDependencies();
+    Html.RequiresJs("Umbraco.UI/TreePicker.js", "Scripts");
+
+    Html.RequiresJsResource(typeof(NodeSelectorEditor), "Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.NodeSelectorPreValues.js");
+    Html.RequiresCssResource(typeof(NodeSelectorEditor), "Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.NodeSelectorPreValues.css");
+}
+
+<script type="text/javascript">
+    
+    $(document).ready(function () {
+        var preValueEditor = new Umbraco.PropertyEditors.NodeSelectorPreValues(
+            $("#nodeSelectorPreValues").get(0), {
+                getPickerUrl: "@Url.Action("GetPicker", "TreePicker", new { area = "umbraco" })",
+                startNodeIdFieldId : "@Html.IdFor(x => Model.StartNodeId).ToString()",
+                startNodeIdFieldName : "@Html.NameFor(x => Model.StartNodeId).ToString()",
+                savedSelectedTree: $("#@Html.Id("saved_selected_tree")").val(),
+                savedSelectedId: $("#@Html.Id("saved_selected_id")").val(),
+                $nodePickerPlaceholder: $("#nodePickerPlaceholder"),
+                startNodeSelectionType: "@(Model.StartNodeSelectionType.ToString())"
+            });        
+    });
+    
+</script>
+<div id="nodeSelectorPreValues">
+    @Html.Hidden("saved_selected_tree", Model.SelectedTree)
+    @Html.Hidden("saved_selected_id", Model.StartNodeId)    
+    @Html.UmbEditorFor(
+        x => Model.SelectedTree,
+        Html.DropDownListFor(x => Model.SelectedTree, Model.AvailableTrees, "--Select tree type--",
+                          new Dictionary<string, object> { { "data-bind", "value:selectedTreeType" } }),
+        ViewData.ModelMetadata.Description)
+    
+    <div data-bind="visible: selectedTreeType() != ''">
+         @Html.UmbEditorFor(
+            x => Model.StartNodeSelectionType,
+            @<div>
+                    @Html.RadioButtonFor(x => Model.StartNodeSelectionType, StartNodeSelectionType.UsePicker,
+                                new Dictionary<string, object>
+                                    {
+                                        { "Id", Html.IdFor(x => Model.StartNodeSelectionType) + "_UsePicker" },
+                                        {"data-bind", "checked: startNodeSelectionType"}
+                                    })
+                    <label for="@(Html.IdFor(x => Model.StartNodeSelectionType) + "_UsePicker")">Use picker</label>
+                    @Html.RadioButtonFor(x => Model.StartNodeSelectionType, StartNodeSelectionType.UseQuery,
+                                new Dictionary<string, object>
+                                    {
+                                        { "Id", Html.IdFor(x => Model.StartNodeSelectionType) + "_UseQuery" },
+                                        {"data-bind", "checked: startNodeSelectionType"}
+                                    })
+                    <label for="@(Html.IdFor(x => Model.StartNodeSelectionType) + "_UseQuery")">Use query </label>
+                </div>,
+            ViewData.ModelMetadata.Description)
+        
+        <div data-bind="visible: startNodeSelectionType() == 'UsePicker'">
+            @Html.UmbEditorFor(
+                x => Model.StartNodeId,
+                @<div id="nodePickerPlaceholder" data-bind="stopBindings: true">
+                     @if(Model.SelectedTree != Guid.Empty)
+                     {
+                        @Html.TreePickerFor(x => Model.StartNodeId, new TreePickerRenderModel
+                        {
+                            TreeControllerId = Model.SelectedTree,
+                            Id = Html.IdFor(x => Model.StartNodeId).ToString(),
+                            Name = Html.NameFor(x => Model.StartNodeId).ToString()
+                        })
+                     }
+                 </div>, ViewData.ModelMetadata.Description)
+        </div>    
+        
+        <div data-bind="visible: startNodeSelectionType() == 'UseQuery'">
+            @Html.UmbEditorFor(
+                x => Model.StartNodeQuery,
+                @<div class="code">
+                        <div>public HiveId StartNodeId(IBackOfficeRequestContext requestContext, TypedEntity currentNode, TypedEntity rootNode) {</div>
+                        @Html.TextAreaFor(x => Model.StartNodeQuery)
+                        <div>}</div>
+                    </div>,
+                ViewData.ModelMetadata.Description)
+        </div> 
+    </div>                      
+   
+    @Html.UmbEditorFor(
+        x => Model.ShowThumbnails,
+        @Html.CheckBoxFor(x => Model.ShowThumbnails),
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.ThumbnailPropertyName,
+        @Html.TextBoxFor(x => Model.ThumbnailPropertyName),
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.ShowToolTip,
+        @Html.CheckBoxFor(x => Model.ShowToolTip),
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.MinNodeCount,
+        @Html.TextBoxFor(x => Model.MinNodeCount),
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.MaxNodeCount,
+        @Html.TextBoxFor(x => Model.MaxNodeCount),
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.FilterType,
+        @<div>
+             @Html.RadioButtonFor(x => Model.FilterType, NodeFilterType.Enabled, new { Id = Html.IdFor(x => Model.FilterType) + "_Enabled" })
+                <label for="@(Html.IdFor(x => Model.FilterType) + "_Enabled")">Enabled</label>
+             @Html.RadioButtonFor(x => Model.FilterType, NodeFilterType.Disabled, new { Id = Html.IdFor(x => Model.FilterType) + "_Disabled" })
+             <label for="@(Html.IdFor(x => Model.FilterType) + "_Disabled")">Disabled</label>
+         </div>,
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.NodeFilter,
+        @<div class="code">
+             <div>public bool IsMatch(IBackOfficeRequestContext requestContext, TypedEntity entity) {</div>
+             @Html.TextAreaFor(x => Model.NodeFilter)
+             <div>}</div>
+         </div>,
+        ViewData.ModelMetadata.Description)
+    @Html.UmbEditorFor(
+        x => Model.EditorHeight,
+        @Html.TextBoxFor(x => Model.EditorHeight),
+        ViewData.ModelMetadata.Description)
+</div>

@@ -1,0 +1,12 @@
+﻿@model Umbraco.Cms.Web.Model.BackOffice.Editors.CreateMacroModel
+@using Umbraco.Framework.Localization;
+@{
+    Layout = "../Shared/_CreateNewLayout.cshtml";
+    ViewBag.ControllerId = new Guid(CorePluginConstants.MacroEditorControllerId);
+    ViewBag.Title = "Macro.Create.Title".Localize();
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@Html.UmbNextButton()

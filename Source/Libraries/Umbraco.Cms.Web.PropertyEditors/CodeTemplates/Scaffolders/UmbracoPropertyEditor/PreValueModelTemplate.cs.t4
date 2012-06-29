@@ -1,0 +1,60 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Umbraco.Cms.Web.Context;
+using Umbraco.Cms.Web.EmbeddedViewEngine;
+using Umbraco.Cms.Web.Model.BackOffice.PropertyEditors;
+using Umbraco.Framework;
+
+namespace <#= Model.Namespace #>.<#= Model.PropertyEditorAlias #>
+{ 
+
+<#
+	if (Model.UseCustomPreValuesView) {
+#>
+	// By default views are not embedded because it is easier to develop on non-embedded views. However, it is 
+	// recommended to embed your views for PropertyEditors once you have completed development if you 
+	// do not want other developers to be able to modify the template code which could potentially cause your
+	// PropertyEditor to stop working.
+	//[EmbeddedView("<#= Model.Namespace #>.Views.EditorTemplates.<#= Model.PropertyEditorAlias #>PreValueModel.cshtml", "<#= Model.AssemblyName #>")]
+<#
+	}
+#>
+    public class <#= Model.PropertyEditorAlias #>PreValueModel : PreValueModel, IValidatableObject
+    {
+	
+		/* Define some Members for the model which will be editable in the pre-value editor for your PropertyEditor.*/
+
+		public string Value { get; set; }
+
+			
+		/* 
+		You can attribute properties here with AllowDocumentTypePropertyOverride if you would like to 
+		allow admins to override a pre-value property at the Document Type level
+
+		[AllowDocumentTypePropertyOverride]
+		public bool IsRequired { get; set; }
+		*/
+	
+		/// <summary>
+        /// Executes custom server side validation for the model
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {			
+            //if (YOUR_CUSTOM_VALIDATION_CHECK)
+            //{
+			//    //return a validation result with a message and for which field the error is associated
+            //    yield return new ValidationResult("Value is required", new[] { "Value" });
+            //}
+		    yield return null;
+        }
+
+	}
+}

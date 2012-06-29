@@ -1,0 +1,34 @@
+<#@ template language="C#" HostSpecific="True"  inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="EnvDTE" #>
+using Umbraco.Framework.Tasks;
+using Umbraco.Framework;
+using Umbraco.Cms.Web.Tasks;
+using Umbraco.Cms.Web.Context;
+using Umbraco.Framework.Diagnostics;
+
+namespace <#= Model.Namespace #>.Tasks
+{ 
+	[Task("<#= Model.TaskGuid #>", TaskTriggers.Hive.Revisions.PreAddOrUpdateOnUnitComplete)]
+	public class <#= Model.ClassName #> : AbstractWebTask
+	{
+		public <#= Model.ClassName #>(IUmbracoApplicationContext applicationContext) : base(applicationContext) { }
+
+		//Method which is executed when trigger fires, this receives a Task context
+		//Raised at the beginning of a work unit completion, triggered for each entity revision set to be added or updated, 
+		//this trigger can cancel the entire unit of work
+		public override void Execute(TaskExecutionContext context)
+		{
+			//Here we can cast the CallerEventArgs to HiveRevisionPreActionEventArgs
+			var args = (Umbraco.Hive.HiveRevisionPreActionEventArgs)context.EventArgs.CallerEventArgs;
+
+			//cancel the entire unit of works revisions from being added or updated
+			context.Cancel = true;
+		}
+	}
+}

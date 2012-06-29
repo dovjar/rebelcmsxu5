@@ -1,4 +1,4 @@
-Hi! Thanks for grabbing the RebelCms sourcecode.
+Hi! Thanks for grabbing the Umbraco sourcecode.
 
 ===========================================
 NOTE - WHERE TO FIND V4 CODE - December 2010
@@ -14,8 +14,8 @@ NOTE - WHERE TO FIND V4 CODE - December 2010
 Thanks to Matt Hawley at CodePlex for his help in our migration!
 
 Cheers,
-The RebelCms Team
+The Umbraco Team
 
-http://RebelCms.com
-http://our.RebelCms.org
-http://RebelCms.codeplex.com
+http://umbraco.com
+http://our.umbraco.org
+http://umbraco.codeplex.com

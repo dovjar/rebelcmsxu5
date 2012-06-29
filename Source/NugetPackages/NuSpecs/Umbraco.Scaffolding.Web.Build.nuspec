@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package>
+ <metadata>
+   <id>Umbraco.Scaffolding.Web</id>
+   <version>0.2.0</version>
+   <authors>Umbraco HQ</authors>
+   <owners>Umbraco</owners>
+   <licenseUrl>http://umbraco.codeplex.com/license</licenseUrl>
+   <projectUrl>http://umbraco.com</projectUrl>
+   <iconUrl>http://umbraco.com/media/357769/100px_transparent.png</iconUrl>
+   <requireLicenseAcceptance>false</requireLicenseAcceptance>
+   <description>A collection of scaffolders for Umbraco 5, which allows you to scaffold Umbraco Views, SurfaceControllers, Models and Tasks.</description>
+   <summary>Scaffolders for Umbraco 5</summary>
+   <tags>umbraco</tags>
+   <language>en-US</language>
+   <dependencies>
+     <dependency id="T4Scaffolding" version="[1.0.5]" />
+   </dependencies>
+ </metadata>
+ <files>
+   <file src="..\..\Scaffolding\Umbraco.Scaffolding\Scaffolders\**\*.t4" target="tools" />
+   <file src="..\..\Scaffolding\Umbraco.Scaffolding\Scaffolders\**\*.ps1" target="tools" />
+   <file src="..\..\Scaffolding\Umbraco.Scaffolding\init.ps1" target="tools" />
+   <file src="..\..\Scaffolding\Umbraco.Scaffolding\install.ps1" target="tools" />
+   <file src="..\..\Scaffolding\Umbraco.Scaffolding\registerWithMvcTooling.ps1" target="tools" />
+   <file src="..\..\Scaffolding\Umbraco.Scaffolding\InstallationDummyFile.txt" target="content" />
+ </files>
+</package>

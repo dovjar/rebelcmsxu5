@@ -51,9 +51,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Libraries\RebelCms.Foundation\RebelCms.Foundation.csproj">
+    <ProjectReference Include="..\..\..\Source\Libraries\Umbraco.Foundation\Umbraco.Foundation.csproj">
       <Project>{9298A244-72D2-48C4-905D-FE84161589A7}</Project>
-      <Name>RebelCms.Foundation</Name>
+      <Name>Umbraco.Foundation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

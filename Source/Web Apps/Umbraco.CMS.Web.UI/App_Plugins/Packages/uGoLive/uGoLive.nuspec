@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>uGoLive</id>
+    <version>5.1</version>
+    <title>uGoLive</title>
+    <authors>The Umbraco Community</authors>
+    <owners>The Umbraco Community</owners>
+    <projectUrl>http://our.umbraco.org/projects/backoffice-extensions/ugolive</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>uGoLive is an Umbraco dashboard control which allows you to run a series of checks on your website in order to prepair it for launch.</description>
+    <summary />
+    <language />
+  </metadata>
+</package>

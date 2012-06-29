@@ -1,0 +1,231 @@
+﻿.node-selector
+{
+    overflow: hidden;
+}
+
+.node-selector .item a.close
+{
+    color: red;
+    margin: 0;
+    padding: 0px;
+    background: transparent url('<%= WebResource("Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.delete-icon.gif")%>') no-repeat 0px 3px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+    z-index: 200;
+    cursor: pointer;
+}
+.node-selector .item
+{
+    width: 298px;
+    height: 21px;
+    border: 1px dotted #DCD;
+    overflow: hidden;
+    background-color: #FFF;
+    margin-bottom: 3px;
+}
+.node-selector .item.thumb-item .image
+{
+    height: 50px;
+    width: 50px;
+    float: left;
+    border-right: 1px dotted #DCD;
+    margin-right: 2px;
+    position: relative;
+}
+.node-selector .item.thumb-item .image .no-image
+{
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    margin-top: 10px;
+    color: grey;
+}
+.node-selector .item.thumb-item .image img
+{
+    position: absolute;
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+}
+.node-selector .item.thumb-item .throbber
+{
+    position: absolute;
+    z-index: 30;
+    display: block;
+    margin-top: 15px;
+    margin-left: 17px;
+    width: 16px;
+    height: 16px;
+    background: transparent url('<%= WebResource("Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.throbber.gif")%>') no-repeat top left;
+}
+
+.node-selector .item:hover
+{
+    background-color: #F6F6FA;
+}
+
+.node-selector .item .inner-item
+{
+    padding: 2px 0px 0px 0px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.node-selector .item .inner-item a
+{
+    white-space: normal;
+}
+
+.node-selector .item .handle
+{
+    display: block;
+    background: none;
+    cursor: move;
+    height: 100%;
+}
+
+.node-selector .item.thumb-item
+{
+    height: 50px;
+}
+
+.node-selector a.info
+{
+    float: left;
+    width: 18px;
+    height: 18px;
+    background: transparent url('<%= WebResource("Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.info-icon.png")%>') no-repeat 1px 2px;
+    cursor: pointer;
+}
+
+.node-selector .pane
+{
+    border: 1px solid #D9D7D7;
+    margin-top: 5px;
+}
+
+.node-selector .pane .inner-pane
+{
+    background: white;
+    padding: 3px 0px 0px 3px;
+}
+
+.node-selector .pane .inner-pane.jstree.jstree-umbraco
+{
+    margin-left: 0px;
+}
+
+.node-selector .pane .inner-pane.jstree.jstree-umbraco ul li, .node-selector .pane .inner-pane.jstree.jstree-umbraco ul li a
+{
+    margin: 0;
+}
+
+.node-selector .hide
+{
+    display: none;
+}
+
+/* tooltip */
+#nsTooltip
+{
+    background-image: linear-gradient(bottom, #EDEDF5 100%, #FFFFFF 50%);
+    background-image: -o-linear-gradient(bottom, #EDEDF5 100%, #FFFFFF 50%);
+    background-image: -moz-linear-gradient(bottom, #EDEDF5 100%, #FFFFFF 50%);
+    background-image: -webkit-linear-gradient(bottom, #EDEDF5 100%, #FFFFFF 50%);
+    background-image: -ms-linear-gradient(bottom, #EDEDF5 100%, #FFFFFF 50%);
+    background-image: -webkit-gradient( 	        linear, 	        right bottom, 	        right top, 	        color-stop(1, #EDEDF5), 	        color-stop(0.5, #FFFFFF)         );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#FFFFFFFF, endColorStr=#EDEDF5);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#FFFFFFFF, endColorStr=#EDEDF5);
+    border: 1px solid #D9D7D7;
+    border: 2px solid #999;
+    width: 300px;
+    height: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: absolute;
+    z-index: 5000;
+    box-shadow: 2px 2px 11px #999;
+    -moz-box-shadow: 2px 2px 11px #999;
+    -webkit-box-shadow: 2px 2px 11px #999;
+}
+#nsTooltip div.throbber
+{
+    width: 16px;
+    height: 16px;
+    background: transparent url('<%= WebResource("Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.throbber.gif")%>') no-repeat top left;
+    display: none;
+}
+#nsTooltip div.tooltipInfo
+{
+    font-family: Trebuchet MS,Lucida Grande,verdana,arial;
+    font-size: 11px;
+    overflow: hidden;
+}
+#nsTooltip div.tooltipInfo p
+{
+    margin: 3px 0px 3px 0px;
+}
+#nsTooltip div.tooltipInfo .id
+{
+    margin-bottom: 2px;
+}
+#nsTooltip div.tooltipInfo .soft
+{
+    color: gray;
+}
+#nsTooltip div.tooltipInfo .id strong
+{
+    font-size: 14px;
+}
+#nsTooltip div.tooltipInfo a
+{
+    float: right;
+    font-size: 10px;
+    display: block;
+}
+.node-selector .left
+{
+    width: 314px;
+    position: relative;
+}
+.node-selector .left .filter-loading
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: white;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    padding: 3px 3px 0px 0px;
+    margin-left: -3px;
+}
+.node-selector .left .filter-loading > div
+{
+    background: white url('<%= WebResource("Umbraco.Cms.Web.PropertyEditors.NodeSelector.Resources.throbber.gif")%>') no-repeat top right;
+    width: 100%;
+    height: 100%;
+}
+.node-selector .right
+{
+    width: 305px;
+    float: right;
+}
+.node-selector .header
+{
+    width: 622px;
+    padding: 5px;
+}
+.node-selector .treeContainer
+{
+    overflow: auto;
+    height: 200px;
+    position: relative;
+}

@@ -1,0 +1,32 @@
+<#@ template language="C#" HostSpecific="True"  inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="EnvDTE" #>
+using Umbraco.Framework.Tasks;
+using Umbraco.Framework;
+using Umbraco.Cms.Web.Tasks;
+using Umbraco.Cms.Web.Context;
+using Umbraco.Framework.Diagnostics;
+
+namespace <#= Model.Namespace #>.Tasks
+{ 
+	[Task("<#= Model.TaskGuid #>", TaskTriggers.Hive.Relations.PreRelationAdded)]
+	public class <#= Model.ClassName #> : AbstractWebTask
+	{
+		public <#= Model.ClassName #>(IUmbracoApplicationContext applicationContext) : base(applicationContext) { }
+
+		//Method which is executed when trigger fires, this receives a Task context
+		//Raised before a relation is added to an entity, this can cancell the add
+		public override void Execute(TaskExecutionContext context)
+		{
+			//Here we cast the CallerEventArgs to HiveRelationPreActionEventArgs
+			var args = (Umbraco.Hive.HiveRelationPreActionEventArgs)context.EventArgs.CallerEventArgs;
+
+			var item = context.EventSource;
+		}
+	}
+}

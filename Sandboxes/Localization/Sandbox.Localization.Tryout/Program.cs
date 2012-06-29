@@ -6,11 +6,11 @@ using System.Text;
 using System.Globalization;
 using System.Xml.Linq;
 using System.Reflection;
-using RebelCms.Foundation.Localization;
-using RebelCms.Foundation.Localization.Processing;
-using RebelCms.Foundation.Localization.Maintenance;
-using RebelCms.Foundation.Localization.Parsing;
-using RebelCms.Foundation.Localization.Maintenance.Extraction;
+using Umbraco.Foundation.Localization;
+using Umbraco.Foundation.Localization.Processing;
+using Umbraco.Foundation.Localization.Maintenance;
+using Umbraco.Foundation.Localization.Parsing;
+using Umbraco.Foundation.Localization.Maintenance.Extraction;
 using System.Text.RegularExpressions;
 
 namespace Sandbox.Localization.Tryout
@@ -188,7 +188,7 @@ namespace Sandbox.Localization.Tryout
 
             //var extractor = new CStyleLanguageTextExtractor();
             //extractor.SourceFiles =
-            //    new SourceFileList(@"C:\Users\niels.kuhnel\Stuff\RebelCms\RebelCms 5\I18n\i18n\Sandboxes\Localization\Sandbox.Localization.Tryout",
+            //    new SourceFileList(@"C:\Users\niels.kuhnel\Stuff\Umbraco\Umbraco 5\I18n\i18n\Sandboxes\Localization\Sandbox.Localization.Tryout",
             //        new[] { "cs" }, new[] { "obj" }).GetFiles();
 
             //xml.Document = null;

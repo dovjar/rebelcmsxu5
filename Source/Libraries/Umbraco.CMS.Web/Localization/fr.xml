@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Localizations Language="fr-FR">
+  <!-- Single file per language approach. Match all languages (*) as theses are the default text if no localizations exist -->
+
+  <!-- Applications -->
+  <Text Key="content">Contenu</Text>
+  <Text Key="media">Media</Text>
+  <Text Key="settings">Configuration</Text>
+  <Text Key="developer">Développeur</Text>
+  <Text Key="users">Utilisateurs</Text>
+  <Text Key="members">Membres</Text>
+  
+  <!-- These are used regardless of class, assembly and namespace -->
+  <Text Key="Name">Nom</Text>
+  <Text Key="CreatedBy">Créé par</Text>
+  <Text Key="UtcCreated">Date de création</Text>
+  <Text Key="UtcModified">Date de modification</Text>
+  <Text Key="NodeName">Nom du noeud</Text>
+  <Text Key="ModifiedBy">Modifié par</Text>
+  <Text Key="ShowLabel">Afficher le label</Text>
+  
+  <!-- Messages -->
+  <Text Key="Login.Invalid">Nom d'utilisateur ou mot de passe incorrect</Text>
+  <Text Key="Delete.Successful">L'élément a été supprimé avec succès</Text>
+  <Text Key="Delete.Failed">L'élément n'a pas été supprimé</Text>
+  <Text Key="Validation.Errors">Des erreurs de validation se sont produites</Text>
+  
+  <Text Key="Save.ErrorsOccurred.Message">#Plural(ErrorCount){Une erreur de validation s'est produite | Des erreurs de validation se sont produites}</Text>
+  <Text Key="Save.ErrorsOccurred.Title">Erreurs de validation</Text>
+
+  <Text Key="Save.ValidationSummary.Title">Veuillez corriger les erreurs et essayer à nouveau.</Text>
+  
+  <Text Key="Content.Save.Title">Contenu sauvegardé</Text>
+  <Text Key="Content.Save.Message">Rappelez-vous de publier afin de rendre les changements visibles</Text>
+  <Text Key="Content.SaveUnathorized.Title">Contenu pas sauvegardé</Text>
+  <Text Key="Content.SaveUnathorized.Message">Le contenu n'a pas été sauvegardé à cause de permissions insuffisantes</Text>
+  <Text Key="Content.UnSaved.Message">Ce contenu n'est actuellement pas sauvegardé. Rappelez-vous de sauvegarder ce contenu si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+  <Text Key="Content.NoTemplates.Message">Il n'y a pour le moment aucun modèle disponible pour ce contenu.</Text>
+  <Text Key="Content.UrlResolutionFailedHostname.Message">Il n'a pas été possible de générer un URL pour ce noeud parce qu'il faut attribuer un nom d'hôte à la branche qui le contient.</Text>
+  <Text Key="Content.NoChildTypesAllowed.Message">Aucun type de contenu enfant autorisé n'a été assigné à ce type de contenu</Text>
+
+  <Text Key="User.Save.Title">Utilisateur sauvegardé</Text>
+  <Text Key="User.Save.Message">Les données de l'utilisateur ont été sauvegardées avec succès</Text>
+  <Text Key="User.UnSaved.Message">Cet utilisateur n'est actuellement pas sauvegardé. Rappelez-vous de sauvegarder cet utilisateur si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+
+  <Text Key="UserGroup.Save.Title">Groupe utilisateurs sauvegardé</Text>
+  <Text Key="UserGroup.Save.Message">Les données du groupe utilisateurs ont été sauvegardées avec succès</Text>
+  <Text Key="UserGroup.UnSaved.Message">Ce groupe utilisateurs n'est actuellement pas sauvegardé. Rappelez-vous de sauvegarder ce groupe utilisateurs si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+  <Text Key="UserGroup.Inherit.Message">Veuillez noter que les permissions configurées en mode "hériter" prendront par défaut la valeur "refuser" si aucune permission explicite d'autorisation ne peut être héritée.</Text>
+  
+  <Text Key="MemberGroup.Save.Title">Groupe membres sauvegardé</Text>
+  <Text Key="MemberGroup.Save.Message">Les données du groupe membres ont été sauvegardées avec succès</Text>
+  <Text Key="MemberGroup.UnSaved.Message">Ce groupe membres n'est actuellement pas sauvegardé. Rappelez-vou de sauvegarder ce groupe membres si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+
+  <Text Key="DataType.Save.Title">Data type sauvegardé</Text>
+  <Text Key="DataType.Save.Message">Le data type a été sauvegardé avec succès</Text>
+  <Text Key="DataType.UnSaved.Message">Ce data type n'est actuellement pas sauvegardé. Rappelez-vous de sauvegarder ce data type si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+
+  <Text Key="DocumentType.Save.Title">Document type sauvegardé</Text>
+  <Text Key="DocumentType.Save.Message">Le document type a été sauvegardé avec succès</Text>
+  <Text Key="DocumentType.UnSaved.Message">Ce document type n'est actuellement pas sauvegardé. Rappelez-vous de sauvegarder ce document type si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+  <Text Key="DocumentType.PropertyDeleted.Title">Propriété supprimée</Text>
+  <Text Key="DocumentType.PropertyDeleted.Message">La propriété du document type a été supprimée</Text>
+  <Text Key="DocumentType.TabDeleted.Title">Onglet supprimé</Text>
+  <Text Key="DocumentType.TabDeleted.Message">L'onglet du document type a été supprimé</Text>
+  <Text Key="DocumentType.TabAdded.Title">Onglet ajouté</Text>
+  <Text Key="DocumentType.TabAdded.Message">L'onglet du document type a été ajouté</Text>
+  <Text Key="DocumentType.Validation.DuplicateTab">Le nom de l'onglet introduit existe déjà</Text>
+  <Text Key="DocumentType.Validation.RequiredTabName">Il faut spécifier un nom d'onglet</Text>
+  
+  <Text Key="Permissions.Title">Permissions mises à jour</Text>
+  <Text Key="Permissions.Success.Message">Les permissions relatives au noeud {Name} ont été sauvegardées avec succès</Text>
+  <Text Key="Permissions.NoUserGroups.Message">Aucun groupe utilisateurs non-administrateur n'a été trouvé, veuillez ajouter un nouveau groupe utilisateurs avant d'essayer de spécifier les permissions</Text>
+  <Text Key="PublicAccess.Title">Accès public mis à jour</Text>
+  <Text Key="PublicAccess.Success.Message">L'accès public a été mis à jour avec succès sur le noeud {Name}</Text>
+  <Text Key="Hostname.Title">Noms d'hôte mis à jours</Text>
+  <Text Key="Hostname.Success.Message">{Count} noms d'hôte ont été sauvegardés avec succès sur le noeud {Name}</Text>
+  <Text Key="Language.Title">Langue mise à jour</Text>
+  <Text Key="Language.Success.Message">La langue du noeud {Name} a été sauvegardée avec succès</Text>
+  <Text Key="Sort.Title">Tri du contenu</Text>
+  <Text Key="Rollback.Title">Restauration du contenu précédent</Text>
+  <Text Key="Sort.Success.Message">Le contenu a été trié avec succès</Text>
+  <Text Key="Move.Success.Message">'{FromName}' a été déplacé vers '{ToName}'</Text>
+  <Text Key="Copy.Success.Message">'{FromName}' a été copié vers '{ToName}'</Text>
+  <Text Key="Rollback.Success.Message">Le contenu précédent a été restauré avec succès</Text>
+  <Text Key="Publish.Title">Publication du contenu</Text>
+  <Text Key="Publish.SingleSuccess.Message">'{Name}' a été publié</Text>
+  <Text Key="Publish.SingleUnathorized.Message">'{Name}' n'a pas été publié à cause de permissions insuffisantes</Text>
+  <Text Key="Publish.ChildrenSuccess.Message">'{Name}' et ses sous-pages ont été publiés</Text>
+  <Text Key="Publish.IncludeChildren.Label">Publier '{Name}' et toutes ses sous-pages</Text>
+  <Text Key="Publish.IncludeUnpublishedChildren.Label">Inclure les pages sous-jacentes non publiées</Text>
+  <Text Key="Unpublish.Title">Annuler la publication du contenu</Text>
+  <Text Key="Unpublish.SingleSuccess.Message">'{Name}' n'est plus publié</Text>
+  <Text Key="Unpublish.SingleUnathorized.Message">La publication de '{Name}' n'a pas pu être annulée à cause de permissions insuffisantes</Text>
+
+  <Text Key="Language.Save.Title">Langue sauvegardée</Text>
+  <Text Key="Language.Save.Message">La langue a été sauvegardée avec succès</Text>
+  <Text Key="Language.UnSaved.Message">Cette langue n'est actuellement pas sauvegardée. Rappelez-vous de sauvegarder cette languae si vous souhaitez pouvoir y revenir et la modifier plus tard.</Text>
+  
+  <Text Key="Macro.Save.Title">Macro sauvegardée</Text>
+  <Text Key="Macro.Save.Message">La macro a été sauvegardée avec succès</Text>
+  <Text Key="Macro.UnSaved.Message">Cette  macro n'est actuellement pas sauvegardée. Rappelez-vous de sauvegarder cette macro si vous souhaitez pouvoir y revenir et la modifier plus tard.</Text>
+  <Text Key="Macro.ParamsPopulated.Title">Paramètres de la macro</Text>
+  <Text Key="Macro.ParamsPopulatedSuccess.Message">Les paramètres de la macro ont été déterminés avec succès</Text>
+  <Text Key="Macro.ParamsFailedSurfaceAction.Message">Les paramètres de l'action enfant n'ont pas pu être déterminés car ils contiennent un ou plusieurs paramètres : out, return value ou LCID</Text>
+  <Text Key="Macro.ParamsFailedPartialView.Message">La partial view référencée n'a pas pu être trouvée</Text>
+  <Text Key="Macro.RenderingFailed.Message">Une erreur s'est produite lors de l'exécution de la macro '{MacroName}'. ERREUR: '{Error}'. Rapportez-vous au log Umbraco pour les détails complets.</Text>
+  <Text Key="Macro.RenderingFailed.Title">Erreur macro</Text>
+  
+  <Text Key="Template.Save.Title">Modèle sauvegardé</Text>
+  <Text Key="Template.Save.Message">Le modèle a été sauvegardé avec succès</Text>
+  
+  <Text Key="Partials.Save.Title">Partial view sauvegardée</Text>
+  <Text Key="Partials.Save.Message">La partial view a été sauvegardée avec succès</Text>
+  
+  <Text Key="Script.Save.Title">Script sauvegardé</Text>
+  <Text Key="Script.Save.Message">Le script a été sauvegardé avec succès</Text>
+  
+  <Text Key="Stylesheet.Save.Title">Feuille de style sauvegardée</Text>
+  <Text Key="Stylesheet.Save.Message">La feuille de style a été sauvegardée avec succès</Text>
+
+  <Text Key="StylesheetRule.UnSaved.Message">Cette règle n'est actuellement pas sauvegardée. Rappelez-vous de sauvegarder cette règle si vous souhaitez pouvoir y revenir et la modifier plus tard.</Text>
+  
+  <Text Key="Folder.Save.Title">Dossier créé</Text>
+  <Text Key="Folder.Save.Message">Le dossier a été créé avec succès</Text>
+
+  <Text Key="File.UnSaved.Message">Ce fichier n'est actuellement pas sauvegardé. Rappelez-vous de sauvegarder ce fichier si vous souhaitez pouvoir y revenir et le modifier plus tard.</Text>
+
+  <!-- Global UI -->
+  <Text Key="UI.Button.Logout">Déconnexion</Text>
+  <Text Key="UI.Button.About">A propos</Text>
+  <Text Key="UI.Title.Sections">Sections</Text>
+  <Text Key="UI.Title.Search">Chercher</Text>
+  <Text Key="UI.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  <Text Key="UI.Tab.FileProperties">Propriétés Umbraco</Text>
+  <!-- Trees-->
+  <!-- TODO -->
+  
+  <!-- Fixed Tree Nodes -->
+  <Text Key="Local packages">Packages locaux</Text>
+
+  <!-- Menu Items-->
+  <Text Key="Audit">Audit</Text>
+  <Text Key="Copy">Copier</Text>
+  <Text Key="CreateFolder">Créer un dossier</Text>
+  <Text Key="Create">Créer</Text>
+  <Text Key="Delete">Supprimer</Text>
+  <Text Key="EmptyRecycleBin">Vider la corbeille</Text>
+  <Text Key="ExportDocumentType">Exporter le Document Type</Text>
+  <Text Key="Manage hostnames">Gérer les domaines</Text>
+  <Text Key="ImportDocumentType">Importer le Document Type</Text>
+  <Text Key="Language">Langue</Text>
+  <Text Key="Logout">Déconnexion</Text>
+  <Text Key="Move">Déplacer</Text>
+  <Text Key="Notify">Notifier</Text>
+  <Text Key="Package">Package</Text>
+  <Text Key="Permissions">Permissions</Text>
+  <Text Key="Public Access">Accès public</Text>
+  <Text Key="Publish">Publier</Text>
+  <Text Key="Refresh">Rafraîchir</Text>
+  <Text Key="Rollback">Revenir en arrière</Text>
+  <Text Key="Save">Sauvegarder</Text>
+  <Text Key="SendPublish">Envoyer pour Publication</Text>
+  <Text Key="SendTranslate">Envoyer pour Traduction</Text>
+  <Text Key="Sort">Trier</Text>
+  <Text Key="Translate">Traduire</Text>
+  <Text Key="Update">Mettre à jour</Text>
+  
+  <!-- Dashboards -->
+  
+  <!-- Editors -->
+  
+  <!-- General -->
+  <Text Key="Editors.PleaseSelect">Veuillez Sélectionner...</Text>
+  <Text Key="Editors.File">Fichier</Text>
+  <Text Key="Editors.Folder">Dossier</Text>
+  <Text Key="Editors.None">Aucun</Text>
+  
+  <!-- Controls -->
+  <!-- Date Time Picker-->
+  <Text Key="DateTimePicker.Choose">Choisissez une Date</Text>
+  <Text Key="DateTimePicker.None">Aucune date choisie</Text>
+  <Text Key="DateTimePicker.Clear">Effacer la date</Text>
+  
+  <!-- Schema Editor -->
+  <Text Key="Schema.Editor.Tab.Info">Info</Text>
+  <Text Key="Schema.Editor.Tab.Composition">Composition</Text>
+  <Text Key="Schema.Editor.Tab.Properties">Propriétés</Text>
+  <Text Key="Schema.Editor.Tab.Tabs">Onglets</Text>
+  <Text Key="Schema.Editor.Notice.PropInheritance">La liste des types dont ce type hérite a subi des modifications. Veuillez sauvegarder à nouveau afin de pouvoir voir les éventuelles nouvelles propriétés héritées.</Text>
+  <Text Key="Schema.Editor.Notice.TabInheritance">La liste des types dont ce type hérite a subi des modifications. Veuillez sauvegarder à nouveau afin de pouvoir voir les éventuels nouveaux onglets hérités.</Text>
+
+
+  <!-- Content Editor -->
+  <Text Key="Content.Editor.Tab.GeneralProperties">Propriétés Générales</Text>
+  <Text Key="Content.Editor.Label.NotPublishedYet">Cet élément n'a pas été publié</Text>
+  <Text Key="Content.Editor.Label.LastPublished">Dernière publication</Text>
+  
+  <!-- Action - Copy Content -->
+  <Text Key="Action.Copy.Title">Copier</Text>
+  <Text Key="Action.Copy.HeaderTitle">Sélectionnez ci-dessous l'endroit où le document '{Name}' devrait être copié</Text>
+  
+  <!-- Action - Manage Hostnames -->
+  <Text Key="Action.HostNames.Title">Gérer les noms d'hôtes</Text>
+  <Text Key="Action.HostNames.Button.AddHostname">Ajouter un nom d'hôte</Text>
+  <Text Key="Action.HostNames.Button.DeleteHostname">Supprimer un nom d'hôte</Text>
+  <Text Key="Action.HostNames.Description.VirtualDirectory">Le site actuel est exécuté dans un Virtual Directory</Text>
+  <Text Key="Action.HostNames.Description.ResultingHostname">Le nom d'hôte résultant dirigera vers</Text>
+  
+  <!-- Action - Set Languages-->
+  <Text Key="Action.Language.Title">Choisir la langue</Text>
+  
+  <!-- Action - Move Content -->
+  <Text Key="Action.Move.Title">Déplacer</Text>
+  <Text Key="Action.Move.HeaderTitle">Sélectionnez ci-dessous l'endroit où le document '{Name}' devrait être déplacé</Text>
+
+  <!-- Action - Manage Permissions-->
+  <Text Key="Action.Permissions.Title">Gérer les permissions</Text>
+
+  <!-- Action - Public Access-->
+  <Text Key="Action.PublicAccess.Title">Gérer l'accès public</Text>
+  <Text Key="Action.PublicAccess.Label.MemberGroups">Groupes Membres</Text>
+  <Text Key="Action.PublicAccess.Description.MemberGroups">Choisissez les Groupes Membres qui devraient avoir accès à cette page.</Text>
+  <Text Key="Action.PublicAccess.Label.Available">Disponible</Text>
+  <Text Key="Action.PublicAccess.Label.Selected">Sélectionné</Text>
+  <Text Key="Action.PublicAccess.Title.Select">Sélectionnez les pages de redirection pour le login et en cas d'erreur.</Text>
+  <Text Key="Action.PublicAccess.Label.LoginPage">Page Login</Text>
+  <Text Key="Action.PublicAccess.Description.LoginPage">Choisissez la page qui contient le formulaire de login</Text>
+  <Text Key="Action.PublicAccess.Label.ErrorPage">Page Erreur</Text>
+  <Text Key="Action.PublicAccess.Description.ErrorPage">Choisissez la page à afficher lorsqu'un membre est authentifié, mais n'a pas les permissions suffisantes.</Text>
+
+  <!-- Action - Publish-->
+  <Text Key="Action.Publish.Title">Publier le contenu</Text>
+  <Text Key="Action.Publish.Description.Save">Cliquez sur 'Sauvegarder' pour publier '{Name}' et rendre de ce fait son contenu accessible au public.</Text>
+  <Text Key="Action.Publish.Description.Children">Vous pouvez publier cette page et toutes ses sous-pages en cochant "publier tous les enfants ci-dessous".
+  </Text>
+
+  <!-- Action - Rollback-->
+  <Text Key="Action.Rollback.Title">Revenir en arrière</Text>
+  <Text Key="Action.Rollback.HeaderTitle">Choisissez une version cible à laquelle comparer la version actuelle de '{Name}'</Text>
+  <Text Key="Action.Rollback.Label.Current">Actuelle</Text>
+  <Text Key="Action.Rollback.Label.Created">Créée</Text>
+  <Text Key="Action.Rollback.Label.LastStatus">Dernière modification de statut</Text>
+  <Text Key="Action.Rollback.Label.Target">Cible</Text>
+  <Text Key="Action.Rollback.SelectVersion">Sélectionnez une version...</Text>
+  <Text Key="Action.Rollback.Label.View">Visualisation</Text>
+  <Text Key="Action.Rollback.Label.Diff">Diff</Text>
+  <!-- Action - Sort-->
+  <Text Key="Action.Sort.Title">Trier le contenu</Text>
+  <Text Key="Action.Sort.Table.Name">Nom</Text>
+  <Text Key="Action.Sort.Table.CreationDate">Date de création</Text>
+  <Text Key="Action.Sort.Table.SortOrder">Ordonnancement</Text>
+
+  <!-- Media Editor -->
+  <Text Key="Media.Editor.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  
+  
+  <!-- Language Editor -->
+  <Text Key="Language.Editor.Tab.NewLanguage">Nouvelle Langue</Text>
+  <Text Key="Language.Editor.Label.ISO">Code ISO</Text>
+  <Text Key="Language.Editor.Label.Fallbacks">Suppléantes</Text>
+  <Text Key="Language.Editor.FallbackOrder">Définir l'ordre de suppléance...</Text>
+  
+  <!-- Dictionary Editor -->
+  <Text Key="Dictionary.Editor.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  
+  <!-- Document Type Editor-->
+  <Text Key="DocumentType.Editor.Description.IsAbstract">Définit si un document type est prévu uniquement pour être hérité par d'autres. Si coché, il ne pourra plus être sélectionné directement pour entrer du contenu.</Text>
+  <Text Key="DocumentType.Editor.Title.AddNewProperty">Ajouter une nouvelle propriété</Text>
+  <Text Key="DocumentType.Editor.Button.AddNewProperty">Cliquez ici pour ajouter une nouvelle propriété</Text>
+  <Text Key="DocumentType.Editor.Button.CancelNewProperty">Annuler la création d'une nouvelle propriété</Text>
+  <Text Key="DocumentType.Editor.Title.Tab">Onglet</Text>
+  <Text Key="DocumentType.Editor.NoProperties">Pas de propriété</Text>
+  <Text Key="DocumentType.Editor.Label.Tab">Onglets définis</Text>
+  
+  <!-- Media Type Editor-->
+  
+  <!-- Stylesheet Editor -->
+  <Text Key="Stylesheet.Editor.Title">Editeur de Feuille de Style</Text>
+  
+  <!-- Stylesheet Rule Editor -->
+  <Text Key="StylesheetRule.Editor.Title.Create">Créer une règle</Text>
+  <Text Key="StylesheetRule.Editor.Title.Edit">Modifier une règle</Text>
+  <Text Key="StylesheetRule.Editor.Description.Name">Nom pour identifier la règle dans l'éditeur de texte avancé</Text>
+  <Text Key="StylesheetRule.Editor.Description.Selector">Le sélecteur CSS pour la règle eg: h1, .redHeader, .blueText</Text>
+  <Text Key="StylesheetRule.Editor.Label.Styles">Styles</Text>
+  <Text Key="StylesheetRule.Editor.Label.Preview">Prévisualisation</Text>
+  
+  <!-- Scripts Editor -->
+  <Text Key="Script.Create.Title">Créer un script</Text>
+  <Text Key="Script.Editor.Title">Editeur de Script</Text>
+  
+  <!-- Template Editor -->
+  <Text Key="Template.Editor.Title">Editeur de Modèle</Text>
+  <Text Key="Template.Editor.Title.MasterTemplate">Modèle Maître</Text>
+  
+  <!-- Partial Editor -->
+  <Text Key="Partial.Create.Title">Créer une Partial</Text>
+  <Text Key="Partial.Editor.Title">Editeur de Partial</Text>
+  <Text Key="Partial.Editor.Title.CurrentPath">Chemin actuel</Text>
+  <Text Key="Partial.Editor.Label.CreateFile">Créer un fichier</Text>
+  <Text Key="Partial.Editor.Label.CreateFolder">Créer un dossier</Text>
+  
+  <!-- Datatype editor-->
+  <Text Key="DataType.Create.Title">Créer un nouveau data type</Text>
+  <Text Key="DataType.Editor.Tab.Title">Data type</Text>
+  <Text Key="DataType.Editor.Settings">Configuration</Text>
+  <Text Key="DataType.Editor.DataTypeGUID">Data Type GUID</Text>
+  <Text Key="DataType.Editor.SelectPropEditor">--Sélectionnez l'Editeur de Propriété--</Text>
+  
+  <!-- Packaging Editor -->
+  <Text Key="Packaging.Editor.Title">Répertoire local de packages</Text>
+  <Text Key="Packaging.Editor.Title.Upload">Télécharger le package dans le répertoire local</Text>
+  <Text Key="Packaging.Editor.Labels.FileName">Nom de fichier</Text>
+  <Text Key="Packaging.Editor.Button.Upload">Télécharger</Text>
+  <Text Key="Packaging.Editor.Labels.AutoInstall">Auto-installation du package (Veuillez aussi accepter les termes ci-dessous)</Text>
+  <Text Key="Packaging.Editor.Title.Upload">Télécharger le package dans le répertoire local</Text>
+  <Text Key="Packaging.Editor.Title.Install">Installer un package local</Text>
+  <Text Key="Packaging.Editor.Notice.Install.Title">Installez uniquement des packages provenant de sources que vous connaissez et en qui vous avez confiance!</Text>
+  <Text Key="Packaging.Editor.Notice.Install"><![CDATA[
+          <p>
+              Lorsque vous installez un package Umbraco, vous devriez utiliser les même précautions que lorsque vous installez
+  		  une application sur votre ordinateur.</p>
+          <p>
+              Un package malveillant pourrait endommager votre installation Umbraco tout comme une application 
+			  malveillante peut endommager votre ordinateur.</p>
+          <p>
+              Il est recommandé d'installer autant que possible à partir du répertoire de packages officiel d'Umbraco
+			  ou d'un répertoire personnalisé.</p>
+              
+  ]]>
+  </Text>
+  <Text Key="Packaging.Editor.Labels.Risks">Je comprends les risques de sécurité associés à l'installation d'un package local</Text>
+  <Text Key="Packaging.Editor.InstallPackage">Installer le package</Text>
+  <Text Key="Packaging.Editor.UnInstallPackage">Désinstaller le package</Text>
+  <Text Key="Packaging.Editor.Button.RemoveFromLocal">Supprimer du répertoire local</Text>
+  <Text Key="Packaging.Editor.RecycleApplication.Title">Répertoire local de packages</Text>
+  <Text Key="Packaging.Editor.RecycleApplication.PleaseWait">Veuillez attendre pendant que votre application redémarre</Text>
+  <Text Key="Packaging.Editor.RecycleApplication.WaitingForServer">En attente d'une réponse du serveur...</Text>
+
+  <!-- Macro Editor -->
+  <Text Key="Macro.Create.Title">Créer une nouvelle macro</Text>
+  <Text Key="Macro.Editor.Tab.Props">Propriétés de la Macro</Text>
+  <Text Key="Macro.Editor.Tab.Params">Paramètres de la Macro</Text>
+  <Text Key="Macro.Editor.Validation.MacroItemSelected">Assurez-vous qu'un élément macro est sélectionné pour le type de macro courant</Text>
+  <Text Key="Macro.Editor.Params.Notice">Vous pouvez générer automatiquement les paramètres de la macro en cliquant sur le bouton 'Générer'.
+    L'élément/fichier macro que vous avez sélectionné sera scanné afin de déterminer ses paramètres et de remplir automatiquement leur nom, alias et type de paramètre.</Text>
+  <Text Key="Macro.Editor.Button.Populate">Générer</Text>
+  <Text Key="Macro.Editor.Button.Populate.Title">Générer automatiquement les paramètres de la macro</Text>
+  <Text Key="Macro.Editor.ParamsTable.Show">Montrer</Text>
+  <Text Key="Macro.Editor.ParamsTable.Alias">Alias</Text>
+  <Text Key="Macro.Editor.ParamsTable.Name">Nom</Text>
+  <Text Key="Macro.Editor.ParamsTable.Type">Type</Text>
+  <Text Key="Macro.Editor.Validation.AliasRequired">Le champ Alias est obligatoire.</Text>
+  <Text Key="Macro.Editor.Validation.NameRequired">Le champ Nom est obligatoire.</Text>
+  <Text Key="Macro.Editor.Button.Add">Ajouter un paramètre</Text>
+ 
+  <!-- Macro Partial Editor-->
+  <Text Key="MacroPartial.Create.Title">Créer un nouveau partial</Text>
+  <Text Key="Packaging.Editor.Title">Editeur de Partial</Text>
+  
+  <!-- User Editor -->
+  <Text Key="User.Editor.Tab.NewUser">Nouvel Utilisateur</Text>
+  <Text Key="User.Editor.Tab.Backoffice">Backoffice</Text>
+  <Text Key="User.Editor.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  <Text Key="User.Editor.Label.UserGroups">Groupes Utilisateurs</Text>
+  <Text Key="User.Editor.Label.StartNodeContent">Noeud de base pour le contenu</Text>
+  <Text Key="User.Editor.Label.StartNodeMedia">Noeud de base pour les media</Text>
+  <Text Key="User.Editor.Label.Sections">Sections</Text>
+  
+  <!-- User Group Editor -->
+  <Text Key="UserGroup.Editor.Tab.NewUserGroup">Nouveau Groupe Utilisateurs</Text>
+  <Text Key="UserGroup.Editor.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  <Text Key="UserGroup.Editor.Label.Permissions">Permissions</Text>
+  
+  <!-- Member Editor -->
+  <Text Key="Member.Editor.Tab.NewMember">Nouveau Membre</Text>
+  <Text Key="Member.Editor.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  <Text Key="Member.Editor.Label.MemberGroups">Groupes du Membre</Text>
+  
+  <!-- Member Group Editor -->
+  <Text Key="MemberGroup.Editor.Tab.NewMemberGroup">Nouveau Groupe Membres</Text>
+  <Text Key="MemberGroup.Editor.Tab.UmbracoProperties">Propriétés Umbraco</Text>
+  
+  <!-- Member Type Editor -->
+  
+  
+  <Namespace Name="Umbraco.Cms.Web">
+    
+    <Text Key="CoreEntityModel.PropertyEditorId">Choisissez un property editor</Text>
+    <Text Key="CoreEntityModel.UtcPublished">Statut de publication</Text>
+    
+    <Text Key="ContentEditorModel.DocumentTypeName">Document type</Text>
+    <Text Key="ContentEditorModel.SelectedTemplateId">Modèle</Text>
+    <Text Key="ContentEditorModel.UtcPublishedDate">Statut de publication</Text>
+    <Text Key="ContentEditorModel.UtcPublishScheduled">Publier le</Text>
+    <Text Key="ContentEditorModel.UtcUnpublishScheduled">Supprimer le</Text>
+    <Text Key="ContentEditorModel.DocumentLinks">Liens vers le document</Text>
+    <Text Key="CreateContentModel.SelectedDocumentTypeId">Choisissez le document type</Text>    
+
+    <Text Key="DocumentTypeProperty.DataTypeId">Data Type</Text>
+    <Text Key="DocumentTypeProperty.TabId">Onglet</Text>
+
+    <Text Key="MemberEditorModel.ConfirmPassword">Confirmez le mot de passe</Text>
+    <Text Key="MemberEditorModel.OldPassword">Ancien mot de passe</Text>
+    <Text Key="MemberEditorModel.IsApproved">Login autorisé?</Text>
+    <Text Key="MemberEditorModel.LastLoginDate">Date de dernier login</Text>
+    <Text Key="MemberEditorModel.LastActivityDate">Date de dernière activité</Text>
+    <Text Key="MemberEditorModel.LastPasswordChangeDate">Date de dernier changement de mot de passe</Text>
+
+    <Text Key="UserEditorModel.ConfirmPassword">Confirmez le mot de passe</Text>
+    <Text Key="UserEditorModel.OldPassword">Ancien mot de passe</Text>
+    <Text Key="UserEditorModel.IsApproved">Login autorisé?</Text>
+    <Text Key="UserEditorModel.SessionTimeout">Expiration de la session (min.)</Text>
+    <Text Key="UserEditorModel.LastLoginDate">Date de dernier login</Text>
+    <Text Key="UserEditorModel.LastActivityDate">Date de dernière activité</Text>
+    <Text Key="UserEditorModel.LastPasswordChangeDate">Date de dernier changement de mot de passe</Text>
+    <Text Key="UserEditorModel.StartContentHiveId">Noeud de base pour le contenu</Text>
+    <Text Key="UserEditorModel.StartMediaHiveId">Noeud de base pour les media</Text>
+    <Text Key="UserEditorModel.Applications">Sections</Text>
+    
+    <Text Key="CreateDocumentTypeModel.CreateTemplate">Créer le modèle correspondant</Text>
+    <Text Key="CreateDocumentTypeModel.SelectedDocumentTypeId">Document type maître</Text>
+
+    <Text Key="CreateMacroModel.MacroType">Type de Macro</Text>
+
+    <Text Key="MacroEditorModel.MacroType">Type de Macro</Text>
+    <Text Key="MacroEditorModel.UseInEditor">Utiliser dans l'éditeur</Text>
+    <Text Key="MacroEditorModel.RenderContentInEditor">Générer le contenu dans l'éditeur</Text>
+    <Text Key="MacroEditorModel.CachePeriodSeconds">Période de cache en secondes</Text>
+    <Text Key="MacroEditorModel.CacheByPage">Cacher par page</Text>
+    <Text Key="MacroEditorModel.CachePersonalized">Cache personnalisée</Text>
+
+    <Text Key="HostnamesModel.NewHostname">Ajouter un nom d'hôte</Text>
+    <Text Key="HostnamesModel.AssignedHostnames">Noms d'hôtes assignés</Text>
+
+    <Text Key="AbstractSchemaEditorModel.Name">Nom</Text>
+    <Text Key="AbstractSchemaEditorModel.Alias">Alias</Text>
+    <Text Key="AbstractSchemaEditorModel.Icon">Icone</Text>
+    <Text Key="AbstractSchemaEditorModel.Icon.Description">L'icone à afficher dans l'arbre de contenu.</Text>
+    <Text Key="AbstractSchemaEditorModel.Thumbnail">Miniature</Text>
+    <Text Key="AbstractSchemaEditorModel.Thumbnail.Description">La miniature à afficher dans l'écran 'Créer'.</Text>
+    <Text Key="AbstractSchemaEditorModel.Description">Description</Text>
+    <Text Key="AbstractSchemaEditorModel.Description.Description">Une description à afficher dans l'écran 'Créer'.</Text>
+    <Text Key="AbstractSchemaEditorModel.InheritFrom">Hérite De</Text>
+    <Text Key="AbstractSchemaEditorModel.InheritFrom.Description">Les types parent dont ce type devrait hériter des onglets/propriétés.</Text>
+    <Text Key="AbstractSchemaEditorModel.AllowedChildren">Enfants Autorisés</Text>
+    <Text Key="AbstractSchemaEditorModel.AllowedChildren.Description">Les types qui sont autorisés à être créés sous ce type.</Text>
+    
+    <Text Key="DocumentTypeEditorModel.AllowedTemplates">Modèles Autorisés</Text>
+    <Text Key="DocumentTypeEditorModel.AllowedTemplates.Description">Les modèles qui peuvent être utilisés par ce type.</Text>
+    <Text Key="DocumentTypeEditorModel.DefaultTemplateId">Modèle par défaut</Text>
+    <Text Key="DocumentTypeEditorModel.DefaultTemplateId.Description">Le modèle à utiliser par défaut lorsque l'on crée du contenu de ce type.</Text>
+    
+    <Text Key="MembershipCreateStatus.DuplicateUserName">Le nom d'utilisateur existe déjà. Veuillez entrer un nom d'utilisateur différent.</Text>
+    <Text Key="MembershipCreateStatus.DuplicateEmail">Il existe déjà un nom d'utilisateur associé à cette adresse e-mail. Veuillez entrer une adresse e-mail différente.</Text>
+    <Text Key="MembershipCreateStatus.InvalidPassword">Le mot de passe fourni n'est pas valide. Veuillez introduire un mot de passe valide.</Text>
+    <Text Key="MembershipCreateStatus.InvalidEmail">L'adresse e-mail fournie n'est pas valide. Veuillez vérifier la valeur et essayer à nouveau.</Text>
+    <Text Key="MembershipCreateStatus.InvalidAnswer">La réponse pour la récupération du mot de passe n'est pas valide. Veuillez vérifier la valeur et essayer à nouveau.</Text>
+    <Text Key="MembershipCreateStatus.InvalidQuestion">La question pour la récupération du mot de passe n'est pas valide. Veuillez vérifier la valeur et essayer à nouveau.</Text>
+    <Text Key="MembershipCreateStatus.InvalidUserName">Le nom d'utilisateur fourni n'est pas valide. Veuillez vérifier la valeur et essayer à nouveau.</Text>
+    <Text Key="MembershipCreateStatus.ProviderError">Le service d'authentification a retourné une erreur. Veuillez vérifier votre entrée et essayer à nouveau. Si le problème persiste, veuillez prendre contact avec votre administrateur système.</Text>
+    <Text Key="MembershipCreateStatus.UserRejected">La demande de création d'utilisateur a été annulée. Veuillez vérifier les données entrées et essayer à nouveau. Si le problème persiste, veuillez prendre contact avec votre administrateur système.</Text>
+
+
+  </Namespace>
+
+  <Namespace Name="Umbraco.Cms.Web.PropertyEditors">
+    <Text Key="IsRequired">Obligatoire</Text>
+    <Text Key="RichTextPreValueModel.ShowContextMenu">Afficher le menu de contexte</Text>
+    <Text Key="RichTextPreValueModel.EditorSize">Taille de l'éditeur</Text>
+    <Text Key="RichTextPreValueModel.TinyMceItems">Eléments de texte avancé</Text>
+
+    <Text Key="TextBoxPreValueModel.RegexValidationStatement">Déclaration de validation d'expression régulière</Text>
+   
+    <Text Key="ColorSwatchPickerPreValueModel.Colors">Couleurs</Text>
+    
+    <Text Key="DateTimePickerPreValueModel.ShowTime">Afficher aussi la sélection de l'heure</Text>
+
+    <Text Key="NodeNameEditorModel.UrlName">Nom de l'Url</Text>
+    <Text Key="NodeNameEditorModel.UrlAliases">Alias de l'Url</Text>
+  </Namespace>
+
+</Localizations>

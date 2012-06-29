@@ -1,0 +1,17 @@
+﻿#nodeSelectorPreValues textarea {
+    width: 80%;
+    height: 80px;
+    margin-left: 10px;
+    font-size: 11px;
+    border: none;
+}
+#nodeSelectorPreValues .code {
+    border: dashed 1px #DDD;
+    padding: 5px;
+}
+#nodeSelectorPreValues .code div {        
+    font-size: 11px;
+}   
+#nodePickerPlaceholder .no-tree{
+    font-style: italic;
+}

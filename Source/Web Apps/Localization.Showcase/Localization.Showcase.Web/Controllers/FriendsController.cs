@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Localization.Showcase.Web.Models;
-using RebelCms.Framework.Localization;
-using RebelCms.Framework.Localization.Configuration;
+using Umbraco.Framework.Localization;
+using Umbraco.Framework.Localization.Configuration;
 using System.Threading;
 using System.Globalization;
 

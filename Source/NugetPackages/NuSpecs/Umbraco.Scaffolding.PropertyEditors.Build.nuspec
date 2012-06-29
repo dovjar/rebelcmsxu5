@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Umbraco.Scaffolding.PropertyEditors</id>
+    <version>5.2.0.0</version>
+    <title>Umbraco T4 Scaffolding for PropertyEditors</title>
+    <authors>Umbraco HQ</authors>
+    <owners>Umbraco</owners>
+    <licenseUrl>http://umbraco.codeplex.com/license</licenseUrl>
+    <projectUrl>http://umbraco.com</projectUrl>
+    <iconUrl>http://umbraco.com/media/357769/100px_transparent.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs the Umbraco PropertyEditor T4 Scaffolding and dependencies.</description>
+    <summary>Installs the Umbraco PropertyEditor T4 Scaffolding and dependencies</summary>
+    <language>en-US</language>
+    <tags>umbraco</tags>
+    <dependencies>
+      <dependency id="Umbraco.Cms.Web.PropertyEditors" version="5.2.0-beta" />      
+      <dependency id="T4Scaffolding" version="1.0.5" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="WebMatrix.Data" targetFramework="net40" />
+      <frameworkAssembly assemblyName="WebMatrix.WebData" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.ComponentModel.Composition" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+	    <frameworkAssembly assemblyName="System.Web.Helpers" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Web.Mvc" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Web.WebPages" targetFramework="net40" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="..\..\libraries\Umbraco.CMS.Web.PropertyEditors\CodeTemplates\Scaffolders\**" target="Content\CodeTemplates\Scaffolders" />    	 
+  </files>
+</package>

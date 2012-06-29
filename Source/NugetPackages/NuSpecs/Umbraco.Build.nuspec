@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Umbraco</id>
+    <version>5.2.0.0</version>
+    <title>Umbraco</title>
+    <authors>Umbraco HQ</authors>
+    <owners>Umbraco</owners>
+    <licenseUrl>http://umbraco.codeplex.com/license</licenseUrl>
+    <projectUrl>http://umbraco.com</projectUrl>
+    <iconUrl>http://umbraco.com/media/357769/100px_transparent.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs Umbraco Cms in your Visual Studio MVC3 project. This package contains all files and dependencies needed to setup Umbraco.</description>
+    <summary>Installs Umbraco Cms in your Visual Studio MVC3 project</summary>
+    <tags>umbraco</tags>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="DataAnnotationsExtensions" version="[1.0.2.0]" />
+      <dependency id="DataAnnotationsExtensions.MVC3" version="[1.0.2.0]" />
+      <dependency id="Newtonsoft.Json" version="[4.5.6]" />
+      <dependency id="Nuget.Core" version="[1.5.20902.9026]" />
+      <dependency id="routedebugger" version="[2.0.0.6]" />
+      <dependency id="Microsoft.Web.Infrastructure" version="[1.0.0.0]" />
+      <dependency id="Umbraco.Framework" version="5.2.0-beta" />
+      <dependency id="Umbraco.Framework.Persistence" version="5.2.0-beta" />
+      <dependency id="Umbraco.Hive" version="5.2.0-beta" />
+      <dependency id="Umbraco.Hive.Providers.IO" version="5.2.0-beta" />
+      <dependency id="Umbraco.Framework.Security" version="5.2.0-beta" />
+      <dependency id="Autofac" version="2.5.2.830" />
+      <dependency id="Autofac.Mvc3" version="2.5.2.830" />
+      <dependency id="Lucene.Net" version="2.9.4.1" />
+      <dependency id="ClientDependency" version="1.5.1.0" />
+      <dependency id="ClientDependency-Mvc" version="1.5.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Lucene.dll" target="lib\net40\Umbraco.Lucene.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Castle.Core.dll" target="lib\net40\Castle.Core.dll" />    
+    <file src="..\..\BuildOutput\WebApp\bin\FluentNHibernate.dll" target="lib\net40\FluentNHibernate.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\HibernatingRhinos.Profiler.Appender.v4.0.dll" target="lib\net40\HibernatingRhinos.Profiler.Appender.v4.0.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\HtmlDiff.dll" target="lib\net40\HtmlDiff.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Iesi.Collections.dll" target="lib\net40\Iesi.Collections.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\log4net.dll" target="lib\net40\log4net.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Microsoft.Web.Mvc.dll" target="lib\net40\Microsoft.Web.Mvc.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\NHibernate.ByteCode.Castle.dll" target="lib\net40\NHibernate.ByteCode.Castle.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\NHibernate.Caches.SysCache2.dll" target="lib\net40\NHibernate.Caches.SysCache2.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\NHibernate.dll" target="lib\net40\NHibernate.dll" />
+	<file src="..\..\BuildOutput\WebApp\bin\NHibernate.XmlSerializers.dll" target="lib\net40\NHibernate.XmlSerializers.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\System.Data.SqlServerCe.dll" target="lib\net40\System.Data.SqlServerCe.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Cms.Web.dll" target="lib\net40\Umbraco.Cms.Web.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Cms.Web.EmbeddedViewEngine.dll" target="lib\net40\Umbraco.Cms.Web.EmbeddedViewEngine.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Cms.Web.UI.dll" target="lib\net40\Umbraco.Cms.Web.UI.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Framework.DependencyManagement.Autofac.dll" target="lib\net40\Umbraco.Framework.DependencyManagement.Autofac.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\Umbraco.Framework.Persistence.NHibernate.dll" target="lib\net40\Umbraco.Framework.Persistence.NHibernate.dll" />
+    <file src="..\..\BuildOutput\WebApp\bin\amd64\**" target="Content\bin\amd64" />
+    <file src="..\..\BuildOutput\WebApp\bin\x86\**" target="Content\bin\x86" />
+    <file src="..\..\BuildOutput\WebApp\App_Data\Umbraco\Config\**" target="Content\App_Data\Umbraco\Config" />
+    <file src="..\..\BuildOutput\WebApp\App_Data\Umbraco\HiveConfig\**" target="Content\App_Data\Umbraco\HiveConfig" />
+    <file src="..\..\BuildOutput\WebApp\App_Data\Umbraco\Macros\**" target="Content\App_Data\Umbraco\Macros" />
+    <file src="..\..\BuildOutput\WebApp\Content\**" target="Content\Content" />
+    <file src="..\..\BuildOutput\WebApp\Scripts\**" target="Content\Scripts" />
+    <file src="..\..\BuildOutput\WebApp\Views\**" target="Content\Views" />
+    <file src="..\..\BuildOutput\WebApp\App_Data\**" target="UmbracoFiles\App_Data" />
+    <file src="..\..\BuildOutput\WebApp\App_Plugins\**" target="UmbracoFiles\App_Plugins" />
+    <file src="..\..\BuildOutput\WebApp\Areas\**" target="UmbracoFiles\Areas" />
+    <file src="..\..\BuildOutput\WebApp\Scripts\jQuery\**" target="UmbracoFiles\Scripts\jQuery" />
+    <file src="..\..\BuildOutput\WebApp\Views\Web.config" target="UmbracoFiles\Views\Web.config" />
+    <file src="..\..\BuildOutput\WebApp\Global.asax" target="UmbracoFiles\Global.asax" />
+    <file src="..\..\BuildOutput\WebApp\Web.config" target="UmbracoFiles\Web.config" />
+    <file src="..\..\BuildOutput\NuSpecs\tools\install.ps1" target="tools\install.ps1" />
+    <file src="..\..\BuildOutput\NuSpecs\tools\Readme.txt" target="tools\Readme.txt" />
+  </files>
+</package>

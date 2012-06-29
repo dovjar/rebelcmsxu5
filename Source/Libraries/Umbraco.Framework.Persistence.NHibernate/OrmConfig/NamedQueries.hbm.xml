@@ -1,0 +1,77 @@
+﻿<?xml version="1.0"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <sql-query name="AggregateNodeStatus_All" cacheable="false" read-only="true">
+    <![CDATA[
+  Insert Into AggregateNodeStatus
+    (NodeId, NodeVersionId, StatusDate, StatusTypeId)
+  Select distinct IV.NodeId, IVSL.NodeVersionId, IVSL.[Date], IVSL.NodeVersionStatusTypeId
+  From NodeVersionStatusHistory As IVSL
+    Join (
+        Select iV.NodeId, IVSL1.NodeVersionStatusTypeId, IVSL1.[Date], Max(cast(IVSL1.Id as varbinary(16))) As Id
+        From NodeVersionStatusHistory As IVSL1
+        join NodeVersion iV on iV.Id = IVSL1.NodeVersionId
+          Join (
+              Select iiV.NodeId, IVSL2.NodeVersionStatusTypeId, Max([Date]) As [Date]
+              From NodeVersionStatusHistory As IVSL2
+              join NodeVersion iiV on iiV.Id = IVSL2.NodeVersionId
+              Group By iiV.NodeId, IVSL2.NodeVersionStatusTypeId
+              ) As Z
+            On Z.NodeVersionStatusTypeId = IVSL1.NodeVersionStatusTypeId
+              And Z.[Date] = IVSL1.[Date]
+              and Z.NodeId = iV.NodeId
+        Group By iV.NodeId, IVSL1.NodeVersionStatusTypeId, IVSL1.[Date]
+        ) As MostRecentStatus
+      On cast(MostRecentStatus.Id as uniqueidentifier) = cast(IVSL.Id as uniqueidentifier)
+    Join NodeVersion As IV
+    On IV.Id = IVSL.NodeVersionId
+    
+    /* A note about the casting of Ids - we use max(cast(id as varbinary(36))) simply to select only
+       one row if date collisions exist. The cast back on the join condition isn't necessary in Sql Server
+       but fails silently in SqlLite if we don't have it. Since it doesn't appear to have dramatic performance penalties,
+       I've left it in rather than having a different named query just for SqlLite (and thus only unit tests) */
+    ]]>
+  </sql-query>
+
+  <sql-query name="ClearAggregateNodeStatus_PerNode" cacheable="false" read-only="true">
+    <query-param name="nodeIds" type="Guid[]" />
+    <![CDATA[
+      Delete From AggregateNodeStatus
+      Where NodeId in (:nodeIds)
+    ]]>
+  </sql-query>
+
+  <sql-query name="AggregateNodeStatus_PerNode" cacheable="false" read-only="true">
+    <query-param name="nodeIds" type="Guid[]" />
+    <![CDATA[
+  Insert Into AggregateNodeStatus
+    (NodeId, NodeVersionId, StatusDate, StatusTypeId)
+  Select distinct IV.NodeId, IVSL.NodeVersionId, IVSL.[Date], IVSL.NodeVersionStatusTypeId
+  From NodeVersionStatusHistory As IVSL
+    Join (
+        Select iV.NodeId, IVSL1.NodeVersionStatusTypeId, IVSL1.[Date], Max(cast(IVSL1.Id as varbinary(16))) As Id
+        From NodeVersionStatusHistory As IVSL1
+        join NodeVersion iV on iV.Id = IVSL1.NodeVersionId
+          Join (
+              Select iiV.NodeId, IVSL2.NodeVersionStatusTypeId, Max([Date]) As [Date]
+              From NodeVersionStatusHistory As IVSL2
+              join NodeVersion iiV on iiV.Id = IVSL2.NodeVersionId
+              Group By iiV.NodeId, IVSL2.NodeVersionStatusTypeId
+              ) As Z
+            On Z.NodeVersionStatusTypeId = IVSL1.NodeVersionStatusTypeId
+              And Z.[Date] = IVSL1.[Date]
+              and Z.NodeId = iV.NodeId
+        Group By iV.NodeId, IVSL1.NodeVersionStatusTypeId, IVSL1.[Date]
+        ) As MostRecentStatus
+      On cast(MostRecentStatus.Id as uniqueidentifier) = cast(IVSL.Id as uniqueidentifier)
+    Join NodeVersion As IV
+    On IV.Id = IVSL.NodeVersionId
+    
+    Where IV.NodeId in (:nodeIds)
+    
+    /* A note about the casting of Ids - we use max(cast(id as varbinary(36))) simply to select only
+       one row if date collisions exist. The cast back on the join condition isn't necessary in Sql Server
+       but fails silently in SqlLite if we don't have it. Since it doesn't appear to have dramatic performance penalties,
+       I've left it in rather than having a different named query just for SqlLite (and thus only unit tests) */
+    ]]>
+  </sql-query>
+</hibernate-mapping>

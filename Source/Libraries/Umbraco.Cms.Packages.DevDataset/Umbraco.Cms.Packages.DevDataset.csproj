@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23078C45-56CA-4F7A-99A2-0B2B677A56E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Umbraco.Cms.Packages.DevDataset</RootNamespace>
+    <AssemblyName>Umbraco.Cms.Packages.DevDataset</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNoTests|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugNoTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="DevDataset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Files.Designer.cs">
+      <DependentUpon>Files.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="HttpPostedFileProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Umbraco.CMS.Web\Umbraco.Cms.Web.csproj">
+      <Project>{8F320595-7764-4E31-AEC5-94F1B128EDFE}</Project>
+      <Name>Umbraco.Cms.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Umbraco.Framework.Persistence\Umbraco.Framework.Persistence.csproj">
+      <Project>{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}</Project>
+      <Name>Umbraco.Framework.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Umbraco.Framework.Security\Umbraco.Framework.Security.csproj">
+      <Project>{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}</Project>
+      <Name>Umbraco.Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Umbraco.Framework\Umbraco.Framework.csproj">
+      <Project>{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}</Project>
+      <Name>Umbraco.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Umbraco.Hive\Umbraco.Hive.csproj">
+      <Project>{8E44FCAB-2597-48F9-8F88-984DD47787C5}</Project>
+      <Name>Umbraco.Hive</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Content\Images\umbraco-logo-devstarterkit.png" />
+    <Content Include="Content\Content\Images\umbraco-logo.png" />
+    <Content Include="Content\Scripts\IE8.js" />
+    <Content Include="Content\Content\Styles\Faqs.css" />
+    <Content Include="Content\Content\Styles\ie.css" />
+    <Content Include="Content\Content\Styles\ie6.css" />
+    <Content Include="Content\Content\Styles\main.css" />
+    <Content Include="Content\Content\Styles\reset.css" />
+    <Content Include="icon.png" />
+    <Content Include="Content\Content\Media\546a124b26874d7e83d6627d0dea8d06\01.jpg" />
+    <Content Include="Content\Content\Media\604a01902f0b4d8f8394d5dce824f5b4\02.jpg" />
+    <Content Include="Content\Content\Media\0c8da27f507248689d139dbae431212a\03.jpg" />
+    <Content Include="Content\Content\Media\1f33baf5cb104ad7b8fa538a9a845b84\04.jpg" />
+    <Content Include="Content\Content\Media\8f5068b22af8455e9b9d877c3eb7b40e\05.jpg" />
+    <Content Include="Content\Views\Faq.cshtml" />
+    <Content Include="Content\Views\Homepage.cshtml" />
+    <Content Include="Content\Views\Textpage.cshtml" />
+    <Content Include="Content\Views\_DevDatasetLayout.cshtml" />
+    <None Include="Content\App_Data\Umbraco\Macros\bookList.macro" />
+    <None Include="Content\App_Data\Umbraco\Macros\test.macro" />
+    <None Include="Data\Content\18826911adc5ce96d0df8508b9202e25.json" />
+    <None Include="Data\Content\2384adc14d16a3d866d4797711136515.json" />
+    <None Include="Data\Content\262bc39eaec1d4e3b386a6e6c5e8445c.json" />
+    <None Include="Data\Content\3dbfcbac605d785ded73f21f2b994882.json" />
+    <None Include="Data\Content\648bce6a1023aca834697a38abb00eff.json" />
+    <None Include="Data\Content\725925c2d1851ae9cb64fa7ff8a704a6.json" />
+    <None Include="Data\Content\7a618c172b9c13f22d8f90790fda412a.json" />
+    <None Include="Data\Content\8ae2b26a24d48cfac63fe50a7f827515.json" />
+    <None Include="Data\Content\8e099d5edafe7bb54d4ded8b36fd2263.json" />
+    <None Include="Data\Content\914dcf99817efed7445ed9a67e00f498.json" />
+    <None Include="Data\Content\9ef51b9d341f71d484dd5fed3f57a1a2.json" />
+    <None Include="Data\Content\c4c055285185a608eb5c19fd59ba0056.json" />
+    <None Include="Data\Content\d08a497129644f5e894ad37283bcdc3c.json" />
+    <None Include="Data\Content\df63fffab4beaa9b54521fd50927459e.json" />
+    <None Include="Data\Content\dfdd8349bc994c393723b840803ce4c7.json" />
+    <None Include="Data\Content\e0f2ab38e6183115e68ade3ccc99c63e.json" />
+    <None Include="Data\Content\e9179a66f5122212e3797358f91b83a8.json" />
+    <None Include="Data\Content\eb58d9edc6d969d9090fd8b920bdebff.json" />
+    <None Include="Data\Content\f7f5afb64d3c060649b722b5e97d4eff.json" />
+    <None Include="Data\Content\fa1ded2ba74028eba25392e16fa45b2a.json" />
+    <None Include="Data\Content\fb41ccd3d964debd05e39c157eab0c7b.json" />
+    <None Include="Data\Content\Relations\2384adc14d16a3d866d4797711136515-648bce6a1023aca834697a38abb00eff.json" />
+    <None Include="Data\Content\Relations\2384adc14d16a3d866d4797711136515-7a618c172b9c13f22d8f90790fda412a.json" />
+    <None Include="Data\Content\Relations\2384adc14d16a3d866d4797711136515-8e099d5edafe7bb54d4ded8b36fd2263.json" />
+    <None Include="Data\Content\Relations\2384adc14d16a3d866d4797711136515-df63fffab4beaa9b54521fd50927459e.json" />
+    <None Include="Data\Content\Relations\2384adc14d16a3d866d4797711136515-f7f5afb64d3c060649b722b5e97d4eff.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-2384adc14d16a3d866d4797711136515.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-8ae2b26a24d48cfac63fe50a7f827515.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-914dcf99817efed7445ed9a67e00f498.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-9ef51b9d341f71d484dd5fed3f57a1a2.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-d08a497129644f5e894ad37283bcdc3c.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-dfdd8349bc994c393723b840803ce4c7.json" />
+    <None Include="Data\Content\Relations\3dbfcbac605d785ded73f21f2b994882-e9179a66f5122212e3797358f91b83a8.json" />
+    <None Include="Data\Content\Relations\9ef51b9d341f71d484dd5fed3f57a1a2-18826911adc5ce96d0df8508b9202e25.json" />
+    <None Include="Data\Content\Relations\9ef51b9d341f71d484dd5fed3f57a1a2-262bc39eaec1d4e3b386a6e6c5e8445c.json" />
+    <None Include="Data\Content\Relations\9ef51b9d341f71d484dd5fed3f57a1a2-c4c055285185a608eb5c19fd59ba0056.json" />
+    <None Include="Data\Content\Relations\c4c055285185a608eb5c19fd59ba0056-725925c2d1851ae9cb64fa7ff8a704a6.json" />
+    <None Include="Data\Content\Relations\c4c055285185a608eb5c19fd59ba0056-e0f2ab38e6183115e68ade3ccc99c63e.json" />
+    <None Include="Data\Content\Relations\c4c055285185a608eb5c19fd59ba0056-eb58d9edc6d969d9090fd8b920bdebff.json" />
+    <None Include="Data\Content\Relations\c4c055285185a608eb5c19fd59ba0056-fa1ded2ba74028eba25392e16fa45b2a.json" />
+    <None Include="Data\Content\Relations\c4c055285185a608eb5c19fd59ba0056-fb41ccd3d964debd05e39c157eab0c7b.json" />
+    <None Include="Data\Content\Relations\d3737cd0afe0a480a3f52f9112046c98-3dbfcbac605d785ded73f21f2b994882.json" />
+    <None Include="Data\DocumentTypes\BookPage.json" />
+    <None Include="Data\DocumentTypes\BooksPage.json" />
+    <None Include="Data\DocumentTypes\contentPage.json" />
+    <None Include="Data\DocumentTypes\Faq.json" />
+    <None Include="Data\DocumentTypes\FaqCategory.json" />
+    <None Include="Data\DocumentTypes\FaqQuestion.json" />
+    <None Include="Data\DocumentTypes\homePage.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-30c9dabf8d25974c1260886690f8280e.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-6474c7e530d8b190c398d30e0fb47284.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-79c2c12876cf1a966041ae3a75a199e6.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-8f94194708ed581c59b5f1c5377ff57a.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-9d8dfa2eb84671eb8a8dcb660cf97404.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-b33703f3accf72567b2b094a399a31b8.json" />
+    <None Include="Data\DocumentTypes\Relations\f2d040f7589eeead34787bddd9a9c912-c7bdf0875976c808d435677037163f66.json" />
+    <None Include="NuSpecs\DevDataset.1.0.Build.nuspec" />
+    <None Include="NuSpecs\DevDataset.1.0.Debug.nuspec" />
+    <None Include="NuSpecs\DevDataset.1.0.Release.nuspec" />
+    <Content Include="Content\Views\MacroPartials\TestPartialViewMacro.cshtml" />
+    <Content Include="Content\Views\BooksPage.cshtml" />
+    <Content Include="Content\Views\BookPage.cshtml" />
+    <None Include="Content\Views\Partials\ChildContent.cshtml" />
+    <None Include="Content\Views\Partials\Navigation.cshtml" />
+    <None Include="Content\Views\MacroPartials\BookList.cshtml">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Files.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Files.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="umbraco.config">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM ===========================================
+REM Remove trailing slash off ProjectDir as NUget doesn't like it
+REM ===========================================
+
+SET targetDir=$(ProjectDir)
+SET endChar=%25targetDir:~-1%25
+IF %25endChar%25 == \ SET targetDir=%25targetDir:~0,-1%25
+
+echo targetDir = "%25targetDir%25"
+
+REM ===========================================
+REM Detect actual OutputDir (Differs in VS and Build script)
+REM ===========================================
+
+SET webProjectOutputDir=$(WebProjectOutputDir)
+IF "%25webProjectOutputDir%25" == "" SET webProjectOutputDir=$(SolutionDir)Web Apps\Umbraco.Cms.Web.UI\
+
+echo webProjectOutputDir = "%25webProjectOutputDir%25"
+
+REM ===========================================
+REM Decide which NUget template to use based on build config
+REM ===========================================
+
+SET config=$(ConfigurationName)
+SET template=Debug
+SET configChar=%25config:~0,1%25
+IF %25configChar%25 == R SET template=Release
+IF NOT "$(WebProjectOutputDir)" == "" SET template=Build
+
+echo template = "%25template%25"
+
+REM ===========================================
+REM Create NUget package
+REM ===========================================
+
+"$(SolutionDir)..\Resources\Build\Nuget\Nuget.exe" pack "%25targetDir%25\Nuspecs\DevDataset.1.0.%25template%25.nuspec" -BasePath "%25targetDir%25" -OutputDirectory "%25webProjectOutputDir%25App_Data\Umbraco\LocalPackages"
+
+
+
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

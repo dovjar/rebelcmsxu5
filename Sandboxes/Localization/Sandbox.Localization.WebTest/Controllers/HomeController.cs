@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using RebelCms.Foundation.Web.Localization.JavaScript;
+using Umbraco.Foundation.Web.Localization.JavaScript;
 using System.IO;
 
 namespace Sandbox.Localization.WebTest.Controllers
