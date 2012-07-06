@@ -1,7 +1,7 @@
 RebelCMS - a fork of the discontinued Umbraco 5
 ===============
 
-Issues have moved here [YOUTRUCK](http://youtrack.rebelcms.com)
+Issues have moved here [YOUTRACK](http://youtrack.rebelcms.com)
 ===============
 
 Why?
