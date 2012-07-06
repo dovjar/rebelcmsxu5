@@ -1,9 +1,6 @@
 RebelCMS - a fork of the discontinued Umbraco 5
 ===============
 
-Issues have moved here [YOUTRACK](http://youtrack.rebelcms.com)
-===============
-
 Why?
 ===============
 We believe that Umbraco 5 can be rescued. Lots of good code and functionality can be salvaged.
