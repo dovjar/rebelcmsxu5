@@ -1,0 +1,3 @@
+[submodule "Source/_powerup"]
+	path = Source/_powerup
+	url = https://github.com/AffinityID/PowerUp.git

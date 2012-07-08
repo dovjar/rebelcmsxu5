@@ -1,0 +1,9 @@
+default
+	siteid						auto
+
+local
+	deployment.root				d:\sites
+	website.name				rebelcms.local
+	website.domain	 			rebelcms.local
+	website.source.folder		web
+	web.servers					localhost

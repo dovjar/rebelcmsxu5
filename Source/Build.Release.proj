@@ -38,7 +38,59 @@
 		<RemoveDir Directories="$(BuildFolder)" />
 		<Message Text="Finished deleting $(BuildFolder)" Importance="high" />
 	</Target>
-	<Target Name="ZipWebApp" DependsOnTargets="OffsetTimestamps">
+	<Target Name="PreparePowerUp" DependsOnTargets="OffsetTimestamps">
+		<ItemGroup>
+			<Tokens Include="packagename">
+				<ReplacementValue>WebApp</ReplacementValue>
+			</Tokens>
+		</ItemGroup>
+
+		<Copy
+            SourceFiles="_powerup\build\msbuild\templates\package.id"
+            DestinationFiles="$(BuildFolder)\templatepackage.id"/>
+	  
+		<TemplateFile Template="$(BuildFolder)\templatepackage.id" OutputFileName="package.id" Tokens="@(Tokens)" />
+	    
+		<ItemGroup>
+			<PowerUp Include="_powerup\deploy\**\*.*" />
+			<ProfileFiles Include="_profilefiles\**\*.*" />
+			<Templates Include="_templates\**\*.*" />
+			<FilesForRoot Include="$(BuildFolder)\_powerup\deploy\core\deploy.bat" />
+		</ItemGroup>
+
+		<Delete
+            Files="$(BuildFolder)\templatepackage.id" />
+			
+		<Delete
+            Files="$(BuildFolder)\deploy.bat" />
+			
+		<ItemGroup>
+			<_FilesToDelete Include="$(BuildFolder)\WebApp\Web.Template.*.*"/>
+		</ItemGroup>
+
+		<Delete Files="@(_FilesToDelete)"/>
+	
+		<Copy
+            SourceFiles="@(PowerUp)"
+            DestinationFolder="$(BuildFolder)_powerup\deploy\%(RecursiveDir)"/>
+
+		<Copy
+            SourceFiles="@(ProfileFiles)"
+            DestinationFolder="$(BuildFolder)\_profilefiles\%(RecursiveDir)"/>
+
+		<Copy
+            SourceFiles="@(Templates)"
+            DestinationFolder="$(BuildFolder)\_templates\%(RecursiveDir)"/>
+
+		<Copy
+            SourceFiles="deploy.ps1;settings.txt;servers.txt"
+            DestinationFolder="$(BuildFolder)\"/>
+
+		<Move
+			SourceFiles="@(FilesForRoot)"
+			DestinationFolder="$(BuildFolder)\"/>
+	</Target>
+	<Target Name="ZipWebApp" DependsOnTargets="PreparePowerUp">
 		<Time Format="yyyyMMdd-HHmm">
 		  <Output TaskParameter="FormattedTime" PropertyName="buildDate" />
 		</Time>
