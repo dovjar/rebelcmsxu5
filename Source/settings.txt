@@ -7,3 +7,10 @@ local
 	website.domain	 			rebelcms.local
 	website.source.folder		web
 	web.servers					localhost
+
+live
+	deployment.root				d:\sites
+	website.name				test.rebelcms.com
+	website.domain	 			test.rebelcms.com
+	website.source.folder		web
+	web.servers					localhost
