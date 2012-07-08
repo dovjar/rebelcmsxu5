@@ -8,9 +8,23 @@ local
 	website.source.folder		web
 	web.servers					localhost
 
-live
+test
 	deployment.root				d:\sites
 	website.name				test.rebelcms.com
 	website.domain	 			test.rebelcms.com
+	website.source.folder		web
+	web.servers					localhost
+	
+uat
+	deployment.root				d:\sites
+	website.name				uat.rebelcms.com
+	website.domain	 			uat.rebelcms.com
+	website.source.folder		web
+	web.servers					localhost
+	
+beta
+	deployment.root				d:\sites
+	website.name				beta.rebelcms.com
+	website.domain	 			beta.rebelcms.com
 	website.source.folder		web
 	web.servers					localhost
