@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Rebel.Framework.Security</id>
+    <version>5.2.0.0</version>
+    <title>Rebel Framework Security</title>
+    <authors>Rebel HQ</authors>
+    <owners>Rebel</owners>
+    <licenseUrl>http://rebel.codeplex.com/license</licenseUrl>
+    <projectUrl>http://rebel.com</projectUrl>
+    <iconUrl>http://rebel.com/media/357769/100px_transparent.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs the Rebel Framework Security assemblies and dependencies</description>
+    <summary>Installs the Rebel Framework Security assemblies and dependencies</summary>
+    <language>en-US</language>
+    <tags>rebel</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="[4.5.6]" />
+      <dependency id="Rebel.Framework" version="5.2.0-beta" />
+      <dependency id="Rebel.Framework.Persistence" version="5.2.0-beta" />
+      <dependency id="Rebel.Hive" version="5.2.0-beta" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\BuildOutput\WebApp\bin\Rebel.Framework.Security.dll" target="lib\net40\Rebel.Framework.Security.dll" />
+  </files>
+</package>

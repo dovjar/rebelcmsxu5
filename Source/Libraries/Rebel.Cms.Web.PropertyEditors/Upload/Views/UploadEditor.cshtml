@@ -1,0 +1,47 @@
+﻿@inherits System.Web.Mvc.WebViewPage<Rebel.Cms.Web.PropertyEditors.Upload.UploadEditorModel>
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Microsoft.Web.Mvc;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using Rebel.Cms;
+@using Rebel.Cms.Web;
+@using Rebel.Cms.Web.Editors;
+@using Rebel.Cms.Web.PropertyEditors.Upload;
+@using Rebel.Framework;
+
+@if (!Model.Value.IsNullValueOrEmpty())
+{
+    <div class="upload-details">
+        <a href="@Url.GetMediaUrl(Model.ContentId, Model.PropertyAlias)" target="_blank">
+            @if (Model.File.IsImage())
+            {
+                <img src="@Url.GetMediaUrl(Model.ContentId, Model.PropertyAlias, 100)" />
+            }
+            else
+            {
+                if (Model.File != null)
+                {
+                    @Model.File.Name
+                }
+                else
+                {
+                    <text>Cannot find filename</text>
+                }
+            }
+        </a> 
+        <br />
+        @Html.CheckBoxFor(x => Model.RemoveFile)
+        @Html.LabelFor(x => Model.RemoveFile)
+    </div>
+    
+    
+}
+<div class="upload-input">
+    <input id="@Html.IdFor(x => Model.NewFile)" name="@Html.IdFor(x => Model.NewFile)" type="file" />
+</div>
+

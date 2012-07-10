@@ -9,49 +9,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Cms.Development.vsmdi = Cms.Development.vsmdi
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.UI", "Web Apps\Umbraco.Cms.Web.UI\Umbraco.Cms.Web.UI.csproj", "{D17A89C5-54ED-49A4-B07A-14CBFA47E793}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.UI", "Web Apps\Rebel.Cms.Web.UI\Rebel.Cms.Web.UI.csproj", "{D17A89C5-54ED-49A4-B07A-14CBFA47E793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web", "Libraries\Umbraco.Cms.Web\Umbraco.Cms.Web.csproj", "{8F320595-7764-4E31-AEC5-94F1B128EDFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web", "Libraries\Rebel.Cms.Web\Rebel.Cms.Web.csproj", "{8F320595-7764-4E31-AEC5-94F1B128EDFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.Cms", "Testing\Umbraco.Cms.Tests\Umbraco.Tests.Cms.csproj", "{4D3D2E41-6977-47B8-BD87-45ABFB7F60D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Tests.Cms", "Testing\Rebel.Cms.Tests\Rebel.Tests.Cms.csproj", "{4D3D2E41-6977-47B8-BD87-45ABFB7F60D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.PropertyEditors", "Libraries\Umbraco.Cms.Web.PropertyEditors\Umbraco.Cms.Web.PropertyEditors.csproj", "{6E2C1BD8-6652-41B0-9174-D85484AFE703}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.PropertyEditors", "Libraries\Rebel.Cms.Web.PropertyEditors\Rebel.Cms.Web.PropertyEditors.csproj", "{6E2C1BD8-6652-41B0-9174-D85484AFE703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.Extensions", "Testing\Umbraco.TestExtensions\Umbraco.Tests.Extensions.csproj", "{26A70ABF-3C79-463A-A950-DDF5400DFC2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Tests.Extensions", "Testing\Rebel.TestExtensions\Rebel.Tests.Extensions.csproj", "{26A70ABF-3C79-463A-A950-DDF5400DFC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.Trees", "Libraries\Umbraco.Cms.Web.Trees\Umbraco.Cms.Web.Trees.csproj", "{8D847BD0-44E2-428F-9872-3DAF6000EA5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.Trees", "Libraries\Rebel.Cms.Web.Trees\Rebel.Cms.Web.Trees.csproj", "{8D847BD0-44E2-428F-9872-3DAF6000EA5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Tests", "_Tests", "{3F29D317-91A3-491F-963E-4C5E349DD237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.EmbeddedViewEngine", "Libraries\Umbraco.Cms.Web.EmbeddedViewEngine\Umbraco.Cms.Web.EmbeddedViewEngine.csproj", "{8F9C0D9E-CD6A-4CA6-84FC-CEE7474988FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.EmbeddedViewEngine", "Libraries\Rebel.Cms.Web.EmbeddedViewEngine\Rebel.Cms.Web.EmbeddedViewEngine.csproj", "{8F9C0D9E-CD6A-4CA6-84FC-CEE7474988FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.Editors", "Libraries\Umbraco.Cms.Web.Editors\Umbraco.Cms.Web.Editors.csproj", "{340DCA60-FC0D-40E6-AE88-4788D62A0F01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.Editors", "Libraries\Rebel.Cms.Web.Editors\Rebel.Cms.Web.Editors.csproj", "{340DCA60-FC0D-40E6-AE88-4788D62A0F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework", "Libraries\Umbraco.Framework\Umbraco.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework", "Libraries\Rebel.Framework\Rebel.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{AA754A15-A257-499C-AE34-3101B8C9120A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.DependencyManagement.Autofac", "Libraries\Umbraco.Framework.DependencyManagement.Autofac\Umbraco.Framework.DependencyManagement.Autofac.csproj", "{5420EF90-DA2F-405F-A0EC-18FBED4B4438}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.DependencyManagement.Autofac", "Libraries\Rebel.Framework.DependencyManagement.Autofac\Rebel.Framework.DependencyManagement.Autofac.csproj", "{5420EF90-DA2F-405F-A0EC-18FBED4B4438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Persistence", "Libraries\Umbraco.Framework.Persistence\Umbraco.Framework.Persistence.csproj", "{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Persistence", "Libraries\Rebel.Framework.Persistence\Rebel.Framework.Persistence.csproj", "{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Persistence.NHibernate", "Libraries\Umbraco.Framework.Persistence.NHibernate\Umbraco.Framework.Persistence.NHibernate.csproj", "{E119331A-011C-4EDB-8840-A52AFCDF5CD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Persistence.NHibernate", "Libraries\Rebel.Framework.Persistence.NHibernate\Rebel.Framework.Persistence.NHibernate.csproj", "{E119331A-011C-4EDB-8840-A52AFCDF5CD1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{B7CBF667-299F-431C-9083-33AF96439F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Packages.SystemInfo", "Libraries\Umbraco.Cms.Packages.SystemInfo\Umbraco.Cms.Packages.SystemInfo.csproj", "{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Packages.SystemInfo", "Libraries\Rebel.Cms.Packages.SystemInfo\Rebel.Cms.Packages.SystemInfo.csproj", "{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.Tasks", "Libraries\Umbraco.Cms.Web.Tasks\Umbraco.Cms.Web.Tasks.csproj", "{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.Tasks", "Libraries\Rebel.Cms.Web.Tasks\Rebel.Cms.Web.Tasks.csproj", "{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Packages.DevDataset", "Libraries\Umbraco.Cms.Packages.DevDataset\Umbraco.Cms.Packages.DevDataset.csproj", "{23078C45-56CA-4F7A-99A2-0B2B677A56E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Packages.DevDataset", "Libraries\Rebel.Cms.Packages.DevDataset\Rebel.Cms.Packages.DevDataset.csproj", "{23078C45-56CA-4F7A-99A2-0B2B677A56E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hive", "Hive", "{AE7D03D3-6DCF-41F1-915D-8183C8336383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Hive", "Libraries\Umbraco.Hive\Umbraco.Hive.csproj", "{8E44FCAB-2597-48F9-8F88-984DD47787C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Hive", "Libraries\Rebel.Hive\Rebel.Hive.csproj", "{8E44FCAB-2597-48F9-8F88-984DD47787C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Hive.Providers.IO", "Libraries\Umbraco.Hive.Providers.IO\Umbraco.Hive.Providers.IO.csproj", "{F685A510-6DF8-4138-9759-B09CF3CF29D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Hive.Providers.IO", "Libraries\Rebel.Hive.Providers.IO\Rebel.Hive.Providers.IO.csproj", "{F685A510-6DF8-4138-9759-B09CF3CF29D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.CoreAndFramework", "Testing\Umbraco.Tests.CoreAndFramework\Umbraco.Tests.CoreAndFramework.csproj", "{9D4DA63D-8664-4602-918E-2F75B94F1BBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Tests.CoreAndFramework", "Testing\Rebel.Tests.CoreAndFramework\Rebel.Tests.CoreAndFramework.csproj", "{9D4DA63D-8664-4602-918E-2F75B94F1BBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A3F21908-ACBB-4278-9761-F4FA31659BB0}"
 	ProjectSection(SolutionItems) = preProject
@@ -63,30 +63,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A3F21908
 		Build.Release.proj = Build.Release.proj
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.MSBuild.Tasks", "Libraries\Umbraco.MSBuild.Tasks\Umbraco.MSBuild.Tasks.csproj", "{68AC9679-2439-4DA9-86BC-E36579594EFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.MSBuild.Tasks", "Libraries\Rebel.MSBuild.Tasks\Rebel.MSBuild.Tasks.csproj", "{68AC9679-2439-4DA9-86BC-E36579594EFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Security", "Libraries\Umbraco.Framework.Security\Umbraco.Framework.Security.csproj", "{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Security", "Libraries\Rebel.Framework.Security\Rebel.Framework.Security.csproj", "{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Testing", "Libraries\Umbraco.Framework.Testing\Umbraco.Framework.Testing.csproj", "{C2E8F096-9E07-429F-B22D-D13D63154893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Testing", "Libraries\Rebel.Framework.Testing\Rebel.Framework.Testing.csproj", "{C2E8F096-9E07-429F-B22D-D13D63154893}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Web.ParameterEditors", "Libraries\Umbraco.Cms.Web.ParameterEditors\Umbraco.Cms.Web.ParameterEditors.csproj", "{D06CBA96-0135-4132-8CA1-4E171766FAB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.ParameterEditors", "Libraries\Rebel.Cms.Web.ParameterEditors\Rebel.Cms.Web.ParameterEditors.csproj", "{D06CBA96-0135-4132-8CA1-4E171766FAB9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspecs", "Nuspecs", "{F5779C65-2375-4495-90A9-48342556B583}"
 	ProjectSection(SolutionItems) = preProject
-		NugetPackages\NuSpecs\Umbraco.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Cms.Web.Editors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.Editors.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Cms.Web.ParameterEditors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.ParameterEditors.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Cms.Web.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.PropertyEditors.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Cms.Web.Trees.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Cms.Web.Trees.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Framework.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Framework.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Framework.Persistence.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Framework.Persistence.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Framework.Security.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Framework.Security.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Hive.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Hive.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Hive.Providers.IO.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Hive.Providers.IO.Build.nuspec
-		NugetPackages\NuSpecs\Umbraco.Scaffolding.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Umbraco.Scaffolding.PropertyEditors.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Build.nuspec = NugetPackages\NuSpecs\Rebel.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Cms.Web.Editors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.Editors.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Cms.Web.ParameterEditors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.ParameterEditors.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Cms.Web.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.PropertyEditors.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Cms.Web.Trees.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.Trees.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Framework.Build.nuspec = NugetPackages\NuSpecs\Rebel.Framework.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Framework.Persistence.Build.nuspec = NugetPackages\NuSpecs\Rebel.Framework.Persistence.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Framework.Security.Build.nuspec = NugetPackages\NuSpecs\Rebel.Framework.Security.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Hive.Build.nuspec = NugetPackages\NuSpecs\Rebel.Hive.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Hive.Providers.IO.Build.nuspec = NugetPackages\NuSpecs\Rebel.Hive.Providers.IO.Build.nuspec
+		NugetPackages\NuSpecs\Rebel.Scaffolding.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Scaffolding.PropertyEditors.Build.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Lucene", "Libraries\Umbraco.Lucene\Umbraco.Lucene.csproj", "{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Lucene", "Libraries\Rebel.Lucene\Rebel.Lucene.csproj", "{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{24859A7C-0E76-49E6-B702-88C85B8064C5}"
 	ProjectSection(SolutionItems) = preProject
@@ -95,7 +95,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{24859A7C
 		NugetPackages\NuSpecs\tools\Readme.txt = NugetPackages\NuSpecs\tools\Readme.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cms.Packages.SnapshotDashboard", "Libraries\Umbraco.Cms.Packages.SnapshotDashboard\Umbraco.Cms.Packages.SnapshotDashboard.csproj", "{81115A66-62A7-4358-8F71-0EE3521BCE07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Packages.SnapshotDashboard", "Libraries\Rebel.Cms.Packages.SnapshotDashboard\Rebel.Cms.Packages.SnapshotDashboard.csproj", "{81115A66-62A7-4358-8F71-0EE3521BCE07}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

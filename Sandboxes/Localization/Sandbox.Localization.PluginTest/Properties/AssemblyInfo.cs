@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Umbraco.Foundation.Localization.Configuration;
+using Rebel.Foundation.Localization.Configuration;
 using Sandbox.Localization.PluginTest;
 using System.Web.UI;
 

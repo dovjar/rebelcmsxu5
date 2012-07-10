@@ -1,0 +1,19 @@
+﻿@model dynamic
+
+@using Rebel.Cms.Web.Mvc.Metadata;
+
+@* Render out each property of the pre-value model that has been attributed with the AllowDocumentTypePropertyOverrideAttribute *@
+
+@foreach (var prop in ViewData.ModelMetadata.Properties
+    .Where(pm => pm.ShowForEdit 
+        && !ViewData.TemplateInfo.Visited(pm)
+        && pm.AdditionalValues.ContainsKey(RebelMetadataAdditionalInfo.AllowDocumentTypePropertyOverride.ToString())
+        && (bool)pm.AdditionalValues[RebelMetadataAdditionalInfo.AllowDocumentTypePropertyOverride.ToString()] == true))
+{
+    
+    //uses the existing template hint if set, otherwise checks for an embedded view
+    var template = string.IsNullOrEmpty(prop.TemplateHint) ? Html.GetEmbeddedViewPath((object)prop.Model) : prop.TemplateHint;
+    
+    @Html.UmbEditor(prop.PropertyName, template, null)
+     
+}

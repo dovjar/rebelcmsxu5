@@ -1,0 +1,22 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cshtml" #>
+
+@inherits System.Web.Mvc.WebViewPage<<#= Model.Namespace #>.<#= Model.PropertyEditorAlias #>.<#= Model.PropertyEditorAlias #>PreValueModel>
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Microsoft.Web.Mvc;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using Rebel.Cms;
+@using Rebel.Cms.Web;
+@using Rebel.Cms.Web.Editors;
+@using Rebel.Cms.Web.PropertyEditors.Upload;
+@using Rebel.Framework;
+
+<h5>Generated output for a scaffolded Pre-Value editor:</h5>
+
+@Html.EditorFor(x => Model.Value)

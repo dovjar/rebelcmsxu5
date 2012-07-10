@@ -1,0 +1,42 @@
+﻿@using System.Reflection
+@using Rebel.Cms.Web;
+@using Rebel.Framework.Localization;
+
+<div id="header" class="clearfix">
+    <div class="right">
+        @using (Html.BeginForm("Logout", "Default", FormMethod.Post))
+        {
+            <button class="logout">
+                <span>@("UI.Button.Logout".Localize())</span>
+            </button>
+        }
+        @*<button class="help">
+            <span>
+                Help</span>
+        </button>
+        *@
+        <button class="about">
+            <span>@("UI.Button.About".Localize())</span>
+        </button>
+    </div>
+    <div class="left">        
+       @* <button class="create">
+            <span>
+                Create</span>
+        </button>*@
+        @Html.Partial("SearchPartial", new Rebel.Cms.Web.Model.BackOffice.SearchModel())
+    </div>
+</div>
+
+<div style="display: none;">
+    <div id="about">
+        <img src="@Url.Content("~/Areas/Rebel/Content/Images/login-header.png")" alt="Rebel 5" />
+        <p>@RebelWebApplication.ProductVersionInfo (Assembly version: @RebelWebApplication.ProductVersion)</p>
+        <p>Copyright &copy; 2001 - @DateTime.Today.Year Rebel / Niels Hartvig</p>
+        <p>Developed by the <a href="http://our.rebel.org/wiki/about/core-team?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">Rebel Core Team</a></p>
+        <p>Rebel is licensed under the <a href="http://rebel.com/products/license?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">open source license MIT</a></p>
+        <p>Visit <a href="http://rebel.com/?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">rebel.com</a> for more information.</p>
+        <p><a href="http://www.famfamfam.com/lab/icons/silk/" target="_blank">Silk icons</a> by <a href="http://www.famfamfam.com" target="_blank">FamFamFam</a></p>
+        <p><br />Dedicated to Gry, August, Villum and Oliver!</p>
+    </div>
+</div>

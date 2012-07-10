@@ -1,0 +1,14 @@
+﻿@inherits RenderViewPage
+@using System.Web.Mvc.Html;
+@using Rebel.Cms.Web;
+@using Rebel.Framework;
+@{
+    Layout = "_DevDatasetLayout.cshtml";
+    ViewBag.Title = CurrentPage.Name;
+}
+@section PageTitle
+{
+    @CurrentPage.Name
+}
+
+@Rebel.RenderMacro("bookList")

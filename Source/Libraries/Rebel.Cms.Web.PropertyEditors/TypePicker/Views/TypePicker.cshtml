@@ -1,0 +1,15 @@
+﻿@inherits WebViewPage<Rebel.Cms.Web.PropertyEditors.TypePicker.TypePickerEditorModel>
+              
+@using Rebel.Cms.Web;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Rebel.Cms.Web.Trees;
+@using Rebel.Framework;
+ 
+@Html.DropDownListFor(x => Model.Value, Model.AvailableTypes, "Please Select")

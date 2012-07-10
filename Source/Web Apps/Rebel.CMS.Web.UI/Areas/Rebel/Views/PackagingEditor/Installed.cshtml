@@ -1,0 +1,38 @@
+﻿@model Rebel.Cms.Web.Packaging.PackageLog
+@{
+    Layout = "../Shared/_layout.cshtml";
+}
+
+<div id="editor" class="panel">
+    <div class="boxhead">
+        <h2>Installed</h2>
+    </div>
+    <div class="boxbody">   
+        <div class="padded-content scrolling-content">
+            <h2>Package installed</h2>
+            <div class="property-pane">
+                The package <strong>@Model.Title @Model.Version</strong> was successfully installed.<br />
+                <br />
+                Please find below a summary of files / data installed by this package.<br />
+                <br />
+                @foreach(var entry in Model.LogEntries)
+                {
+                    <text>&bull;</text> @(entry.Message) <text> - (@(entry.Success ? "Installed Successfully" : "Failed to Install"))</text><br />
+                }
+                <br />
+                <br />
+                You can uninstall this package at any time from the <strong>Local packages</strong> option of the <strong>Packages</strong> tree in the <strong>Developer</strong> section.             
+            </div>
+            <h2>What now?</h2>
+            <div class="property-pane">
+                &bull; <a href="@Url.Action("LocalRepository")">Return to local packages</a><br />
+                &bull; <a href="@Model.ProjectUrl">View package website</a>
+            </div>
+        </div>
+    </div>
+    <div class="boxfooter">
+        <div class="statusBar">
+            <h5></h5>
+        </div>
+    </div>
+</div>

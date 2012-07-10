@@ -113,13 +113,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Libraries\Umbraco.Foundation.Web\Umbraco.Foundation.Web.csproj">
+    <ProjectReference Include="..\..\..\Source\Libraries\Rebel.Foundation.Web\Rebel.Foundation.Web.csproj">
       <Project>{EF7C0FFD-1343-4BA6-BDA0-59AD3B33EDC3}</Project>
-      <Name>Umbraco.Foundation.Localization.Web</Name>
+      <Name>Rebel.Foundation.Localization.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\Libraries\Umbraco.Foundation\Umbraco.Foundation.csproj">
+    <ProjectReference Include="..\..\..\Source\Libraries\Rebel.Foundation\Rebel.Foundation.csproj">
       <Project>{9298A244-72D2-48C4-905D-FE84161589A7}</Project>
-      <Name>Umbraco.Foundation</Name>
+      <Name>Rebel.Foundation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sandbox.Localization.PluginTest\Sandbox.Localization.PluginTest.csproj">
       <Project>{6A576C4D-3C34-4B73-9ECF-F25BB23CB84A}</Project>

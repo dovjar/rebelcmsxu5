@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-using Umbraco.Framework.Localization.Web.Mvc;
+using Rebel.Framework.Localization.Web.Mvc;
 
 namespace Localization.Showcase.Web.Models
 {

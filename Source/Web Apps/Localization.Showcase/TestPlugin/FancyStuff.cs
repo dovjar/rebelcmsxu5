@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Umbraco.Framework.Localization.Configuration;
-using Umbraco.Framework.Localization.Web.Mvc;
+using Rebel.Framework.Localization.Configuration;
+using Rebel.Framework.Localization.Web.Mvc;
 
 namespace TestPlugin
 {

@@ -1,0 +1,1179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <GenerateResourceNeverLockTypeAssemblies>true</GenerateResourceNeverLockTypeAssemblies>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D17A89C5-54ED-49A4-B07A-14CBFA47E793}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rebel.Cms.Web.UI</RootNamespace>
+    <AssemblyName>Rebel.Cms.Web.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNoTests|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientDependency.Core">
+      <HintPath>..\..\packages\ClientDependency.1.5.1.0\lib\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc">
+      <HintPath>..\..\packages\ClientDependency-Mvc.1.5.1.0\lib\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DataAnnotationsExtensions.1.0.2.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlDiff">
+      <HintPath>..\..\..\Resources\References\HtmlDiff\HtmlDiff.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Resources\References\log4net\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\..\..\Resources\References\Microsoft.Web.Mvc\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.5.20902.9026, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NuGet.Core.1.5.20902.9026\lib\net40-Client\NuGet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RouteDebugger">
+      <HintPath>..\..\packages\routedebugger.2.0.0.6\lib\net40\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Content Include="App_Data\Rebel\Stubs\ScriptEditor\Clean.js" />
+    <Content Include="App_Data\Rebel\Stubs\ScriptEditor\CleanAnonymousClosure.js" />
+    <Content Include="App_Data\Rebel\Stubs\StylesheetEditor\Clean.css" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\cog.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\cross.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\error.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\help.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\icon.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\run.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\throbber.gif" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\tick.png" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Scripts\uGoLive.js" />
+    <Content Include="App_Plugins\Packages\uGoLive\Content\Styles\uGoLive.css" />
+    <Content Include="App_Plugins\Packages\uGoLive\lib\Our.Rebel.uGoLive.Checks.dll" />
+    <Content Include="App_Plugins\Packages\uGoLive\lib\Our.Rebel.uGoLive.dll" />
+    <Content Include="Areas\Install\Content\Images\btn-cancel.png" />
+    <Content Include="Areas\Install\Content\Images\btn-login.png" />
+    <Content Include="Areas\Rebel\Content\Images\browse.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\dictionary.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\house.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\images.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\layout.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\layout_content.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\layout_header.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\magnifier.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_add.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_attach.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_code.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_copy.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_delete.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_edit.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_error.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_excel.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_find.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_gear.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_go.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_green.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_key.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_lightning.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_link.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_paintbrush.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_paste.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_red.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_refresh.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_save.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_add.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_code.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_error.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_get.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_stack.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_text.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\sitemap.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\sitemap_blue.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\sitemap_color.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\zoom.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\doc_with_image.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\home.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\image1.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\image2.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\member_group.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\search.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\sitemap1.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\sitemap2.png" />
+    <Content Include="Areas\Rebel\Content\Images\membersearch.png" />
+    <Content Include="Areas\Rebel\Content\Images\na-checkbox.png" />
+    <Content Include="Areas\Rebel\Content\Images\partial.gif" />
+    <Content Include="Areas\Rebel\Content\Images\preview.gif" />
+    <Content Include="Areas\Rebel\Content\Images\rebelSplash.png" />
+    <Content Include="Areas\Rebel\Modules\MSDropDown\dd.css" />
+    <Content Include="Areas\Rebel\Modules\MSDropDown\dd_arrow.gif" />
+    <Content Include="Areas\Rebel\Modules\MSDropDown\jquery.dd.js" />
+    <Content Include="Areas\Rebel\Modules\MSDropDown\uncompressed.jquery.dd.js" />
+    <Content Include="Areas\Rebel\Scripts\KnockoutJs\knockout-2.0.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\PackageEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\MemberSearchEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\LanguageDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\PublicAccessDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\MemberEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\InsertPartialEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\PartialsEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\InsertMacroEditor\InsertMacro.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\InsertMacroEditor\SetParameters.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\InsertMacroEditor\SelectMacro.js" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Rebel\HiveConfig\empty.txt" />
+    <Content Include="App_Data\Rebel\LocalizationEntries.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Rebel\LocalPackages\empty.txt" />
+    <Content Include="App_Data\Rebel\Macros\empty.txt" />
+    <Content Include="Areas\Install\Content\Images\btn-skip.png" />
+    <Content Include="Areas\Install\Content\Images\devdataset.png" />
+    <Content Include="Areas\Install\Content\Images\package.png" />
+    <Content Include="Areas\Install\Content\Images\package_preview.png" />
+    <Content Include="Areas\Install\Scripts\jquery.cycle.all.js" />
+    <Content Include="Areas\Install\Scripts\jquery.simplelightbox.js" />
+    <Content Include="Areas\Install\Scripts\jquery.zrssfeed.min.js" />
+    <Content Include="Areas\Rebel\Content\Images\arrow-left.gif" />
+    <Content Include="Areas\Rebel\Content\Images\arrow-right.gif" />
+    <Content Include="Areas\Rebel\Content\Images\bullet_error.png" />
+    <Content Include="Areas\Rebel\Content\Images\clipboard.png" />
+    <Content Include="Areas\Rebel\Content\Images\field.gif" />
+    <Content Include="Areas\Rebel\Content\Images\list-item-orange.gif" />
+    <Content Include="Areas\Rebel\Content\Images\login-header.png" />
+    <Content Include="Areas\Rebel\Content\Images\macro.gif" />
+    <Content Include="Areas\Rebel\Content\Images\renderSection.gif" />
+    <Content Include="Areas\Rebel\Content\Images\section.gif" />
+    <Content Include="Areas\Rebel\Content\Images\seperator.gif" />
+    <Content Include="Areas\Rebel\Content\Styles\Buttons.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Error.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Dashboard.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Editor.css">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Content\Styles\ericmeyer.reset.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Exception.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Login.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Messaging.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Site.css" />
+    <Content Include="Areas\Rebel\Content\Styles\Validation.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\python\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\python\LICENSE.txt" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\python\python.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\ruby\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\ruby\ruby.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\xmlpure\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\xmlpure\xmlpure.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\runmode.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\theme\rebel.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\theme\default.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\theme\elegant.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\theme\neat.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\theme\night.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autolink\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\lists\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\moxieplayer.swf" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebelmacro\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebelmedia\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebelsave\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\flash.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\icons.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\iframe.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\quicktime.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\realmedia.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\shockwave.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\trans.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\video.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\shortcuts.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\default\ui.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\icons.gif" />
+    <Content Include="Areas\Rebel\Modules\Tree\ApplicationPersistence.js" />
+    <Content Include="Areas\Rebel\Modules\Tree\TreeSyncManager.js" />
+    <Content Include="Areas\Rebel\Modules\zClip\jquery.zclip.js" />
+    <Content Include="Areas\Rebel\Modules\zClip\jquery.zclip.min.js" />
+    <Content Include="Areas\Rebel\Modules\zClip\ZeroClipboard.swf" />
+    <Content Include="Areas\Rebel\Modules\zClip\ZeroClipboard10.swf" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.form.js" />
+    <Content Include="Areas\Rebel\Scripts\KnockoutJs\knockout.extensions.js" />
+    <Content Include="Areas\Rebel\Scripts\Modernizr\modernizr.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\ContentEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\ImplementSectionEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\DefineSectionEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\Dialogs\InsertFieldEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\TemplateEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\LanguageEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\RollbackDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\PermissionsDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\HostnameDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\CreateFileDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\DataTypeEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\DefaultDashboard.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\DocTypeInfo.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\BaseDocumentTypeEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\DocumentTypeEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\MacroEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\MoveCopyDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\PublishDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\ScriptEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\SearchBox.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\SearchDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\SortDialog.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\UserEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\UserGroupEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Base2\base2.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\BaseViewModel.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\HiveId.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\HierarchicalCheckBoxList.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\HiveIdClipboard.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\PermissionsGrid.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\TreePicker.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\UIElements\ButtonUIElement.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\UIElements\SelectListUIElement.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\UIElements\SeperatorUIElement.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\UIElement.js" />
+    <Content Include="Areas\Rebel\Scripts\WebToolkit\webtoolkit.md5.js" />
+    <Content Include="App_Plugins\Core\Scripts\Dashboards.js" />
+    <Content Include="Content\Styles\RTE.css" />
+    <Content Include="README - Upgrade - 5.1 to 5.2.txt" />
+    <Content Include="Scripts\jQuery\jquery.js" />
+    <Content Include="Scripts\jQuery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.min.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Areas\Install\Content\Images\bg-bhuiness-cl.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-bhuiness-cr.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-bhuiness.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-blog-cl.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-blog-cr.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-blog-repeat.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-blog.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-drop-b.png" />
+    <Content Include="Areas\Install\Content\Images\bg-drop-c.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-drop-t.png" />
+    <Content Include="Areas\Install\Content\Images\bg-header.png" />
+    <Content Include="Areas\Install\Content\Images\bg-img-ie.png" />
+    <Content Include="Areas\Install\Content\Images\bg-img.png" />
+    <Content Include="Areas\Install\Content\Images\bg-inp-big.png" />
+    <Content Include="Areas\Install\Content\Images\bg-inp-error.png" />
+    <Content Include="Areas\Install\Content\Images\bg-inp.png" />
+    <Content Include="Areas\Install\Content\Images\bg-lightbox-b.png" />
+    <Content Include="Areas\Install\Content\Images\bg-lightbox-t.png" />
+    <Content Include="Areas\Install\Content\Images\bg-normal-cl.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-normal-cr.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-normal-repeat.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-normal.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-paging-h.png" />
+    <Content Include="Areas\Install\Content\Images\bg-paging.png" />
+    <Content Include="Areas\Install\Content\Images\bg-personal-cl.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-personal-cr.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-personal-repeat.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-personal.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-simple-cl.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-simple-cr.gif" />
+    <Content Include="Areas\Install\Content\Images\bg-simple-repeat.jpg" />
+    <Content Include="Areas\Install\Content\Images\bg-simple.jpg" />
+    <Content Include="Areas\Install\Content\Images\btn-accept.png" />
+    <Content Include="Areas\Install\Content\Images\btn-back.png" />
+    <Content Include="Areas\Install\Content\Images\btn-blog.png" />
+    <Content Include="Areas\Install\Content\Images\btn-buisness-repeat.png" />
+    <Content Include="Areas\Install\Content\Images\btn-buisness.png" />
+    <Content Include="Areas\Install\Content\Images\btn-close.png" />
+    <Content Include="Areas\Install\Content\Images\btn-confirm.png" />
+    <Content Include="Areas\Install\Content\Images\btn-continue.png" />
+    <Content Include="Areas\Install\Content\Images\btn-create-hover.png" />
+    <Content Include="Areas\Install\Content\Images\btn-create.png" />
+    <Content Include="Areas\Install\Content\Images\btn-get.png" />
+    <Content Include="Areas\Install\Content\Images\btn-install-gal.png" />
+    <Content Include="Areas\Install\Content\Images\btn-install-hover.png" />
+    <Content Include="Areas\Install\Content\Images\btn-install.png" />
+    <Content Include="Areas\Install\Content\Images\btn-next.png" />
+    <Content Include="Areas\Install\Content\Images\btn-no-thanks.png" />
+    <Content Include="Areas\Install\Content\Images\btn-no.png" />
+    <Content Include="Areas\Install\Content\Images\btn-personal.png" />
+    <Content Include="Areas\Install\Content\Images\btn-prev.png" />
+    <Content Include="Areas\Install\Content\Images\btn-preview-web.png" />
+    <Content Include="Areas\Install\Content\Images\btn-preview.png" />
+    <Content Include="Areas\Install\Content\Images\btn-set.png" />
+    <Content Include="Areas\Install\Content\Images\btn-simple.png" />
+    <Content Include="Areas\Install\Content\Images\btn-yes.png" />
+    <Content Include="Areas\Install\Content\Images\bul1.png" />
+    <Content Include="Areas\Install\Content\Images\bul2.gif" />
+    <Content Include="Areas\Install\Content\Images\bul3.png" />
+    <Content Include="Areas\Install\Content\Images\bul4.gif" />
+    <Content Include="Areas\Install\Content\Images\ico-invalidaing.png" />
+    <Content Include="Areas\Install\Content\Images\ico-validaing.png" />
+    <Content Include="Areas\Install\Content\Images\img01.jpg" />
+    <Content Include="Areas\Install\Content\Images\img02.jpg" />
+    <Content Include="Areas\Install\Content\Images\img03.jpg" />
+    <Content Include="Areas\Install\Content\Images\img04.jpg" />
+    <Content Include="Areas\Install\Content\Images\img05.jpg" />
+    <Content Include="Areas\Install\Content\Images\img06.jpg" />
+    <Content Include="Areas\Install\Content\Images\img07.jpg" />
+    <Content Include="Areas\Install\Content\Images\img08.jpg" />
+    <Content Include="Areas\Install\Content\Images\img09.jpg" />
+    <Content Include="Areas\Install\Content\Images\img10.jpg" />
+    <Content Include="Areas\Install\Content\Images\img11.jpg" />
+    <Content Include="Areas\Install\Content\Images\loader.gif" />
+    <Content Include="Areas\Install\Content\Images\logo.gif" />
+    <Content Include="Areas\Install\Content\Images\none.gif" />
+    <Content Include="Areas\Install\Content\Images\pbar-ani.gif" />
+    <Content Include="Areas\Install\Content\Images\pbar.gif" />
+    <Content Include="Areas\Install\Content\Images\select-button.png" />
+    <Content Include="Areas\Install\Content\Images\select-center.png" />
+    <Content Include="Areas\Install\Content\Images\select-left-2.png" />
+    <Content Include="Areas\Install\Content\Images\select-left.png" />
+    <Content Include="Areas\Install\Content\Images\sep1.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Areas\Install\Content\Images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Areas\Install\Content\Images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Install\Content\Images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Areas\Install\Content\Images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Areas\Install\Content\Images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Areas\Install\Content\Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Areas\Install\Content\Styles\all.css" />
+    <Content Include="Areas\Install\Content\Styles\form.css" />
+    <Content Include="Areas\Install\Content\Styles\jquery-ui-1.8.6.custom.css" />
+    <Content Include="Areas\Install\Content\Styles\lt7.css" />
+    <Content Include="Areas\Install\Content\Styles\reset.css" />
+    <Content Include="Areas\Install\Scripts\InstallerUtility.js" />
+    <Content Include="Areas\Install\Scripts\ie-png.js" />
+    <Content Include="Areas\Install\Scripts\jquery.1.4.4.js" />
+    <Content Include="Areas\Install\Scripts\Installer.js" />
+    <Content Include="Areas\Install\Scripts\jquery.ui.selectmenu.js" />
+    <Content Include="Areas\Install\Scripts\jquery.passwordstrength.js" />
+    <Content Include="Areas\Rebel\Content\Images\about.png" />
+    <Content Include="Areas\Rebel\Content\Images\app-install.png" />
+    <Content Include="Areas\Rebel\Content\Images\app-remove.png" />
+    <Content Include="Areas\Rebel\Content\Images\AppIcons\system-info.png" />
+    <Content Include="Areas\Rebel\Content\Images\AppIcons\tray-sprites.png" />
+    <Content Include="Areas\Rebel\Content\Images\big-add.png" />
+    <Content Include="Areas\Rebel\Content\Images\close.png" />
+    <Content Include="Areas\Rebel\Content\Images\create.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\doc.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\doc2.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\doc3.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\doc4.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\doc5.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\image.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\developer.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\doc.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\folder.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\folder_media.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\member.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\members.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\template.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\xml.png" />
+    <Content Include="Areas\Rebel\Content\Images\gradient-bg.png" />
+    <Content Include="Areas\Rebel\Content\Images\help.png" />
+    <Content Include="Areas\Rebel\Content\Images\login-bg.png" />
+    <Content Include="Areas\Rebel\Content\Images\logout.png" />
+    <Content Include="Areas\Rebel\Content\Images\progressbar.gif" />
+    <Content Include="Areas\Rebel\Content\Images\property-background.gif" />
+    <Content Include="Areas\Rebel\Content\Images\publish.gif" />
+    <Content Include="Areas\Rebel\Content\Images\save.gif" />
+    <Content Include="Areas\Rebel\Content\Images\topGradient.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\bin.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\bin_empty.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\package.png" />
+    <Content Include="Areas\Rebel\Content\Images\rebelFavicon.ico" />
+    <Content Include="Areas\Rebel\Content\Images\collapse.png" />
+    <Content Include="Areas\Rebel\Content\Images\delete.png" />
+    <Content Include="Areas\Rebel\Content\Images\expand.png" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\codemirror.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\codemirror.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\css\css.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\css\css.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\css\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\diff\diff.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\diff\diff.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\diff\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\htmlmixed\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\javascript\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\javascript\javascript.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\javascript\javascript.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\xml\index.html" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\xml\xml.css" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\mode\xml\xml.js" />
+    <Content Include="Areas\Rebel\Modules\CodeMirror\overlay.js" />
+    <Content Include="Areas\Rebel\Modules\Notifications\images\error.png" />
+    <Content Include="Areas\Rebel\Modules\Notifications\images\info.png" />
+    <Content Include="Areas\Rebel\Modules\Notifications\images\success.png" />
+    <Content Include="Areas\Rebel\Modules\Notifications\images\warning.png" />
+    <Content Include="Areas\Rebel\Modules\Notifications\Notifications.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\alert.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\button.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\buttons.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\close.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\confirm.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\corners.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\horizontal.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\img\vertical.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\rebel\window.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebelanchor\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebelcharmap\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebellink\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\rebelstyles\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\dialog.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\buttons.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\items.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\menu_arrow.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\menu_check.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\progress.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\img\tabs.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\skins\rebel\ui.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\tiny_mce_popup.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.watermark.min.js" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\v4\jquery-ui-rebel-v4.css" />
+    <Content Include="Areas\Rebel\Content\Images\AppIcons\tray-sprites.css" />
+    <Content Include="Areas\Rebel\Modules\CollapsePanel\CollapsePanel.css" />
+    <Content Include="Areas\Rebel\Modules\CollapsePanel\CollapsePanel.js" />
+    <Content Include="Areas\Rebel\Modules\CollapsePanel\Images\background.gif" />
+    <Content Include="Areas\Rebel\Modules\DateTimePicker\datetimepicker.css" />
+    <Content Include="Areas\Rebel\Modules\DateTimePicker\images\calSprite.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\v4\images\ui-icons_666666_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\v4\images\ui-icons_999999_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\DateTimePicker\jquery-ui-timepicker-addon.js" />
+    <Content Include="Areas\Rebel\Modules\DateTimePicker\RebelDateTimePicker.js" />
+    <Content Include="Areas\Rebel\Modules\Modal\Images\modal-gradient.gif" />
+    <Content Include="Areas\Rebel\Modules\Modal\Images\overlay-background.gif" />
+    <Content Include="Areas\Rebel\Modules\Modal\jqDnR.js" />
+    <Content Include="Areas\Rebel\Modules\Modal\jqModal.css" />
+    <Content Include="Areas\Rebel\Modules\Modal\jqModal.js" />
+    <Content Include="Areas\Rebel\Modules\Panel\images\panel_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\Panel\images\panel_boxfooter_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\Panel\images\panel_boxfooter_statusBar_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\Panel\images\panel_boxfooter_statusBar_h2_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\Panel\images\panel_boxhead_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\Panel\images\panel_boxhead_h2_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\Panel\style.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\jquery.tinymce.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\langs\en.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\license.txt" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advhr\css\advhr.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advhr\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advhr\js\rule.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advhr\rule.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\css\advimage.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\image.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\img\sample.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\js\image.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlink\css\advlink.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlink\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlink\js\advlink.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlink\link.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlist\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autosave\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\autosave\langs\en.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\directionality\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\emotions.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\js\emotions.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\dialog.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\img\example.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\js\dialog.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\langs\en.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\example\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullpage\fullpage.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\iespell\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\inlinepopups\template.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\layer\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\css\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\css\media.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\flash.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\flv_player.swf" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\quicktime.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\realmedia.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\shockwave.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\trans.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\img\windowsmedia.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\js\embed.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\js\media.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\media\media.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\pagebreak\css\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\pagebreak\img\pagebreak.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\pagebreak\img\trans.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\js\pastetext.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\js\pasteword.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\pastetext.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\paste\pasteword.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\preview\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\preview\example.html" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\preview\jscripts\embed.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\preview\preview.html" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\print\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\print\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\save\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\save\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\spellchecker\css\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\style\css\props.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\style\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\style\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\style\js\props.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\style\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\style\props.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\cell.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\css\cell.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\css\row.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\css\table.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\js\cell.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\js\merge_cells.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\js\row.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\js\table.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\merge_cells.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\row.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\table\table.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\blank.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\css\template.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\js\template.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\template\template.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\about.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\anchor.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\charmap.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\color_picker.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\editor_template.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\editor_template_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\image.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\about.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\anchor.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\charmap.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\color_picker.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\image.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\link.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\js\source_editor.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\langs\en.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\link.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\advanced\source_editor.htm" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\editor_template.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\editor_template_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\img\icons.gif" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\langs\en.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\skins\default\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\skins\default\ui.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\tiny_mce.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\tiny_mce_src.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\utils\editable_selects.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\utils\form_utils.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\utils\mctabs.js" />
+    <Content Include="Areas\Rebel\Modules\TinyMCE\utils\validate.js" />
+    <Content Include="Areas\Rebel\Modules\Tree\MenuItems.js" />
+    <Content Include="Areas\Rebel\Modules\Tree\NodeFormatter.js" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\Arrows.png" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\ContextMenuBg.gif" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\d.gif" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\d.png" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\MenuIcons.css" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\MenuSprites.png" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\OverlayNewVersion.png" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\OverlayProtect.gif" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\root.png" />
+    <Content Include="Areas\Rebel\Modules\Tree\themes\rebel\style.css" />
+    <Content Include="Areas\Rebel\Content\Images\throbber.gif" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\TreeSprites.css" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\TreeSprites.png" />
+    <Content Include="Areas\Rebel\Modules\Tree\RebelContextMenu.js" />
+    <Content Include="Areas\Rebel\Modules\Tree\RebelTree.js" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\background.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\bg.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\footer_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\footer_statusBar_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\footer_statusBar_h2_bg.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\left_both.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\Images\right_both.gif" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\RebelTabs.css" />
+    <Content Include="Areas\Rebel\Modules\RebelTabs\RebelTabs.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.tmpl.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\Extensions.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\Validation.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery-ui-1.8.7.custom.min.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.bbq.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.cookies.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.hotkeys.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.jstree.js" />
+    <Content Include="Areas\Rebel\Content\Images\rebel-logo.png" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.validate.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.validate.min.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.validate.unobtrusive.js" />
+    <Content Include="Areas\Rebel\Scripts\jQuery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Areas\Rebel\Scripts\Microsoft\MicrosoftAjax.debug.js" />
+    <Content Include="Areas\Rebel\Scripts\Microsoft\MicrosoftAjax.js" />
+    <Content Include="Areas\Rebel\Scripts\Microsoft\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Areas\Rebel\Scripts\Microsoft\MicrosoftMvcAjax.js" />
+    <Content Include="Areas\Rebel\Scripts\Microsoft\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Areas\Rebel\Scripts\Microsoft\MicrosoftMvcValidation.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\ClientApiManager.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\HistoryManager.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\NamespaceManager.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.PropertyEditors\PropertyEditor.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.PropertyEditors\PropertyEditorContext.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.PropertyEditors\PropertyEditorManager.js" />
+    <Content Include="Areas\Rebel\Modules\Notifications\NotificationManager.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\QueryStrings.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\WindowManager.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\EditorBar.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\UiElementFactory.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.UI\UiPanel.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\RebelApplication.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.System\RebelUtils.js" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Areas\Rebel\Modules\jQueryUI\ui-lightness\jquery-ui-1.8.7.custom.css" />
+    <Content Include="Content\Images\rebel-logo.png" />
+    <Content Include="Content\Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\MacroPartials\empty.txt" />
+    <Content Include="Views\Partials\empty.txt" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Rebel\Dashboards\empty.txt" />
+    <Content Include="Areas\Rebel\Views\MediaTypeEditor\EditorTemplates\CreateContentModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Test.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\InsufficientPermissions.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Rollback.cshtml" />
+    <Content Include="Areas\Rebel\Views\LanguageEditor\Edit.cshtml" />
+    <Content Include="App_Data\Rebel\Config\rebel.cms.languages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Views\TemplateEditor\EditorTemplates\CreateFileModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\PartialsEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\PartialsEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\MacroEditor\EditorTemplates\CreateMacroModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\TabListPartial.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\EditorTemplates\TabListItem.cshtml" />
+    <Content Include="Areas\Rebel\Views\ImplementSectionEditor\Index.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\PartialsEditor\CleanPartialView.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\TemplateEditor\Clean.cshtml" />
+    <Content Include="Areas\Rebel\Views\DictionaryEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\DictionaryEditor\EditorTemplates\CreateContentModel.cshtml" />
+    <Content Include="Areas\Install\Views\Install\Error.cshtml" />
+    <Content Include="Areas\Rebel\Views\InsertFieldEditor\Index.cshtml" />
+    <Content Include="Areas\Rebel\Views\InsertMacroEditor\Index.cshtml" />
+    <Content Include="Areas\Rebel\Views\DefineSectionEditor\Index.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_ModalLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\InsertMacroEditor\SetParameters.cshtml" />
+    <Content Include="Areas\Rebel\Views\InsertMacroEditor\InsertMacro.cshtml" />
+    <Content Include="Areas\Rebel\Views\MemberEditor\Edit.cshtml" />
+    <Content Include="Views\Home\_Layout.cshtml" />
+    <Content Include="Areas\Rebel\Views\MemberGroupEditor\Edit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Views\PartialsEditor\EditorTemplates\CreateFileModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\MacroPartialsEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\MacroPartialsEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\MacroPartialsEditor\EditorTemplates\CreateFileModel.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\CleanPartialViewMacro.cshtml" />
+    <Content Include="Areas\Rebel\Views\InsertPartialEditor\Index.cshtml" />
+    <Content Include="Areas\Install\Views\Install\CreateUser.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\LoginOverlaySuccess.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Language.cshtml" />
+    <Content Include="Areas\Rebel\Views\MemberTypeEditor\EditorTemplates\CreateContentModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\MemberTypeEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\UserEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\PublicAccess.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListAncestorsFromCurrentPage.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildMediaItemsFromMediaFolder.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesFromChangeableSource.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesFromCurrentPage.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesFromCurrentPageByDoctype.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesFromSiteRoot.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesOrderedByDate.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesOrderedByName.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListChildPagesOrderedByProperty.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\ListDescendantsFromCurrentPage.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\SiteMap.cshtml" />
+    <Content Include="App_Data\Rebel\Stubs\MacroPartialsEditor\TwitterFeed.cshtml" />
+    <Content Include="App_Data\Rebel\Config\rebel.framework.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Plugins\Packages\uGoLive\uGoLive.nuspec" />
+    <Content Include="App_Plugins\Packages\uGoLive\Views\Partials\Checklist.cshtml" />
+    <Content Include="App_Plugins\Packages\uGoLive\Views\Partial\Checklist.cshtml" />
+    <Content Include="App_Plugins\Packages\uGoLive\Web.config" />
+    <Content Include="Areas\Rebel\Views\PackagingEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\HierarchicalCheckBoxList.cshtml" />
+    <Content Include="Areas\Rebel\Views\PackagingEditor\Installed.cshtml" />
+    <Content Include="Areas\Rebel\Views\PackagingEditor\Uninstalled.cshtml" />
+    <Content Include="Areas\Rebel\Views\MemberEditor\CreateNew.cshtml" />
+    <Content Include="App_Data\Rebel\Config\rebel.security.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Views\MemberEditor\Search.cshtml" />
+    <Content Include="Views\Partials\EditorTemplates\LoginFormTemplate.cshtml" />
+    <Content Include="Views\Partials\EditorTemplates\RegisterFormTemplate.cshtml" />
+    <Content Include="Views\Partials\LoginPartial.cshtml" />
+    <Content Include="Views\Partials\RegisterPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.Template.JupiterTemp.Debug.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Template.ShandemVaio.Debug.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Template.slacebox.Debug.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Template.MBP-WIN.Debug.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Template.JupiterTemp.Release.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Template.Debug.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Template.DebugNoTests.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Template.Release.config">
+      <DependentUpon>Web.Template.config</DependentUpon>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Content\Styles\Packaging.css" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\AppRestarter.js" />
+    <Content Include="Areas\Rebel\Scripts\Rebel.Editors\PackagingInstaller.js" />
+    <Content Include="Areas\Install\Views\Upgrade\Index.cshtml" />
+    <Content Include="Areas\Install\Views\Upgrade\Success.cshtml" />
+    <Content Include="Views\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Plugins\Core\lib\" />
+    <Folder Include="App_Plugins\Core\Views\PropertyEditors\" />
+    <Folder Include="Areas\Rebel\Modules\DocTypeInfo\" />
+    <Folder Include="Areas\Rebel\Modules\TinyMCE\plugins\autosave\images\" />
+    <Folder Include="Areas\Rebel\Modules\TinyMCE\plugins\spellchecker\classes\utils\" />
+    <Folder Include="Areas\Rebel\Modules\TinyMCE\plugins\spellchecker\includes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Rebel\Views\Web.config" />
+    <Content Include="Areas\Rebel\Views\Default\Index.cshtml" />
+    <Content Include="App_Data\Rebel\Config\rebel.cms.applications.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Rebel\Config\ClientDependency.config" />
+    <Content Include="App_Data\Rebel\Config\rebel.cms.system.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Views\Default\CtxMenuDefPartial.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\CheckBoxList.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\EditorTemplates\DocumentTypeProperty.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\EditorTemplates\DocumentTypeProperties.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\PropertiesTabPartial.cshtml" />
+    <Content Include="App_Data\Rebel\Config\log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\ContentProperty.cshtml" />
+    <Content Include="Areas\Rebel\Views\DataTypeEditor\EditorTemplates\PreValueModel.cshtml" />
+    <Content Include="Areas\Install\Views\Install\Index.cshtml" />
+    <Content Include="Areas\Install\Views\Web.config" />
+    <Content Include="Areas\Install\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Install\Views\Shared\_Layout.cshtml" />
+    <Content Include="App_Data\Rebel\Config\rebel.cms.trees.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Install\Views\Install\License.cshtml" />
+    <Content Include="Areas\Install\Views\Install\Database.cshtml" />
+    <Content Include="Areas\Install\Views\Install\_RestartAppLayout.cshtml" />
+    <Content Include="Areas\Install\Views\Install\StarterKit.cshtml" />
+    <Content Include="Areas\Install\Views\Install\Finish.cshtml" />
+    <Content Include="App_Data\Rebel\Config\rebel.cms.dashboards.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Rebel\Config\rebel.hive.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Data\Rebel\LocalPackages\DevDataset.1.0.nupkg" />
+    <Content Include="Areas\Install\Views\Install\DatabaseInstall.cshtml" />
+    <Content Include="Areas\Install\Views\Install\PostStarterKitInstall.cshtml" />
+    <Content Include="Areas\Rebel\Content\Images\logo-small.png" />
+    <None Include="Areas\Rebel\Modules\CodeMirror\mode\ruby\LICENSE" />
+    <None Include="Areas\Rebel\Modules\DateTimePicker\README" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\EditorTemplates\PublicationStatus.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\EditorTemplates\DocumentLinks.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\DocumentTypeDropDown.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\EditorTemplates\PreValueOverrideProperties.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Move.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\MoveCopyLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Copy.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Sort.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Publish.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\Login.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\SearchPartial.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\HeaderPartial.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\Search.cshtml" />
+    <Content Include="Areas\Rebel\Views\ScriptEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_CreateNewLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\DocumentTypeEditor\EditorTemplates\CreateDocumentTypeModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\DataTypeEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_TabbedEditorLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\Dashboard.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\DataTypeEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\DateTimePicker.cshtml" />
+    <Content Include="Areas\Rebel\Views\DataTypeEditor\EditorTemplates\PropertyEditorDropDown.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_DialogLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\EnumDropDownList.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_EditorLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\Object.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\CoreEntityModel.cshtml" />
+    <Content Include="Areas\Rebel\Views\Default\TrayPartial.cshtml" />
+    <Content Include="Areas\Rebel\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\Exception.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\TreePickerPartial.cshtml" />
+    <Content Include="Web.Template.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Rebel\Views\TemplateEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\StylesheetEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\PackagingEditor\LocalRepository.cshtml" />
+    <Content Include="Areas\Rebel\Views\PackagingEditor\RecycleApplication.cshtml" />
+    <Content Include="Areas\Rebel\Views\UserEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_ContentEditorLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\StylesheetEditor\EditRule.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_SchemaEditorLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\MediaTypeEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\MacroEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\MacroEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\MediaEditor\Edit.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\_FileContentEditorLayout.cshtml" />
+    <Content Include="Areas\Rebel\Views\ScriptEditor\CreateNew.cshtml" />
+    <Content Include="Areas\Rebel\Views\UserGroupEditor\Edit.cshtml" />
+    <Content Include="App_Plugins\Core\Views\Dashboards\StartHere.cshtml" />
+    <Content Include="App_Plugins\Core\Views\Web.config" />
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\CreateFileModel.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\MacroParameter.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Hostname.cshtml" />
+    <Content Include="Areas\Rebel\Views\ContentEditor\Permissions.cshtml" />
+    <Content Include="Areas\Rebel\Views\Shared\DisplayTemplates\NoticeBoard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Rebel.CMS.Web.EmbeddedViewEngine\Rebel.Cms.Web.EmbeddedViewEngine.csproj">
+      <Project>{8F9C0D9E-CD6A-4CA6-84FC-CEE7474988FF}</Project>
+      <Name>Rebel.Cms.Web.EmbeddedViewEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.CMS.Web\Rebel.Cms.Web.csproj">
+      <Project>{8F320595-7764-4E31-AEC5-94F1B128EDFE}</Project>
+      <Name>Rebel.Cms.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Framework.DependencyManagement.Autofac\Rebel.Framework.DependencyManagement.Autofac.csproj">
+      <Project>{5420EF90-DA2F-405F-A0EC-18FBED4B4438}</Project>
+      <Name>Rebel.Framework.DependencyManagement.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Framework.Persistence.NHibernate\Rebel.Framework.Persistence.NHibernate.csproj">
+      <Project>{E119331A-011C-4EDB-8840-A52AFCDF5CD1}</Project>
+      <Name>Rebel.Framework.Persistence.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Framework.Persistence\Rebel.Framework.Persistence.csproj">
+      <Project>{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}</Project>
+      <Name>Rebel.Framework.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Framework.Security\Rebel.Framework.Security.csproj">
+      <Project>{72EBBDF6-24FE-4B6D-B1B5-001D8A96AACE}</Project>
+      <Name>Rebel.Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Framework\Rebel.Framework.csproj">
+      <Project>{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}</Project>
+      <Name>Rebel.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Hive.Providers.IO\Rebel.Hive.Providers.IO.csproj">
+      <Project>{F685A510-6DF8-4138-9759-B09CF3CF29D6}</Project>
+      <Name>Rebel.Hive.Providers.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Hive\Rebel.Hive.csproj">
+      <Project>{8E44FCAB-2597-48F9-8F88-984DD47787C5}</Project>
+      <Name>Rebel.Hive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Rebel.Lucene\Rebel.Lucene.csproj">
+      <Project>{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}</Project>
+      <Name>Rebel.Lucene</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild">
+    <Message Text="Hello" Importance="high" />
+  </Target>
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2253</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4450/TestVDir</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.-->
+  <Import Project="$(MSBuildStartupDirectory)\Source\Rebel.Cms.Web.UI.targets" Condition="$(BuildingInsideVisualStudio) != true" />
+  <Import Project="$(SolutionDir)Rebel.Cms.Web.UI.targets" Condition="$(BuildingInsideVisualStudio) == true" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,23 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework", "Libraries\Umbraco.Framework\Umbraco.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework", "Libraries\Rebel.Framework\Rebel.Framework.csproj", "{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.IO", "Libraries\Umbraco.Framework.IO\Umbraco.Framework.IO.csproj", "{F2A3BD62-F4E4-4A76-BE69-5D274C688625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.IO", "Libraries\Rebel.Framework.IO\Rebel.Framework.IO.csproj", "{F2A3BD62-F4E4-4A76-BE69-5D274C688625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Persistence", "Libraries\Umbraco.Framework.Persistence\Umbraco.Framework.Persistence.csproj", "{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Persistence", "Libraries\Rebel.Framework.Persistence\Rebel.Framework.Persistence.csproj", "{178FC7BB-05AA-4AC1-8A0F-0AB2CBEADD9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.TypeMapping", "Libraries\Umbraco.Framework.TypeMapping\Umbraco.Framework.TypeMapping.csproj", "{96C9C834-519D-4A75-9DD6-54B5A4250BA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.TypeMapping", "Libraries\Rebel.Framework.TypeMapping\Rebel.Framework.TypeMapping.csproj", "{96C9C834-519D-4A75-9DD6-54B5A4250BA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests.Hive", "Testing\Umbraco.Tests.Hive\Umbraco.Tests.Hive.csproj", "{9D4DA63D-8664-4602-918E-2F75B94F1BBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Tests.Hive", "Testing\Rebel.Tests.Hive\Rebel.Tests.Hive.csproj", "{9D4DA63D-8664-4602-918E-2F75B94F1BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Hive", "Libraries\Umbraco.Hive\Umbraco.Hive.csproj", "{8E44FCAB-2597-48F9-8F88-984DD47787C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Hive", "Libraries\Rebel.Hive\Rebel.Hive.csproj", "{8E44FCAB-2597-48F9-8F88-984DD47787C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Hive.Providers.IO", "Libraries\Umbraco.Hive.Providers.IO\Umbraco.Hive.Providers.IO.csproj", "{F685A510-6DF8-4138-9759-B09CF3CF29D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Hive.Providers.IO", "Libraries\Rebel.Hive.Providers.IO\Rebel.Hive.Providers.IO.csproj", "{F685A510-6DF8-4138-9759-B09CF3CF29D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Hive", "Libraries\Umbraco.Framework.Hive\Umbraco.Framework.Hive.csproj", "{C61A56D6-57F2-41F8-8542-683290E8369E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Hive", "Libraries\Rebel.Framework.Hive\Rebel.Framework.Hive.csproj", "{C61A56D6-57F2-41F8-8542-683290E8369E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Framework.Persistence.NHibernate", "Libraries\Umbraco.Framework.Persistence.NHibernate\Umbraco.Framework.Persistence.NHibernate.csproj", "{E119331A-011C-4EDB-8840-A52AFCDF5CD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Framework.Persistence.NHibernate", "Libraries\Rebel.Framework.Persistence.NHibernate\Rebel.Framework.Persistence.NHibernate.csproj", "{E119331A-011C-4EDB-8840-A52AFCDF5CD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

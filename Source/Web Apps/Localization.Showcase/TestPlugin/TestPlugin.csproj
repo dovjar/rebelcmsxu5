@@ -54,9 +54,9 @@
     <EmbeddedResource Include="Tulips.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Libraries\Umbraco.Framework\Umbraco.Framework.csproj">
+    <ProjectReference Include="..\..\..\Libraries\Rebel.Framework\Rebel.Framework.csproj">
       <Project>{6B0F8E7A-FFD4-4C93-9E40-F591383EDB57}</Project>
-      <Name>Umbraco.Framework</Name>
+      <Name>Rebel.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

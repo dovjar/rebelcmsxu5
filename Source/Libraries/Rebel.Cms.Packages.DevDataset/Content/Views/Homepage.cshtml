@@ -1,0 +1,449 @@
+﻿@inherits RenderViewPage
+@using System.Web.Mvc.Html
+@using Rebel.Cms.Web;
+@using Rebel.Framework;
+@{
+    Layout = "_DevDatasetLayout.cshtml";
+    ViewBag.Title = CurrentPage.Name;
+}
+@section PageTitle
+{
+    @CurrentPage.Name
+}
+
+<style type="text/css">
+    table.matrix { margin: 0 0 20px; border: solid 1px #c5c5c5; }
+    table.matrix thead th { font-size: 0.85em; background: #c5c5c5; }
+    table.matrix tbody tr.even td { background: #e5e5e5; }
+    table.matrix small { font-size: 0.85em; color: #666; }
+</style>
+
+<h2>Welcome to the Book Club example!</h2>
+
+<p>This is the Homepage template, you can see it at /Views/Homepage.cshtml on your filesystem. It contains some example markup for developers.</p>
+
+<h2>Putting values into your templates</h2>
+<p>This template is a standard View from the Model-View-Controller pattern on which Rebel 5 is built.</p>
+<p>It uses Razor syntax, and in addition to the standard objects available to you in Views, we've added a couple of our own.</p>
+
+<h3>CurrentPage</h3>
+<p>First up we have <code>CurrentPage</code>. This allows you to access the fields of your piece of content in short-hand syntax.</p>
+<p>For example, this page is a Homepage type, so it has a Name field. By using the code <code>@@CurrentPage.Name</code> in this template, we get: <strong>@CurrentPage.Name</strong></p>
+<p>Let's put another field here, 'BodyText'. Using the same style code <code>@@CurrentPage.BodyText</code>, we get: <strong>@Rebel.Truncate(CurrentPage.BodyText, 30)</strong>. <br />
+Actually, <code>BodyText</code> is a long field, so we truncated that using another new concept: the <code>Rebel</code> helper object and its <code>Truncate</code> method.</p>
+<p>First a standard one: <code>Model</code>. <code>Model</code> is the statically-typed way of accessing data. </p>
+
+<h3>Model</h3>
+<p>Like regular MVC Views, you have a Model object to play with too. It's a style of accessing the same data as <code>CurrentPage</code>, and it's really just about your preference.<br />
+This is a "statically-typed" object, meaning you will get Intellisense in Visual Studio or WebMatrix if you choose to use it. Since <code>CurrentPage</code> has some of the handy shortcuts, its properties like 'BodyText'
+above are not known until the page is generated, so whilst it's shorter to write, Visual Studio can't help you.</p>
+<p>To get at the parts of your content, <code>Model</code> can be used with the <code>Field&lt;T&gt;(string fieldName)</code> helper method, like so: <code>@@Model.Field&lt;string&gt;("siteName")</code>. This gives: <strong>@(Model.Field<string>("siteName"))</strong>.</p>
+
+<h2>Hierarchy navigators</h2>
+<p>In the latest update we've added more hierarchy navigators to the model so that you can grab parents, children, ancestors and descendants of your data similarly to how you can in Rebel 4. Here's some examples:</p>
+<ul>
+<li>@@CurrentPage.Parent</li>
+<li>@@CurrentPage.Children</li>
+<li>@@CurrentPage.Ancestors</li>
+<li>@@CurrentPage.AncestorsOrSelf</li>
+<li>@@CurrentPage.Descendants</li>
+<li>@@CurrentPage.DescendantsOrSelf</li>
+</ul>
+<p>Because @@CurrentPage is a .NET <code>dynamic</code> object, "extension methods" like Count() can't be used in their regular fashion, so instead of myDynamicObjects.Count() you'd have to run Enumerable.Count(myDynamicObjects). However, to keep some of this convenience, we've added these methods directly to the collection you get when you use one of these navigators:</p>
+<ul>
+<li>@@CurrentPage.Children.Count() (for your current site, this returns: <strong>@CurrentPage.Children.Count()</strong>)</li>
+<li>@@CurrentPage.Children.Any()</li>
+<li>@@CurrentPage.Children.First()</li>
+<li>@@CurrentPage.Children.FirstOrDefault()</li>
+<li>@@CurrentPage.Children.Last()</li>
+<li>@@CurrentPage.Children.LastOrDefault()</li>
+<li>@@CurrentPage.Children.Single()</li>
+<li>@@CurrentPage.Children.SingleOrDefault()</li>
+<li>@@CurrentPage.Children.ElementAt(int)</li>
+<li>@@CurrentPage.Children.ElementAtOrDefault(int)</li>
+<li>@@CurrentPage.Children.IndexOf(item)</li>
+</ul>
+
+
+<h2>Querying using strings</h2>
+<p>For those coming from Rebel 4.7, or if you're not comfortable or familiar with lambda expressions, we are working on dynamic queries using strings</p>
+@{var book = Hive.Content.First("publisher == \"APRESS\"");}
+<p>Let's get the first book published by APRESS: it is <strong>"@book.Name"</strong> and it has <strong>@book.NumberOfPages</strong> pages</p>
+<p>Here's the code for this:</p>
+<pre>
+@@{var book = Hive.Content.First(&quot;publisher == \&quot;APRESS\&quot;&quot;);}
+&lt;p&gt;Let&#39;s get the first book published by APRESS: it is &lt;strong&gt;&quot;@@book.Name&quot;&lt;/strong&gt; and it has &lt;strong&gt;@@book.NumberOfPages&lt;/strong&gt; pages&lt;/p&gt;
+
+</pre>
+<p>To avoid injection attacks or ugly escaping, you can also use parameters in your string query, like:</p>
+<pre>
+@@{var firstItem = Hive.Content.First(&quot;publisher == @@0&quot;, &quot;APRESS&quot;);}
+
+</pre>
+
+<h3>Additional string query examples</h3>
+<h4>Query by Name</h4>
+<p>@@{ var result = Hive.Content.Where(&quot;Name == @@0&quot;, &quot;Professional ASP.NET MVC 3&quot;); }</p>
+<h4>Query by UrlName</h4>
+<p>@@{ var result = Hive.Content.Where(&quot;UrlName == @@0&quot;, &quot;professional-aspnet-mvc-3&quot;); }</p>
+<h4>Query by Template</h4>
+<p>@@{ var name = Hive.Content.Where(&quot;Template == @@0&quot;, &quot;BookPage&quot;); }</p>
+<h4>Query by CreateDate *</h4>
+<p>@@{ var result = Hive.Content.Where(&quot;UtcCreated == @@0&quot;, DateTimeOffset.Now); }</p>
+<h4>Query by ModifiedDate *</h4>
+<h4>Ordering results</h4>
+<p>@@{ var result = Hive.Content.Where(&quot;ContentTypeAlias == @@0&quot;, &quot;BookPage&quot;).OrderBy(&quot;UtcCreated&quot;); }<br />
+@@{ var result = Hive.Content.Where(&quot;ContentTypeAlias == @@0&quot;, &quot;BookPage&quot;).OrderByDescending(&quot;UtcModified&quot;); }</p>
+<h5>Date Ascending</h5>
+@*@{ orderedBooks = Hive.Content.Where("ContentTypeAlias == @0", "BookPage").OrderBy("UtcCreated"); }
+<ul>
+    @foreach (var b in orderedBooks)
+    {
+        <li>@b.Name</li>
+    }
+</ul>*@
+<h5>Date Descending</h5>
+@*@{ orderedBooks = Hive.Content.Where("ContentTypeAlias == @0", "BookPage").OrderByDescending("UtcCreated"); }
+<ul>
+    @foreach (var b in orderedBooks)
+    {
+        <li>@b.Name</li>
+    }
+</ul>*@
+<h4>Take/Skip/Pagniate</h4>
+<p>@@{ var result = Hive.Content.Where(&quot;ContentTypeAlias == @@0&quot;, &quot;BookPage&quot;).Skip(2).Take(2); }<br />
+@@{ var result = Hive.Content.Where(&quot;ContentTypeAlias == @@0&quot;, &quot;BookPage&quot;).Paged(2, 2); }</p>
+<h5>Paged(2,2)</h5>
+@*@{ var pagedBooks = Hive.Content.Where(content => content.ContentType.Alias == "BookPage").OrderBy(content => content.UtcCreated).Paged(2, 2); }
+<ul>
+    @foreach (var b in pagedBooks)
+    {
+        <li>@b.Name</li>
+    }
+</ul>*@
+
+<p>@@{ var result = Hive.Content.Where(&quot;UtcModified == @@0&quot;, DateTimeOffset.Now); }</p>
+<p><strong>*</strong> Supports the following operators: &lt; &lt;= == &gt;= &gt;</p>
+
+<h2>Querying using Linq</h2>
+<p>In the current release, we've started to implement querying. At the moment, you can only do a query from the root rather than querying only the children. But it's still a powerful step.</p>
+@{
+    var publishersInClub = Hive.Content
+        .Where(x => x.ContentType.Alias == "BookPage")
+        .ToList()
+        .Select(x => x.Field<string>("publisher"))
+        .Distinct();
+    var publishersString = string.Join(", ", publishersInClub);
+}
+
+<p>Let's query for <em>Books in the club:</em> <strong>@Hive.Content.Count(x => x.ContentType.Alias == "BookPage")</strong></p>
+<p>Or how about a distinct list of <em>Publishers in the club:</em> <strong>@publishersString</strong></p>
+<p>Let's do that as a list:</p>
+<ul>
+    @foreach (var name in publishersInClub)
+    {
+        <li>@name</li>
+    }
+</ul>
+
+<h3>Additional linq query examples</h3>
+<h4>Query by Name</h4>
+<p>@@{ var result = Hive.Content.Where(content => content.Name == &quot;Professional ASP.NET MVC 3&quot;); }</p>
+<h4>Query by UrlName</h4>
+<p>@@{ var result = Hive.Content.Where(content => content.UrlName == &quot;professional-aspnet-mvc-3&quot;); }</p>
+<h4>Query by Template</h4>
+<p>@@{ var name = Hive.Content.Where(content => content.CurrentTemplate.Alias == &quot;BookPage&quot;); }</p>
+<h4>Query by CreateDate *</h4>
+<p>@@{ var result = Hive.Content.Where(content => content.UtcCreated == DateTimeOffset.Now); }</p>
+<h4>Query by ModifiedDate *</h4>
+<p>@@{ var result = Hive.Content.Where(content => content.UtcModified == DateTimeOffset.Now); }</p>
+<h4>Ordering results</h4>
+<p>@@{ var result = Hive.Content.Where(content => content.ContentType.Alias == &quot;BookPage&quot; ).OrderBy(content => content.UtcCreated); }<br />
+@@{ var result = Hive.Content.Where(content => content.ContentType.Alias == &quot;BookPage&quot; ).OrderByDescending(content => content.UtcModified); }</p>
+<h5>Date Ascending</h5>
+@{ var orderedBooks = Hive.Content.Where(content => content.ContentType.Alias == "BookPage").OrderBy(content => content.UtcCreated); }
+<ul>
+    @foreach (var b in orderedBooks)
+    {
+        <li>@b.Name</li>
+    }
+</ul>
+<h5>Date Descending</h5>
+@{ orderedBooks = Hive.Content.Where(content => content.ContentType.Alias == "BookPage").OrderByDescending(content => content.UtcCreated); }
+<ul>
+    @foreach (var b in orderedBooks)
+    {
+        <li>@b.Name</li>
+    }
+</ul>
+<h4>Take/Skip/Pagniate</h4>
+<p>@@{ var result = Hive.Content.Where(content => content.ContentType.Alias == &quot;BookPage&quot; ).Skip(2).Take(2); }<br />
+@@{ var result = Hive.Content.Where(content => content.ContentType.Alias == &quot;BookPage&quot; ).Paged(2, 2); }</p>
+<h5>Paged(2,2)</h5>
+@{ var pagedBooks = Hive.Content.Where(content => content.ContentType.Alias == "BookPage").OrderBy(content => content.UtcCreated).Paged(2, 2); }
+<ul>
+    @foreach (var b in pagedBooks)
+    {
+        <li>@b.Name</li>
+    }
+</ul>
+
+<p><strong>*</strong> Supports the following operators: &lt; &lt;= == &gt;= &gt;</p>
+
+
+<h2>IsHelpers</h2>
+<p>The IsHelpers offer a set of extension methods for use on both Content and Dynamic objects that help simplify common tasks.</p>
+<p>All IsHelper methods are available in 3 variations:</p>
+<ul>
+    <li><strong>IsHelper([args]) : bool</strong><br />
+        Calling the extension with no/minimum args returns a boolean indicating whether the result is true or false.
+    </li>
+    <li><strong>IsHelper([args], "valueIfTrue") : string</strong><br />
+        Calling the extension with an optional "valueIfTrue" string, returns the "valueIfTrue" string if the result is true, or string.Empty if false.
+    </li>
+    <li><strong>IsHelper([args], "valueIfTrue", "valueIfFalse") : string</strong><br />
+        Calling the extension with an optional "valueIfTrue" string, and "valueIfFalse" string, returns the "valueIfTrue" string if the result is true, or the "valueIfFalse" string if false.
+    </li>
+</ul>
+<p>Lets use the books collection to demonstrate their usage</p>
+
+<table class="matrix">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>IsFirst()</th>
+            <th>IsNotFirst()</th>
+            <th>IsLast()</th>
+            <th>IsNotLast()</th>
+            <th>IsPosition(2)</th>
+            <th>IsNotPosition(2)</th>
+            <th>IsModZero(2)</th>
+            <th>IsNotModZero(2)</th>
+            <th>IsEven()</th>
+            <th>IsOdd()</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            var lastTime = "";
+            var timerCallback = new Action<long>((result) => lastTime = "(" + result + "ms)");
+            var books = Hive.Content.Where(x => x.ContentType.Alias == "BookPage");
+            foreach (var currentBook in books)
+            {
+                <tr class="@currentBook.IsOdd("odd", "even")">
+                    <td>@currentBook.Name</td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsFirst()
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsNotFirst()
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsLast()
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsNotLast()
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsPosition(2)
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsNotPosition(2)
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsPositionDivisibleBy(2)
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsPositionIndivisibleBy(2)
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsEven()
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                    <td>
+                        @using (DisposableTimer.Start(timerCallback))
+                        {
+                            @currentBook.IsOdd()
+                        }
+                        <br /><small>@lastTime</small>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<p>In addition to these, we also have built in IsHelpers for checking equality and ancestry.</p>
+<p>Lets take the home page, and the first book page to test these</p>
+@{ var firstBook = books.First().AsDynamic(); }
+<table class="matrix">
+    <thead>
+        <th>Command</th>
+        <th>Result</th>
+    </thead>
+    <tbody>
+        <tr class="odd">
+            <td>homePage.IsEqualTo(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @CurrentPage.IsEqualTo(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>homePage.IsEqualTo(homePage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @CurrentPage.IsEqualTo(CurrentPage)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>homePage.IsNotEqualTo(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @CurrentPage.IsNotEqualTo(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>homePage.IsNotEqualTo(homePage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @CurrentPage.IsNotEqualTo(CurrentPage)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>homePage.IsDescendantOf(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @CurrentPage.IsDescendantOf(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>bookPage.IsDescendantOf(homePage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @firstBook.IsDescendantOf(CurrentPage)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>bookPage.IsDescendantOf(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @firstBook.IsDescendantOf(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>bookPage.IsDescendantOfOrEqualTo(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @firstBook.IsDescendantOfOrEqualTo(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>homePage.IsAncestorOf(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @CurrentPage.IsAncestorOf(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>bookPage.IsAncestorOf(homePage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @firstBook.IsAncestorOf(CurrentPage)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>bookPage.IsAncestorOf(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @firstBook.IsAncestorOf(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+        <tr class="even">
+            <td>bookPage.IsAncestorOfOrEqualTo(bookPage)</td>
+            <td>
+                @using (DisposableTimer.Start(timerCallback))
+                {
+                    @firstBook.IsAncestorOfOrEqualTo(firstBook)
+                }
+                <br /><small>@lastTime</small>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Other tips, including parents and children</h2>
+<ul>
+    <li>The current page was retrieved from Hive provider '@Model.Id.ProviderId', and matches Hive group @Model.Id.ProviderGroupRoot.ToString().</li>
+    <li>Its path is: @Model.NiceUrl()</li>
+</ul>
+
+<h2>Let's render a macro (a "partial view" in MVC)</h2>
+@Html.Partial("ChildContent")

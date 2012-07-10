@@ -1,0 +1,22 @@
+﻿@inherits WebViewPage<Rebel.Cms.Web.PropertyEditors.TreeNodePicker.TreeNodePickerModel>
+              
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Rebel.Cms
+@using Rebel.Cms.Web
+@using Rebel.Cms.Web.Security
+@using Rebel.Framework;
+@using Rebel.Cms.Web.Model.BackOffice;
+@using Rebel.Cms.Web.Trees;
+@using Microsoft.Web.Mvc;
+@using Rebel.Framework.Persistence.Model.Constants
+
+@Html.TreePickerFor(x => Model.Value, new TreePickerRenderModel
+{
+    TreeControllerId = Model.TreeMetadata.Id
+})

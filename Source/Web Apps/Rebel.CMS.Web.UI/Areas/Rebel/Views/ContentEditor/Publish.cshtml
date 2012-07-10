@@ -1,0 +1,45 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.PublishModel
+@using Rebel.Framework.Localization;
+@using System.Reflection;
+@{
+    Layout = "../Shared/_DialogLayout.cshtml";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    ViewBag.Title = "Action.Publish.Title".Localize();
+}
+@section Head {
+    @{Html.RequiresJs("Rebel.Editors/PublishDialog.js", "Scripts");}
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                Rebel.Editors.PublishDialog.getInstance().init({
+                    ajaxUrl: "@Url.GetEditorUrl("Publish", (Guid)ViewBag.ControllerId, null)",
+                    id: "@Model.Id"
+                });
+            });
+        })(jQuery);
+    </script>
+}
+<div data-bind="visible: !success()">
+    <h2>
+        @("Action.Publish.Title".Localize())</h2>
+    <div class="property-pane">
+        <p>
+            @("Action.Publish.Description.Save".Localize(this, new { Name = Model.Name},encode:false))</p>
+        <p>
+            @("Action.Publish.Description.Children".Localize())</p>
+        <p>
+            @Html.CheckBoxFor(x => Model.IncludeChildren,
+                            new Dictionary<string, object> { { "data-bind", "checked: includeChildren" } })
+            @Html.LabelFor(x => Model.IncludeChildren, "Publish.IncludeChildren.Label".Localize(Assembly.Load("Rebel.Cms.Web.Editors"), new { Name = Model.Name }, encode: false))
+        </p>
+        <p style="padding-left: 25px">
+            @Html.CheckBoxFor(x => Model.IncludeUnpublishedChildren,
+                            new Dictionary<string, object> { { "data-bind", "enable: includeChildren, checked: includeUnpublishedChildren" } })
+            @Html.LabelFor(x => Model.IncludeUnpublishedChildren, "Publish.IncludeUnpublishedChildren.Label".Localize(Assembly.Load("Rebel.Cms.Web.Editors")))
+        </p>
+    </div>
+</div>
+@Html.HiddenFor(x => Model.Id)
+<input type="hidden" name="DataValidation" id="DataValidation" data-bind="value: success()"
+    value="" />

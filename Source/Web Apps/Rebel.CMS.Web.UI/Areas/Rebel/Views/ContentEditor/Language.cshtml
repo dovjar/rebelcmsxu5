@@ -1,0 +1,37 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.LanguageModel
+@using Rebel.Framework.Localization;           
+@{
+    Layout = "../Shared/_DialogLayout.cshtml";
+
+    ViewBag.Title = "Action.Language.Title".Localize();
+    ViewBag.Action = "Language";
+    
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    Html.EnablePartialViewValidation();
+}
+@section Head {
+    @{Html.RequiresJs("Rebel.Editors/LanguageDialog.js", "Scripts");}
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                Rebel.Editors.LanguageDialog.getInstance().init({
+                    id: "@Model.Id",
+                    isoCode: "@Model.IsoCode"
+                });
+            });
+        })(jQuery);
+    </script>
+}
+<div data-bind="visible: !success()" id="hostnameDialog">
+    <h2>
+        @("Action.Language.Title".Localize())</h2>
+    <div class="big narrow-editor clearfix">              
+               
+        @Html.DropDownListFor(x => Model.IsoCode, Model.InstalledLanguages, "Editors.PleaseSelect".Localize(), new Dictionary<string, object> { { "data-bind", "value: isoCode" } })
+
+    </div>
+</div>
+@Html.HiddenFor(x => Model.Id)
+
+<input type="hidden" name="DataValidation" id="DataValidation" data-bind="value: success()" value="" />

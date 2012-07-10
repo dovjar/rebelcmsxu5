@@ -1,0 +1,27 @@
+<#@ template language="C#" HostSpecific="True"  inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="EnvDTE" #>
+using Rebel.Framework.Tasks;
+using Rebel.Framework;
+using Rebel.Cms.Web.Tasks;
+using Rebel.Cms.Web.Context;
+using Rebel.Framework.Diagnostics;
+
+namespace <#= Model.Namespace #>.Tasks
+{ 
+	[Task("<#= Model.TaskGuid #>")]
+	public class <#= Model.ClassName #> : AbstractWebTask
+	{
+		public <#= Model.ClassName #>(IRebelApplicationContext applicationContext) : base(applicationContext) { }
+
+		//Method which is executed when trigger fires, this receives a Task context
+		public override void Execute(TaskExecutionContext context)
+		{
+		}
+	}
+}

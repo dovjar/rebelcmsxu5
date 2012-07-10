@@ -1,0 +1,365 @@
+/* Rebel */
+
+/* Reset */
+.rebel, .rebel div, .rebel span, .rebel a
+{
+    vertical-align: baseline;
+    text-align: left;
+    position: absolute;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-family: Arial,Verdana;
+    font-size: 11px;
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    display: block;
+}
+
+/* General */
+.rebel
+{
+    position: absolute;
+    direction: ltr;
+    border: 5px solid #a3a3a3;
+    overflow: hidden;
+}
+.rebel .mceWrapper
+{
+    position: static;
+}
+
+#mceEventBlocker
+{
+    border: none !important;
+}
+.mceEventBlocker
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.rebel .mcePlaceHolder
+{
+    border: 1px solid #a3a3a3;
+    background: #fff;
+    top: 0;
+    left: 0;
+}
+.rebel_modalBlocker
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: url("../../../../../../modal/images/overlay-background.gif");
+}
+
+/* Top */
+.rebel .mceTop
+{
+    top: 0;
+    height: 15px;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background: url("../../../../../../modal/images/modal-gradient.gif") repeat-x;
+}
+.rebel .mceTop .mceLeft
+{
+    display: none;
+}
+.rebel .mceTop .mceCenter
+{
+    display: none;
+}
+.rebel .mceTop .mceRight
+{
+    display: none;
+}
+
+.rebel .mceTop span
+{
+    color: #378080;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    display: block;
+    padding-left: 10px;
+}
+
+/* Middle */
+.rebel .mceMiddle, .rebel .mceMiddle div
+{
+    top: 0;
+}
+.rebel .mceMiddle
+{
+    width: 100%;
+    height: 100%;
+    clip: rect(26px auto auto auto);
+    background: #FFF;
+    overflow: hidden;
+}
+.rebel .mceMiddle .mceLeft
+{
+    display: none;
+}
+.rebel .mceMiddle span
+{
+    top: 25px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+}
+.rebel .mceMiddle .mceRight
+{
+    display: none;
+}
+
+/* Bottom */
+.rebel .mceBottom, .rebel .mceBottom div
+{
+    display: none !important;
+}
+
+/* Actions */
+.rebel a
+{
+    width: 29px;
+    height: 16px;
+    top: 3px;
+}
+.rebel .mceClose
+{
+    right: 6px;
+    background: url(img/close.png) no-repeat;
+}
+.rebel .mceMin
+{
+    display: none;
+    right: 68px;
+    background: url(img/buttons.gif) 0 0;
+}
+.rebel .mceMed
+{
+    display: none;
+    right: 37px;
+    background: url(img/buttons.gif) -29px 0;
+}
+.rebel .mceMax
+{
+    display: none;
+    right: 37px;
+    background: url(img/buttons.gif) -58px 0;
+}
+.rebel .mceMove
+{
+    display: none;
+    width: 100%;
+    cursor: move;
+    background: url(img/corners.gif) no-repeat -100px -100px;
+}
+.rebel .mceMovable .mceMove
+{
+    display: block;
+}
+.rebel .mceFocus .mceClose
+{
+    right: 6px;
+    top: 6px;
+}
+
+.rebel .mceFocus .mceMin
+{
+    right: 68px;
+    background: url(img/buttons.gif) 0 -16px;
+}
+.rebel .mceFocus .mceMed
+{
+    right: 37px;
+    background: url(img/buttons.gif) -29px -16px;
+}
+.rebel .mceFocus .mceMax
+{
+    right: 37px;
+    background: url(img/buttons.gif) -58px -16px;
+}
+
+.rebel .mceFocus .mceMin:hover
+{
+    right: 68px;
+    background: url(img/buttons.gif) 0 -32px;
+}
+.rebel .mceFocus .mceMed:hover
+{
+    right: 37px;
+    background: url(img/buttons.gif) -29px -32px;
+}
+.rebel .mceFocus .mceMax:hover
+{
+    right: 37px;
+    background: url(img/buttons.gif) -58px -32px;
+}
+
+/* Resize */
+.rebel .mceResize
+{
+    top: auto;
+    left: auto;
+    display: none;
+    width: 5px;
+    height: 5px;
+    background: url(img/horizontal.gif) no-repeat 0 -75px;
+}
+.rebel .mceResizable .mceResize
+{
+    display: block;
+}
+.rebel .mceResizable .mceMin, .rebel .mceMax
+{
+    display: none;
+}
+.rebel .mceMinimizable .mceMin
+{
+    display: block;
+}
+.rebel .mceMaximizable .mceMax
+{
+    display: block;
+}
+.rebel .mceMaximized .mceMed
+{
+    display: block;
+}
+.rebel .mceMaximized .mceMax
+{
+    display: none;
+}
+.rebel a.mceResizeN
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: n-resize;
+}
+.rebel a.mceResizeNW
+{
+    top: 0;
+    left: 0;
+    cursor: nw-resize;
+}
+.rebel a.mceResizeNE
+{
+    top: 0;
+    right: 0;
+    cursor: ne-resize;
+}
+.rebel a.mceResizeW
+{
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: w-resize;
+}
+.rebel a.mceResizeE
+{
+    top: 0;
+    right: 0;
+    height: 100%;
+    cursor: e-resize;
+}
+.rebel a.mceResizeS
+{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: s-resize;
+}
+.rebel a.mceResizeSW
+{
+    bottom: 0;
+    left: 0;
+    cursor: sw-resize;
+}
+.rebel a.mceResizeSE
+{
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+/* Alert/Confirm */
+.rebel .mceButton
+{
+    font-weight: bold;
+    bottom: 10px;
+    width: 80px;
+    height: 30px;
+    background: url(img/button.gif);
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    outline: 0;
+}
+.rebel .mceMiddle .mceIcon
+{
+    left: 15px;
+    top: 35px;
+    width: 32px;
+    height: 32px;
+}
+.rebel .mceAlert .mceMiddle span, .rebel .mceConfirm .mceMiddle span
+{
+    background: transparent;
+    left: 60px;
+    top: 35px;
+    width: 320px;
+    height: 50px;
+    font-weight: bold;
+    overflow: auto;
+    white-space: normal;
+}
+.rebel a:hover
+{
+    font-weight: bold;
+}
+.rebel .mceAlert .mceMiddle, .rebel .mceConfirm .mceMiddle
+{
+    background: #D6D7D5;
+}
+.rebel .mceAlert .mceOk
+{
+    left: 50%;
+    top: auto;
+    margin-left: -40px;
+}
+.rebel .mceAlert .mceIcon
+{
+    background: url(img/alert.gif);
+}
+.rebel .mceConfirm .mceOk
+{
+    left: 50%;
+    top: auto;
+    margin-left: -90px;
+}
+.rebel .mceConfirm .mceCancel
+{
+    left: 50%;
+    top: auto;
+}
+.rebel .mceConfirm .mceIcon
+{
+    background: url(img/confirm.gif);
+}

@@ -1,0 +1,19 @@
+@inherits PartialViewMacroPage
+@using Rebel.Cms.Web
+@using Rebel.Cms.Web.Macros
+@using Rebel.Framework
+
+
+@* Ensure that the Current Page has children, where the property rebelNaviHide is not True *@
+@if (CurrentPage.Children.Where("rebelNaviHide != @0", "True").Any())
+{
+    <ul>            
+        @* For each child page under the root node, where the property rebelNaviHide is not True *@
+        @foreach (var childPage in CurrentPage.Children.Where("rebelNaviHide != @0", "True"))
+        {
+            <li>
+                <a href="@childPage.Url">@childPage.Name</a>
+            </li>
+        }
+    </ul>
+}

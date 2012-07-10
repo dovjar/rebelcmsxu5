@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <RebelMSBuildTasksPath Condition="'$(RebelMSBuildTasksPath)' == ''">$(MSBuildProjectDirectory)\Lib\RebelMSBuildTasks</RebelMSBuildTasksPath>
+    <RebelMSBuildTasksLib>$(RebelMSBuildTasksPath)\Rebel.MSBuild.Tasks.dll</RebelMSBuildTasksLib>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(RebelMSBuildTasksLib)" TaskName="Rebel.MSBuild.Tasks.TimestampOffset" />
+  <UsingTask AssemblyFile="$(RebelMSBuildTasksLib)" TaskName="Rebel.MSBuild.Tasks.GetAssemblyFileVersion" />
+  
+</Project>

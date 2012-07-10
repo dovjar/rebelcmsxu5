@@ -1,0 +1,9 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.ProfileTypeEditorModel
+@{
+    Layout = "../Shared/_SchemaEditorLayout.cshtml";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    ViewBag.ControllerId = new Guid(CorePluginConstants.MemberTypeEditorControllerId);
+    ViewBag.TreeRootId = Rebel.Framework.Security.Model.FixedHiveIds.MemberProfileVirtualRoot.GetHtmlId();
+}

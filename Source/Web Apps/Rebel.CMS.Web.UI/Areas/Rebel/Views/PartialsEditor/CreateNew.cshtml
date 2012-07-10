@@ -1,0 +1,18 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.CreateFileModel
+@using Rebel.Framework.Localization;
+           
+@{
+    Layout = "../Shared/_CreateNewLayout.cshtml";
+    if (string.IsNullOrEmpty(ViewBag.ControllerId.ToString()))
+    {
+        ViewBag.ControllerId = new Guid(CorePluginConstants.PartialsEditorControllerId);
+    }
+    if (string.IsNullOrEmpty(ViewBag.Title))
+    {
+        ViewBag.Title = "Partial.Create.Title".Localize();
+    }
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+@Html.UmbNextButton()

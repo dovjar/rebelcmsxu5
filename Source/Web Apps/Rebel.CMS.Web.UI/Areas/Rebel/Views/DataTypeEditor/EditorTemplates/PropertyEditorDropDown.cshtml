@@ -1,0 +1,13 @@
+﻿@model Guid
+@using Rebel.Framework.Localization
+
+@using Rebel.Cms.Web.Model.BackOffice.PropertyEditors;
+@{
+    var propertyEditors = (IEnumerable<PropertyEditorMetadata>)ViewBag.AvailablePropertyEditors;
+    var selectListItems = new SelectList(propertyEditors.OrderBy(x => x.Name), "Id", "Name", Model);
+}
+
+@Html.DropDownListFor(x => Model, 
+    selectListItems,
+    "DataType.Editor.SelectPropEditor".Localize(), 
+    new Dictionary<string, object> { { "data-bind", "event : { change : itemChanged }" } })

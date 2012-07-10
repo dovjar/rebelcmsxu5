@@ -1,0 +1,56 @@
+﻿@inherits WebViewPage<Rebel.Cms.Web.PropertyEditors.Slider.SliderEditorModel>
+@using Rebel.Cms.Web;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Microsoft.Web.Mvc;
+@using Rebel.Cms.Web.PropertyEditors.Slider;
+@{
+	bool hasMultipleValues = false;
+	int width = 400;
+}
+
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function () {
+			$('#@Html.IdFor(x => Model.SliderControl)').slider({
+				
+				@if (Model.Defaults.EnableRange) {
+					if (Model.Defaults.RangeValue != SliderOptionsRange.None) {
+						<text>range: '@Model.Defaults.RangeValue.ToString().ToLower()',</text>
+					} else {
+						if (Model.Defaults.Value2 >= Model.Defaults.Value) {
+							<text>range: true, values: [@Model.Defaults.Value,@Model.Defaults.Value2],</text>
+							hasMultipleValues = true;
+						}
+					}
+				}
+				@if (!hasMultipleValues) {
+					<text>value: @Model.Defaults.Value,</text>
+				}
+				@if (Model.Defaults.MaxValue > Model.Defaults.MinValue) {
+					<text>min: @Model.Defaults.MinValue, max: @Model.Defaults.MaxValue,</text>
+				}
+				@if (Model.Defaults.EnableStep) {
+					<text>step: @Model.Defaults.StepValue,</text>
+				}
+				@if (Model.Defaults.Orientation != null && Model.Defaults.Orientation != @SliderOptionsOrientation.Horizontal) {
+					<text>orientation: '@Model.Defaults.Orientation.ToString().ToLower()',</text>
+					width = 10;
+				}
+				slide: function(e, ui) {
+					$('#@Html.IdFor(x => Model.Value)').val(ui.@(hasMultipleValues ? "values" : "value"));
+				}
+			});
+			$('#@Html.IdFor(x => Model.Value)').val($('#@Html.IdFor(x => Model.SliderControl)').slider('@(hasMultipleValues ? "values" : "value")'));
+		});
+	})(jQuery);
+</script>
+
+<div id="@Html.IdFor(x => Model.SliderControl)" style="float:left;width:@(width)px;"></div>
+@Html.TextBoxFor(x => Model.Value, new { @style = "float:left;width:40px;margin-left: 10px;" })

@@ -7,12 +7,12 @@ using System.Xml.Linq;
 using System.Web.Mvc;
 using System.Web;
 using System.Reflection;
-using Umbraco.Foundation.Localization.Maintenance;
-using Umbraco.Foundation.Localization;
+using Rebel.Foundation.Localization.Maintenance;
+using Rebel.Foundation.Localization;
 using System.Globalization;
 using System.Linq.Expressions;
-using Umbraco.Foundation.Localization.Configuration;
-using Umbraco.Foundation.Web.Localization;
+using Rebel.Foundation.Localization.Configuration;
+using Rebel.Foundation.Web.Localization;
 
 namespace Sandbox.Localization.WebTest
 {

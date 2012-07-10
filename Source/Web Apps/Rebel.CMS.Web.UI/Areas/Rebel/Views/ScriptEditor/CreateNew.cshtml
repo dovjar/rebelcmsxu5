@@ -1,0 +1,19 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.CreateFileModel
+@using Rebel.Framework.Localization
+@{
+    Layout = "../Shared/_CreateNewLayout.cshtml";
+
+    if (ViewBag.ControllerId == null || (Guid)ViewBag.ControllerId == default(Guid))
+    {
+        ViewBag.ControllerId = new Guid(CorePluginConstants.ScriptEditorControllerId);
+    }    
+    
+    if (string.IsNullOrEmpty(ViewBag.Title))
+    {
+        ViewBag.Title = "Script.Create.Title".Localize();
+    }
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+@Html.UmbNextButton()

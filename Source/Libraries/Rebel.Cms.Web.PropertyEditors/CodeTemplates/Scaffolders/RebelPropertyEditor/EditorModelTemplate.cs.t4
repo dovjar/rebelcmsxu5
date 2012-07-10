@@ -1,0 +1,120 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Rebel.Cms.Web.Context;
+using Rebel.Cms.Web.EmbeddedViewEngine;
+using Rebel.Cms.Web.Model.BackOffice.PropertyEditors;
+using Rebel.Framework;
+
+namespace <#= Model.Namespace #>.<#= Model.PropertyEditorAlias #>
+{ 
+
+<#
+	if (Model.UseCustomEditorView) {
+#>
+	// By default views are not embedded because it is easier to develop on non-embedded views. However, it is 
+	// recommended to embed your views for PropertyEditors once you have completed development if you 
+	// do not want other developers to be able to modify the template code which could potentially cause your
+	// PropertyEditor to stop working.
+	//[EmbeddedView("<#= Model.Namespace #>.Views.EditorTemplates.<#= Model.PropertyEditorAlias #>EditorModel.cshtml", "<#= Model.AssemblyName #>")]
+<#
+	}
+#>
+	public class <#= Model.PropertyEditorAlias #>EditorModel : EditorModel<#= Model.HasPreValueEditor ? "<" + Model.PropertyEditorAlias + "PreValueModel>" : "" #>, IValidatableObject
+    {
+	
+		/* Define some Members for the model which will be editable for your PropertyEditor. */
+
+        //NOTE: By convention, if the PropertyEditor Editor only exposes one editable value, then it should be called 'Value'.
+        public string Value { get; set; }
+
+        #region Private members
+        private readonly IBackOfficeRequestContext _backOfficeRequestContext;
+        private readonly HiveId _contentId;
+        private readonly string _propertyAlias; 
+        #endregion
+
+		#region Constructor
+		/// <summary>
+        /// Initializes a new instance of the <see cref="<#= Model.PropertyEditorAlias #>EditorModel"/> class.
+        /// </summary>
+        /// <param name="backOfficeRequestContext">The back office request context.</param>
+		/// <param name="contentId">The current id of the content item being rendered.</param>
+		/// <param name="propertyAlias">The current alias of the property being rendered.</param>
+        public <#= Model.PropertyEditorAlias #>EditorModel(
+			<#= Model.HasPreValueEditor ? Model.PropertyEditorAlias + "PreValueModel preValueModel," : "" #>			
+			IBackOfficeRequestContext backOfficeRequestContext,
+			HiveId contentId, 
+			string propertyAlias)
+			<#= Model.HasPreValueEditor ? ": base(preValueModel)" : "" #>
+        {
+            _backOfficeRequestContext = backOfficeRequestContext;
+			_contentId = contentId;
+            _propertyAlias = propertyAlias;
+        }
+		#endregion
+
+		/*
+        
+        If you require custom serialization of your values, or if your model is a 'Complex' model 
+        (meaning that you might have properties that are classes) then you can override GetSerializedValue
+        to serialize your own values. This will also mean that you will need to override SetModelValues
+        to deserialize your values to your Model properties.
+        
+        /// <summary>
+        /// Returns a serialized value for the Editor Model
+        /// </summary>
+        /// <returns></returns>
+        public override IDictionary<string, object> GetSerializedValue()
+        {
+            //create a custom dictionary to return
+            var val = new Dictionary<string, object>
+                {
+                    {"MediaId", Value}
+                };
+            return val;
+        }
+        */
+
+        /*
+
+        If you require custom serialization of your values, or if your model is a 'Complex' model 
+        (meaning that you might have properties that are classes) then you can override SetModelValues
+        to set your model's properties based on the custom serialized values. 
+        This will also mean that you will need to override GetSerializedValue to custom serialize your model. 
+        
+        /// <summary>
+        /// Sets this Model's properties based on the serialized values.
+        /// </summary>
+        /// <param name="serializedVal"></param>
+        public override void SetModelValues(IDictionary<string, object> serializedVal)
+        {
+            if (serializedVal.ContainsKey("MediaId"))
+            {
+                Value = serializedVal["MediaId"].ToString();
+            }
+        }
+        */
+
+		/// <summary>
+        /// Executes custom server side validation for the model
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {			
+            //if (YOUR_CUSTOM_VALIDATION_CHECK)
+            //{
+			//    //return a validation result with a message and for which field the error is associated
+            //    yield return new ValidationResult("Value is required", new[] { "Value" });
+            //}
+		    yield return null;
+        }
+
+	}
+}

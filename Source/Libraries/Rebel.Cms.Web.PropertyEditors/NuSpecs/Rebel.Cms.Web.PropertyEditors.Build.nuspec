@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Rebel.Cms.Web.PropertyEditors</id>
+    <version>5.0</version>
+    <title>Rebel Cms Web PropertyEditors</title>
+    <authors>Rebel HQ</authors>
+    <owners>Rebel</owners>
+    <licenseUrl>http://rebel.codeplex.com/license</licenseUrl>
+    <projectUrl>http://rebel.com</projectUrl>
+    <iconUrl>http://rebel.com/media/357769/100px_transparent.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs the Rebel Cms Web PropertyEditor assemblies and dependencies. This package contains all dependencies needed to create a custom PropertyEditors for Rebel 5.</description>
+    <summary>Installs the Rebel Cms Web PropertyEditor assemblies and dependencies</summary>
+    <language>en-US</language>
+    <tags>rebel</tags>
+    <dependencies>
+      <dependency id="Rebel.Framework" version="5.1.000.0" />
+      <dependency id="Rebel.Framework.Persistence" version="5.1.000.0" />
+      <dependency id="Rebel.Framework.Security" version="5.1.000.0" />
+      <dependency id="Rebel.Hive" version="5.1.000.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="WebMatrix.Data" targetFramework="" />
+      <frameworkAssembly assemblyName="WebMatrix.WebData" targetFramework="" />
+      <frameworkAssembly assemblyName="System.ComponentModel.Composition" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Web.Helpers" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Web.Mvc" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Web.WebPages" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="..\..\BuildOutput\bin\ClientDependency.Core.dll" target="lib\net40\ClientDependency.Core.dll" />
+    <file src="..\..\BuildOutput\bin\ClientDependency.Core.Mvc.dll" target="lib\net40\ClientDependency.Core.Mvc.dll" />
+    <file src="..\..\BuildOutput\bin\HtmlDiff.dll" target="lib\net40\HtmlDiff.dll" />
+    <file src="..\..\BuildOutput\bin\Microsoft.Web.Mvc.dll" target="lib\net40\Microsoft.Web.Mvc.dll" />
+    <file src="..\..\BuildOutput\bin\Rebel.Cms.Web.dll" target="lib\net40\Rebel.Cms.Web.dll" />
+    <file src="..\..\BuildOutput\bin\Rebel.Cms.Web.EmbeddedViewEngine.dll" target="lib\net40\Rebel.Cms.Web.EmbeddedViewEngine.dll" />
+    <file src="..\..\BuildOutput\bin\Rebel.Cms.Web.PropertyEditors.dll" target="lib\net40\Rebel.Cms.Web.PropertyEditors.dll" />
+  </files>
+</package>

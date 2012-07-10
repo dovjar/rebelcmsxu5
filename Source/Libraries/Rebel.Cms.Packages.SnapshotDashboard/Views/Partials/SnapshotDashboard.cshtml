@@ -1,0 +1,70 @@
+﻿@using Rebel.Cms.Web;
+@using Rebel.Framework;
+@using Rebel.Cms.Packages.SnapshotDashboard.Controllers
+@using Rebel.Cms.Packages.SnapshotDashboard.Models
+
+@model Rebel.Cms.Packages.SnapshotDashboard.Models.SnapshotModel
+
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@using (Html.BeginForm("CreateSnapshot", "CreateSnapshotDashboard", FormMethod.Post, new { id = "SnapshotForm" }))
+{ 
+    <div class="property-pane">
+
+        @Html.UmbEditorFor(x => x.IncludeContent)
+
+        @Html.UmbEditorFor(x => x.IncludeMedia)
+
+        @Html.UmbEditorFor(x => x.IncludeDocumentTypes)
+
+        <button type="submit" id="createSnapshot" class="btn">Create Snapshot</button>
+    </div>
+}
+
+<script>
+    $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    //DOM Ready
+    $(document).ready(function () {
+        //On form submit
+        $("#SnapshotForm").submit(function (e) {
+            //Check form is valid - from jQuery validation plugin
+            if ($(this).valid()) {
+                //Post AJAX data if form valid
+                var formObj = $('form').serializeObject();
+                console.log(formObj);
+                var json = JSON.stringify(formObj);
+                $.post("/Rebel/CreateSnapshotDashboard/CreateSnapshot",
+                        json,
+                        function (data) {
+                            //DEBUG
+                            console.log(data);
+
+                            //Show notification
+                            $u.Sys.NotificationManager.getInstance().showNotifications([{ title: data.NotificationTitle, message: data.NotificationMessage, type: data.NotificationType}]);
+                        });
+            }
+
+            //Prevent default form submit - as we are doing via AJAX
+            e.preventDefault();
+        });
+
+    });
+</script>

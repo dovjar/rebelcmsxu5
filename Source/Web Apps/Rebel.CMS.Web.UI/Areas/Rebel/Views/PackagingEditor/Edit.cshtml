@@ -1,0 +1,206 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.PackageDefinitionEditorModel
+@using Rebel.Cms.Web.Configuration.ApplicationSettings
+@using Rebel.Framework
+@using Rebel.Framework.Persistence.Model.Constants
+@using Rebel.Framework.Persistence.Model.Constants.Entities
+@using Rebel.Framework.Persistence.Model.Constants.Schemas
+@using Rebel.Framework.Security.Model.Entities
+@{
+    Layout = "../Shared/_TabbedEditorLayout.cshtml";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    //Change the action to post to depending on if the entity is new or not
+    ViewBag.Action = !Model.Id.IsNullValueOrEmpty() ? "Edit" : "Create";
+    //if the model is not null, then DONT post any Id to the Create method, otherwise post
+    //the Id as per normal
+    ViewBag.UrlParams = !Model.Id.IsNullValueOrEmpty()
+        ? (object)new { id = Model.Id }
+        : (object)new { id = "" };
+}
+@section Head {
+    @{Html.RequiresJs("Rebel.Editors/PackageEditor.js", "Scripts");}
+    <script type="text/javascript">
+        (function ($) {
+           $(document).ready(function () {                
+                Rebel.Editors.PackageEditor.getInstance().init({
+                    activeTabIndex: @Model.ActiveTabIndex ,
+                    activeTabIndexField: $("#@Html.IdFor(x => Model.ActiveTabIndex)"),
+                    additionalFiles: @Html.ToJsonString(Model.AdditionalFiles)
+                }); 
+            });
+        })(jQuery);
+    </script>
+}
+@section Tabs {
+    <li><a href="#packageProperties"><span>Package Properties</span></a></li>
+    <li><a href="#packageContents"><span>Package Contents</span></a></li>
+    <li><a href="#packageFiles"><span>Package Files</span></a></li>
+    <li><a href="#packageConfig"><span>Package Config</span></a></li>
+}
+@using (Html.BeginForm((string)ViewBag.Action, new Guid(CorePluginConstants.PackagingEditorControllerId), (object)ViewBag.UrlParams, new { enctype = "multipart/form-data" }))
+{
+    @Html.UmbValidationSummary("Please correct the errors and try again.")
+    
+    @Html.UmbEditorBar();
+ 
+    @Html.HiddenFor(x => Model.ActiveTabIndex)
+    
+    if (!Model.Id.IsNullValueOrEmpty())
+    {
+        @Html.HiddenFor(x => Model.Id)
+    }   
+    
+    <div id="editorContent" class="has-editor-bar scrolling-content padded-content">
+        
+        @if (Model.Id.IsNullValueOrEmpty())
+        {
+            <p class="notice">@("Package.UnSaved.Message".Localize())</p>
+        }
+        
+        @*Render Package Properties Tab*@
+        <div id="packageProperties">
+            <div class="property-pane clearfix">
+                @Html.UmbEditorFor(x => Model.Name)
+                @Html.UmbEditorFor(x => Model.Alias)
+                @Html.UmbEditorFor(x => Model.Version)
+                @Html.UmbEditorFor(x => Model.Author)
+            </div>
+            <div class="property-pane clearfix">
+                @Html.UmbEditorFor(x => Model.ProjectUrl)
+                @Html.UmbEditorFor(x => Model.LicenseUrl)
+            </div>
+            <div class="property-pane clearfix">
+                @Html.UmbEditorFor(x => Model.Description)
+                @Html.UmbEditorFor(x => Model.Tags)
+            </div>
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix">
+                    <div class="property-editor-label">Package file (.nupkg)</div>
+                    <div class="property-editor-control">
+                        @if (Model.IsPublished)
+                        {
+                            <a href="@Url.Action("Download", "PackagingEditor", new { area = "Rebel", id = Model.Id })">Download</a>
+                        }
+                        else
+                        {
+                            <text>This package is not published</text>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        @*Render Package Contents Tab*@
+        <div id="packageContents">
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix">
+                    <div class="property-editor-label">Content</div>
+                    <div class="property-editor-control">
+                        @Html.TreePickerFor(x => Model.ContentNodeId, new TreePickerRenderModel
+                   {
+                       TreeControllerId = new Guid(CorePluginConstants.ContentTreeControllerId),
+                       TreeVirtualRootId = FixedHiveIds.ContentVirtualRoot,
+                       StartNodeId = new HiveId(new Guid(CorePluginConstants.ContentTreeControllerId))
+                   })
+                    </div>
+                </div>
+                @Html.UmbEditorFor(x => Model.IncludeChildContentNodes)
+            </div>
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix">
+                    <div class="property-editor-label">Media</div>
+                    <div class="property-editor-control">
+                        @Html.TreePickerFor(x => Model.MediaNodeId, new TreePickerRenderModel
+                   {
+                       TreeControllerId = new Guid(CorePluginConstants.MediaTreeControllerId),
+                       TreeVirtualRootId = FixedHiveIds.MediaVirtualRoot,
+                       StartNodeId = new HiveId(new Guid(CorePluginConstants.MediaTreeControllerId))
+                   })
+                    </div>
+                </div>
+                @Html.UmbEditorFor(x => Model.IncludeChildMediaNodes)
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.DocumentTypeIds, Html.EditorFor(l => l.AvailableDocumentTypes, "HierarchicalCheckBoxList",
+                                                                    new { altName = Html.NameFor(l => l.DocumentTypeIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.MediaTypeIds, Html.EditorFor(l => l.AvailableMediaTypes, "HierarchicalCheckBoxList",
+                                                                 new { altName = Html.NameFor(l => l.MediaTypeIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.TemplateIds, Html.EditorFor(l => l.AvailableTemplates, "CheckBoxList",
+                                                                new { altName = Html.NameFor(l => l.TemplateIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.PartialIds, Html.EditorFor(l => l.AvailablePartials, "HierarchicalCheckBoxList",
+                                                               new { altName = Html.NameFor(l => l.PartialIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.StylesheetIds, Html.EditorFor(l => l.AvailableStylesheets, "HierarchicalCheckBoxList",
+                                                                  new { altName = Html.NameFor(l => l.StylesheetIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.ScriptIds, Html.EditorFor(l => l.AvailableScripts, "HierarchicalCheckBoxList",
+                                                              new { altName = Html.NameFor(l => l.ScriptIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.MacroIds, Html.EditorFor(l => l.AvailableMacros, "CheckBoxList",
+                                                             new { altName = Html.NameFor(l => l.MacroIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.LanguageIds, Html.EditorFor(l => l.AvailableLanguages, "CheckBoxList",
+                                                                new { altName = Html.NameFor(l => l.LanguageIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.DictionaryItemIds, Html.EditorFor(l => l.AvailableDictionaryItems, "HierarchicalCheckBoxList",
+                                                                      new { altName = Html.NameFor(l => l.DictionaryItemIds) }))
+            </div>
+            <div id="persistanceSettings" class="property-pane clearfix">
+                @Html.UmbEditorFor(m => Model.DataTypeIds, Html.EditorFor(l => l.AvailableDataTypes, "CheckBoxList",
+                                                                new { altName = Html.NameFor(l => l.DataTypeIds) }))
+            </div>
+        </div>
+        
+        @*Render Package Files Tab*@
+        <div id="packageFiles">
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix">
+                    <span style="color: red;">Remember:</span> macro partial files for your macros will be added automaticly, but you will still need to add assemblies, images and script files manually to the list below.
+                </div>
+            </div>
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix additional-file-list">
+                    <label for="txt-additional-file">Relative path to file (ie: ~/bin/rebel.bin)</label><br /><br />
+                    <input id="txt-additional-file" type="text" style="width: 400px;" data-bind="value: additionalFilePath" /> <input type="image" src="@Url.Content("~/Areas/Rebel/Content/Images/browse.png")" title="Browse" style="vertical-align: middle;" data-bind="click: browseFile"/> <input type="image" src="@Url.Content("~/Areas/Rebel/Content/Images/create.png")" title="Add" style="vertical-align: middle;" data-bind="click: addFile"/>
+                    <div style="display: hidden;">
+                        @Html.RenderTree(
+                            new TreeRenderModel(Url.Action("Browse", "PackagingEditor"), "browse-tree") { ManuallyInitialize = true }
+                            )
+                    </div>
+                    <ul class="additional-files" data-bind="template: { name : 'additionalFile', foreach: additionalFiles }"></ul>
+                </div>
+            </div>
+        </div>
+
+        @*Render Package Config Tab*@
+        <div id="packageConfig">
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix">
+                    Here you can add custom installer / uninstaller tasks to run during installation and uninstallation.<br />
+                    <br />
+                    @Html.TextAreaFor(m => Model.Config, new { style = "width: 99%; height: 400px;" })
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @*Jquery template to render the macro parameters*@
+    <script type="text/html" id='additionalFile'>
+        <li>
+            <input type="hidden" name="@Html.NameFor(x => Model.AdditionalFiles)" data-bind="value: path" />
+            <input type="text" disabled="disabled" style="width: 400px; background:#eee;" data-bind="value: path" /> <input type="image" src="@Url.Content("~/Areas/Rebel/Content/Images/delete.png")" title="Remove" style="vertical-align: middle;" data-bind="click: removeFile" />
+        </li>
+    </script>
+}

@@ -1,0 +1,13 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.CreateDataTypeModel
+@using Rebel.Framework.Localization;
+           
+@{
+    Layout = "../Shared/_CreateNewLayout.cshtml";
+    ViewBag.ControllerId = new Guid(CorePluginConstants.DataTypeEditorControllerId);
+    ViewBag.Title = "DataType.Create.Title".Localize();
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@Html.UmbNextButton()

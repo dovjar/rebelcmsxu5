@@ -1,0 +1,34 @@
+﻿@inherits System.Web.Mvc.WebViewPage<Rebel.Cms.Web.PropertyEditors.Numeric.NumericEditorModel>
+@using System.Web.Helpers;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using System.Web.WebPages;
+@using Microsoft.Web.Mvc;
+@using ClientDependency.Core;
+@using ClientDependency.Core.Mvc;
+@using Rebel.Cms.Web;
+@using Rebel.Cms.Web.Editors;
+@using Rebel.Cms.Web.PropertyEditors.Numeric
+
+@{
+    Html.RequiresJsResource(typeof(NumericEditor), "Rebel.Cms.Web.PropertyEditors.Numeric.Resources.NumericPropertyEditor.js");
+
+    var propertyId = ViewBag.RebelPropertyId;
+    var fieldId = Html.IdFor(x => Model.ValueAsDecimal).ToString();
+    
+    <script type="text/javascript">
+		(function ($) {
+			$(document).ready(function () {
+			    Rebel.PropertyEditors.NumericPropertyEditor.init({
+			            rebelPropertyId: "@propertyId",
+			            fieldId: "@fieldId",
+			            decimalPlaces: @Model.PreValueModel.DecimalPlaces
+			        });
+			});
+		})(jQuery);
+    </script>
+}
+
+@Html.TextBox("ValueAsDecimal", Model.ValueAsDecimal.ToString("0.".PadRight(Model.PreValueModel.DecimalPlaces + 2, '0')), new { @class = "numeric" })

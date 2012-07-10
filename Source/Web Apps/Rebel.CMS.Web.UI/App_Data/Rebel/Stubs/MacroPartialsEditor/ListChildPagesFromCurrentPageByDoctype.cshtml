@@ -1,0 +1,28 @@
+@inherits PartialViewMacroPage
+@using Rebel.Cms.Web
+@using Rebel.Cms.Web.Macros
+@using Rebel.Framework
+
+@{
+    @*
+    === Macro Parameters To Create ===
+    Show:True   Alias:contentTypeAlias       Name:Content/Document Type Alias   Type:Document Type Picker
+    *@
+    
+    @* Get the content type alias we want to filter on from the macro parameter *@
+    var contentTypeAlias = Model.MacroParameters.contentTypeAlias;
+}
+
+@* Ensure that the rootNode has children, where the property rebelNaviHide is not True and content type of node matches our macro param *@
+@if (CurrentPage.Children.Where("rebelNaviHide != @0 && ContentTypeAlias == @1", "True", contentTypeAlias).Any())
+{
+    <ul>            
+        @* For each child page under the root node, where the property rebelNaviHide is not True and content type of node matches our macro param *@
+        @foreach (var childPage in CurrentPage.Children.Where("rebelNaviHide != @0 && ContentTypeAlias == @1", "True", contentTypeAlias))
+        {
+            <li>
+                <a href="@childPage.Url">@childPage.Name</a>
+            </li>
+        }
+    </ul>
+}

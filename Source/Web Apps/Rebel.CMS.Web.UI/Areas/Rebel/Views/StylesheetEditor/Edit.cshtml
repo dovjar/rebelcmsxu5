@@ -1,0 +1,20 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.FileEditorModel
+@using Rebel.Framework.Localization           
+@{
+    Layout = "../Shared/_FileContentEditorLayout.cshtml";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    ViewBag.Action = "Save";
+    ViewBag.ControllerId = new Guid(CorePluginConstants.StylesheetEditorControllerId);
+    ViewBag.TabTitle = "Stylesheet.Editor.Title".Localize();
+
+    Html
+        .RequiresJs("CodeMirror/codemirror.js", "Modules", 100)
+        .RequiresJs("CodeMirror/mode/css/css.js", "Modules", 101)
+        .RequiresJs("Rebel.Editors/ScriptEditor.js", "Scripts", 102);
+    Html
+        .RequiresCss("CodeMirror/codemirror.css", "Modules", 100)
+        .RequiresCss("CodeMirror/theme/rebel.css", "Modules", 101)
+        .RequiresCss("CodeMirror/mode/css/css.css", "Modules", 102);
+        
+}

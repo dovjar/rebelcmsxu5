@@ -34,8 +34,8 @@ if ($project) {
         Remove-Item $examinePluginPath -Recurse -Force
 	}
 	
-	# Create a backup of extisting umbraco config files
-	$configPath = Join-Path (Split-Path $project.FullName -Parent) "\App_Data\Umbraco\Config"
+	# Create a backup of extisting rebel config files
+	$configPath = Join-Path (Split-Path $project.FullName -Parent) "\App_Data\Rebel\Config"
 	Get-ChildItem -path $configPath |
 	   Where -filterscript {($_.Name.EndsWith("config"))} | Foreach-Object {
 	    $newFileName = $_.FullName.replace(".config",".config.backup")
@@ -48,9 +48,9 @@ if ($project) {
 	$webConfigDestination = Join-Path $projectDestinationPath "web.config.backup"
 	Copy-Item $webConfigSource $webConfigDestination
 	
-	# Copy umbraco files from package to project folder
-	$umbracoFilesPath = Join-Path $rootPath "UmbracoFiles\*"
-	Copy-Item $umbracoFilesPath $projectDestinationPath -recurse -force
+	# Copy rebel files from package to project folder
+	$rebelFilesPath = Join-Path $rootPath "RebelFiles\*"
+	Copy-Item $rebelFilesPath $projectDestinationPath -recurse -force
 	
 	# Open readme.txt file
 	$DTE.ItemOperations.OpenFile($toolsPath + '\Readme.txt')

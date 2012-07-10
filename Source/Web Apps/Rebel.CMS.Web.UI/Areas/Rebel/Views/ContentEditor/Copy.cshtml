@@ -1,0 +1,24 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.CopyModel
+@using Rebel.Framework.Localization;
+           
+@{
+    Layout = "MoveCopyLayout.cshtml";  
+    ViewBag.ActionName = "Copy";
+    ViewBag.Title = "Copy";
+    ViewBag.HeaderTitle = "Action.Copy.HeaderTitle".Localize(this,new { Name = Model.SelectedItemName }, encode: false);
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@section TreeBottom {
+<br />
+<div>
+    <span class="editor-label">
+        @Html.LabelFor(x => Model.RelateToOriginal)
+    </span>
+    <span class="editor-field">
+        @Html.CheckBoxFor(x => Model.RelateToOriginal, new Dictionary<string, object> { { "data-bind", "checked: relateToOriginal" } })
+    </span>
+</div>
+}

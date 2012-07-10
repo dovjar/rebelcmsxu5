@@ -1,0 +1,75 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Rebel.Cms.Web.Context;
+using Rebel.Cms.Web.Model.BackOffice.PropertyEditors;
+using Rebel.Framework;
+
+namespace <#= Model.Namespace #>.<#= Model.PropertyEditorAlias #>
+{ 
+	[PropertyEditor("<#= Guid.NewGuid().ToString() #>", "<#= Model.PropertyEditorAlias #>", "<#= Model.PropertyEditorName #>", IsParameterEditor = <#= Model.IsParameterEditor.ToString().ToLower() #>)]
+    public class <#= Model.PropertyEditorAlias #>Editor : ContentAwarePropertyEditor<<#= Model.PropertyEditorAlias #>EditorModel<#= Model.HasPreValueEditor ? ", " + Model.PropertyEditorAlias + "PreValueModel" : "" #>>
+    {
+	
+		protected IBackOfficeRequestContext BackOfficeRequestContext {get; private set;}
+
+		/// <summary>
+        /// Initializes a new instance of the <see cref="<#= Model.PropertyEditorAlias #>Editor"/> class.
+        /// </summary>
+        /// <param name="backOfficeRequestContext">The back office request context.</param>
+        public <#= Model.PropertyEditorAlias #>Editor(IBackOfficeRequestContext backOfficeRequestContext)
+        {
+            BackOfficeRequestContext = backOfficeRequestContext;
+        }
+
+		<#
+			if (Model.HasPreValueEditor) {
+		#>
+
+		/// <summary>
+        /// Creates the editor model
+        /// </summary>
+        /// <param name="preValues"></param>
+        /// <returns></returns>
+		public override <#= Model.PropertyEditorAlias #>EditorModel CreateEditorModel(<#= Model.PropertyEditorAlias #>PreValueModel preValues)
+        {
+            return new <#= Model.PropertyEditorAlias #>EditorModel(preValues, BackOfficeRequestContext, 
+                GetContentModelValue(x => x.Id, HiveId.Empty),
+                GetContentPropertyValue(x => x.Alias, ""));
+        }
+		
+		/// <summary>
+        /// Creates the pre value model
+        /// </summary>
+        /// <returns></returns>
+        public override <#= Model.PropertyEditorAlias #>PreValueModel CreatePreValueEditorModel()
+        {
+            return new <#= Model.PropertyEditorAlias #>PreValueModel();
+        }
+
+		<#
+			}
+			else {
+		#>
+
+		/// <summary>
+        /// Creates the editor model
+        /// </summary>
+        /// <returns></returns>
+		public override <#= Model.PropertyEditorAlias #>EditorModel CreateEditorModel()
+        {
+            return new <#= Model.PropertyEditorAlias #>EditorModel(BackOfficeRequestContext, 
+                GetContentModelValue(x => x.Id, HiveId.Empty),
+                GetContentPropertyValue(x => x.Alias, ""));
+        }
+
+		<#
+			}			
+		#>
+
+	}
+}

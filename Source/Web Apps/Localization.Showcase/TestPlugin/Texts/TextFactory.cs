@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Umbraco.Framework.Localization.Configuration;
-using Umbraco.Framework.Localization.Maintenance;
-using Umbraco.Framework.Localization;
+using Rebel.Framework.Localization.Configuration;
+using Rebel.Framework.Localization.Maintenance;
+using Rebel.Framework.Localization;
 using System.Reflection;
 
 namespace TestPlugin.Texts

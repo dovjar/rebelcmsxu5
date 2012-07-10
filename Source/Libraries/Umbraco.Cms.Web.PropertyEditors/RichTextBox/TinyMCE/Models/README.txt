@@ -1,1 +1,0 @@
-﻿Because Models can't currently be registered with the model mapper via a plugin, models are currently defined in the Umbraco.Cms.Model namespace. Once this ability has been added, models should be moved here.

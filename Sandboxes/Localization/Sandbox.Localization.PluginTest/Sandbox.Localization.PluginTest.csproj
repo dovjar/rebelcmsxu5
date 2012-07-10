@@ -52,9 +52,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Libraries\Umbraco.Foundation\Umbraco.Foundation.csproj">
+    <ProjectReference Include="..\..\..\Source\Libraries\Rebel.Foundation\Rebel.Foundation.csproj">
       <Project>{9298A244-72D2-48C4-905D-FE84161589A7}</Project>
-      <Name>Umbraco.Foundation</Name>
+      <Name>Rebel.Foundation</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,26 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.SearchModel
+@using Rebel.Cms.Web;
+@{
+    Html
+        .RequiresJs("Rebel.Editors/SearchBox.js", "Scripts", 100)
+        .RequiresJs("jQuery/jquery.watermark.min.js", "Scripts", 101);
+}
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            var treeElementId = '@(ViewBag.TreeElementId == null ? "mainTree" : (string)ViewBag.TreeElementId)';
+            var searchAjaxUrl = "@Url.GetTreeSearchUrl()";
+            var searchUrl = "@Url.Action("Search", "Default")";
+            $('#@Html.IdFor(x => Model.SearchText)').rebelSearchBox({
+                searchAjaxUrl: searchAjaxUrl, 
+                treeElementId: treeElementId,
+                searchUrl: searchUrl,
+                windowMgr: Rebel.System.WindowManager.getInstance()
+            });
+        });
+    })(jQuery);
+</script>
+
+<div id="searchBox">
+    @Html.TextBoxFor(x => Model.SearchText)
+</div>

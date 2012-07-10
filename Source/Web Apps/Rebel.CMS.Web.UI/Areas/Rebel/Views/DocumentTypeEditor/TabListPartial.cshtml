@@ -1,0 +1,35 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.AbstractSchemaEditorModel
+@using System.Linq;
+@using Rebel.Framework.Persistence.Model.Constants;
+@using Rebel.Framework.Localization;
+
+@{
+    var sortedTabs = Model.DefinedTabs.Union(Model.InheritedTabs.DistinctBy(x => x.Alias).Where(x => !Model.DefinedTabs.Any(y => y.Alias == x.Alias)))
+        .OrderBy(x => x.SortOrder);
+}
+
+<div class="property-editor clearfix">
+        <label>@("DocumentType.Editor.Label.Tab".Localize())</label>
+        <ul id="tabItems">   
+            @foreach (var t in sortedTabs)
+            {        
+                @Html.EditorFor(x => t, "TabListItem", t.Id.GetHtmlId())
+            }
+        </ul>
+        @*<span>
+            <table class="tab-list">
+                <thead>
+                    <th>Name</th>
+                    <th>Sort Order</th>
+                    <th>&nbsp;</th>
+                </thead>
+                <tbody>
+                    @foreach (var t in sortedTabs)
+                    {        
+                        @Html.EditorFor(x => t, "TabListItem", t.Id.GetHtmlId())
+                    }
+                </tbody>
+            </table>
+        </span>*@
+</div>
+

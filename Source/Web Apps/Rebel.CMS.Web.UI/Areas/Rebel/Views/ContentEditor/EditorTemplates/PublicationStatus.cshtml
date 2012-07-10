@@ -1,0 +1,12 @@
+﻿@model DateTimeOffset?
+@using Rebel.Framework.Localization;           
+
+@if (!Model.HasValue)
+{
+    <span>@("Content.Editor.Label.NotPublishedYet".Localize())</span>
+}
+else
+{       
+    <span>@("Content.Editor.Label.LastPublished".Localize()): @string.Format(ViewData.ModelMetadata.DisplayFormatString, Model.Value)</span>
+    <input type="submit" id="submit_Unpublish" name="submit.Unpublish" value="Unpublish" />
+}

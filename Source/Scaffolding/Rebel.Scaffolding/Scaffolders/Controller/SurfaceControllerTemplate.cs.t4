@@ -1,0 +1,54 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Rebel.Cms.Web.Surface;
+using Rebel.Cms.Web.Context;
+using Rebel.Cms.Web;
+using Rebel.Framework;
+using <#= Model.ModelNamespaceRef #>;
+
+namespace <#= Model.Namespace #>.Controllers.SurfaceControllers
+{ 
+    public class <#= Model.ControllerName #>SurfaceController : SurfaceController
+    {
+		//Surfacecontroller with a default ViewModel Setup
+		//Two methods added, one for rendering a macro, one for receiving the posted form back
+		
+		private readonly IRebelApplicationContext _context;
+        public <#= Model.ControllerName #>SurfaceController(IRebelApplicationContext context)
+        {
+            _context = context;
+        }
+
+		//Renders a partialview for a ChildAction macrom pageId param is optional, and just an exemple
+		[ChildActionOnly]
+        public PartialViewResult <#= Model.RenderMethod #>(HiveId? pageid)
+        {
+            if(pageid.HasValue)
+                ViewBag.saveTo = pageid.Value.ToString();
+            
+			var model = new <#= Model.ModelTypeName #>();
+
+            return PartialView(model);    
+        }
+        
+		//endpoint for posting data to a surface controller action
+	    [HttpPost]
+        public ActionResult Create<#= Model.ControllerName #>Item(<#= Model.ModelTypeName #> model)
+        {
+			//model not valid, do not save, but return current rebel page
+            if (!ModelState.IsValid)
+                return CurrentRebelPage();
+			
+			//if validation passes perform whatever logic
+
+
+			//redirect to current page to clear the form
+            return RedirectToCurrentRebelPage();
+        }
+	}
+}

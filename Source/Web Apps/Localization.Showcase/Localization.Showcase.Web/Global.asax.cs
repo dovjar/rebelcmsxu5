@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Umbraco.Framework.Localization.Web;
-using Umbraco.Framework.Localization;
-using Umbraco.Framework.Localization.Configuration;
-using Umbraco.Framework.Localization.Web.Mvc.Areas;
+using Rebel.Framework.Localization.Web;
+using Rebel.Framework.Localization;
+using Rebel.Framework.Localization.Configuration;
+using Rebel.Framework.Localization.Web.Mvc.Areas;
 
 namespace Localization.Showcase.Web
 {

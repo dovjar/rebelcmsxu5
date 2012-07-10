@@ -27,42 +27,42 @@ _ReSharper*/
 [Bb]uild[Ll]og.*
 *.[Pp]ublish.xml
 *.suo
-umbraco.config
+rebel.config
 Plugins\**.dll
 *.vs10x
 *.orig
 */App_Data/Logs/*
 */App_Data/ClientDependency/*
-*/App_Data/Umbraco.sdf
+*/App_Data/Rebel.sdf
 Source/testimpactdata.sdf
-Source/Web Apps/Umbraco.Cms.Web.UI/Web.config
+Source/Web Apps/Rebel.Cms.Web.UI/Web.config
 *.DS_Store
-Source/Web Apps/Umbraco.CMS.Web.UI/Web.config
+Source/Web Apps/Rebel.CMS.Web.UI/Web.config
 Source/BuildOutput/*
 Source/*.zip
 glob:*.docstates
-*/App_Data/Umbraco/web.config
+*/App_Data/Rebel/web.config
 */Plugins/Packages/*
 */App_Data/Examine/*
-*/App_Data/Umbraco/HiveConfig/web.config
-glob:Source/Web Apps/Umbraco.CMS.Web.UI/App_Data/Umbraco/Media/*
+*/App_Data/Rebel/HiveConfig/web.config
+glob:Source/Web Apps/Rebel.CMS.Web.UI/App_Data/Rebel/Media/*
 */App_Plugins/Packages/*
-*/App_Data/Umbraco/Macros/*
-*/App_Data/Umbraco/Media/*
+*/App_Data/Rebel/Macros/*
+*/App_Data/Rebel/Media/*
 */App_Plugins/Core/Editors/*
 */App_Plugins/Core/Trees/*
 */App_Plugins/Core/PropertyEditors/*
 */App_Plugins/Core/Tasks/*
-*/Umbraco.Cms.Web.UI/Scripts/Umbraco/*
-*/Umbraco.Cms.Web.UI/Views/Umbraco/*
+*/Rebel.Cms.Web.UI/Scripts/Rebel/*
+*/Rebel.Cms.Web.UI/Views/Rebel/*
 *.crunchproject.local.xml
-Source/Web Apps/Umbraco.CMS.Web.UI/App_Plugins/Core/ParameterEditors/*
+Source/Web Apps/Rebel.CMS.Web.UI/App_Plugins/Core/ParameterEditors/*
 *.crunchsolution.local.xml
 */App_Plugins/Core/ParameterEditors/*
-Source/Web Apps/Umbraco.Cms.Web.UI/Content/Styles/*
-Source/Web Apps/Umbraco.Cms.Web.UI/Content/Images/*
-*/App_Data/Umbraco/LocalPackages/*.nupkg
-Source/Web Apps/Umbraco.Cms.Web.UI/App_Plugins/Core/lib/*
-Source/Testing/Umbraco.Tests.CoreAndFramework/App_Data/Users.xml
-Source/Testing/Umbraco.Tests.CoreAndFramework/App_Data/Roles.xml
-Source/Web Apps/Umbraco.CMS.Web.UI/App_Plugins/Core/lib/*
+Source/Web Apps/Rebel.Cms.Web.UI/Content/Styles/*
+Source/Web Apps/Rebel.Cms.Web.UI/Content/Images/*
+*/App_Data/Rebel/LocalPackages/*.nupkg
+Source/Web Apps/Rebel.Cms.Web.UI/App_Plugins/Core/lib/*
+Source/Testing/Rebel.Tests.CoreAndFramework/App_Data/Users.xml
+Source/Testing/Rebel.Tests.CoreAndFramework/App_Data/Roles.xml
+Source/Web Apps/Rebel.CMS.Web.UI/App_Plugins/Core/lib/*

@@ -1,0 +1,98 @@
+﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.UserGroupEditorModel
+@using Rebel.Framework
+@using Rebel.Framework.Persistence.Model.Constants.Schemas
+@using Rebel.Framework.Localization
+@{
+    Layout = "../Shared/_TabbedEditorLayout.cshtml";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    //Change the action to post to depending on if the entity is new or not
+    ViewBag.Action = !Model.Id.IsNullValueOrEmpty() ? "Edit" : "Create";
+    //if the model is not null, then DONT post any Id to the Create method, otherwise post
+    //the Id as per normal
+    ViewBag.UrlParams = !Model.Id.IsNullValueOrEmpty()
+        ? (object)new { id = Model.Id }
+        : (object)new { id = "" };
+}
+@section Head {
+    @{
+        Html
+            .RequiresJs("Rebel.UI/PermissionsGrid.js", "Scripts")
+            .RequiresJs("Rebel.Editors/UserGroupEditor.js", "Scripts");
+    }
+    <script type="text/javascript">
+        (function ($) {
+           $(document).ready(function () {                
+                Rebel.Editors.UserGroupEditor.getInstance().init({
+                    activeTabIndex: @Model.ActiveTabIndex ,
+                    activeTabIndexField: $("#@Html.IdFor(x => Model.ActiveTabIndex)"),
+                    permissions: @Html.ToJsonString(@Model.Permissions),
+                    isReadOnly: @((Model.Name == "Administrator").ToString().ToLower())
+                }); 
+            });
+        })(jQuery);
+    </script>
+}
+@section Tabs {
+    <li><a href="#macroPropertiesTab"><span>@(string.IsNullOrEmpty(Model.Name) ? "UserGroup.Editor.Tab.NewUserGroup".Localize() : Model.Name)</span></a></li>
+    <li><a href="#rebelPropertiesTab"><span>@("UserGroup.Editor.Tab.RebelProperties".Localize())</span></a></li>
+}
+@using (Html.BeginForm((string)ViewBag.Action, new Guid(CorePluginConstants.UserGroupEditorControllerId), (object)ViewBag.UrlParams, new { enctype = "multipart/form-data" }))
+{
+    @Html.UmbValidationSummary("Save.ValidationSummary.Title".Localize())
+    
+    @Html.UmbEditorBar();
+ 
+    @Html.HiddenFor(x => Model.ActiveTabIndex)
+
+    <div id="editorContent" class="has-editor-bar scrolling-content padded-content">
+        
+        @if (Model.Id.IsNullValueOrEmpty())
+        {
+            <p class="notice">@("UserGroup.UnSaved.Message".Localize())</p>
+        }
+        
+        <p class="notice">@("UserGroup.Inherit.Message".Localize())</p>
+        
+        @*Render User properties tab*@
+        <div id="macroPropertiesTab">
+            <div class="property-pane clearfix">
+                @if(Model.Name == "Administrator" || Model.Name == "Anonymous")
+                {
+                    @Html.UmbDisplayFor(x => Model.Name)
+                } 
+                else
+                {
+                    @Html.UmbEditorFor(x => Model.Name)
+                }
+            </div>
+            <div class="property-pane clearfix">
+                <div class="property-editor clearfix">
+                    <div class="property-editor-label">@("UserGroup.Editor.Label.Permissions".Localize())</div>
+                    <div class="property-editor-control permissions-grids-container">
+                        <div id="@Model.Id.GetHtmlId()" class="permissions-grid-container" style="max-width: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+            @*@{
+                var usersProperty = Model.Properties.SingleOrDefault(x => x.Alias == UserGroupSchema.UsersAlias);
+                if (usersProperty != null)
+                {
+                    @Html.EditorFor(editor => usersProperty, "ContentProperty", usersProperty.Id.GetHtmlId())
+                }
+            }*@
+        </div>
+        @*Render Rebel properties tab*@
+        <div id="rebelPropertiesTab">
+            <div class="property-pane clearfix">
+                @Html.UmbDisplayId(f => Model.Id)
+                @Html.UmbDisplayFor(m => Model.DocumentTypeName)
+                @Html.UmbDisplayFor(f => Model.UtcCreated)
+                @Html.UmbDisplayFor(f => Model.UtcModified)
+                @Html.UmbDisplayFor(f => Model.CreatedBy)
+                @Html.UmbDisplayFor(f => Model.ModifiedBy)
+            </div>
+        </div>
+    </div>
+}

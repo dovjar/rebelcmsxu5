@@ -1,0 +1,107 @@
+﻿@model IEnumerable<PackageModel>
+@using Rebel.Framework.Localization;
+           
+@{
+    Html
+        .RequiresCss("Packaging.css", "Styles")
+        .RequiresJs("Rebel.Editors/PackagingInstaller.js", "Scripts");
+
+    Layout = "../Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            Rebel.Editors.PackageInstaller.getInstance().init();
+        });
+    })(jQuery);
+</script>
+<div>
+    <div id="editor" class="panel">
+        <div class="boxhead">
+            <h2>@("Packaging.Editor.Title".Localize())</h2>
+        </div>
+        <div class="boxbody">
+            <div class="padded-content scrolling-content">
+                        <h2>
+                            @("Packaging.Editor.Title.Upload".Localize())</h2>
+                <div class="property-pane">
+                    <div id="uploadPackage">
+                        @using (Html.BeginForm("AddLocalPackage", "PackagingEditor", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.ValidationMessage("PackageFileValidation")
+                            
+                            <label for="file">
+                                @("Packaging.Editor.Labels.FileName".Localize()):</label>
+                            <input type="file" name="file" id="file" /> 
+                            <br />
+                            <button type="submit" id="upload" name="upload" value="upload" data-bind="enable: canUpload">@("Packaging.Editor.Button.Upload".Localize())</button>
+                            <br />
+                            <input type="checkbox" id="autoinstall" name="autoinstall" value="autoinstall" data-bind="checked: autoInstall" /><label for="autoinstall" style="width: 400px;">@("Packaging.Editor.Labels.AutoInstall".Localize())</label>
+                        }
+                    </div>
+                </div>
+                            <h2>
+                                @("Packaging.Editor.Title.Install".Localize())</h2>
+                <div class="property-pane">
+                    <div class="notice">
+                        <h4>@("Packaging.Editor.Notice.Install.Title".Localize())</h4>
+                        @Html.Raw("Packaging.Editor.Notice.Install".Localize())
+                       
+                            <input type="checkbox" id="risks" data-bind="checked: acceptTerms" /><label for="risks">@("Packaging.Editor.Labels.Risks".Localize())</label></p>
+                    </div>
+                    @if (Model.Any())
+                    {
+                        <div style="margin-top: 5px;">
+                            @using (Html.BeginForm("ManagePackage", "PackagingEditor", FormMethod.Post))
+                            {
+                                <ul class="box package-list" data-bind="style: { 'background-color': acceptTerms() ? 'transparent' : '#EEE' }">
+                                    @foreach (var p in Model)
+                                    {
+                                        <li class="clearfix">
+                                            <div class="action">
+                                                @if (!p.IsPackageInstalled)
+                                                {
+                                                    
+                                                    <button data-bind="enable: acceptTerms(), click: validateInstall, css: { clickable : acceptTerms() }" title="@("Packaging.Editor.InstallPackage".Localize())" class="big-install-button" value="@(p.Metadata.Id + "-" + p.Metadata.Version)" name="install" id="@(p.Metadata.Id + "-" + p.Metadata.Version)"></button>
+                                                }
+                                                else if (p.IsVersionInstalled)
+                                                {
+                                                    <button data-bind="enable: acceptTerms(), click: validateUninstall, css: { clickable : acceptTerms() }" title="@("Packaging.Editor.UnInstallPackage".Localize())" class="big-remove-button" value="@(p.Metadata.Id + "-" + p.Metadata.Version)" name="uninstall" id="@(p.Metadata.Id + "-" + p.Metadata.Version)"></button>
+                                                }
+                                                else
+                                                {
+                                                    <div style="width: 96px;height: 96px;"></div>
+                                                }
+                                            </div>
+                                            <div class="info" style="width: 500px;">
+                                                @if (!p.IsPackageInstalled)
+                                                {
+                                                    <button style="float:right" name="remove" id="remove" value="@(p.Metadata.Id + "-" + p.Metadata.Version)" data-bind="enable: acceptTerms(), click: validateRemoval">
+                                                        @("Packaging.Editor.Button.RemoveFromLocal".Localize())</button>
+                                                }
+                                                @if (p.Metadata.IconUrl != null)
+                                                {
+                                                    <img src="@p.Metadata.IconUrl" class="icon" />
+                                                }
+                                                <h4>@p.Metadata.Title</h4>
+                                                <em>@p.Metadata.Version</em>
+                                                <p>@p.Metadata.Description</p>
+                                                <a href="@p.Metadata.ProjectUrl" target="_blank">@p.Metadata.ProjectUrl</a>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="boxfooter">
+            <div class="statusBar">
+                <h5>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>

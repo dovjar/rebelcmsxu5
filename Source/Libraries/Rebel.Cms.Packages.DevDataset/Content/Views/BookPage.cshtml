@@ -1,0 +1,34 @@
+﻿@inherits RenderViewPage
+@using System.Web.Mvc.Html;
+@using Rebel.Cms.Web;
+@using Rebel.Framework;
+@{
+    Layout = "_DevDatasetLayout.cshtml";
+    ViewBag.Title = CurrentPage.Name;
+}
+@section PageTitle
+{
+    @CurrentPage.Name
+}
+
+<div class="product-page cf">
+    <div class="product-info">
+        <img src="@CurrentPage.Image.Url()" alt="@CurrentPage.Name" />
+        <br /><br />
+        <h4>Publisher: @(CurrentPage.Publisher)<br />Number of Pages: @(CurrentPage.NumberOfPages)</h4>
+    </div>
+    <div class="product-details">
+        <h2>Description</h2>
+        @Rebel.Field(Model, "bodyText")
+        <h3>Options</h3>
+        @{
+            var preValues = (Rebel.Cms.Web.PropertyEditors.ListPicker.ListPickerPreValueModel)Rebel.GetPreValueModel("content://p__nhibernate/v__guid/64726f70646f776e2d6c6973742d7065");
+        }
+        <ul>
+            @foreach (var option in preValues.Items)
+            {
+                <li id="@option.Id">@option.Value</li>
+            }
+        </ul>
+    </div>
+</div>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-using Umbraco.Foundation.Localization;
+using Rebel.Foundation.Localization;
 
 namespace Sandbox.Localization.PluginTest
 {
