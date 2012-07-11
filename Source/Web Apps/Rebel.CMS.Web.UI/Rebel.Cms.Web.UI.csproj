@@ -103,6 +103,7 @@
     <Content Include="App_Data\Rebel\Stubs\ScriptEditor\Clean.js" />
     <Content Include="App_Data\Rebel\Stubs\ScriptEditor\CleanAnonymousClosure.js" />
     <Content Include="App_Data\Rebel\Stubs\StylesheetEditor\Clean.css" />
+    <Content Include="App_Plugins\Packages\SystemInfo\lib\Rebel.Cms.Packages.SystemInfo.dll" />
     <Content Include="Areas\Install\Content\Images\btn-cancel.png" />
     <Content Include="Areas\Install\Content\Images\btn-login.png" />
     <Content Include="Areas\Rebel\Content\Images\browse.png" />
@@ -1022,6 +1023,17 @@
     <Content Include="Areas\Install\Views\Install\DatabaseInstall.cshtml" />
     <Content Include="Areas\Install\Views\Install\PostStarterKitInstall.cshtml" />
     <Content Include="Areas\Rebel\Content\Images\logo-small.png" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\Backup.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\Edit.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\EditorTemplates\RouteTableModel.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\Permissions.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\PluginInfo.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\RouteTable.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Editors\SystemInfoEditor\_ViewStart.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Partial\AnotherForm.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Partial\DisplayForm.cshtml" />
+    <Content Include="App_Plugins\Packages\SystemInfo\Views\Web.config" />
+    <Content Include="App_Plugins\Packages\SystemInfo\web.config" />
     <None Include="Areas\Rebel\Modules\CodeMirror\mode\ruby\LICENSE" />
     <None Include="Areas\Rebel\Modules\DateTimePicker\README" />
     <Content Include="Areas\Rebel\Views\ContentEditor\EditorTemplates\PublicationStatus.cshtml" />
