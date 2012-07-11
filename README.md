@@ -24,5 +24,5 @@ Our long term goals
  - Continued development and support for "Umbraco 5" supporters
 
 Feedback
- - Follow us on Twitter: @rebel_cms
+ - Follow us on Twitter: [@rebel_cms](http://twitter.com/rebel_cms)
  - Email us at: info@rebelcms.com
