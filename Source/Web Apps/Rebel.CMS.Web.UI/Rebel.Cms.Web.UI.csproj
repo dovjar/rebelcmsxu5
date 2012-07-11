@@ -103,18 +103,6 @@
     <Content Include="App_Data\Rebel\Stubs\ScriptEditor\Clean.js" />
     <Content Include="App_Data\Rebel\Stubs\ScriptEditor\CleanAnonymousClosure.js" />
     <Content Include="App_Data\Rebel\Stubs\StylesheetEditor\Clean.css" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\cog.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\cross.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\error.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\help.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\icon.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\run.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\throbber.gif" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Images\tick.png" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Scripts\uGoLive.js" />
-    <Content Include="App_Plugins\Packages\uGoLive\Content\Styles\uGoLive.css" />
-    <Content Include="App_Plugins\Packages\uGoLive\lib\Our.Rebel.uGoLive.Checks.dll" />
-    <Content Include="App_Plugins\Packages\uGoLive\lib\Our.Rebel.uGoLive.dll" />
     <Content Include="Areas\Install\Content\Images\btn-cancel.png" />
     <Content Include="Areas\Install\Content\Images\btn-login.png" />
     <Content Include="Areas\Rebel\Content\Images\browse.png" />
@@ -332,7 +320,16 @@
     <Content Include="Areas\Rebel\Scripts\Rebel.UI\UIElement.js" />
     <Content Include="Areas\Rebel\Scripts\WebToolkit\webtoolkit.md5.js" />
     <Content Include="App_Plugins\Core\Scripts\Dashboards.js" />
+    <Content Include="Content\Images\rebel-logo-devstarterkit.png" />
+    <Content Include="Content\Media\empty.txt" />
+    <Content Include="Content\Scripts\IE8.js" />
+    <Content Include="Content\Styles\Faqs.css" />
+    <Content Include="Content\Styles\ie.css" />
+    <Content Include="Content\Styles\ie6.css" />
+    <Content Include="Content\Styles\main.css" />
+    <Content Include="Content\Styles\reset.css" />
     <Content Include="Content\Styles\RTE.css" />
+    <Content Include="Content\Styles\test.css" />
     <Content Include="README - Upgrade - 5.1 to 5.2.txt" />
     <Content Include="Scripts\jQuery\jquery.js" />
     <Content Include="Scripts\jQuery\jquery.unobtrusive-ajax.min.js" />
@@ -924,10 +921,6 @@
     <Content Include="App_Data\Rebel\Config\rebel.framework.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Plugins\Packages\uGoLive\uGoLive.nuspec" />
-    <Content Include="App_Plugins\Packages\uGoLive\Views\Partials\Checklist.cshtml" />
-    <Content Include="App_Plugins\Packages\uGoLive\Views\Partial\Checklist.cshtml" />
-    <Content Include="App_Plugins\Packages\uGoLive\Web.config" />
     <Content Include="Areas\Rebel\Views\PackagingEditor\Edit.cshtml" />
     <Content Include="Areas\Rebel\Views\Shared\EditorTemplates\HierarchicalCheckBoxList.cshtml" />
     <Content Include="Areas\Rebel\Views\PackagingEditor\Installed.cshtml" />
