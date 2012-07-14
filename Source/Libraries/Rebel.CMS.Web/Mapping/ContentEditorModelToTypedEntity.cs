@@ -55,7 +55,7 @@ namespace Rebel.Cms.Web.Mapping
                                 {
                                     ordinalRelativeToParent = myRelation.Ordinal;
                                 }
-                                else
+                                else if(siblingRelations.Count() > 0)
                                 {
                                     ordinalRelativeToParent = siblingRelations.Max(x => x.Ordinal) + 1;
                                 }

@@ -226,6 +226,7 @@
     <Compile Include="Mapping\MembershipUserToUser.cs" />
     <Compile Include="Mapping\RenderTypesModelMapper.cs" />
     <Compile Include="Mapping\RevisionToContentEditorModel.cs" />
+    <Compile Include="Mapping\SimpleFlattenedTypedEntityMapper.cs" />
     <Compile Include="Mapping\UserEditorModelToTypedEntity.cs" />
     <Compile Include="Mapping\UserToUserEditorModel.cs" />
     <Compile Include="MemberExtensions.cs" />
