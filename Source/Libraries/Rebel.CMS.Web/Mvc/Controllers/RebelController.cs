@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Web.Mvc;
+
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.EmbeddedViewEngine;
 using Rebel.Cms.Web.Mapping;
@@ -18,6 +20,7 @@ using Rebel.Hive.RepositoryTypes;
 using File = Rebel.Framework.Persistence.Model.IO.File;
 using MSMvc = System.Web.Mvc;
 
+
 namespace Rebel.Cms.Web.Mvc.Controllers
 {
     /// <summary>
@@ -28,7 +31,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers
     [Internationalize]
     public class RebelController : Controller, IRequiresRoutableRequestContext
     {
-        private const string JsonKey = "?format=json";
+        private const string JsonKey = "format=json";
 
         /// <summary>
         /// Constructor initializes custom action invoker
@@ -96,6 +99,12 @@ namespace Rebel.Cms.Web.Mvc.Controllers
 
         #endregion
 
+
+        private bool IsJsonRequest()
+        {
+            return HttpContext.Request.AcceptTypes.Contains("application/json") || HttpContext.Request.RawUrl.Contains(JsonKey);
+        }
+
         /// <summary>
         /// The default action to render the template/view
         /// </summary>
@@ -108,7 +117,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         {
             if (model.CurrentNode == null) return new HttpNotFoundResult();
 
-            if (HttpContext.Request.RawUrl.Contains(JsonKey))
+            if (IsJsonRequest())
             {
                 return Json(FlattenToJson(model), JsonRequestBehavior.AllowGet);
             }
