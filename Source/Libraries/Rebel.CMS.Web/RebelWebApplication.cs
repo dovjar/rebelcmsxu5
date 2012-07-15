@@ -198,7 +198,6 @@ namespace Rebel.Cms.Web
         public static void RegisterDefaultGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new EnableCompressionAttribute());
         }
 
         public static void RegisterDefaultRoutes(RouteCollection routes)
