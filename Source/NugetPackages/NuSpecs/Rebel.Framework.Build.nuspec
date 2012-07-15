@@ -7,8 +7,8 @@
     <authors>Rebel HQ</authors>
     <owners>Rebel</owners>
     <licenseUrl>http://rebel.codeplex.com/license</licenseUrl>
-    <projectUrl>http://rebel.com</projectUrl>
-    <iconUrl>http://rebel.com/media/357769/100px_transparent.png</iconUrl>
+    <projectUrl>http://rebelcms.com</projectUrl>
+    <iconUrl>http://rebelcms.com/media/357769/100px_transparent.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Installs the Rebel Framework assemblies and dependencies</description>
     <summary>Installs the Rebel Framework assemblies and dependencies</summary>
@@ -20,7 +20,7 @@
       <dependency id="ServiceStack.Text" version="[3.7.6]" />
     </dependencies>
   </metadata>
-  <files>    
+  <files>
     <file src="..\..\BuildOutput\WebApp\bin\log4net.dll" target="lib\net40\log4net.dll" />
     <file src="..\..\BuildOutput\WebApp\bin\Remotion.Linq.dll" target="lib\net40\Remotion.Linq.dll" />
     <file src="..\..\BuildOutput\WebApp\bin\Rebel.Framework.dll" target="lib\net40\Rebel.Framework.dll" />

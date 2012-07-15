@@ -18,6 +18,7 @@
 *.lib
 *.sbr
 *.scc
+*.idea
 [Bb]in
 [Db]ebug*/
 obj/

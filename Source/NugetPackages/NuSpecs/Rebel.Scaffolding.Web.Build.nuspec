@@ -6,8 +6,8 @@
    <authors>Rebel HQ</authors>
    <owners>Rebel</owners>
    <licenseUrl>http://rebel.codeplex.com/license</licenseUrl>
-   <projectUrl>http://rebel.com</projectUrl>
-   <iconUrl>http://rebel.com/media/357769/100px_transparent.png</iconUrl>
+   <projectUrl>http://rebelcms.com</projectUrl>
+   <iconUrl>http://rebelcms.com/media/357769/100px_transparent.png</iconUrl>
    <requireLicenseAcceptance>false</requireLicenseAcceptance>
    <description>A collection of scaffolders for Rebel 5, which allows you to scaffold Rebel Views, SurfaceControllers, Models and Tasks.</description>
    <summary>Scaffolders for Rebel 5</summary>

@@ -8,7 +8,7 @@
     <owners>Rebel</owners>
     <licenseUrl>http://opensource.org/licenses/mit-license.php</licenseUrl>
     <projectUrl>http://www.rebelcms.com/</projectUrl>
-    <iconUrl>http://www.rebel.com/media/357769/100px_transparent.png</iconUrl>
+    <iconUrl>http://www.rebelcms.com/media/357769/100px_transparent.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Installs the Rebel Cms Web Editor assemblies and dependencies. This package contains all dependencies needed to create a custom Editors for Rebel 1.</description>
     <summary>Installs the Rebel Cms Web Editor assemblies and dependencies</summary>

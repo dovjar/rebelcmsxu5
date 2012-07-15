@@ -7,8 +7,8 @@
     <authors>Rebel HQ</authors>
     <owners>Rebel</owners>
     <licenseUrl>http://rebel.codeplex.com/license</licenseUrl>
-    <projectUrl>http://rebel.com</projectUrl>
-    <iconUrl>http://rebel.com/media/357769/100px_transparent.png</iconUrl>    
+    <projectUrl>http://rebelcms.com</projectUrl>
+    <iconUrl>http://rebelcms.com/media/357769/100px_transparent.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Installs the Rebel Cms Web Trees assemblies and dependencies. This package contains all dependencies needed to create a custom tree for Rebel 5.</description>
     <summary>Installs the Rebel Cms Web Trees assemblies and dependencies</summary>
@@ -27,7 +27,7 @@
       <frameworkAssembly assemblyName="System.Web.Mvc" targetFramework="" />
     </frameworkAssemblies>
   </metadata>
-  <files>    
+  <files>
     <file src="..\..\BuildOutput\bin\Rebel.Cms.Web.dll" target="lib\net40\Rebel.Cms.Web.dll" />
     <file src="..\..\BuildOutput\bin\Rebel.Cms.Web.Trees.dll" target="lib\net40\Rebel.Cms.Web.Trees.dll" />
   </files>

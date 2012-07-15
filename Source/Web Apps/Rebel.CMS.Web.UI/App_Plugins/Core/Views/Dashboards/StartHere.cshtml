@@ -1,16 +1,16 @@
 ﻿@inherits Rebel.Cms.Web.Dashboards.DashboardViewPage
 @{
     Html.RequiresJs("WebToolkit/webtoolkit.md5.js", "Scripts");
-    Html.RequiresJs(Url.GetPluginsFolder() +  "/Core/Scripts/Dashboards.js");         
-       
-}              
+    Html.RequiresJs(Url.GetPluginsFolder() +  "/Core/Scripts/Dashboards.js");
+
+}
 <script type="text/javascript">
     (function ($) {
            $(document).ready(function () {
                Rebel.Editors.Dashboards.init({
                    userId: "@Context.User.Identity.Name",
                    dashboardSelector: $("#dashboardStartHere")
-                }); 
+                });
             });
         })(jQuery);
 </script>
@@ -41,7 +41,7 @@
                             <ul>
                                 <li>Download and read the <a href="http://rebel.codeplex.com/documentation?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">
                                     Rebel Getting Started Guide</a></li>
-                                <li>Download the <a href="http://our.rebel.org/projects/website-utilities/editors-manual?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
+                                <li>Download the <a href="http://rebelcms.com/projects/website-utilities/editors-manual?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
                                     target="_blank">Editors Manual</a> for details on working with the Rebel UI</li>
                                 <li>Watch the Rebel foundation videos on <a href="http://www.youtube.com/user/RebelCMS?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
                                     target="_blank">Youtube</a></li>
@@ -52,15 +52,15 @@
                             <h3>
                                 Go further</h3>
                             <ul>
-                                <li>Find an add-on <a href="http://our.rebel.org/projects?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">package</a>
+                                <li>Find an add-on <a href="http://rebelcms.com/projects?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">package</a>
                                     to help you get going quickly</li>
                                 <li>Learn to extend Rebel at <a href="http://rebel.tv?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">Rebel TV</a>
                                     (some videos are free, some require a subscription)</li>
-                                <li>Read the API documentation on our <a href="http://our.rebel.org/wiki/recommendations/recommended-reading-for-net-developers?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
+                                <li>Read the API documentation on our <a href="http://rebelcms.com/wiki/recommendations/recommended-reading-for-net-developers?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
                                     target="_blank">Community Wiki</a></li>
-                                <li>Become a <a href="http://rebel.com/products/training/schedule?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">
+                                <li>Become a <a href="http://rebelcms.com/products/training/schedule?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">
                                     Certified Rebel Developer</a> and learn from the source</li>
-                                <li>Find out about our <a href="http://rebel.org/products?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">productivity
+                                <li>Find out about our <a href="http://rebelcms.com/products?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">productivity
                                     boosting tools</a></li>
                             </ul>
                         </div>
@@ -68,13 +68,13 @@
                             <h3>
                                 Get support</h3>
                             <ul>
-                                <li>Ask a question in the <a href="http://our.rebel.org/?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">Community
+                                <li>Ask a question in the <a href="http://rebelcms.com/?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">Community
                                     Forum</a></li>
                                 <li>Watch our <a href="http://rebel.tv/?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">tutorial videos</a> (some
                                     are free, some require a subscription)</li>
-                                <li>Find out about our <a href="http://rebel.org/products?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">commercial
+                                <li>Find out about our <a href="http://rebelcms.com/products?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo" target="_blank">commercial
                                     support</a></li>
-                                <li>Find out about real-life <a href="http://rebel.com/products/training/schedule?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
+                                <li>Find out about real-life <a href="http://rebelcms.com/products/training/schedule?ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo"
                                     target="_blank">training and certification</a> opportunities</li>
                             </ul>
                         </div>

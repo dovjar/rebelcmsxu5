@@ -7,8 +7,8 @@
     <authors>Rebel HQ</authors>
     <owners>Rebel</owners>
     <licenseUrl>http://rebel.codeplex.com/license</licenseUrl>
-    <projectUrl>http://rebel.com</projectUrl>
-    <iconUrl>http://rebel.com/media/357769/100px_transparent.png</iconUrl>
+    <projectUrl>http://rebelcms.com</projectUrl>
+    <iconUrl>http://rebelcms.com/media/357769/100px_transparent.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Installs Rebel Cms in your Visual Studio MVC3 project. This package contains all files and dependencies needed to setup Rebel.</description>
     <summary>Installs Rebel Cms in your Visual Studio MVC3 project</summary>
@@ -35,7 +35,7 @@
   </metadata>
   <files>
     <file src="..\..\BuildOutput\WebApp\bin\Rebel.Lucene.dll" target="lib\net40\Rebel.Lucene.dll" />
-    <file src="..\..\BuildOutput\WebApp\bin\Castle.Core.dll" target="lib\net40\Castle.Core.dll" />    
+    <file src="..\..\BuildOutput\WebApp\bin\Castle.Core.dll" target="lib\net40\Castle.Core.dll" />
     <file src="..\..\BuildOutput\WebApp\bin\FluentNHibernate.dll" target="lib\net40\FluentNHibernate.dll" />
     <file src="..\..\BuildOutput\WebApp\bin\HibernatingRhinos.Profiler.Appender.v4.0.dll" target="lib\net40\HibernatingRhinos.Profiler.Appender.v4.0.dll" />
     <file src="..\..\BuildOutput\WebApp\bin\HtmlDiff.dll" target="lib\net40\HtmlDiff.dll" />

@@ -1,4 +1,4 @@
-Hi! Thanks for grabbing the Rebel sourcecode.
+Hi! Thanks for grabbing the Rebel CMS sourcecode.
 
 ===========================================
 NOTE - WHERE TO FIND V4 CODE - December 2010
@@ -16,6 +16,6 @@ Thanks to Matt Hawley at CodePlex for his help in our migration!
 Cheers,
 The Rebel Team
 
-http://rebel.com
-http://our.rebel.org
-http://rebel.codeplex.com
+http://rebelcms.com
+http://forum.rebelcms.com
+https://github.com/RebelCMS

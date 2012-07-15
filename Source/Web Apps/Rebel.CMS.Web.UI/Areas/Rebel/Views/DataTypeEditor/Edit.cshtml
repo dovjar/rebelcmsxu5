@@ -1,6 +1,6 @@
 ﻿@model Rebel.Cms.Web.Model.BackOffice.Editors.DataTypeEditorModel
 @using Rebel.Framework.Localization;
-           
+
 @{
     Layout = "../Shared/_TabbedEditorLayout.cshtml";
     Html.EnableClientValidation();
@@ -23,24 +23,24 @@
 }
 @{
     //need to change the post action based on whether this is new content or existing content
-    //if it's new content, we need to post the parent doc type id to create the doc type with, if its 
+    //if it's new content, we need to post the parent doc type id to create the doc type with, if its
     //existing content, we just post the existing doc type id to lookup and bind.
     var action = !Model.Id.IsNullValueOrEmpty() ? "Edit" : "Create";
     var urlParams = !Model.Id.IsNullValueOrEmpty() ? (object)new { id = Model.Id } : null;
 }
 @using (Html.BeginForm(action, new Guid(CorePluginConstants.DataTypeEditorControllerId), urlParams, new { enctype = "multipart/form-data" }))
-{ 
+{
     @Html.UmbValidationSummary("Save.ValidationSummary.Title".Localize())
 
     @Html.UmbEditorBar();
 
     <div id="editorContent" class="has-editor-bar scrolling-content padded-content">
-        
+
         @if (Model.Id.IsNullValueOrEmpty())
         {
             <p class="notice">@("DataType.UnSaved.Message".Localize())</p>
         }
-        
+
         @* Render Property editor on first tab *@
         <div>
             <div id="dataTypeDefinition" class="property-pane clearfix">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             @if (Model.PropertyEditorId != null && Model.HasEditableProperties())
-            {                 
+            {
                 <h2>
                     @("DataType.Editor.Settings".Localize())</h2>
                 <div class="property-pane clearfix">
@@ -64,17 +64,17 @@
                         {
                             //Creates an HtmlHelper for a specific area if the property editor exists in a package that isn't the core
                             //this is so that the ViewEngine searches for the views in the package folder if they are not embedded.
-                            //fixes issue: http://issues.rebel.org/issue/U5-946
+                            //fixes issue: http://issues.rebelcms.com/issue/U5-946
                             var htmlHelper = Html;
                             if (!Model.PropertyEditorPackage.IsNullOrWhiteSpace() && !Model.PropertyEditorPackage.InvariantEquals("Core"))
                             {
                                 htmlHelper = Html.CloneForArea(Model.PropertyEditorPackage);
                             }
-                            @htmlHelper.EditorFor(x => Model.PreValueEditorModel, Html.GetEmbeddedViewPath((object)Model.PreValueEditorModel))           
-                        }                        
-                    }                    
+                            @htmlHelper.EditorFor(x => Model.PreValueEditorModel, Html.GetEmbeddedViewPath((object)Model.PreValueEditorModel))
+                        }
+                    }
                 </div>
             }
         </div>
-    </div>				
+    </div>
 }

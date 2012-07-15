@@ -32,12 +32,11 @@
                     <ul>
                         <li><a href="http://rebel.codeplex.com/documentation" target="_blank">Getting Started
                             Guide</a></li>
-                        <li><a href="http://our.rebel.org?ref=ourFromv5Installer&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">our.rebel.org</a></li>
+                        <li><a href="http://forum.rebelcms.com?ref=ourFromv5Installer&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">Forum</a></li>
                     </ul>
                     <ul>
-                        <li><a href="http://our.rebel.org/wiki?ref=LatestDocsFromInstaller&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">New documentation</a></li>
-                        <li><a href="http://our.rebel.org/projects?ref=LatestProjectsFromv5Installer&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">New Projects</a></li>
-                        <li><a href="http://our.rebel.org/forum?ref=LatesTalkFromv5Installer&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">Forum Talk</a></li>
+                        <li><a href="http://rebelcms.com/wiki?ref=LatestDocsFromInstaller&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">New documentation</a></li>
+                        <li><a href="http://rebelcms.com/projects?ref=LatestProjectsFromv5Installer&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo">New Projects</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -60,10 +59,10 @@
 
     @{var googleFeedCacheBuster = DateTime.Now.ToString("yyyyMMddHH");}
     jQuery(document).ready(function () {
-        jQuery('#ajax-sitebuildervids').rssfeed('http://rebel.com/feeds/videos/site-builder-foundation-v5.aspx?buster=@googleFeedCacheBuster&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo', {
+        jQuery('#ajax-sitebuildervids').rssfeed('http://rebelcms.com/feeds/videos/site-builder-foundation-v5.aspx?buster=@googleFeedCacheBuster&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo', {
             limit: 5
         });
-        jQuery('#ajax-developervids').rssfeed('http://rebel.com/feeds/videos/developer-foundation-v5.aspx?buster=@googleFeedCacheBuster&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo', {
+        jQuery('#ajax-developervids').rssfeed('http://rebelcms.com/feeds/videos/developer-foundation-v5.aspx?buster=@googleFeedCacheBuster&ver=@RebelWebApplication.ProductVersion&amp;ref=@RebelWebApplication.ProductVersionInfo', {
             limit: 5
         });
     });

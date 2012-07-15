@@ -19,7 +19,7 @@ namespace Rebel.Framework
 
     /// <summary>
     /// A utility class to find all classes of a certain type by reflection in the current bin folder
-    /// of the web application. 
+    /// of the web application.
     /// </summary>
     public class TypeFinder
     {
@@ -39,10 +39,10 @@ namespace Rebel.Framework
         /// This is a modified version of: http://www.dominicpettifer.co.uk/Blog/44/how-to-get-a-reference-to-all-assemblies-in-the--bin-folder
         /// </summary>
         /// <remarks>
-        /// We do this because we cannot use AppDomain.Current.GetAssemblies() as this will return only assemblies that have been 
+        /// We do this because we cannot use AppDomain.Current.GetAssemblies() as this will return only assemblies that have been
         /// loaded in the CLR, not all assemblies.
         /// See these threads:
-        /// http://issues.rebel.org/issue/U5-198
+        /// http://issues.rebelcms.com/issue/U5-198
         /// http://stackoverflow.com/questions/3552223/asp-net-appdomain-currentdomain-getassemblies-assemblies-missing-after-app
         /// http://stackoverflow.com/questions/2477787/difference-between-appdomain-getassemblies-and-buildmanager-getreferencedassembl
         /// </remarks>
@@ -148,7 +148,7 @@ namespace Rebel.Framework
             using (new WriteLockDisposable(_localFilteredAssemblyCacheLocker))
             {
                 var assemblies = GetAllAssemblies()
-                    .Where(x => !x.GlobalAssemblyCache 
+                    .Where(x => !x.GlobalAssemblyCache
                         && !KnownAssemblyExclusionFilter.Any(f => x.FullName.StartsWith(f)));
                 assemblies.ForEach(_localFilteredAssemblyCache.Add);
             }
@@ -659,7 +659,7 @@ namespace Rebel.Framework
                     foreach (Type t in
                         assembly.GetTypes().Where(t => !t.IsInterface && assignTypeFrom.IsAssignableFrom(t) && (onlyConcreteClasses ? (t.IsClass && !t.IsAbstract) : true)))
                     {
-                        //add the full type name and full assembly name                                  
+                        //add the full type name and full assembly name
                         result.Add(t.FullName, t.Assembly.FullName);
                     }
                 }

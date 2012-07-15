@@ -29,8 +29,8 @@
             return {
                 longname: 'Rebel Media Plugin',
                 author: 'Rebel HQ',
-                authorurl: 'http://rebel.com',
-                infourl: 'http://rebel.com',
+                authorurl: 'http://rebelcms.com',
+                infourl: 'http://rebelcms.com',
                 version: '1.0'
             };
         }

@@ -264,7 +264,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
                 try
                 {
                     new WebClient()
-                        .UploadValues("http://rebel.org/base/Ecom/SubmitEmail/installer.aspx", new NameValueCollection()
+                        .UploadValues("http://rebelcms.com/base/Ecom/SubmitEmail/installer.aspx", new NameValueCollection()
                     {
                         {
                             "name",
@@ -355,7 +355,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
             //    //get the package folder name, create the task execution context and then execute the package tasks using the utility class
             //    var packageFolderName = _requestContext.PackageContext.LocalPathResolver.GetPackageDirectory(nugetPackage);
             //    var taskExeContext = _packageInstallUtility.GetTaskExecutionContext(nugetPackage, packageFolderName, PackageInstallationState.Installing, this);
-            //    _packageInstallUtility.RunPostPackageInstallActions(PackageInstallationState.Installing, taskExeContext, packageFolderName);    
+            //    _packageInstallUtility.RunPostPackageInstallActions(PackageInstallationState.Installing, taskExeContext, packageFolderName);
             //}
 
             return View((object)id);
@@ -408,7 +408,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
         /// Actually does the shutting down of the app which is called by ajax, if onlyCheck is true, this will just
         /// return the status
         /// </summary>
-        /// <param name="onlyCheck"></param> 
+        /// <param name="onlyCheck"></param>
         /// <returns></returns>
         [HttpPost]
         public JsonResult PerformRecycleApplication(bool onlyCheck)
@@ -440,7 +440,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
                 {
                     var installStatus = hive.Bootstrapper.GetInstallStatus();
 
-                    //it needs to be configured by now, 
+                    //it needs to be configured by now,
                     if (installStatus.StatusType == InstallStatusType.Pending
                         || installStatus.StatusType == InstallStatusType.TriedAndFailed)
                     {
@@ -460,14 +460,14 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
                 //TODO: Handle this
                 ////if for some reason there's nothing been installed
                 //if (statuses.Count == 0)
-                //{                    
+                //{
                 //    if (!_requestContext.Application.AnyProvidersHaveStatus(InstallStatusType.Pending))
                 //    {
                 //        //go back to step one
                 //        return RedirectToAction("Index");
-                //    }    
+                //    }
                 //}
-                
+
 
                 //now, if there were no errors, then we can run the post hive install tasks
                 if (!statuses.Any(x => x.StatusType == InstallStatusType.TriedAndFailed))
@@ -526,12 +526,12 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
             }
 
             if (!onlyCheck)
-            {                
+            {
                 var nugetPackage = _requestContext.PackageContext.LocalPackageManager.SourceRepository.FindPackage(id);
-                
-                //Run the configuration taks                
+
+                //Run the configuration taks
                 //get the package with the name and ensure it exists
-                
+
                 if (nugetPackage != null)
                 {
                     var packageFolderName = _requestContext.PackageContext.LocalPathResolver.GetPackageDirectory(nugetPackage);
@@ -575,7 +575,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers.BackOffice
             }).ToArray();
 
         }
-        
+
         #endregion
 
     }
