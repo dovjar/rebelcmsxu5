@@ -19,7 +19,7 @@ namespace Rebel.Cms.Web.UI.Controllers
         /// <returns></returns>
         public virtual ActionResult Index()
         {
-            ViewBag.Message = "Welcome to Rebel 5";
+            ViewBag.Message = "Welcome to Rebel 1.0";
             ViewBag.IsInstalled = false;
             try
             {
@@ -35,7 +35,7 @@ namespace Rebel.Cms.Web.UI.Controllers
             }
             catch (Exception ex)
             {
-                LogHelper.Error<HomeController>("Couldn't get the installation status, this is normal if Rebel 5 isn't yet installed", ex);
+                LogHelper.Error<HomeController>("Couldn't get the installation status, this is normal if Rebel 1.0 isn't yet installed", ex);
                 ViewBag.IsInstalled = false;
             }
 

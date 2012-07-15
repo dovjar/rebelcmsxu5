@@ -114,7 +114,7 @@ namespace Rebel.Cms.Web
             get { return _currentPage ?? (_currentPage = RenderModel.CurrentNode.AsDynamic()); }
         }
 
-        [Obsolete("Please use CurrentPage as DynamicModel will be removed in Rebel 5.3", false)]
+        [Obsolete("Please use CurrentPage as DynamicModel will be removed in Rebel 1.0", false)]
         public dynamic DynamicModel
         {
             get { return CurrentPage; }

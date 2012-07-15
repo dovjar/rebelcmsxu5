@@ -331,7 +331,7 @@
     <Content Include="Content\Styles\reset.css" />
     <Content Include="Content\Styles\RTE.css" />
     <Content Include="Content\Styles\test.css" />
-    <Content Include="README - Upgrade - 5.1 to 5.2.txt" />
+    <Content Include="README - Upgrade - 5.2 to Rebel.txt" />
     <Content Include="Scripts\jQuery\jquery.js" />
     <Content Include="Scripts\jQuery\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jQuery\jquery.validate.min.js" />

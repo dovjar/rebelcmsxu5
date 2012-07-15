@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Rebel.Cms.Web.ParameterEditors</id>
-    <version>5.2.0.0</version>
+    <version>1.0.0.0</version>
     <title>Rebel Cms Web ParameterEditors</title>
     <authors>Rebel HQ</authors>
     <owners>Rebel</owners>
@@ -15,8 +15,8 @@
     <language>en-US</language>
     <tags>rebel</tags>
     <dependencies>
-      <dependency id="Rebel.Cms.Web.PropertyEditors" version="5.2.0-beta" />
-      <dependency id="Rebel.Framework" version="5.2.0-beta" />
+      <dependency id="Rebel.Cms.Web.PropertyEditors" version="1.0.0-beta" />
+      <dependency id="Rebel.Framework" version="1.0.0-beta" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40" />

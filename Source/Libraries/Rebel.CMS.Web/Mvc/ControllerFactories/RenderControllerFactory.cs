@@ -10,7 +10,7 @@ using Rebel.Framework;
 namespace Rebel.Cms.Web.Mvc.ControllerFactories
 {
     /// <summary>
-    /// A controller factory for the render pipeline of Rebel 5. This controller factory tries to create a controller with the supplied
+    /// A controller factory for the render pipeline of Rebel 1. This controller factory tries to create a controller with the supplied
     /// name, and falls back to RebelController if none was found.
     /// </summary>
     /// <remarks></remarks>

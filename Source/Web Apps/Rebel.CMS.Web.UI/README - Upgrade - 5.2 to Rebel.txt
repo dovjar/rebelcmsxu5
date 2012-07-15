@@ -1,10 +1,10 @@
-﻿Thanks for downloading Rebel 5!
+﻿Thanks for downloading Rebel 1.0!
 
-These are some notes if you are upgrading from 5.1 to 5.2.
+These are some notes if you are upgrading from Umbraco 5.2 to Rebel
 
 Configuration changes
 ---------------------
-Be sure to copy over the contents of App_Data/Rebel/Config from the release zip
+Be sure to copy over the contents of App_Data/Umbraco/Config from the release zip
 There is a new element in the web.config for general Framework configuration, either copy over the /web.config from the release zip, 
 or if you have made modifications, the new lines are:
 
@@ -16,8 +16,8 @@ To be added to /rebel:
 
 ** Important **
 
-The files /App_Data/Rebel/Config/log4net.config and /App_Data/Rebel/Config/rebel.cms.system.config contain important changes
-that affect performance. Please ensure these are copied over or merged if you have made any changes.
+The files /App_Data/Umbraco/Config/log4net.config and /App_Data/Umbraco/Config/umbraco.cms.system.config contain important changes
+that affect performance. Please ensure these are copied over or merged and renamed to rebel if you have made any changes.
 
 Default packages - remove Examine
 ---------------------------------
@@ -26,9 +26,9 @@ Be sure to remove the Examine folder from App_Plugins/Packages which may have be
 folder over the top and cause the application to fail to compile. Note that for the moment the Examine package is not actually used
 and is safe to delete.
 
-First app startup for 5.2 on a database created earlier than 5.2
+First app startup for Rebel on a database created earlier than 5.2
 ----------------------------------------------------------------
-5.2 has a new database table called AggregateNodeStatus. When the app first starts up, if the table doesn't exist, it will try to create 
+Rebel has a new database table called AggregateNodeStatus. When the app first starts up, if the table doesn't exist, it will try to create 
 this table. If it can't create it, for example if your database user does not have dbo rights, it will log a warning message together
 with the T-SQL that it attempted to run, so that if you prefer not to change your db user permissions, you can run the script manually.
 
@@ -43,7 +43,7 @@ It's vital that the application has read/write/modify permissions to the followi
 Regarding the first two: if the application doesn't have write permissions to these folders you will receive a YSOD on application startup.
 
 A note about source control: some source control providers may mark files as readonly if you check them in. This can cause problems
-in Rebel 5's plugin manager when it attempts to write a cache of which assemblies it has copied to the bin folder, if the file cannot
+in Rebel 1.0's plugin manager when it attempts to write a cache of which assemblies it has copied to the bin folder, if the file cannot
 be written to then a YSOD will be produced on application startup. 
 Please avoid checking the following folders/files into source control or otherwise marking files as readonly:
 
@@ -52,6 +52,6 @@ Please avoid checking the following folders/files into source control or otherwi
 
 
 Thanks again!
-The Rebel 5 team
+The Rebel team
 
-Issues and feature requests can always be logged at http://issues.rebel.org
+Issues and feature requests can always be logged at http://youtrack.rebelcms.com

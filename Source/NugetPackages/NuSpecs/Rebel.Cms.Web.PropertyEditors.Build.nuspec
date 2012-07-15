@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Rebel.Cms.Web.PropertyEditors</id>
-    <version>5.2.0.0</version>
+    <version>1.0.0.0</version>
     <title>Rebel Cms Web PropertyEditors</title>
     <authors>Rebel HQ</authors>
     <owners>Rebel</owners>
@@ -15,12 +15,12 @@
     <language>en-US</language>
     <tags>rebel</tags>
     <dependencies>
-      <dependency id="Rebel.Framework" version="5.2.0-beta" />
-      <dependency id="Rebel.Framework.Persistence" version="5.2.0-beta" />
-      <dependency id="Rebel.Framework.Security" version="5.2.0-beta" />
-      <dependency id="Rebel.Hive" version="5.2.0-beta" />
-      <dependency id="ClientDependency" version="1.5.1.0" />
-      <dependency id="ClientDependency-Mvc" version="1.5.1.0" />
+      <dependency id="Rebel.Framework" version="1.0.0-beta" />
+      <dependency id="Rebel.Framework.Persistence" version="1.0.0-beta" />
+      <dependency id="Rebel.Framework.Security" version="1.0.0-beta" />
+      <dependency id="Rebel.Hive" version="1.0.0-beta" />
+      <dependency id="ClientDependency" version="1.0.0.0" />
+      <dependency id="ClientDependency-Mvc" version="1.0.0" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="WebMatrix.Data" targetFramework="net40" />
