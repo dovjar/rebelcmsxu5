@@ -134,8 +134,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers
                 {
                     //try to find the view based on all engines registered.
                     ViewEngineResult view = global::System.Web.Mvc.ViewEngines.Engines.FindView(ControllerContext,
-                                                                                                Path.
-                                                                                                    GetFileNameWithoutExtension
+                                                                                                Path.GetFileNameWithoutExtension
                                                                                                     (templateFile.
                                                                                                          RootedPath), "");
 
@@ -161,7 +160,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         private dynamic FlattenToJson(IRebelRenderModel model)
         {
             var typedEntity = (CustomTypedEntity<Content>) model.CurrentNode;
-            var mapper = new SimpleFlattenedTypedEntityMapper(RoutableRequestContext.Application.Hive, Url, JsonKey);
+            var mapper = new SimpleFlattenedTypedEntityMapper(RoutableRequestContext.Application.Hive, Url, string.Concat("?",JsonKey));
             return mapper.Flatten(model.CurrentNode.NiceUrl(), typedEntity);
         }
 
