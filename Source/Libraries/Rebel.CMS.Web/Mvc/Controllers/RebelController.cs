@@ -113,6 +113,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         /// </remarks>        
         [PublicAccessAuthorize]
         [OutputCache(CacheProfile = "rebel-default")]
+        [EnableCompression]
         public virtual ActionResult Index(IRebelRenderModel model)
         {
             if (model.CurrentNode == null) return new HttpNotFoundResult();

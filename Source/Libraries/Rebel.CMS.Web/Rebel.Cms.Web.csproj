@@ -259,6 +259,7 @@
     <Compile Include="Model\BackOffice\UIElements\UIElementAttribute.cs" />
     <Compile Include="Model\BackOffice\Editors\MediaEditorModel.cs" />
     <Compile Include="Model\BackOffice\Editors\StandardContentEditorModel.cs" />
+    <Compile Include="Mvc\ActionFilters\EnableCompressionAttribute.cs" />
     <Compile Include="Mvc\ActionFilters\HandleAuthorizationErrors.cs" />
     <Compile Include="Mvc\ActionFilters\InternationalizeAttribute.cs" />
     <Compile Include="Mvc\ActionFilters\PublicAccessAuthorizeAttribute.cs" />
