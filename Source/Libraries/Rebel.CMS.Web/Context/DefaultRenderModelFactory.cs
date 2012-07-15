@@ -8,6 +8,7 @@ using System.Linq;
 using Rebel.Cms.Web.Model;
 using Rebel.Cms.Web.Routing;
 using Rebel.Framework;
+using Rebel.Framework.Caching;
 using Rebel.Framework.Diagnostics;
 using Rebel.Framework.Persistence.Model;
 using Rebel.Framework.Persistence.Model.Attribution;
@@ -29,6 +30,7 @@ namespace Rebel.Cms.Web.Context
     public class DefaultRenderModelFactory : IRenderModelFactory
     {
         private readonly IRebelApplicationContext _applicationContext;
+        private TimeSpan _veryLongSlidingExpiration=new TimeSpan(10, 0, 0, 0);
 
         public DefaultRenderModelFactory(IRebelApplicationContext applicationContext)
         {
@@ -43,19 +45,31 @@ namespace Rebel.Cms.Web.Context
         /// <returns></returns>
         public IRebelRenderModel Create(HttpContextBase httpContext, string rawUrl)
         {
+            bool isPreview = false;
+            bool.TryParse(httpContext.Request.QueryString[ContentEditorModel.PreviewQuerystringKey], out isPreview);
+
             using (DisposableTimer.TraceDuration<DefaultRenderModelFactory>("Begin find/create context", "End find/create"))
             {
+                if (isPreview)
+                {
+                    return _applicationContext.FrameworkContext.ScopedCache.GetOrCreateTyped(rawUrl, () =>
+                        {
+                            LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
+                            var model = new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
+                            return model;
+                        });
+                }
+
                 return _applicationContext.FrameworkContext.ApplicationCache.GetOrCreate(rawUrl, () =>
                     {
                         LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
-                        var model = new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl));
-                        return new HttpRuntimeCacheParameters<IRebelRenderModel>(model)
-                                             {SlidingExpiration = new TimeSpan(10, 0, 0, 0)};
+                        var model = new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
+                        return new HttpRuntimeCacheParameters<IRebelRenderModel>(model) { SlidingExpiration = _veryLongSlidingExpiration};
                     });
             }
         }
 
-        private Content ResolveItem(HttpContextBase httpContext, string requestUrl)
+        private Content ResolveItem(HttpContextBase httpContext, string requestUrl, bool isPreview)
         {
             //check if the RouteDebugger is enabled, if it is, we just return the content virtual root... or any other full TypedEntity will work.
             //this however will show a no template found page, but still allows us to debug the route.
@@ -72,8 +86,7 @@ namespace Rebel.Cms.Web.Context
                 //var revisionStatusType = httpContext.Request.QueryString["revisionStatusType"];
                 //var actualStatusType = (revisionStatusType.IsNullOrWhiteSpace()) ? FixedStatusTypes.Published : new RevisionStatusType(revisionStatusType, revisionStatusType);
 
-                bool isPreview = false;
-                bool.TryParse(httpContext.Request.QueryString[ContentEditorModel.PreviewQuerystringKey], out isPreview);
+                
 
                 Content content = null;
                 var fullUrlIncludingDomain = httpContext.Request.Url;
