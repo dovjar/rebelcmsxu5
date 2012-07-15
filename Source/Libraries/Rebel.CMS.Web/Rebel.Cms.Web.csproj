@@ -132,8 +132,8 @@
       <Link>Properties\SolutionInfo.Rebel.Cms.cs</Link>
     </Compile>
     <Compile Include="BendyContentList.cs" />
-    <Compile Include="BuildManagerCodeDelegates\CodeDelegatesCollection.cs" />
     <Compile Include="BendyObjectExtensionsHelper.cs" />
+    <Compile Include="BuildManagerCodeDelegates\CodeDelegatesCollection.cs" />
     <Compile Include="BuildManagerCodeDelegates\CodeDelegateVirtualFile.cs" />
     <Compile Include="BuildManagerCodeDelegates\CodeDelegateVirtualPath.cs" />
     <Compile Include="BuildManagerCodeDelegates\CodeDelegateVirtualPathProvider.cs" />

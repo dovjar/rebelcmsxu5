@@ -83,39 +83,10 @@ namespace Rebel.Framework.Persistence.Model.Attribution
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
 
-        //public new void Add(TypedAttribute item)
-        //{
-        //    Add(item, true);
-        //}
-
         public void Add(TypedAttribute item, bool validate)
         {
             InsertItem(Count, item, validate);
         }
-
-        //public new void Add(TypedAttribute item, bool validate)
-        //{
-        //    Mandate.ParameterNotNull(item, "item");
-
-        //    bool? performAdd = null;
-        //    if (validate && ValidateAdd != null) performAdd = ValidateAdd.Invoke(item);
-        //    if (performAdd == null || performAdd == true) 
-        //    {
-                
-        //        if (base.Contains(GetKeyForItem(item)))
-        //            throw new InvalidOperationException("This TypedAttributeCollection already contains an item with key {0}".InvariantFormat(GetKeyForItem(item)));
-
-        //        base.Add(item);
-
-        //        OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
-
-        //        return;
-        //    }
-
-        //    throw new InvalidOperationException(
-        //        string.Format("Cannot add a '{0}' attribute to this collection as it does not exist in the schema",
-        //                      item.AttributeDefinition.Alias));
-        //}
 
         protected TypedAttributeCollection(IEnumerable<TypedAttribute> attributes)
         {

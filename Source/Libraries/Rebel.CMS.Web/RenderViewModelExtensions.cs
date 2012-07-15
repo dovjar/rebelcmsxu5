@@ -60,6 +60,12 @@ namespace Rebel.Cms.Web
             }
         }
 
+        public static string NiceUrl(this TypedEntity content)
+        {
+            var urlUtility = DependencyResolver.Current.GetService<IRoutingEngine>();
+            return urlUtility.GetUrl(content.Id);
+        }
+
         /// <summary>
         /// Returns the url 
         /// </summary>

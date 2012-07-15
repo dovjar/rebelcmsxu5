@@ -544,6 +544,8 @@ namespace Rebel.Cms.Web.Editors
             model.UtcPublishedDate = DateTimeOffset.UtcNow;
 
             NotifyForProcess(NotificationState.Publish, model);
+            var cacheKey = entity.Item.NiceUrl();
+            BackOfficeRequestContext.Application.FrameworkContext.ApplicationCache.Remove(cacheKey);
 
             entity.MetaData.StatusType = FixedStatusTypes.Published;
 

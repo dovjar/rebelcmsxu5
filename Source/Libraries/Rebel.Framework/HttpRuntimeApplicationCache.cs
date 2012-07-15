@@ -39,6 +39,15 @@ namespace Rebel.Framework
             return (T)output;
         }
 
+        public override void Remove(string key)
+        {
+            var realKey = ContextKey + key;
+            if (HttpRuntime.Cache.Get(realKey) != null)
+            {
+                HttpRuntime.Cache.Remove(realKey);
+            }
+        }
+
         /// <summary>
         /// Removes any item from the cache that match the regex pattern
         /// </summary>

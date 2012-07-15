@@ -15,6 +15,8 @@ namespace Rebel.Framework
         /// <returns></returns>
         public abstract T GetOrCreate<T>(string key, Func<HttpRuntimeCacheParameters<T>> callback);
 
+        public abstract void Remove(string key);
+
         /// <summary>
         /// Removes an item from the cache
         /// </summary>

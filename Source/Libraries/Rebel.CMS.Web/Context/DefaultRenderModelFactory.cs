@@ -28,7 +28,6 @@ namespace Rebel.Cms.Web.Context
     /// </summary>
     public class DefaultRenderModelFactory : IRenderModelFactory
     {
-        private const string ResponseLifecycleCacheKey = "DefaultRenderModelFactory-b23r98ysjdnfsuk";
         private readonly IRebelApplicationContext _applicationContext;
 
         public DefaultRenderModelFactory(IRebelApplicationContext applicationContext)
@@ -46,11 +45,12 @@ namespace Rebel.Cms.Web.Context
         {
             using (DisposableTimer.TraceDuration<DefaultRenderModelFactory>("Begin find/create context", "End find/create"))
             {
-                return _applicationContext.FrameworkContext.ScopedCache.GetOrCreateTyped<IRebelRenderModel>(ResponseLifecycleCacheKey, () =>
+                return _applicationContext.FrameworkContext.ApplicationCache.GetOrCreate(rawUrl, () =>
                     {
                         LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
                         var model = new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl));
-                        return model;
+                        return new HttpRuntimeCacheParameters<IRebelRenderModel>(model)
+                                             {SlidingExpiration = new TimeSpan(10, 0, 0, 0)};
                     });
             }
         }
