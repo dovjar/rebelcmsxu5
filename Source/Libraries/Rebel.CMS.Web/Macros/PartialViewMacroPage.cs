@@ -26,7 +26,7 @@ namespace Rebel.Cms.Web.Macros
         /// Gets or sets the dynamic model.
         /// </summary>
         /// <value>The dynamic model.</value>
-        [Obsolete("Please use CurrentPage as DynamicModel will be removed in Rebel 5.3", false)]
+        [Obsolete("Please use CurrentPage as DynamicModel will be removed in Rebel 1.1", false)]
         public dynamic DynamicModel
         {
             get { return CurrentPage; }
