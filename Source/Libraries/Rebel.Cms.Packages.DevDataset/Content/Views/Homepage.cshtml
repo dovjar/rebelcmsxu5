@@ -40,7 +40,7 @@ above are not known until the page is generated, so whilst it's shorter to write
 <p>To get at the parts of your content, <code>Model</code> can be used with the <code>Field&lt;T&gt;(string fieldName)</code> helper method, like so: <code>@@Model.Field&lt;string&gt;("siteName")</code>. This gives: <strong>@(Model.Field<string>("siteName"))</strong>.</p>
 
 <h2>Hierarchy navigators</h2>
-<p>In the latest update we've added more hierarchy navigators to the model so that you can grab parents, children, ancestors and descendants of your data similarly to how you can in Rebel 4. Here's some examples:</p>
+<p>In the latest update we've added more hierarchy navigators to the model so that you can grab parents, children, ancestors and descendants of your data similarly to how you can in Umbraco 4. Here's some examples:</p>
 <ul>
 <li>@@CurrentPage.Parent</li>
 <li>@@CurrentPage.Children</li>
@@ -66,7 +66,7 @@ above are not known until the page is generated, so whilst it's shorter to write
 
 
 <h2>Querying using strings</h2>
-<p>For those coming from Rebel 4.7, or if you're not comfortable or familiar with lambda expressions, we are working on dynamic queries using strings</p>
+<p>For those coming from Umbraco 4.7, or if you're not comfortable or familiar with lambda expressions, we are working on dynamic queries using strings</p>
 @{var book = Hive.Content.First("publisher == \"APRESS\"");}
 <p>Let's get the first book published by APRESS: it is <strong>"@book.Name"</strong> and it has <strong>@book.NumberOfPages</strong> pages</p>
 <p>Here's the code for this:</p>
@@ -224,7 +224,7 @@ above are not known until the page is generated, so whilst it's shorter to write
         </tr>
     </thead>
     <tbody>
-        @{ 
+        @{
             var lastTime = "";
             var timerCallback = new Action<long>((result) => lastTime = "(" + result + "ms)");
             var books = Hive.Content.Where(x => x.ContentType.Alias == "BookPage");

@@ -3,8 +3,8 @@
 namespace Rebel.Framework.Persistence.Abstractions.Attribution.MetaData
 {
     /// <summary>
-    /// Defines a collection of <see cref="IAttributeTypeDefinition"/> in order to form a group. 
-    /// Analogous to a document type tab in Rebel 4.x
+    /// Defines a collection of <see cref="IAttributeTypeDefinition"/> in order to form a group.
+    /// Analogous to a document type tab in Umbraco 4.x
     /// </summary>
     public interface IAttributeGroupDefinition : IPersistenceEntity, IReferenceByAlias, IReferenceByOrdinal
     {

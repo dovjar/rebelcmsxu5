@@ -4,7 +4,7 @@
 Possibly rename IEntity to be IEntityRevision, but do need a way of knowing what is the 'current' and what is
 a hand-loaded revision by choice
 
-- Can EVERYTHING deal in an IEntityRevision? Is that safe? What notion of versioning would we ever need 
+- Can EVERYTHING deal in an IEntityRevision? Is that safe? What notion of versioning would we ever need
 on a user?
 
 - Need a way for an entity provider to advertise whether it supports versioning or not
@@ -12,10 +12,10 @@ on a user?
 
 APN 2010 08 11: Attribute Schema system:
 - I haven't yet implemented attribute grouping into AttributeSchemaDefinition.
-Attribute grouping is analogous to 'tabs' in document types of Rebel 4.x
+Attribute grouping is analogous to 'tabs' in document types of Umbraco 4.x
 It's tempting to implement a group construct, and even to introduce a XAML-like dot notation on the
 attribute names in any Xml seriaization of the data, but note to self: even attributes should be entities
-since that way we can inherently have hierarchy in the attribute system. A grouping of attributes is 
+since that way we can inherently have hierarchy in the attribute system. A grouping of attributes is
 just an inherent hierarchy of entities on another entity. Welcome to the matrix.
 HOWEVER we need to be careful about how it's implemented: as a consumer of the UF, it would be confusing if
 we just made ITypedAttribute inherit IEntity because the properties may get very confusing. Check out XElement vs

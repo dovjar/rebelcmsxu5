@@ -4,7 +4,7 @@ namespace Rebel.Framework.EntityGraph.Domain.Entity.Attribution.MetaData
 {
     /// <summary>
     ///   Defines the permitted schema of the attributes on an <see cref = "IEntity" />, in order for it to become an <see cref="ITypedEntity"/>.
-    /// Analogous to a document type in Rebel 4.x
+    /// Analogous to a document type in Umbraco 4.x
     /// </summary>
     [ContractClass(typeof (AttributionSchemaDefinitionCodeContract))]
     public interface IAttributionSchemaDefinition : IEntity, IReferenceByAlias

@@ -1,4 +1,4 @@
-Some or all of following pre-requisites are needed in order to build or run the Rebel 5 source.
+Some or all of following pre-requisites are needed in order to build or run the Rebel CMS source.
 In many cases it's inpractical or not permitted for us to distribute the libraries or installers:
 
 

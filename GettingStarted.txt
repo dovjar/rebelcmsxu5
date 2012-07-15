@@ -14,7 +14,7 @@ NOTE - WHERE TO FIND V4 CODE - December 2010
 Thanks to Matt Hawley at CodePlex for his help in our migration!
 
 Cheers,
-The Rebel Team
+The Rebel CMS Team
 
 http://rebelcms.com
 http://forum.rebelcms.com
