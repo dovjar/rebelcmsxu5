@@ -27,7 +27,6 @@ namespace Rebel.Cms.Web.Mvc.Controllers
     /// The default controller for Rebel front-end request
     /// </summary>
     [InstalledFilter]
-    [OutputCache(CacheProfile = "rebel-default")]
     [Internationalize]
     public class RebelController : Controller, IRequiresRoutableRequestContext
     {
@@ -113,6 +112,7 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         /// This will check if the view for the template for the IRoutableItem exists, if it doesn't will render the default 'Index' view.
         /// </remarks>        
         [PublicAccessAuthorize]
+        [OutputCache(CacheProfile = "rebel-default")]
         public virtual ActionResult Index(IRebelRenderModel model)
         {
             if (model.CurrentNode == null) return new HttpNotFoundResult();
