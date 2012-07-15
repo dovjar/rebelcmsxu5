@@ -2,7 +2,7 @@
     tinymce.create('tinymce.plugins.RebelMacroPlugin', {
 
         init: function (ed, url) {
-            
+
             var _this = this;
             var isOnMacroElement = false;
 
@@ -64,7 +64,7 @@
 
             function getRealMacroElem(element) {
                 ///<summary>
-                /// Because the macro gets wrapped in a P tag because of the way 'enter' works, this 
+                /// Because the macro gets wrapped in a P tag because of the way 'enter' works, this
                 /// method will return the macro element if not wrapped in a p, or the p if the macro
                 /// element is the only one inside of it even if we are deep inside an element inside the macro
                 /// </summary>
@@ -72,7 +72,7 @@
                 var e = $(element).closest(".umb-macro-holder");
                 if (e.length > 0) {
                     if (e.get(0).parentNode.nodeName == "P") {
-                        //now check if we're the only element                    
+                        //now check if we're the only element
                         if (element.parentNode.childNodes.length == 1) {
                             return e.get(0).parentNode;
                         }
@@ -128,7 +128,7 @@
             }
 
             ed.onSaveContent.add(function (ed, o) {
-                ///<summary>We need to remove the contents of the macro content so that it doesn't actually get persisted and ensure that our custom hidden html comments are added so we can parse nicely on the server side</summary>                
+                ///<summary>We need to remove the contents of the macro content so that it doesn't actually get persisted and ensure that our custom hidden html comments are added so we can parse nicely on the server side</summary>
                 o.content = resetMacroElements(o.content, false);
             });
 
@@ -208,7 +208,7 @@
                     }
 
                     //supported keys to move to the next or prev element (13-enter, 27-esc, 38-up, 40-down, 39-right, 37-left)
-                    //supported keys to remove the macro (8-backspace, 46-delete)                    
+                    //supported keys to remove the macro (8-backspace, 46-delete)
                     if ($.inArray(e.keyCode, [13, 40, 39]) != -1) {
                         //move to next element
                         moveSibling(macroElement, true);
@@ -234,7 +234,7 @@
                 ///<summary>Register our MCE command</summary>
 
                 //we need to wait a small amount of time for the selection to actually be done, especially if the selction is caused
-                //by a click or a cursor moving into the macro area... 
+                //by a click or a cursor moving into the macro area...
                 setTimeout(function () {
                     //check if we already have a macro selected, if so we should be editing it
                     var element = getRealMacroElem(ed.selection.getNode());
@@ -283,8 +283,8 @@
             return {
                 longname: 'Rebel Macro Plugin',
                 author: 'Rebel HQ',
-                authorurl: 'http://rebel.com',
-                infourl: 'http://rebel.com',
+                authorurl: 'http://rebelcms.com',
+                infourl: 'http://rebelcms.com',
                 version: "1.0"
             };
         }

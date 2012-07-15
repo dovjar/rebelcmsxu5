@@ -6,7 +6,7 @@
             <div class="property-validator">
                 @Html.ValidationMessage(Model.Id.GetHtmlId())
             </div>
-            
+
             @{
                 var tooltip = Model.DocTypeProperty.Alias;
                 if (!Model.DocTypeProperty.SchemaName.IsNullOrWhiteSpace())
@@ -16,25 +16,25 @@
 
                 //Creates an HtmlHelper for a specific area if the property editor exists in a package that isn't the core
                 //this is so that the ViewEngine searches for the views in the package folder if they are not embedded.
-                //fixes issue: http://issues.rebel.org/issue/U5-946
+                //fixes issue: http://issues.rebelcms.com/issue/U5-946
                 var htmlHelper = Html;
                 if (!Model.DocTypeProperty.DataType.PropertyEditorPackage.IsNullOrWhiteSpace() && !Model.DocTypeProperty.DataType.PropertyEditorPackage.InvariantEquals("Core"))
                 {
                     htmlHelper = Html.CloneForArea(Model.DocTypeProperty.DataType.PropertyEditorPackage);
                 }
             }
-            
+
             @htmlHelper.UmbEditorFor(
                 label => Model,
                 validation => Model.PropertyEditorModel,
-                editor => Model.PropertyEditorModel,                
+                editor => Model.PropertyEditorModel,
                 Html.GetEmbeddedViewPath((object)Model.PropertyEditorModel),
                 string.Empty,
                 Model.DocTypeProperty.Description,
                 tooltip,
                 (bool)Model.PropertyEditorModel.ShowRebelLabel,
                 new { RebelPropertyId = Model.Id.GetHtmlId() })
-            
+
             @*Store this property's alias *@
             @Html.EditorFor(x => Model.Alias, string.Empty, "__Alias__")
         </div>

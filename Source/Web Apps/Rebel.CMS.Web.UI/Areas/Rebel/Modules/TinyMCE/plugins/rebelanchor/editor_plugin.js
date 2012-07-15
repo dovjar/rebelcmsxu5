@@ -6,7 +6,7 @@
             // Register commands
             ed.addCommand('mceRebelAnchor', function () {
                 ed.windowManager.open({
-                    file: tinyMCE.activeEditor.getParam('rebel_mce_controller_paths')['InsertAnchor'], 
+                    file: tinyMCE.activeEditor.getParam('rebel_mce_controller_paths')['InsertAnchor'],
                     width: 390 + parseInt(ed.getLang('anchor.delta_width', 0)),
                     height: 100 + parseInt(ed.getLang('anchor.delta_height', 0)),
                     inline: 1
@@ -26,8 +26,8 @@
             return {
                 longname: 'Rebel Anchor',
                 author: 'Rebel HQ',
-                authorurl: 'http://rebel.com',
-                infourl: 'http://rebel.com',
+                authorurl: 'http://rebelcms.com',
+                infourl: 'http://rebelcms.com',
                 version: '1.0'
             };
         }

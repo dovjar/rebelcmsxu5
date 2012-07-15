@@ -55,7 +55,7 @@ namespace Rebel.Framework.Dynamics
         {
 
             //03/05/12 (SD). This was never set and i can't figure out why as its used in Equality checks, etc... had come to light due to the
-            // IEnumerable issue: http://issues.rebel.org/issue/U5-888
+            // IEnumerable issue: http://issues.rebelcms.com/issue/U5-888
             BendyObjectValue = value;
 
             if (value is BendyObject)
@@ -67,14 +67,14 @@ namespace Rebel.Framework.Dynamics
                 //03/05/12 (SD). Before we were just checking if it was IDictionary, adding the key/vals as props and returning.
                 // I've come to realize though, that we should also be keeping the actual Dictionary objects' members too, not just
                 // its key value pairs. Also, we were never checking for enumerable so now we do this too.
-                // http://issues.rebel.org/issue/U5-888
+                // http://issues.rebelcms.com/issue/U5-888
                 // and since if something was IEnumerable before we'd still keep all of it's members like 'Count', etc... but never did
                 // this on IDictionary.
 
                 //check for IDictionary, to set the key/values as props
                 var dictionary = value as IDictionary;
                 if (dictionary != null)
-                {                   
+                {
                     foreach (var key in dictionary.Keys)
                     {
                         var localKey = key;
@@ -87,7 +87,7 @@ namespace Rebel.Framework.Dynamics
                 //check for IEnumerable, set the BendyObjectValue to IEnumerable<Bendy>, this will even be run for a
                 //dictionary object so it can still be enumerated as Bendy
                 if (value is IEnumerable && !incomingType.IsPrimitive && incomingType != typeof(string))
-                {                    
+                {
                     BendyObjectValue = new List<BendyObject>();
                     foreach(var v in value)
                     {
@@ -95,13 +95,13 @@ namespace Rebel.Framework.Dynamics
                     }
                 }
 
-                //set the properties                
+                //set the properties
                 foreach (var propertyInfo in incomingType.GetProperties())
                 {
                     if (!propertyInfo.CanRead) continue;
-                    
-                    //03/05/12 (SD). Ensure the property doesn't already exist, 
-                    // this could happen if a key in the dictionary exists with the member name. 
+
+                    //03/05/12 (SD). Ensure the property doesn't already exist,
+                    // this could happen if a key in the dictionary exists with the member name.
                     if (__KeyedChildren.Any(x => x.Key == propertyInfo.Name)) continue;
 
                     var localInfo = propertyInfo;
@@ -388,7 +388,7 @@ namespace Rebel.Framework.Dynamics
             {
                 return ((dynamic)bendy).__OriginalItem;
             }
-            
+
             throw new ApplicationException("Unable to locate Original Item in Bendy Object of type " + originalItemType.ToString());
         }
 
@@ -603,7 +603,7 @@ namespace Rebel.Framework.Dynamics
         }
 
         /// <summary>
-        /// Serves as a hash function for a particular type. 
+        /// Serves as a hash function for a particular type.
         /// </summary>
         /// <returns>
         /// A hash code for the current <see cref="T:System.Object"/>.

@@ -23,7 +23,7 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
     [DynamicExtensions]
     public static class NodeSelectorHelper
     {
-        
+
         /// <summary>
         /// Returns all Content items selected
         /// </summary>
@@ -45,7 +45,7 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
                 () => "This method can only be used when the attribute is defined by a NodeSelector PropertyEditor that is configured to use the Content tree",
                 includeUnpublished, includeRecycled, FixedHiveIds.ContentRecylceBin);
         }
-        
+
         /// <summary>
         /// Returns all Content items selected
         /// </summary>
@@ -58,7 +58,7 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
         }
 
         // BUG: We are returning a Content entity because there is no mapping between TypedEntity and Media entities:
-        // http://issues.rebel.org/issue/U5-898
+        // http://issues.rebelcms.com/issue/U5-898
 
         /// <summary>
         /// Returns all Media items selected
@@ -127,7 +127,7 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
         {
             //BUG: we are returning content currently since there is no AsDynamic method for Media.
             // this should still work but may cause problems if people try to access content specific stuff dynamically.
-            // http://issues.rebel.org/issue/U5-959            
+            // http://issues.rebelcms.com/issue/U5-959
             // Also, because of this we cannot validate the media tree type!!
 
             return GetItems<Content, IContentStore>(attribute.SelectedNodeIds().ToArray(), includeUnpublished, includeRecycled, FixedHiveIds.MediaRecylceBin)
@@ -176,7 +176,7 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
                 })
                 .Where(x => !x.IsNullValueOrEmpty()); //if it didn't parse, don't return it
         }
-        
+
         /// <summary>
         /// Returns the items for either the requested Media or Content
         /// </summary>
@@ -191,14 +191,14 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
         /// <param name="recycleBinId"></param>
         /// <returns></returns>
         private static IEnumerable<T> GetItemsWithValidation<T, TStore>(
-            TypedAttribute attribute, 
-            NodeSelectorEditor nodeSelector, 
-            Guid treeId, 
-            Func<string> errMsg, 
-            bool includeUnpublished, 
+            TypedAttribute attribute,
+            NodeSelectorEditor nodeSelector,
+            Guid treeId,
+            Func<string> errMsg,
+            bool includeUnpublished,
             bool includeRecycled,
             HiveId recycleBinId)
-            where T: TypedEntity 
+            where T: TypedEntity
             where TStore : class, IProviderTypeFilter
         {
             var preVals = nodeSelector.CreatePreValueEditorModel();
@@ -257,7 +257,7 @@ namespace Rebel.Cms.Web.PropertyEditors.NodeSelector
         private static NodeSelectorEditor ValidateNodeSelectorPropertyEditor(TypedAttribute attribute)
         {
             Action throwException = () => { throw new NotSupportedException("This extension method can only be used with an attribute that is defined by a property editor of type NodeSelector"); };
-            
+
             var propEditorFactory = DependencyResolver.Current.GetService<IPropertyEditorFactory>();
             var propEditor = propEditorFactory.GetPropertyEditor(attribute.AttributeDefinition.AttributeType.RenderTypeProvider);
             if (propEditor == null)
