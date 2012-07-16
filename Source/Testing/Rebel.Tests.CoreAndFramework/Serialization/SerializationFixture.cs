@@ -20,18 +20,17 @@ using Rebel.Framework.Serialization;
 using Rebel.Hive;
 using Rebel.Hive.Caching;
 using Rebel.Tests.Extensions;
+using Rebel.Cms.Web;
+using Rebel.Cms.Web.DependencyManagement;
+using Rebel.Framework.Persistence.Model.Attribution;
+using Rebel.Framework.Persistence.Model.Constants.AttributeDefinitions;
+using Rebel.Framework.Persistence.Model.Constants.Entities;
+using Rebel.Framework.Persistence.Model.Constants.Schemas;
+using Rebel.Hive.Configuration;
+using Rebel.Hive.RepositoryTypes;
 
 namespace Rebel.Tests.CoreAndFramework.Serialization
 {
-    using Rebel.Cms.Web;
-    using Rebel.Cms.Web.DependencyManagement;
-    using Rebel.Framework.Persistence.Model.Attribution;
-    using Rebel.Framework.Persistence.Model.Constants.AttributeDefinitions;
-    using Rebel.Framework.Persistence.Model.Constants.Entities;
-    using Rebel.Framework.Persistence.Model.Constants.Schemas;
-    using Rebel.Hive.Configuration;
-    using Rebel.Hive.RepositoryTypes;
-
     public class JsonNetSerializationFixture : AbstractSerializationFixture
     {
         public override void SetUp()
@@ -530,13 +529,13 @@ namespace Rebel.Tests.CoreAndFramework.Serialization
         [Test]
         public void CanRoundtripGenericLazyDictionary()
         {
-            var dict = new LazyDictionary<string, object>()
+            var dict = new Dictionary<string, object>()
                 {
                     {"BlahKey", "Blah"},
                     {"FoodKey", "Foo"}
                 };
             var json = SerializationService.ToJson(dict);
-            var rehydrated = SerializationService.FromJson<LazyDictionary<string, object>>(json);
+            var rehydrated = SerializationService.FromJson<Dictionary<string, object>>(json);
 
             Assert.That(dict.Count, Is.EqualTo(rehydrated.Count));
             Assert.That(dict.First().Key, Is.EqualTo(rehydrated.First().Key));
