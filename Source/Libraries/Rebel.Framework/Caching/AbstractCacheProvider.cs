@@ -108,6 +108,21 @@ namespace Rebel.Framework.Caching
 
         public abstract bool Remove(string key);
 
+        public virtual int RemoveWhereKeyContainsString(string toMatch)
+        {
+            var removed = 0;
+            // Ensure sequence is executed once to avoid collection modified errors in inheriting class
+            var cacheKeys = GetKeysMatching(toMatch).ToArray();
+            cacheKeys
+                .ForEach(x =>
+                {
+                    LogHelper.TraceIfEnabled(GetType(), "Removing item due to key delegate, key: {0}", () => x);
+                    Remove(x);
+                    removed++;
+                });
+            return removed;
+        }
+
         public virtual int RemoveWhereKeyMatches<T>(Func<T, bool> matches)
         {
             var removed = 0;
@@ -135,9 +150,10 @@ namespace Rebel.Framework.Caching
                 return null;
             }
             return entry.Value;
-        }
+        } 
 
         protected abstract IEnumerable<string> GetKeysMatching<T>(Func<T, bool> predicate);
+        protected abstract IEnumerable<string> GetKeysMatching(string containing);
 
         protected abstract CacheEntry<T> PerformGet<T>(string key);
 

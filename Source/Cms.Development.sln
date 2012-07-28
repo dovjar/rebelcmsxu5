@@ -72,19 +72,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Cms.Web.ParameterEditors", "Libraries\Rebel.Cms.Web.ParameterEditors\Rebel.Cms.Web.ParameterEditors.csproj", "{D06CBA96-0135-4132-8CA1-4E171766FAB9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuspecs", "Nuspecs", "{F5779C65-2375-4495-90A9-48342556B583}"
-	ProjectSection(SolutionItems) = preProject
-		NugetPackages\NuSpecs\Rebel.Build.nuspec = NugetPackages\NuSpecs\Rebel.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Cms.Web.Editors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.Editors.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Cms.Web.ParameterEditors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.ParameterEditors.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Cms.Web.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.PropertyEditors.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Cms.Web.Trees.Build.nuspec = NugetPackages\NuSpecs\Rebel.Cms.Web.Trees.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Framework.Build.nuspec = NugetPackages\NuSpecs\Rebel.Framework.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Framework.Persistence.Build.nuspec = NugetPackages\NuSpecs\Rebel.Framework.Persistence.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Framework.Security.Build.nuspec = NugetPackages\NuSpecs\Rebel.Framework.Security.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Hive.Build.nuspec = NugetPackages\NuSpecs\Rebel.Hive.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Hive.Providers.IO.Build.nuspec = NugetPackages\NuSpecs\Rebel.Hive.Providers.IO.Build.nuspec
-		NugetPackages\NuSpecs\Rebel.Scaffolding.PropertyEditors.Build.nuspec = NugetPackages\NuSpecs\Rebel.Scaffolding.PropertyEditors.Build.nuspec
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebel.Lucene", "Libraries\Rebel.Lucene\Rebel.Lucene.csproj", "{E10B551E-2D14-46ED-BDAD-E1692D03F6A6}"
 EndProject

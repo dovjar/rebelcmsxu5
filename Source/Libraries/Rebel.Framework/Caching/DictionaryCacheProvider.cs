@@ -74,6 +74,11 @@ namespace Rebel.Framework.Caching
             }
         }
 
+        protected override IEnumerable<string> GetKeysMatching(string containing)
+        {
+            return _cacheStore.Keys.Where(key => key.Contains(containing));
+        }
+
         protected override CacheEntry<T> PerformGet<T>(string key)
         {
             var item = _cacheStore.ContainsKey(key) ? _cacheStore[key] : null;

@@ -52,6 +52,11 @@ namespace Rebel.Tests.Extensions
             yield break;
         }
 
+        protected override IEnumerable<string> GetKeysMatching(string containing)
+        {
+            yield break;
+        }
+
         protected override CacheEntry<T> PerformGet<T>(string key)
         {
             return null;

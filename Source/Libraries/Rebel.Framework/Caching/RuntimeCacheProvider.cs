@@ -40,6 +40,11 @@ namespace Rebel.Framework.Caching
             yield break;
         }
 
+        protected override IEnumerable<string> GetKeysMatching(string containing)
+        {
+            yield break;
+        }
+
         protected override CacheEntry<T> PerformGet<T>(string key)
         {
             return null;
@@ -124,6 +129,11 @@ namespace Rebel.Framework.Caching
             _keyTracker.TryRemove(key, out throwaway);
 
             return itemRemoved != null;
+        }
+
+        protected override IEnumerable<string> GetKeysMatching(string containing)
+        {
+            return _keyTracker.Keys.Where(key => key.Contains(containing));
         }
 
         protected override CacheEntry<T> PerformGet<T>(string key)

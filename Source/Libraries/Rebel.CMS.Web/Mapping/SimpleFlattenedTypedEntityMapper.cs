@@ -15,14 +15,12 @@ namespace Rebel.Cms.Web.Mapping
         private const string UploaderType = "Uploader";
         private const string MediaPickerType = "Media Picker";
         private readonly IHiveManager _hiveManager;
-        private readonly string _urlPostfix;
         private readonly UrlHelper _url;
 
-        internal SimpleFlattenedTypedEntityMapper(IHiveManager hiveManager, UrlHelper url, string urlPostfix)
+        internal SimpleFlattenedTypedEntityMapper(IHiveManager hiveManager, UrlHelper url)
         {
             _hiveManager = hiveManager;
             _url = url;
-            _urlPostfix = urlPostfix;
         }
 
         internal object Flatten(string itemUrl, CustomTypedEntity<Content> typedEntity)
@@ -32,7 +30,7 @@ namespace Rebel.Cms.Web.Mapping
             
             List<string> childrenUrls = children
                 .Select(child => _hiveManager.Cms().Content.GetById(child))
-                .Select(entity => string.Concat(entity.NiceUrl(),_urlPostfix))
+                .Select(entity => entity.NiceUrl())
                 .ToList();
 
             return new { 

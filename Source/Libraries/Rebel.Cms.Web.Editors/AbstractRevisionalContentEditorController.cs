@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web.Mvc;
 using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.Editors.Extenders;
 using Rebel.Cms.Web.Model.BackOffice.Editors;
+using Rebel.Cms.Web.Mvc;
 using Rebel.Cms.Web.Mvc.ActionFilters;
 using Rebel.Cms.Web.Mvc.ActionInvokers;
 using Rebel.Cms.Web.Mvc.Controllers;
@@ -544,13 +546,17 @@ namespace Rebel.Cms.Web.Editors
             model.UtcPublishedDate = DateTimeOffset.UtcNow;
 
             NotifyForProcess(NotificationState.Publish, model);
-            var cacheKey = entity.Item.NiceUrl();
-            BackOfficeRequestContext.Application.FrameworkContext.ApplicationCache.Remove(cacheKey);
-
             entity.MetaData.StatusType = FixedStatusTypes.Published;
 
             // Clear URL cache
             Hive.HiveContext.GenerationScopedCache.RemoveWhereKeyMatches<UrlCacheKey>(x => x.EntityId.Value == entity.Item.Id.Value);
+            RegenerateCache(entity.Item);
+        }
+
+        private void RegenerateCache(TypedEntity entity)
+        {
+            string niceUrl = entity.NiceUrl();
+            BackOfficeRequestContext.Application.FrameworkContext.Caches.ExtendedLifetime.RemoveWhereKeyContainsString(niceUrl);
         }
 
         [RebelAuthorize(Permissions = new[] { FixedPermissionIds.Unpublish })]

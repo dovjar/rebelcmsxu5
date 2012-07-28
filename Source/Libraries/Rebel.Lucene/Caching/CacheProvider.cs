@@ -28,7 +28,7 @@
         private readonly bool _useInMemoryCache;
 
         public CacheProvider(IndexController indexController)
-            : this(indexController, true)
+            : this(indexController, false)
         {}
 
         public CacheProvider(IndexController indexController, bool useInMemoryCache)
@@ -144,6 +144,31 @@
                     if (matches)
                         allMatches.Add(asText);
                 }
+                termEnumerator = termScanner.Next() ? termScanner.Term() : null;
+            }
+            return allMatches;
+        }
+
+        protected override IEnumerable<string> GetKeysMatching(string containing)
+        {
+            var allMatches = new List<string>();
+            var allTerms = new List<string>();
+
+            var scopedReader = _indexController.GetScopedReader();
+
+            var cachekey = "CacheKey";
+            var termScanner = scopedReader.InnerReader.Terms(new Term(cachekey, string.Empty));
+
+            // Lucene doesn't start at -1 so can't just do "while termScanner.Next()"
+            var termEnumerator = termScanner.Term();
+            while (termEnumerator != null && termEnumerator.Field() == "CacheKey")
+            {
+                var asText = termEnumerator.Text();
+                allTerms.Add(asText);
+
+                if(asText.Contains(containing))
+                    allMatches.Add(asText);
+
                 termEnumerator = termScanner.Next() ? termScanner.Term() : null;
             }
             return allMatches;

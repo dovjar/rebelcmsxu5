@@ -118,51 +118,17 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         {
             if (model.CurrentNode == null) return new HttpNotFoundResult();
 
-            if (IsJsonRequest())
+            var rebelViewHelper = new RebelCachedViewHelper(RoutableRequestContext.Application, this);
+            var content = rebelViewHelper.RenderContent(model);
+
+            if (string.IsNullOrEmpty(content.Key))
             {
-                return Json(FlattenToJson(model), JsonRequestBehavior.AllowGet);
-            }
-
-            using (
-                IReadonlyGroupUnit<IFileStore> uow =
-                    RoutableRequestContext.Application.Hive.OpenReader<IFileStore>(new Uri("storage://templates")))
-            {
-                File templateFile = model.CurrentNode.CurrentTemplate != null
-                                        ? uow.Repositories.Get<File>(model.CurrentNode.CurrentTemplate.Id)
-                                        : null;
-
-                if (templateFile != null)
-                {
-                    //try to find the view based on all engines registered.
-                    ViewEngineResult view = global::System.Web.Mvc.ViewEngines.Engines.FindView(ControllerContext,
-                                                                                                Path.GetFileNameWithoutExtension
-                                                                                                    (templateFile.
-                                                                                                         RootedPath), "");
-
-                    if (view.View != null)
-                    {
-                        return View(view.View, model.CurrentNode);
-                    }
-                }
-
-                //return the compiled default view!
-                //TODO: Remove magic strings
                 return View(
                     EmbeddedViewPath.Create("Rebel.Cms.Web.EmbeddedViews.Views.TemplateNotFound.cshtml,Rebel.Cms.Web"),
                     model.CurrentNode);
             }
-        }
 
-        /// <summary>
-        /// Use the simple flatten json mapper to provide a restful json representation of the node
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        private dynamic FlattenToJson(IRebelRenderModel model)
-        {
-            var typedEntity = (CustomTypedEntity<Content>) model.CurrentNode;
-            var mapper = new SimpleFlattenedTypedEntityMapper(RoutableRequestContext.Application.Hive, Url, string.Concat("?",JsonKey));
-            return mapper.Flatten(model.CurrentNode.NiceUrl(), typedEntity);
+            return Content(content.Value, content.Key);
         }
 
         protected override void Dispose(bool disposing)

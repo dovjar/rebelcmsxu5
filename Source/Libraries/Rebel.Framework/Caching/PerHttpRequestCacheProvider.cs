@@ -97,6 +97,11 @@ namespace Rebel.Framework.Caching
             }
         }
 
+        protected override IEnumerable<string> GetKeysMatching(string containing)
+        {
+            return GetCurrent().Items.Keys.OfType<string>().Where(keyAsString => keyAsString.Contains(containing));
+        }
+
         protected override CacheEntry<T> PerformGet<T>(string key)
         {
             var item = GetCurrent().Items[key] as ICacheValueOf<T>;

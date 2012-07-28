@@ -270,11 +270,13 @@
     <Compile Include="Mvc\Controllers\BackOffice\UpgradeController.cs" />
     <Compile Include="Mvc\Controllers\MediaProxyController.cs" />
     <Compile Include="Mvc\HierarchicalSelectListItem.cs" />
+    <Compile Include="Mvc\IndexRegenerator.cs" />
     <Compile Include="Mvc\ModelBinders\BackOffice\DocumentTypePropertyModelBinder.cs" />
     <Compile Include="Mvc\ModelBinders\BackOffice\MediaTypeModelBinder.cs" />
     <Compile Include="Mvc\ModelBinders\BackOffice\ModelBinderExtensions.cs" />
     <Compile Include="Mvc\ModelBinders\BackOffice\NullableHiveIdModelBinder.cs" />
     <Compile Include="Mvc\ModelBinders\BackOffice\StandardModelBinder.cs" />
+    <Compile Include="Mvc\RebelCachedViewHelper.cs" />
     <Compile Include="Mvc\RedirectToRebelPageResult.cs" />
     <Compile Include="Mvc\RebelPageResult.cs" />
     <Compile Include="Mvc\ViewEngines\IFilteredViewPageActivator.cs" />
