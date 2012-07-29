@@ -15,24 +15,28 @@ namespace Rebel.Cms.Web.Mvc
 
         public void Go(string node)
         {
-            string url = string.Concat(Host, node);
-            WebRequest request = WebRequest.Create(url+"?format=json");
-            string text;
-            var response = (HttpWebResponse) request.GetResponse();
-
-            using (var sr = new StreamReader(response.GetResponseStream()))
+            try
             {
-                text = sr.ReadToEnd();
-            }
+                string url = string.Concat(Host, node);
+                WebRequest request = WebRequest.Create(url + "?format=json");
+                string text;
+                var response = (HttpWebResponse)request.GetResponse();
 
-            var deserialised = new JavaScriptSerializer().Deserialize<DeserializedNode>(text);
-            foreach (var childUrl in deserialised.children)
-            {
-                Go(childUrl);
-            }
+                using (var sr = new StreamReader(response.GetResponseStream()))
+                {
+                    text = sr.ReadToEnd();
+                }
 
-            request = WebRequest.Create(url);
-            request.GetResponse();
+                var deserialised = new JavaScriptSerializer().Deserialize<DeserializedNode>(text);
+                foreach (var childUrl in deserialised.children)
+                {
+                    Go(childUrl);
+                }
+
+                request = WebRequest.Create(url);
+                request.GetResponse();
+            }
+            catch {} // To have the cache warmed is a nice-to-have, if something goes wrong don't let the app fall over
         }
     }
 

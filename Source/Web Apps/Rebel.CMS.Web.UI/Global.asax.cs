@@ -35,6 +35,8 @@ namespace Rebel.Cms.Web.UI
     {
         private static bool _isInitialised = false;
         private static bool _isFirstRequest = true;
+
+        private static readonly object _mutex = new Object();
         private static readonly ReaderWriterLockSlim InitialiserLocker = new ReaderWriterLockSlim(LockRecursionPolicy.NoRecursion);
 
         static MvcApplication()
@@ -96,6 +98,24 @@ namespace Rebel.Cms.Web.UI
                 LogHelper.Error<MvcApplication>("Couldn't get shutdown stack: " + ex.Message, ex);
             }
             return string.Empty;
+        }
+
+        protected virtual void Application_BeginRequest(object sender, EventArgs e)
+        {
+            if (_isFirstRequest) // lets warm up that cache the first time app starts up
+            {
+                lock(_mutex){
+                    _isFirstRequest = false;
+                }
+                var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+                var thread = new Thread(() =>
+                {
+                    var generator =
+                        new IndexRegenerator(host);
+                    generator.Go("/");
+                }) { IsBackground = true };
+                thread.Start();
+            }
         }
 
         // RebelWebApplication cannot hook this event programatically in the Start event due to a known
