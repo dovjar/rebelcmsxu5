@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Mvc;
 using Rebel.Cms.Web.Mvc.ActionFilters;
 
@@ -30,6 +32,9 @@ namespace Rebel.Cms.Web
         private readonly Action _registerFilters;
         private readonly Action _registerCustomRoutes;
         private readonly Action _registerDefaultRoutes;
+        private static bool _isFirstRequest = true;
+        private static readonly object Mutex = new Object();
+
 
         /// <summary>
         /// Constructor which sets up custom logic to register Areas, Global Filters and standard MVC routes
@@ -101,6 +106,26 @@ namespace Rebel.Cms.Web
         public virtual void OnEndRequest(object sender, EventArgs e)
         {
             DisposeScope();
+        }
+
+        public virtual void OnBeginRequest(object sender, EventArgs e)
+        {
+            var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+            
+            if (_isFirstRequest) // lets warm up the cache the first time app starts up
+            {
+                lock (Mutex)
+                {
+                    if (!_isFirstRequest) return;
+                    _isFirstRequest = false;
+                    
+                    Task.Factory.StartNew(() =>
+                    {
+                        var cacheWarmer = new CacheWarmer(host);
+                        cacheWarmer.TraverseFrom("/");
+                    });
+                }
+            }
         }
 
         protected virtual void DisposeScope()

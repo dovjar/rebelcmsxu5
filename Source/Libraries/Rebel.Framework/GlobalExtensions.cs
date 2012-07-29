@@ -16,13 +16,15 @@ namespace Rebel.Framework
         [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames", MessageId = "1#", Justification = "By Design")]
         public static string Format(this TimeSpan timeSpan, string format)
         {
-            return string.Format(
+            return String.Format(
                 CultureInfo.InvariantCulture,
                 format,
                 timeSpan.Hours,
                 timeSpan.Minutes,
                 timeSpan.Seconds);
         }
+
+        
         
         /// <summary>The if not null.</summary>
         /// <param name="item">The item.</param>

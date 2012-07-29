@@ -3,6 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Compilation;
 using System.Web.Hosting;
@@ -35,9 +36,7 @@ namespace Rebel.Cms.Web.UI
     public class MvcApplication : HttpApplication
     {
         private static bool _isInitialised = false;
-        private static bool _isFirstRequest = true;
-
-        private static readonly object _mutex = new Object();
+ 
         private static readonly ReaderWriterLockSlim InitialiserLocker = new ReaderWriterLockSlim(LockRecursionPolicy.NoRecursion);
 
         static MvcApplication()
@@ -103,19 +102,7 @@ namespace Rebel.Cms.Web.UI
 
         protected virtual void Application_BeginRequest(object sender, EventArgs e)
         {
-            if (_isFirstRequest) // lets warm up that cache the first time app starts up
-            {
-                lock(_mutex){
-                    _isFirstRequest = false;
-                }
-                var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
-                var thread = new Thread(() =>
-                {
-                    var cacheWarmer = new CacheWarmer(host);
-                    cacheWarmer.TraverseFrom("/");
-                }) { IsBackground = true };
-                thread.Start();
-            }
+            RebelWebApplication.OnBeginRequest(sender, e);    
         }
 
         // RebelWebApplication cannot hook this event programatically in the Start event due to a known

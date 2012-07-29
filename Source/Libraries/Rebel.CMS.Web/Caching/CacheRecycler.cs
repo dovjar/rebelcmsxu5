@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using System.Threading.Tasks;
 using Rebel.Framework.Context;
 using Rebel.Framework.Persistence.Model;
 
@@ -23,7 +24,7 @@ namespace Rebel.Cms.Web.Caching
         public void RecycleCacheFor(TypedEntity entity)
         {
             string niceUrl = entity.NiceUrl();
-            
+
             RemoveFromLimitedProvider(entity, _caches, niceUrl);
             RemoveFromExtendedProvider(entity, _caches, niceUrl);
 
@@ -68,12 +69,11 @@ namespace Rebel.Cms.Web.Caching
 
         private void GenerateIndexesFor(string node)
         {
-            var thread = new Thread(() =>
+            Task.Factory.StartNew(() =>
                                         {
                                             var generator = new CacheWarmer(_host);
                                             generator.TraverseFrom(node);
-                                        }) {IsBackground = true};
-            thread.Start();
+                                        });
         }
 
         public void RecycleCacheFor(string templateName)

@@ -20,6 +20,7 @@ using Rebel.Framework.Localization.Configuration;
 [assembly: InternalsVisibleTo("Rebel.Cms.Packages.DevDataset")]
 [assembly: InternalsVisibleTo("Rebel.Cms.Web.Tasks")]
 [assembly: InternalsVisibleTo("Rebel.Tests.Cms.DomainIntegration")]
+[assembly: InternalsVisibleTo("Rebel.Cms.Migrations")]
 
 [assembly: LocalizationXmlSource("Localization.Default.xml")]
 
