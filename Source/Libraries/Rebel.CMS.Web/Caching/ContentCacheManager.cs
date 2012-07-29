@@ -53,19 +53,12 @@ namespace Rebel.Cms.Web.Caching
             {
                 var jsonResult = isPreview
                                      ? RenderAsJson(model)
-                                     : Cache(model.CurrentNode.NiceUrl() + "/json",
-                                             () => RenderAsJson(model));
+                                     : Cache(model.CurrentNode.NiceUrl() + "/json", () => RenderAsJson(model));
 
                 return new KeyValuePair<string, string>("application/json",jsonResult);
             }
 
-            string key = string.Format("{0}{1}", 
-                model.CurrentNode.CurrentTemplate.Name, 
-                model.CurrentNode.NiceUrl());
-
-            var htmlResult = isPreview
-                ? GetViewHtml(model)
-                : Cache(key, () => GetViewHtml(model));
+            var htmlResult = GetViewHtml(model);
 
             if (string.IsNullOrEmpty(htmlResult))
                 return new KeyValuePair<string, string>(string.Empty, string.Empty);

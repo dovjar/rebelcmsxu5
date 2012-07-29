@@ -7,7 +7,6 @@ namespace Rebel.Cms.Web.Caching
 {
     /// <summary>
     /// This object is used for when nodes and templates are saved
-    /// When a template is saved a background thread will warm all the nodes
     /// When a node is saved the background thread will only wam the relevant nodes
     /// </summary>
     public class CacheRecycler
@@ -43,28 +42,12 @@ namespace Rebel.Cms.Web.Caching
             caches.LimitedLifetime.RemoveWhereKeyContainsString(niceUrl);
         }
 
-        private static void RemoveFromExtendedProvider(string templateName, IFrameworkCaches caches)
-        {
-            caches.ExtendedLifetime.RemoveWhereKeyContainsString(templateName);
-        }
-
-        private static void RemoveFromLimitedProvider(string templateName, IFrameworkCaches caches)
-        {
-            caches.LimitedLifetime.RemoveWhereKeyContainsString(templateName);
-        }
-
         private delegate void AsyncMethodCaller(string node);
 
         private void RegenerateCache(string url)
         {
             var method = new AsyncMethodCaller(GenerateIndexesFor);
             method.BeginInvoke(url, null, null);
-        }
-
-        private void RegenerateCache()
-        {
-            var method = new AsyncMethodCaller(GenerateIndexesFor);
-            method.BeginInvoke("/", null, null);
         }
 
         private void GenerateIndexesFor(string node)
@@ -74,13 +57,6 @@ namespace Rebel.Cms.Web.Caching
                                             var generator = new CacheWarmer(_host);
                                             generator.TraverseFrom(node);
                                         });
-        }
-
-        public void RecycleCacheFor(string templateName)
-        {
-            RemoveFromLimitedProvider(templateName, _caches);
-            RemoveFromExtendedProvider(templateName, _caches);
-            RegenerateCache();
         }
     }
 }

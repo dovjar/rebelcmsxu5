@@ -259,14 +259,5 @@ namespace Rebel.Cms.Web.Editors
         {
             createModel.ParentId = editorModel.ParentId = FixedHiveIds.SystemRoot;
         }
-
-        protected override void  OnBeforeSave(File file)
-        {
-            var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
-                                                  BackOfficeRequestContext.Application.FrameworkContext.Caches);
-            cacheRecycler.RecycleCacheFor(file.Name);
-            
-            base.OnBeforeSave(file);
-        }
     }
 }

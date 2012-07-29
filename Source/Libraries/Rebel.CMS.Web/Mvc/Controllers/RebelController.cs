@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.EmbeddedViewEngine;
-using Rebel.Cms.Web.Mapping;
 using Rebel.Cms.Web.Model;
 using Rebel.Cms.Web.Mvc.ActionFilters;
 using Rebel.Cms.Web.Mvc.ActionInvokers;
@@ -13,11 +12,6 @@ using Rebel.Cms.Web.Routing;
 using Rebel.Framework;
 using Rebel.Framework.Diagnostics;
 using Rebel.Framework.Persistence.Model;
-using Rebel.Framework.Persistence.ModelFirst;
-using Rebel.Hive;
-using Rebel.Hive.ProviderGrouping;
-using Rebel.Hive.RepositoryTypes;
-using File = Rebel.Framework.Persistence.Model.IO.File;
 using MSMvc = System.Web.Mvc;
 
 
@@ -30,8 +24,6 @@ namespace Rebel.Cms.Web.Mvc.Controllers
     [Internationalize]
     public class RebelController : Controller, IRequiresRoutableRequestContext
     {
-        private const string JsonKey = "format=json";
-
         /// <summary>
         /// Constructor initializes custom action invoker
         /// </summary>
@@ -97,12 +89,6 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         }
 
         #endregion
-
-
-        private bool IsJsonRequest()
-        {
-            return HttpContext.Request.AcceptTypes.Contains("application/json") || HttpContext.Request.RawUrl.Contains(JsonKey);
-        }
 
         /// <summary>
         /// The default action to render the template/view
