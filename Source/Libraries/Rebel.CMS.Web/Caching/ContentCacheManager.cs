@@ -15,12 +15,12 @@ using Rebel.Hive.ProviderGrouping;
 using Rebel.Hive.RepositoryTypes;
 using File = Rebel.Framework.Persistence.Model.IO.File;
 
-namespace Rebel.Cms.Web.Mvc
+namespace Rebel.Cms.Web.Caching
 {
-    public class RebelCachedViewHelper
+    public class ContentCacheManager
     {
         private const string JsonKey = "format=json";
-        private const int _longTime = 999;
+        private const int LongTime = 999;
 
         private readonly IRebelApplicationContext _context;
         private readonly UrlHelper _urlHelper;
@@ -29,7 +29,7 @@ namespace Rebel.Cms.Web.Mvc
         private readonly TempDataDictionary _tempData;
         private readonly HttpRequestBase _requestContext;
 
-        public RebelCachedViewHelper(IRebelApplicationContext context, Controller controller)
+        public ContentCacheManager(IRebelApplicationContext context, Controller controller)
         {
             _context = context;
             _urlHelper = controller.Url;
@@ -79,7 +79,7 @@ namespace Rebel.Cms.Web.Mvc
             {
                 return _context
                         .FrameworkContext.Caches.ExtendedLifetime.GetOrCreate(
-                        key, value, new StaticCachePolicy(TimeSpan.FromDays(_longTime))).Value.Item;
+                        key, value, new StaticCachePolicy(TimeSpan.FromDays(LongTime))).Value.Item;
             }
         }
 
@@ -114,10 +114,8 @@ namespace Rebel.Cms.Web.Mvc
         private string RenderRazorViewToString(File templateFile, object model)
         {
             _viewData.Model = model;
-            ViewEngineResult view = global::System.Web.Mvc.ViewEngines.Engines.FindView(_controllerContext,
-                                                                                                Path.GetFileNameWithoutExtension
-                                                                                                    (templateFile.
-                                                                                                         RootedPath), "");
+            ViewEngineResult view = ViewEngines.Engines.FindView(_controllerContext, 
+                Path.GetFileNameWithoutExtension(templateFile.RootedPath), "");
 
             using (var sw = new StringWriter())
             {

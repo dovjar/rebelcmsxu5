@@ -1,10 +1,14 @@
 ﻿using System.Threading;
-using Rebel.Cms.Web.Mvc;
 using Rebel.Framework.Context;
 using Rebel.Framework.Persistence.Model;
 
 namespace Rebel.Cms.Web.Caching
 {
+    /// <summary>
+    /// This object is used for when nodes and templates are saved
+    /// When a template is saved a background thread will warm all the nodes
+    /// When a node is saved the background thread will only wam the relevant nodes
+    /// </summary>
     public class CacheRecycler
     {
         private readonly string _host;
@@ -66,8 +70,8 @@ namespace Rebel.Cms.Web.Caching
         {
             var thread = new Thread(() =>
                                         {
-                                            var generator = new IndexRegenerator(_host);
-                                            generator.Go(node);
+                                            var generator = new CacheWarmer(_host);
+                                            generator.TraverseFrom(node);
                                         }) {IsBackground = true};
             thread.Start();
         }

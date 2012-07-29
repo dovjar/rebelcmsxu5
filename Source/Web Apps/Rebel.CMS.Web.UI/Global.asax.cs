@@ -8,6 +8,7 @@ using System.Web.Compilation;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Mvc;
 using Rebel.Cms.Web.System;
 using Rebel.Framework;
@@ -110,9 +111,8 @@ namespace Rebel.Cms.Web.UI
                 var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
                 var thread = new Thread(() =>
                 {
-                    var generator =
-                        new IndexRegenerator(host);
-                    generator.Go("/");
+                    var cacheWarmer = new CacheWarmer(host);
+                    cacheWarmer.TraverseFrom("/");
                 }) { IsBackground = true };
                 thread.Start();
             }

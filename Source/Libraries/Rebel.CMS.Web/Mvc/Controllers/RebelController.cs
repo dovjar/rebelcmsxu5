@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-
+using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.EmbeddedViewEngine;
 using Rebel.Cms.Web.Mapping;
@@ -118,8 +118,8 @@ namespace Rebel.Cms.Web.Mvc.Controllers
         {
             if (model.CurrentNode == null) return new HttpNotFoundResult();
 
-            var rebelViewHelper = new RebelCachedViewHelper(RoutableRequestContext.Application, this);
-            var content = rebelViewHelper.RenderContent(model);
+            var contentCacheManager = new ContentCacheManager(RoutableRequestContext.Application, this);
+            var content = contentCacheManager.RenderContent(model);
 
             if (string.IsNullOrEmpty(content.Key))
             {

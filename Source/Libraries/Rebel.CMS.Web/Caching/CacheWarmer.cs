@@ -2,18 +2,18 @@
 using System.Net;
 using System.Web.Script.Serialization;
 
-namespace Rebel.Cms.Web.Mvc
+namespace Rebel.Cms.Web.Caching
 {
-    public class IndexRegenerator
+    public class CacheWarmer
     {
         private string Host { get; set; }
 
-        public IndexRegenerator(string host)
+        public CacheWarmer(string host)
         {
             Host = host;
         }
 
-        public void Go(string node)
+        public void TraverseFrom(string node)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace Rebel.Cms.Web.Mvc
                 var deserialised = new JavaScriptSerializer().Deserialize<DeserializedNode>(text);
                 foreach (var childUrl in deserialised.children)
                 {
-                    Go(childUrl);
+                    TraverseFrom(childUrl);
                 }
 
                 request = WebRequest.Create(url);
