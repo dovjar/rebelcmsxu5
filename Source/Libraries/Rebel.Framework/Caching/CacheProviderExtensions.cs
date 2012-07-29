@@ -9,5 +9,10 @@ namespace Rebel.Framework.Caching
             var cachePolicy = provider.GetCachePolicyForKey(key);
             return provider.GetOrCreate(key, () => new CacheValueOf<T>(callback.Invoke(), cachePolicy));
         }
+
+        public static CacheCreationResult<T> GetOrCreate<T>(this AbstractCacheProvider provider, string key, Func<T> callback, ICachePolicy cachePolicy)
+        {
+            return provider.GetOrCreate(key, () => new CacheValueOf<T>(callback.Invoke(), cachePolicy));
+        }
     }
 }

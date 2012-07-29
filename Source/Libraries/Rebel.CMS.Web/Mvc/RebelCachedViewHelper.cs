@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.Mapping;
 using Rebel.Cms.Web.Model;
 using Rebel.Cms.Web.Model.BackOffice.Editors;
-using Rebel.Cms.Web.Mvc.Controllers;
 using Rebel.Framework;
 using Rebel.Framework.Caching;
 using Rebel.Framework.Persistence.ModelFirst;
@@ -22,6 +20,7 @@ namespace Rebel.Cms.Web.Mvc
     public class RebelCachedViewHelper
     {
         private const string JsonKey = "format=json";
+        private const int _longTime = 999;
 
         private readonly IRebelApplicationContext _context;
         private readonly UrlHelper _urlHelper;
@@ -55,14 +54,18 @@ namespace Rebel.Cms.Web.Mvc
                 var jsonResult = isPreview
                                      ? RenderAsJson(model)
                                      : Cache(model.CurrentNode.NiceUrl() + "/json",
-                                             () => new CacheValueOf<string>(RenderAsJson(model)));
+                                             () => RenderAsJson(model));
 
                 return new KeyValuePair<string, string>("application/json",jsonResult);
             }
 
+            string key = string.Format("{0}{1}", 
+                model.CurrentNode.CurrentTemplate.Name, 
+                model.CurrentNode.NiceUrl());
+
             var htmlResult = isPreview
                 ? GetViewHtml(model)
-                : Cache(model.CurrentNode.NiceUrl(), () => new CacheValueOf<string>(GetViewHtml(model)));
+                : Cache(key, () => GetViewHtml(model));
 
             if (string.IsNullOrEmpty(htmlResult))
                 return new KeyValuePair<string, string>(string.Empty, string.Empty);
@@ -70,13 +73,13 @@ namespace Rebel.Cms.Web.Mvc
             return new KeyValuePair<string, string>("text/html", htmlResult);
         }
 
-        private string Cache(string key, Func<CacheValueOf<string>> value)
+        private string Cache(string key, Func<string> value)
         {
             using (DisposableTimer.TraceDuration<DefaultRenderModelFactory>("Begin Parsing HTML", "End Parsing HTML"))
             {
                 return _context
                         .FrameworkContext.Caches.ExtendedLifetime.GetOrCreate(
-                        key, value).Value.Item;
+                        key, value, new StaticCachePolicy(TimeSpan.FromDays(_longTime))).Value.Item;
             }
         }
 

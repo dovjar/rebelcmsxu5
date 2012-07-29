@@ -548,15 +548,10 @@ namespace Rebel.Cms.Web.Editors
             NotifyForProcess(NotificationState.Publish, model);
             entity.MetaData.StatusType = FixedStatusTypes.Published;
 
-            // Clear URL cache
-            Hive.HiveContext.GenerationScopedCache.RemoveWhereKeyMatches<UrlCacheKey>(x => x.EntityId.Value == entity.Item.Id.Value);
-            RegenerateCache(entity.Item);
-        }
+            var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
+                                                  BackOfficeRequestContext.Application.FrameworkContext.Caches);
 
-        private void RegenerateCache(TypedEntity entity)
-        {
-            string niceUrl = entity.NiceUrl();
-            BackOfficeRequestContext.Application.FrameworkContext.Caches.ExtendedLifetime.RemoveWhereKeyContainsString(niceUrl);
+            cacheRecycler.RecycleCacheFor(entity.Item);
         }
 
         [RebelAuthorize(Permissions = new[] { FixedPermissionIds.Unpublish })]

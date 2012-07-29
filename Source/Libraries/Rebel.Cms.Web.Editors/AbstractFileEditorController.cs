@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web.Mvc;
+using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.Model.BackOffice.Editors;
 using Rebel.Cms.Web.Mvc;

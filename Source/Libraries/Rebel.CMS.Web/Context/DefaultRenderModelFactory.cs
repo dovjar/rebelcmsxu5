@@ -29,6 +29,7 @@ namespace Rebel.Cms.Web.Context
     /// </summary>
     public class DefaultRenderModelFactory : IRenderModelFactory
     {
+        private const int _longTime = 999;
         private readonly IRebelApplicationContext _applicationContext;
         private TimeSpan _veryLongSlidingExpiration=new TimeSpan(10, 0, 0, 0);
 
@@ -48,24 +49,18 @@ namespace Rebel.Cms.Web.Context
             bool isPreview = false;
             bool.TryParse(httpContext.Request.QueryString[ContentEditorModel.PreviewQuerystringKey], out isPreview);
 
+            if(isPreview)
+            {
+                return new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
+            }
             using (DisposableTimer.TraceDuration<DefaultRenderModelFactory>("Begin find/create context", "End find/create"))
             {
-                if (isPreview)
-                {
-                    return _applicationContext.FrameworkContext.ScopedCache.GetOrCreateTyped(rawUrl, () =>
+                string key = string.Format("Model:{0}",rawUrl);
+                return _applicationContext.FrameworkContext.Caches.ExtendedLifetime.GetOrCreate(key, () =>
                         {
                             LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
-                            var model = new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
-                            return model;
-                        });
-                }
-
-                return _applicationContext.FrameworkContext.ApplicationCache.GetOrCreate(rawUrl, () =>
-                    {
-                        LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
-                        var model = new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
-                        return new HttpRuntimeCacheParameters<IRebelRenderModel>(model) { SlidingExpiration = _veryLongSlidingExpiration};
-                    });
+                            return new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
+                        }, new StaticCachePolicy(TimeSpan.FromDays(_longTime))).Value.Item;
             }
         }
 

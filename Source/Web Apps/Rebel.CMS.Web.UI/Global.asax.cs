@@ -8,6 +8,7 @@ using System.Web.Compilation;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Rebel.Cms.Web.Mvc;
 using Rebel.Cms.Web.System;
 using Rebel.Framework;
 using log4net.Config;
@@ -33,6 +34,7 @@ namespace Rebel.Cms.Web.UI
     public class MvcApplication : HttpApplication
     {
         private static bool _isInitialised = false;
+        private static bool _isFirstRequest = true;
         private static readonly ReaderWriterLockSlim InitialiserLocker = new ReaderWriterLockSlim(LockRecursionPolicy.NoRecursion);
 
         static MvcApplication()

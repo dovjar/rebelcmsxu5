@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.Model.BackOffice.Editors;
 using Rebel.Cms.Web.Model.BackOffice.UIElements;
@@ -259,33 +260,13 @@ namespace Rebel.Cms.Web.Editors
             createModel.ParentId = editorModel.ParentId = FixedHiveIds.SystemRoot;
         }
 
-        //protected override void OnAfterSave(File oldFile, File file)
-        //{
-        //    if (oldFile != null)
-        //    {
-        //        // Update all templates using this as layout
-        //        using (var uow = Hive.Create())
-        //        {
-        //            var repo = uow.Repositories;
-        //            var files = repo.GetAll<File>().Where(x => !x.IsContainer);
-
-        //            // Create map of files based upon Layout properties
-        //            var fileMap = TemplateHelper.CreateLayoutFileMap(files);
-
-        //            // Choose the tree depth to render
-        //            var currentKey = Server.MapPath(oldFile.RootedPath);
-
-        //            foreach (var childLayout in fileMap[currentKey])
-        //            {
-        //                var content = Encoding.UTF8.GetString(childLayout.ContentBytes);
-        //                content = content.Replace(oldFile.Name, file.Name);
-        //                childLayout.ContentBytes = Encoding.UTF8.GetBytes(content);
-        //                uow.Repositories.AddOrUpdate(childLayout);
-        //            }
-
-        //            uow.Complete();
-        //        }
-        //    }
-        //}
+        protected override void  OnBeforeSave(File file)
+        {
+            var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
+                                                  BackOfficeRequestContext.Application.FrameworkContext.Caches);
+            cacheRecycler.RecycleCacheFor(file.Name);
+            
+            base.OnBeforeSave(file);
+        }
     }
 }
