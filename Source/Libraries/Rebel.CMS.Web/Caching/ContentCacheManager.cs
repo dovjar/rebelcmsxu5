@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Rebel.Cms.Web.Context;
@@ -28,6 +29,7 @@ namespace Rebel.Cms.Web.Caching
         private readonly ViewDataDictionary _viewData;
         private readonly TempDataDictionary _tempData;
         private readonly HttpRequestBase _requestContext;
+        private static readonly object Mutex = new Object();
 
         public ContentCacheManager(IRebelApplicationContext context, Controller controller)
         {
@@ -37,6 +39,28 @@ namespace Rebel.Cms.Web.Caching
             _viewData = controller.ViewData;
             _tempData = controller.TempData;
             _requestContext = controller.HttpContext.Request;
+            
+            EnsureCacheWarmed();
+        }
+
+        private void EnsureCacheWarmed()
+        {
+            var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+
+            if (_context.IsFirstRun) // lets warm up the cache if this is the first request
+            {
+                lock (Mutex)
+                {
+                    if (!_context.IsFirstRun) return;
+                    _context.IsFirstRun = false;
+
+                    Task.Factory.StartNew(() =>
+                                              {
+                                                  var cacheWarmer = new CacheWarmer(host);
+                                                  cacheWarmer.TraverseFrom("/");
+                                              });
+                }
+            }
         }
 
         private bool IsJsonRequest()

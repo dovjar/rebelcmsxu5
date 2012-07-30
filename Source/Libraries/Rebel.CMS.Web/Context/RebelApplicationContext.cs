@@ -17,6 +17,7 @@ namespace Rebel.Cms.Web.Context
 {
     public class RebelApplicationContext : DisposableObject, IRebelApplicationContext
     {
+        public bool IsFirstRun { get; set; }
 
         /// <summary>
         /// This will restart the application pool
@@ -44,6 +45,7 @@ namespace Rebel.Cms.Web.Context
             Settings = settings;
             FrameworkContext = frameworkContext;
             Security = securityService;
+            IsFirstRun = true;
             //Hive2 = hive2;
             //Hive2 = DependencyResolver.Current.GetService<HiveManager>();
 

@@ -56,12 +56,33 @@ namespace Rebel.Cms.Web.Context
             using (DisposableTimer.TraceDuration<DefaultRenderModelFactory>("Begin find/create context", "End find/create"))
             {
                 string key = string.Format("Model:{0}",rawUrl);
-                return _applicationContext.FrameworkContext.Caches.ExtendedLifetime.GetOrCreate(key, () =>
-                        {
-                            LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
-                            return new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext, rawUrl, isPreview));
-                        }, new StaticCachePolicy(TimeSpan.FromDays(_longTime))).Value.Item;
+                return GetOrCreateRebelRenderModel(httpContext, rawUrl, key);
             }
+        }
+
+        private IRebelRenderModel GetOrCreateRebelRenderModel(HttpContextBase httpContext, string rawUrl,
+                                                              string key)
+        {
+            var modelFromApplicationCache =
+                _applicationContext.FrameworkContext.ApplicationCache.Get<RebelRenderModel>(key);
+
+            if (modelFromApplicationCache != null)
+                return modelFromApplicationCache;
+
+            var modelFromExtendedCache = _applicationContext
+                .FrameworkContext
+                .Caches
+                .ExtendedLifetime
+                .GetOrCreate(key, () =>
+                                    {
+                                        LogHelper.TraceIfEnabled<DefaultRenderModelFactory>("IRebelRenderModel requires creation");
+                                        return new RebelRenderModel(_applicationContext, () => ResolveItem(httpContext,rawUrl,false));
+                                    }, new StaticCachePolicy(TimeSpan.FromDays(_longTime))).Value.Item;
+
+            _applicationContext.FrameworkContext.ApplicationCache
+                .Create(key, modelFromExtendedCache, _veryLongSlidingExpiration);
+
+            return modelFromExtendedCache;
         }
 
         private Content ResolveItem(HttpContextBase httpContext, string requestUrl, bool isPreview)

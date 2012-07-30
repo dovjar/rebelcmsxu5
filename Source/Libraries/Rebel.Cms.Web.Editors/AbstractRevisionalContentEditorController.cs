@@ -549,7 +549,7 @@ namespace Rebel.Cms.Web.Editors
             entity.MetaData.StatusType = FixedStatusTypes.Published;
 
             var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
-                                                  BackOfficeRequestContext.Application.FrameworkContext.Caches);
+                                                  BackOfficeRequestContext.Application.FrameworkContext);
 
             cacheRecycler.RecycleCacheFor(entity.Item);
         }

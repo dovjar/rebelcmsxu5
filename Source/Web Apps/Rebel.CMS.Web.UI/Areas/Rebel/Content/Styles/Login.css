@@ -6,7 +6,10 @@
 	margin:auto;	
 	position:relative;
 	font-size:0.7em;
-	background: url("../images/login-bg.png") no-repeat bottom left;
+}
+
+.login-box .boxhead {
+    display: none;
 }
 
 .login-box .logo 

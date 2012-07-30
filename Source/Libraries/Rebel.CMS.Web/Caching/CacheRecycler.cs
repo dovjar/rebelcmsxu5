@@ -1,5 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Rebel.Framework;
+using Rebel.Framework.Caching;
 using Rebel.Framework.Context;
 using Rebel.Framework.Persistence.Model;
 
@@ -12,34 +14,34 @@ namespace Rebel.Cms.Web.Caching
     public class CacheRecycler
     {
         private readonly string _host;
-        private readonly IFrameworkCaches _caches;
+        private readonly IFrameworkContext frameworkContext;
 
-        public CacheRecycler(string host, IFrameworkCaches caches)
+        public CacheRecycler(string host, IFrameworkContext frameworkContext)
         {
             _host = host;
-            _caches = caches;
+            this.frameworkContext = frameworkContext;
         }
 
         public void RecycleCacheFor(TypedEntity entity)
         {
             string niceUrl = entity.NiceUrl();
 
-            RemoveFromLimitedProvider(entity, _caches, niceUrl);
-            RemoveFromExtendedProvider(entity, _caches, niceUrl);
+            RemoveFromProvider(entity, frameworkContext.Caches.LimitedLifetime, niceUrl);
+            RemoveFromProvider(entity, frameworkContext.Caches.ExtendedLifetime, niceUrl);
+            RemoveFromProvider(frameworkContext.ApplicationCache, niceUrl);
 
             RegenerateCache(niceUrl);
         }
 
-        private static void RemoveFromExtendedProvider(TypedEntity entity, IFrameworkCaches caches, string niceUrl)
+        private static void RemoveFromProvider(TypedEntity entity, AbstractCacheProvider cache, string niceUrl)
         {
-            caches.ExtendedLifetime.RemoveWhereKeyMatches<UrlCacheKey>(x => x.EntityId == entity.Id);
-            caches.ExtendedLifetime.RemoveWhereKeyContainsString(niceUrl);
+            cache.RemoveWhereKeyMatches<UrlCacheKey>(x => x.EntityId == entity.Id);
+            cache.RemoveWhereKeyContainsString(niceUrl);
         }
 
-        private static void RemoveFromLimitedProvider(TypedEntity entity, IFrameworkCaches caches, string niceUrl)
+        private static void RemoveFromProvider(AbstractApplicationCache cache, string niceUrl)
         {
-            caches.LimitedLifetime.RemoveWhereKeyMatches<UrlCacheKey>(x => x.EntityId == entity.Id);
-            caches.LimitedLifetime.RemoveWhereKeyContainsString(niceUrl);
+            cache.RemoveWhereKeyContains(niceUrl);
         }
 
         private delegate void AsyncMethodCaller(string node);

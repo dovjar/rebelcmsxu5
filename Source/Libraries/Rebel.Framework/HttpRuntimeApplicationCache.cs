@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Caching;
 
 namespace Rebel.Framework
 {
@@ -15,6 +16,16 @@ namespace Rebel.Framework
         private const string ContextKey = "UmbHttpRuntimeCache-ase244g-";
 
         #region Overrides of AbstractScopedCache
+
+        public override T Get<T>(string key)
+        {
+            var realKey = ContextKey + key;
+            var output = GetFromContext(realKey);
+            if (output == null)
+                return default(T);
+
+            return (T) output;
+        }
 
         /// <summary>
         /// Gets or Creates the cache item
@@ -39,12 +50,34 @@ namespace Rebel.Framework
             return (T)output;
         }
 
+        public override void Create<T>(string key, T objectToCache, TimeSpan slidingExpiration) 
+        {
+            var realKey = ContextKey + key;
+            if (GetFromContext(realKey) == null)
+            {
+                HttpRuntime.Cache.Add(realKey, objectToCache, null, Cache.NoAbsoluteExpiration, slidingExpiration,
+                                      CacheItemPriority.High, null);
+            }
+        }
+
         public override void Remove(string key)
         {
             var realKey = ContextKey + key;
             if (HttpRuntime.Cache.Get(realKey) != null)
             {
                 HttpRuntime.Cache.Remove(realKey);
+            }
+        }
+
+        public override void RemoveWhereKeyContains(string key)
+        {
+            foreach(DictionaryEntry entry in HttpRuntime.Cache)
+            {
+                string entryKey = entry.Key.ToString();
+                if(entryKey.Contains(key))
+                {
+                    HttpRuntime.Cache.Remove(entryKey);
+                }
             }
         }
 

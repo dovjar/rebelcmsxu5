@@ -134,6 +134,8 @@ namespace Rebel.Tests.Extensions
         /// <remarks></remarks>
         public IFrameworkContext FrameworkContext { get; private set; }
 
+        public bool IsFirstRun { get; set; }
+
         /// <summary>
         /// Gets the application id, useful for debugging or tracing.
         /// </summary>

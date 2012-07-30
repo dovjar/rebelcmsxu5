@@ -1,43 +1,24 @@
 ﻿using System;
-using System.Collections;
-using System.IO;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Web;
-using System.Web.Compilation;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Rebel.Cms.Web.Caching;
-using Rebel.Cms.Web.Mvc;
-using Rebel.Cms.Web.System;
 using Rebel.Framework;
-using log4net.Config;
-using Rebel.Cms.Web.Context;
-using Rebel.Cms.Web.DependencyManagement.DemandBuilders;
-using Rebel.Cms.Web.Mvc.Areas;
-using Rebel.Cms.Web.Mvc.ControllerFactories;
-using Rebel.Cms.Web.System.Boot;
-using Rebel.Cms.Web.Tasks;
-using Rebel.Cms.Web.Trees;
 using Rebel.Framework.DependencyManagement;
 using Rebel.Framework.DependencyManagement.Autofac;
-using System.Collections.Generic;
 using Rebel.Framework.Diagnostics;
 using IDependencyResolver = Rebel.Framework.DependencyManagement.IDependencyResolver;
-using Rebel.Cms.Web.DependencyManagement;
-using Rebel.Framework.Tasks;
 
-namespace Rebel.Cms.Web.UI 
+namespace Rebel.Cms.Web.UI
 {
-    using global::System.Threading;
-
     public class MvcApplication : HttpApplication
     {
-        private static bool _isInitialised = false;
- 
-        private static readonly ReaderWriterLockSlim InitialiserLocker = new ReaderWriterLockSlim(LockRecursionPolicy.NoRecursion);
+        private static bool _isInitialised;
+
+        private static readonly ReaderWriterLockSlim InitialiserLocker =
+            new ReaderWriterLockSlim(LockRecursionPolicy.NoRecursion);
 
         static MvcApplication()
         {
@@ -59,10 +40,10 @@ namespace Rebel.Cms.Web.UI
                 _isInitialised = true;
             }
         }
-        
+
         protected virtual void Application_End()
         {
-            var reason = HostingEnvironment.ShutdownReason;
+            ApplicationShutdownReason reason = HostingEnvironment.ShutdownReason;
 
             LogHelper.TraceIfEnabled<MvcApplication>("Shutting down due to: " + reason.ToString());
             LogHelper.TraceIfEnabled<MvcApplication>("Stack on shutdown: " + TryGetShutdownStack());
@@ -100,11 +81,6 @@ namespace Rebel.Cms.Web.UI
             return string.Empty;
         }
 
-        protected virtual void Application_BeginRequest(object sender, EventArgs e)
-        {
-            RebelWebApplication.OnBeginRequest(sender, e);    
-        }
-
         // RebelWebApplication cannot hook this event programatically in the Start event due to a known
         // bug in ASP.NET causing a NullRef in PipelineRequestManager if events are hooked in the application init (http://forums.asp.net/t/1327102.aspx/1)
         protected virtual void Application_EndRequest(object sender, EventArgs e)
@@ -133,8 +109,8 @@ namespace Rebel.Cms.Web.UI
         protected virtual RebelWebApplication CreateRebelApplication()
         {
             return new RebelWebApplication(
-                this, 
-                CreateContainerBuilder(), 
+                this,
+                CreateContainerBuilder(),
                 MvcResolverFactory(),
                 RegisterMvcAreas,
                 () => RegisterMvcGlobalFilters(GlobalFilters.Filters),
@@ -156,7 +132,6 @@ namespace Rebel.Cms.Web.UI
         /// <param name="routes"></param>
         protected virtual void RegisterCustomMvcRoutes(RouteCollection routes)
         {
-            
         }
 
         /// <summary>
@@ -174,8 +149,7 @@ namespace Rebel.Cms.Web.UI
         /// <param name="filters"></param>
         protected virtual void RegisterMvcGlobalFilters(GlobalFilterCollection filters)
         {
-            RebelWebApplication.RegisterDefaultGlobalFilters(filters);  
+            RebelWebApplication.RegisterDefaultGlobalFilters(filters);
         }
-
     }
 }

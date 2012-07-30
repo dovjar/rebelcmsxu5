@@ -75,11 +75,23 @@ hr
     position: relative;
     left: 0;
 	height:32px;
-	background:url("../../Modules/RebelTabs/Images/background.gif");
-	background-color:#E0E0E0;
 	border-bottom:1px solid #CAC9C9;
 	overflow:hidden;
 	width:100%;
+    background-color: #e2f0fd;
+    background-image: linear-gradient(bottom, rgb(182,206,227) 0%, rgb(226,240,253) 66%);
+    background-image: -o-linear-gradient(bottom, rgb(182,206,227) 0%, rgb(226,240,253) 66%);
+    background-image: -moz-linear-gradient(bottom, rgb(182,206,227) 0%, rgb(226,240,253) 66%);
+    background-image: -webkit-linear-gradient(bottom, rgb(182,206,227) 0%, rgb(226,240,253) 66%);
+    background-image: -ms-linear-gradient(bottom, rgb(182,206,227) 0%, rgb(226,240,253) 66%);
+
+    background-image: -webkit-gradient(
+    	linear,
+    	left bottom,
+    	left top,
+    	color-stop(0, rgb(182,206,227)),
+    	color-stop(0.66, rgb(226,240,253))
+    );
 }
 #editorBar .outer-container 
 {
@@ -141,7 +153,6 @@ hr
 
 .property-pane 
 {
-	background:url("../images/property-background.gif") repeat-x scroll center top #FFFFFF;
 	border:1px solid #D9D7D7;
 	clear:both;
 	display:block;

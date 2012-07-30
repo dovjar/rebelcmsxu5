@@ -1,32 +1,42 @@
-﻿.app-traycontent
-{
-	background: url('tray-sprites.png') -18px -18px;
+﻿#tray {
+    margin-top: 5px;
 }
-.app-traymedia
-{
-	background: url('tray-sprites.png') -18px -90px;
+
+#tray li a {
+    background-repeat: no-repeat;
+    background-image: url('tray-sprites-new.png');
 }
-.app-trayusers
-{
-	background: url('tray-sprites.png') -18px -162px;
+
+.app-traycontent {
+    background-position: 15px 0;
+    height: 21px;
+    width: 24px;
 }
-.app-traysettings
-{
-	background: url('tray-sprites.png') -18px -234px;
+
+.app-traymedia {
+    background-position: 11px -40px;
 }
-.app-traydeveloper
-{
-	background: url('tray-sprites.png') -18px -306px;
+
+.app-trayusers {
+    background-position: 7px -120px;
 }
-.app-traymember
-{
-	background: url('tray-sprites.png') -18px -378px;
+
+.app-traysettings {
+    background-position: 13px -80px;
 }
-.app-traystats
-{
-	background: url('tray-sprites.png') -18px -450px;
+
+.app-traydeveloper {
+    background-position: 13px -200px;
 }
-.app-traytranslation
-{
-	background: url('tray-sprites.png') -18px -522px;
+
+.app-traymember {
+    background-position: 14px -160px;
+}
+
+.app-traystats {
+
+}
+
+.app-traytranslation {
+
 }

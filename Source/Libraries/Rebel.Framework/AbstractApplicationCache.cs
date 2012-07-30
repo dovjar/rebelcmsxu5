@@ -7,15 +7,12 @@ namespace Rebel.Framework
     /// </summary>
     public abstract class AbstractApplicationCache : DisposableObject
     {
-        /// <summary>
-        /// Gets or Creates the cache item
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="callback">Callback to create the cache item if it doesn't exist</param>
-        /// <returns></returns>
+        public abstract T Get<T>(string key);
         public abstract T GetOrCreate<T>(string key, Func<HttpRuntimeCacheParameters<T>> callback);
+        public abstract void Create<T>(string key, T objectToCache, TimeSpan slidingExpiration);
 
         public abstract void Remove(string key);
+        public abstract void RemoveWhereKeyContains(string key);
 
         /// <summary>
         /// Removes an item from the cache

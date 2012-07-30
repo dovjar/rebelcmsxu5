@@ -108,26 +108,6 @@ namespace Rebel.Cms.Web
             DisposeScope();
         }
 
-        public virtual void OnBeginRequest(object sender, EventArgs e)
-        {
-            var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
-            
-            if (_isFirstRequest) // lets warm up the cache the first time app starts up
-            {
-                lock (Mutex)
-                {
-                    if (!_isFirstRequest) return;
-                    _isFirstRequest = false;
-                    
-                    Task.Factory.StartNew(() =>
-                    {
-                        var cacheWarmer = new CacheWarmer(host);
-                        cacheWarmer.TraverseFrom("/");
-                    });
-                }
-            }
-        }
-
         protected virtual void DisposeScope()
         {
             //TODO: This is temporary until the render context registration has been refactored to properly dispose when out of http request scope

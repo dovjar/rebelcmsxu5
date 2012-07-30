@@ -9,23 +9,23 @@
 #editorBar .toolbar-button:hover {
 	width:22px;
 	height:23px;
-    border:1px solid #0A246A;
-    background-color:#B2BBD0;
+    /*border:1px solid #0A246A;*/
+    /*background-color:#B2BBD0;*/
 }
 
 .save-button 
 {
-	background:transparent url("../images/save.gif") no-repeat 0px 0px;
+	background:transparent url("../images/save.png") no-repeat 4px 4px;
 }
 
 .publish-button 
 {
-	background:transparent url("../images/publish.gif") no-repeat 0px 0px;
+	background:transparent url("../images/publish.png") no-repeat 4px 4px;
 }
 
 .preview-button 
 {
-	background:transparent url("../images/preview.gif") no-repeat 0px 2px;
+	background:transparent url("../images/preview.png") no-repeat 4px 4px;
 }
 
 .implement-section-button 

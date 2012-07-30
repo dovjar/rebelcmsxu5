@@ -1,6 +1,6 @@
 .panel
 {
-	background: url(images/panel_bg.gif) top repeat-x !important;
+	/*background: url(images/panel_bg.gif) top repeat-x !important;*/
 }
 
 .panelstatus
@@ -12,41 +12,40 @@
 
 .panel .boxhead
 {
-	background: url(images/panel_boxhead_bg.gif) top left no-repeat; 
-	height:19px;
-	
 	position:absolute;
-	top:0px;
+	top:3px;
 	left:0px;
 	right:0px;
+    background-color: #E2F0FD;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-color: #a5c2dd;
+    width: 50%;
+    border-radius: 3px 3px 0 0;
 }
 
-.panel .boxhead h2, 
-.panel .boxfooter h5
+.panel .boxhead h2
 {
-	background: url(images/panel_boxhead_h2_bg.gif) top right no-repeat;
-	margin: 0px;
-	padding: 3px 0px 1px 10px;
+	margin: 0;
+	padding: 3px 0 3px 10px;
 	font-weight: bold;
 	text-align: left;
-	font-family: "Trebuchet MS" , verdana, arial;
-	font-size: 11px;
-	color: #378080;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #444;
 	display: block;
-	height: 14px;
 	width: auto;
 }
 
 .panel .boxbody
 {
-	border-top: 1px solid #cac9c9;
-	border-right: 1px solid #cac9c9;
-	border-left: 1px solid #cac9c9;
-	/*background: url(images/panel_boxfooter_bg.gif) bottom left repeat-y #fff; 	*/
-	padding-left:1px;
-	
+    border: 1px solid #cac9c9;
+    -moz-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #FFF;
 	position:absolute;
-	top:19px;
+	top:25px;
 	left:0px;
 	bottom:12px;
 	right:0px;
@@ -54,20 +53,14 @@
 
 .panel .boxfooter
 {
-	height: 12px;
-	background: url(images/panel_boxfooter_bg.gif) 11px 11px repeat-x #fff;
-	
-	position:absolute;
-	bottom:0px;
-	left:0px;
-	right:0px;
+    display: none;
 }
 
 .panel .boxfooter .statusBar
 {
 	height: 12px;
 	margin: 0px;
-	background: url(images/panel_boxfooter_statusBar_bg.gif) top left no-repeat;
+	/*background: url(images/panel_boxfooter_statusBar_bg.gif) top left no-repeat;*/
 }
 .panel .boxfooter .statusBar h5
 {
@@ -75,7 +68,7 @@
 	height: 12px;
 	margin: 0px;
 	padding: 0px;
-	background: url(images/panel_boxfooter_statusBar_h2_bg.gif) top right no-repeat;
+	/*background: url(images/panel_boxfooter_statusBar_h2_bg.gif) top right no-repeat;*/
 	font-size:11px;
 	padding-left:10px;
 	overflow:hidden;

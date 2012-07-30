@@ -22,6 +22,8 @@ namespace Rebel.Cms.Web.Context
         /// <remarks></remarks>
         IFrameworkContext FrameworkContext { get; }
 
+        bool IsFirstRun { get; set; }
+
         /// <summary>
         /// Gets the application id, useful for debugging or tracing.
         /// </summary>
