@@ -427,20 +427,6 @@ namespace Rebel.Cms.Web.Editors
 
                 if (success)
                 {
-                    //if (ValueProvider.GetValue("submit.Publish") != null || ValueProvider.GetValue("submit.Unpublish") != null)
-                    //{
-                    //    // Remove old relations
-                    //    var statRelations = uow.Repositories.GetParentRelations(entity.Item.Id, FixedRelationTypes.StatusChangedByRelationType);
-                    //    foreach (var relationById in statRelations)
-                    //    {
-                    //        uow.Repositories.RemoveRelation(relationById);
-                    //    }
-
-                    //    uow.Repositories.AddRelation(_currentUser.ProfileId,
-                    //            entity.Item.Id,
-                    //            FixedRelationTypes.StatusChangedByRelationType);
-                    //}
-
                     if (isRevisional) uow.Repositories.Revisions.AddOrUpdate(entity);
                     else uow.Repositories.AddOrUpdate(entity.Item);
                     uow.Complete();
@@ -458,6 +444,14 @@ namespace Rebel.Cms.Web.Editors
                 {
                     //need to clear the URL cache for this entry
                     BackOfficeRequestContext.RoutingEngine.ClearCache(clearGeneratedUrls: true, clearMappedUrls: true);
+
+                    if (ValueProvider.GetValue("submit.Publish") != null)
+                    {
+                        var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
+                                                  BackOfficeRequestContext.Application.FrameworkContext);
+
+                        cacheRecycler.RecycleCacheFor(entity.Item);
+                    } 
 
                     //add path for entity for SupportsPathGeneration (tree syncing) to work
                     GeneratePathsForCurrentEntity(uow.Repositories.GetEntityPaths<TypedEntity>(entity.Item.Id, FixedRelationTypes.DefaultRelationType));
@@ -547,11 +541,6 @@ namespace Rebel.Cms.Web.Editors
 
             NotifyForProcess(NotificationState.Publish, model);
             entity.MetaData.StatusType = FixedStatusTypes.Published;
-
-            var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
-                                                  BackOfficeRequestContext.Application.FrameworkContext);
-
-            cacheRecycler.RecycleCacheFor(entity.Item);
         }
 
         [RebelAuthorize(Permissions = new[] { FixedPermissionIds.Unpublish })]

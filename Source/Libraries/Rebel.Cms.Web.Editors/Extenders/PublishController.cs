@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using Rebel.Cms.Web.Caching;
 using Rebel.Cms.Web.Context;
 using Rebel.Cms.Web.Model.BackOffice.Editors;
 using Rebel.Cms.Web.Mvc;
@@ -70,6 +71,10 @@ namespace Rebel.Cms.Web.Editors.Extenders
 
             using (var uow = Hive.Create<IContentStore>())
             {
+                var cacheRecycler = new CacheRecycler(Request.Url.GetLeftPart(UriPartial.Authority),
+                                                  BackOfficeRequestContext.Application.FrameworkContext);
+
+                
                 var contentEntity = uow.Repositories.Revisions.GetLatestRevision<TypedEntity>(model.Id);
                 if (contentEntity == null)
                     throw new ArgumentException(string.Format("No entity found for id: {0} on action PublishForm", model.Id));
@@ -90,6 +95,8 @@ namespace Rebel.Cms.Web.Editors.Extenders
                         {
                             var publishRevision = revisionEntity.CopyToNewRevision(FixedStatusTypes.Published);
                             uow.Repositories.Revisions.AddOrUpdate(publishRevision);
+                            
+                            cacheRecycler.RecycleCacheFor(revisionEntity.Item);
                         }
                     }
                 }
@@ -102,6 +109,8 @@ namespace Rebel.Cms.Web.Editors.Extenders
 
                 //save
                 uow.Complete();
+
+                cacheRecycler.RecycleCacheFor(toPublish.Item);
 
                 var contentViewModel = BackOfficeRequestContext.Application.FrameworkContext.TypeMappers.Map<Revision<TypedEntity>, ContentEditorModel>(toPublish);
 
