@@ -106,6 +106,10 @@
     <Content Include="App_Plugins\Packages\SystemInfo\lib\Rebel.Cms.Packages.SystemInfo.dll" />
     <Content Include="Areas\Install\Content\Images\btn-cancel.png" />
     <Content Include="Areas\Install\Content\Images\btn-login.png" />
+    <Content Include="Areas\Rebel\Content\Images\AppIcons\system-info_old.png" />
+    <Content Include="Areas\Rebel\Content\Images\AppIcons\tray-sprites-new.png" />
+    <Content Include="Areas\Rebel\Content\Images\AppIcons\tray-sprites_old.png" />
+    <Content Include="Areas\Rebel\Content\Images\blk-arrow-right.png" />
     <Content Include="Areas\Rebel\Content\Images\browse.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\dictionary.gif" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\house.png" />
@@ -113,6 +117,7 @@
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\layout.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\layout_content.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\layout_header.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\logo-small.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\magnifier.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_add.png" />
@@ -142,6 +147,7 @@
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_get.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_stack.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\page_white_text.png" />
+    <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\rebel-logo.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\sitemap.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\sitemap_blue.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeIcons\sitemap_color.png" />
@@ -154,11 +160,15 @@
     <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\search.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\sitemap1.png" />
     <Content Include="Areas\Rebel\Content\Images\DocTypeThumbs\sitemap2.png" />
+    <Content Include="Areas\Rebel\Content\Images\favicon.png" />
     <Content Include="Areas\Rebel\Content\Images\membersearch.png" />
     <Content Include="Areas\Rebel\Content\Images\na-checkbox.png" />
     <Content Include="Areas\Rebel\Content\Images\partial.gif" />
     <Content Include="Areas\Rebel\Content\Images\preview.gif" />
+    <Content Include="Areas\Rebel\Content\Images\preview.png" />
+    <Content Include="Areas\Rebel\Content\Images\publish.png" />
     <Content Include="Areas\Rebel\Content\Images\rebelSplash.png" />
+    <Content Include="Areas\Rebel\Content\Images\save.png" />
     <Content Include="Areas\Rebel\Modules\MSDropDown\dd.css" />
     <Content Include="Areas\Rebel\Modules\MSDropDown\dd_arrow.gif" />
     <Content Include="Areas\Rebel\Modules\MSDropDown\jquery.dd.js" />
