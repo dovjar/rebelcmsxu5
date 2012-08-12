@@ -92,7 +92,7 @@ namespace Rebel.Framework.Persistence.Model.Associations
         /// </returns>
         public bool IsReadOnly
         {
-            get { return _inner.Values.IsReadOnly; }
+            get { return false;}// _inner.Values.IsReadOnly; }
         }
 
         #region Implementation of IEnumerable

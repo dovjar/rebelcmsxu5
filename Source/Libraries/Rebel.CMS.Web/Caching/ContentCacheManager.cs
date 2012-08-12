@@ -45,6 +45,7 @@ namespace Rebel.Cms.Web.Caching
 
         private void EnsureCacheWarmed()
         {
+            return;
             var host = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
 
             if (_context.IsFirstRun) // lets warm up the cache if this is the first request

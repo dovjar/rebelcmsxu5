@@ -194,7 +194,7 @@ namespace Rebel.Cms.Web
         {
             var settings = DependencyResolver.Current.GetService<RebelSettings>();
             var area = settings.RebelPaths.BackOfficePath;
-            var formAction = html.ViewContext.HttpContext.Request.Url.AbsolutePath;
+            var formAction =html.ViewContext.HttpContext.Request.Url.AbsolutePath;
 
             return html.RenderForm(formAction, FormMethod.Post, htmlAttributes, controllerName, action, area, null);
         }
@@ -308,7 +308,7 @@ namespace Rebel.Cms.Web
             var tagBuilder = new TagBuilder("form");
             tagBuilder.MergeAttributes(htmlAttributes);
             // action is implicitly generated, so htmlAttributes take precedence.
-            tagBuilder.MergeAttribute("action", formAction);
+            tagBuilder.MergeAttribute("action", htmlHelper.ViewContext.RequestContext.HttpContext.Response.ApplyAppPathModifier(formAction));
             // method is an explicit parameter, so it takes precedence over the htmlAttributes. 
             tagBuilder.MergeAttribute("method", HtmlHelper.GetFormMethodString(method), true);
             var traditionalJavascriptEnabled = htmlHelper.ViewContext.ClientValidationEnabled && !htmlHelper.ViewContext.UnobtrusiveJavaScriptEnabled;
