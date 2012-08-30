@@ -103,6 +103,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D17A89C5-54ED-49A4-B07A-14CBFA47E793}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Debug|Any CPU
 		{D17A89C5-54ED-49A4-B07A-14CBFA47E793}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17A89C5-54ED-49A4-B07A-14CBFA47E793}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{D17A89C5-54ED-49A4-B07A-14CBFA47E793}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{D17A89C5-54ED-49A4-B07A-14CBFA47E793}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{D17A89C5-54ED-49A4-B07A-14CBFA47E793}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
@@ -184,6 +185,7 @@ Global
 		{26A70ABF-3C79-463A-A950-DDF5400DFC2A}.ReleaseNoTests|Any CPU.ActiveCfg = Release|Any CPU
 		{8D847BD0-44E2-428F-9872-3DAF6000EA5F}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D847BD0-44E2-428F-9872-3DAF6000EA5F}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D847BD0-44E2-428F-9872-3DAF6000EA5F}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{8D847BD0-44E2-428F-9872-3DAF6000EA5F}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D847BD0-44E2-428F-9872-3DAF6000EA5F}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D847BD0-44E2-428F-9872-3DAF6000EA5F}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
@@ -255,6 +257,7 @@ Global
 		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Debug|Any CPU
 		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Debug|Any CPU
 		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{5420EF90-DA2F-405F-A0EC-18FBED4B4438}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
@@ -292,6 +295,7 @@ Global
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Debug|Any CPU
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Debug|Any CPU
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Debug - Tests.DomainDesign Only|Any CPU.Build.0 = Debug|Any CPU
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
@@ -309,6 +313,7 @@ Global
 		{E119331A-011C-4EDB-8840-A52AFCDF5CD1}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Debug|Any CPU
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
@@ -325,6 +330,7 @@ Global
 		{50CAFAC4-AD8B-41D3-99BF-DB20DCD3CFFE}.ReleaseNoTests|Any CPU.Build.0 = Release|Any CPU
 		{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEFCCA79-0B6B-4A59-8470-D6029B501DFB}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
@@ -342,6 +348,7 @@ Global
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Release|Any CPU
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Release|Any CPU
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{23078C45-56CA-4F7A-99A2-0B2B677A56E7}.Debug - Web only (No Unit test build)|Any CPU.ActiveCfg = Debug|Any CPU
@@ -398,6 +405,7 @@ Global
 		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Alex-QueryDescriptionStackOnly|Any CPU.ActiveCfg = Release|Any CPU
 		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Alex-QueryDescriptionStackOnly|Any CPU.Build.0 = Release|Any CPU
 		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Debug - Tests.Cms Only|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Debug - Tests.Cms Only|Any CPU.Build.0 = Debug|Any CPU
 		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Debug - Tests.DomainDesign Only|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Debug - Tests.DomainDesign Only|Any CPU.Build.0 = Debug|Any CPU
 		{9D4DA63D-8664-4602-918E-2F75B94F1BBA}.Debug - Tests.Framework Only|Any CPU.ActiveCfg = Debug|x86

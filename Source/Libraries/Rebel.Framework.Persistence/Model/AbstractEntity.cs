@@ -121,18 +121,7 @@ namespace Rebel.Framework.Persistence.Model
             return PropertyChangedInfo.Any();
         }
 
-        /// <summary>
-        /// Method to call on a property setter
-        /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <typeparam name="TProperty"></typeparam>
-        /// <param name="propSelector"></param>
-        [Obsolete("Use overload that takes a PropertyInfo instead", true)]
-        protected virtual void OnPropertyChanged<TSource, TProperty>(Expression<Func<TSource, TProperty>> propSelector)
-            where TSource : class
-        {
-            throw new NotImplementedException();
-        }
+        
 
         /// <summary>
         /// Method to call on a property setter.
