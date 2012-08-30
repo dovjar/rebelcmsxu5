@@ -64,7 +64,8 @@ namespace Rebel.Framework.Persistence.Model.Attribution
             {
 
                 if (base.Contains(GetKeyForItem(item)))
-                    throw new InvalidOperationException("This TypedAttributeCollection already contains an item with key {0}".InvariantFormat(GetKeyForItem(item)));
+                    return;
+                    //throw new InvalidOperationException("This TypedAttributeCollection already contains an item with key {0}".InvariantFormat(GetKeyForItem(item)));
 
                 base.InsertItem(index, item);
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));

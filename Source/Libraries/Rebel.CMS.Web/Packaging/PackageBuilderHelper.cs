@@ -87,7 +87,7 @@ namespace Rebel.Cms.Web.Packaging
                         foreach (var node in nodesToSerialize.Where(x => x.Attributes.Any(y => y.AttributeDefinition.AttributeType.RenderTypeProvider.InvariantEquals(CorePluginConstants.FileUploadPropertyEditorId))))
                         {
                             var attributes = node.Attributes.Where(x => x.AttributeDefinition.AttributeType.RenderTypeProvider.InvariantEquals(CorePluginConstants.FileUploadPropertyEditorId));
-                            uploadedFilesToPackage.AddRange(attributes.Where(x => x.Values["Value"] != null).Select(attribute => HiveId.Parse(attribute.Values["Value"].ToString())));
+                            uploadedFilesToPackage.AddRange(attributes.Where(x => x.Values.Keys.Count(key => key == "Value") > 0 && x.Values["Value"] != null).Select(attribute => HiveId.Parse(attribute.Values["Value"].ToString())));
                         }
 
                         CopySerializedObjectsToPackage(builder, appContext, nodesToSerialize, 
