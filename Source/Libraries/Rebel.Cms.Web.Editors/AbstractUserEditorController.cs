@@ -111,7 +111,7 @@ namespace Rebel.Cms.Web.Editors
             var user = MembershipService.GetById(id.Value);
 
             if (user == null)
-                throw new ArgumentException(string.Format("No user found for id: {0} on action Edit", id));
+                return RedirectToAction("CreateNew", new { id });
 
             var userViewModel = BackOfficeRequestContext.Application.FrameworkContext.TypeMappers.Map<TUserType, TEditorModel>(user);
 
